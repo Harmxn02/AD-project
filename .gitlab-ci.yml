@@ -1,0 +1,38 @@
+image: registry.ti.howest.be:5000/project-2:client-QA
+
+stages:
+  - QA
+  - deploy
+
+before_script:
+  - ln -s /ci/node_modules .
+
+validateHTML:
+  stage: QA
+  only:
+    - main
+  script:
+    - npm run validate-html
+
+SonarQube:
+  stage: QA
+  needs:
+    - validateHTML
+  only:
+    - main
+  script:
+    - npm run validate-sonar-ci
+
+deployment:
+  stage: deploy
+  image: registry.ti.howest.be:5000/project-2:client-deploy
+  needs:
+    - validateHTML
+    - SonarQube
+  variables:
+    year: 2023-2024
+  only:
+    - main
+  script:
+    - rm ./src/config.json
+    - scp -qr ./src/* gitlab-runner@project-2.ti.howest.be:/var/www/html/${year}/${CI_PROJECT_NAMESPACE##*/}/
