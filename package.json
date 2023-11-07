@@ -3,7 +3,7 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "validate-html": "java -jar node_modules/vnu-jar/build/dist/vnu.jar --Werror --filterpattern '.*(v-|@).*' --filterfile .vnuignore --skip-non-html ./src",
+    "validate-html": "java -jar node_modules/vnu-jar/build/dist/vnu.jar --Werror --filterpattern \".*(v-|@).*\" --filterfile .vnuignore --skip-non-html ./src",
     "validate-sonar-ci": "node_modules/sonar-scanner/bin/sonar-scanner",
     "validate-sonar-local-mac": "node_modules/sonar-scanner/bin/sonar-scanner -Dsonar.host.url=https://sonarqube.ti.howest.be",
     "validate-sonar-local-win": ".\\node_modules\\sonar-scanner\\bin\\sonar-scanner -Dsonar.host.url=https://sonarqube.ti.howest.be",
