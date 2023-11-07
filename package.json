@@ -3,6 +3,10 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
     "validate-html": "java -jar node_modules/vnu-jar/build/dist/vnu.jar --Werror --filterpattern \".*(v-|@).*\" --filterfile .vnuignore --skip-non-html ./src",
     "validate-sonar-ci": "node_modules/sonar-scanner/bin/sonar-scanner",
     "validate-sonar-local-mac": "node_modules/sonar-scanner/bin/sonar-scanner -Dsonar.host.url=https://sonarqube.ti.howest.be",
@@ -14,7 +18,10 @@
   },
   "dependencies": {
     "sonar-scanner": "^3.1.0",
-    "vnu-jar": "^20.2.28"
+    "vnu-jar": "^20.2.28",
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "14.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.7",
@@ -23,7 +30,10 @@
     "babel-jest": "^26.6.3",
     "jest": "^26.6.3",
     "jest-sonar-reporter": "^2.0.0",
-    "jsdom": "^22.1.0"
+    "jsdom": "^22.1.0",
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0"
   },
   "moduleDirectories": [
     "node_modules",
