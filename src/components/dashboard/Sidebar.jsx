@@ -3,6 +3,7 @@ import ProfilePicture from '../../../public/avatar-profile.jpg'
 import HouseIcon from '../../../public/icons/house.svg'
 import SettingsIcon from '../../../public/icons/settings.svg'
 import TransactionIcon from '../../../public/icons/transaction.svg'
+import ExitIcon from '../../../public/icons/exit.svg'
 import Image from 'next/image'
 
 const Sidebar = () => {
@@ -38,22 +39,28 @@ const Sidebar = () => {
                 <li>
                     <a href="#" className='flex items-center gap-4'>
                         <Image src={HouseIcon} width={25} height={25}/>
-                        <p>Dashboard</p>
+                        Dashboard
                     </a>
                 </li>
                 <li>
                     <a href="#" className='flex items-center gap-4'>
                         <Image src={TransactionIcon} width={25} height={25}/>
-                        <p>Transactions</p>
+                        Transactions
                     </a>
                 </li>
                 <li>
                     <a href="#" className='flex items-center gap-4'>
                         <Image src={SettingsIcon} width={25} height={25}/>
-                        <p>Settings</p>
+                        Settings
                     </a>
                 </li>
             </ul>
+            <a href="#" className='block bg-[#747474] text-white font-bold text-center text-[0.950rem] py-4 px-6 mt-8 mb-3'>START EXPLORING</a>
+            <a href="#" className='block bg-[#747474] text-white font-bold text-center text-[0.950rem] py-4'>SCHEDULE EXCURSION</a>
+            <a href="#" className='flex items-center gap-4'>
+                <Image src={ExitIcon} width={25} height={25}/>
+                Transactions
+            </a>
         </nav>
     </header>
   )
