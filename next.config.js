@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export'
+    distDir: 'src/assets/dist',
 }
 
 module.exports = nextConfig
