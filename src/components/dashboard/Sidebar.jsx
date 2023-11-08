@@ -8,7 +8,7 @@ import Image from 'next/image'
 
 const Sidebar = () => {
   return (
-    <header className='w-[250px] h-screen bg-gray-200'>
+    <header className='bg-white w-[250px] h-screen'>
         <div className='p-8 text-center'>
             <Image
                 src={ProfilePicture}
@@ -57,9 +57,9 @@ const Sidebar = () => {
             </ul>
             <a href="#" className='block bg-[#747474] text-white font-bold text-center text-[0.950rem] py-4 px-6 mt-8 mb-3'>START EXPLORING</a>
             <a href="#" className='block bg-[#747474] text-white font-bold text-center text-[0.950rem] py-4'>SCHEDULE EXCURSION</a>
-            <a href="#" className='flex items-center gap-4'>
+            <a href="#" className='flex items-center mt-52 gap-4'>
                 <Image src={ExitIcon} width={25} height={25}/>
-                Transactions
+                Exit
             </a>
         </nav>
     </header>
