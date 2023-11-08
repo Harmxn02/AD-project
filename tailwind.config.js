@@ -13,7 +13,7 @@ module.exports = {
 
         // used for the most expensive plans
         brandBackground: "#3E3E3E",
-      }
+      },
     },
   },
   plugins: [],
