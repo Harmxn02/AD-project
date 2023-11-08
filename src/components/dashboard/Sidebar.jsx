@@ -1,5 +1,8 @@
 import React from 'react'
-import ProfilePicture from '../../../public/profile-picture.avif'
+import ProfilePicture from '../../../public/avatar-profile.jpg'
+import HouseIcon from '../../../public/icons/house.svg'
+import SettingsIcon from '../../../public/icons/settings.svg'
+import TransactionIcon from '../../../public/icons/transaction.svg'
 import Image from 'next/image'
 
 const Sidebar = () => {
@@ -30,6 +33,20 @@ const Sidebar = () => {
                 <p>3</p>
             </div>
         </div>
+        <ul>
+            <li className='flex items-center gap-2'>
+                <Image src={HouseIcon}/>
+                <p>Dashboard</p>
+            </li>
+            <li className='flex items-center gap-2'>
+                <Image src={TransactionIcon}/>
+                <p>Transactions</p>
+            </li>
+            <li className='flex items-center gap-2'>
+                <Image src={SettingsIcon}/>
+                <p>Settings</p>
+            </li>
+        </ul>
     </header>
   )
 }
