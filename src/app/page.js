@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Homescreen from '@/components/homescreen/Homescreen'
 import Account from '@/components/settings/Account'
+import AccountDeleted from '@/components/settings/AccountDeleted'
 import Transactions from '@/components/transactions/Transactions'
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
     <>
       {/* <Homescreen/> */}
       {/* <Account/> */}
+      {/* <AccountDeleted/> */}
       {/* <Transactions/> */}
     </>
     
