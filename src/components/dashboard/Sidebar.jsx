@@ -20,33 +20,41 @@ const Sidebar = () => {
             <h3 className='text-[0.875rem] text-brandBlack'>A.Karpenko@adriamail.com</h3>
         </div>
         <div className='grid grid-cols-2 text-center'>
-            <div className='border-t border-r border-brandBlack p-2'>
+            <div className='border-t border-r border-brandBlack p-3'>
                 <h4>Distance traveled</h4>
                 <p>315km</p>
             </div>
-            <div className='border-t border-brandBlack p-2'>
+            <div className='border-t border-brandBlack p-3'>
                 <h4>Distance traveled</h4>
                 <p>315km</p>
             </div>
-            <div className='border-t border-b border-brandBlack p-2 col-span-2'>
+            <div className='border-t border-b border-brandBlack p-3 col-span-2'>
                 <h4>Items collected</h4>
                 <p>3</p>
             </div>
         </div>
-        <ul>
-            <li className='flex items-center gap-2'>
-                <Image src={HouseIcon}/>
-                <p>Dashboard</p>
-            </li>
-            <li className='flex items-center gap-2'>
-                <Image src={TransactionIcon}/>
-                <p>Transactions</p>
-            </li>
-            <li className='flex items-center gap-2'>
-                <Image src={SettingsIcon}/>
-                <p>Settings</p>
-            </li>
-        </ul>
+        <nav className='p-7'>
+            <ul className='flex flex-col gap-5'>
+                <li>
+                    <a href="#" className='flex items-center gap-4'>
+                        <Image src={HouseIcon} width={25} height={25}/>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" className='flex items-center gap-4'>
+                        <Image src={TransactionIcon} width={25} height={25}/>
+                        <p>Transactions</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" className='flex items-center gap-4'>
+                        <Image src={SettingsIcon} width={25} height={25}/>
+                        <p>Settings</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </header>
   )
 }
