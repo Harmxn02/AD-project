@@ -8,12 +8,7 @@ export default function Home() {
     <>
       {/* <Homescreen/> */}
       {/* <Account/> */}
-
-
-
-
-      
-      <AccountDeleted/>
+      {/* <AccountDeleted/> */}
     </>
     
   )
