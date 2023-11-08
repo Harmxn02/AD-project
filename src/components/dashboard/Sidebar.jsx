@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../utility/Button'
 import ProfilePicture from '../../../public/avatar-profile.jpg'
 import HouseIcon from '../../../public/icons/house.svg'
 import SettingsIcon from '../../../public/icons/settings.svg'
@@ -22,15 +23,15 @@ const Sidebar = () => {
         </div>
         <div className='grid grid-cols-2 text-center'>
             <div className='border-t border-r border-brandBlack p-3'>
-                <h4>Distance traveled</h4>
+                <h4 className='font-bold'>Distance traveled</h4>
                 <p>315km</p>
             </div>
             <div className='border-t border-brandBlack p-3'>
-                <h4>Distance traveled</h4>
+                <h4 className='font-bold'>Distance traveled</h4>
                 <p>315km</p>
             </div>
             <div className='border-t border-b border-brandBlack p-3 col-span-2'>
-                <h4>Items collected</h4>
+                <h4 className='font-bold'>Items collected</h4>
                 <p>3</p>
             </div>
         </div>
@@ -55,8 +56,10 @@ const Sidebar = () => {
                     </a>
                 </li>
             </ul>
-            <a href="#" className='block bg-[#747474] text-white font-bold text-center text-[0.950rem] py-4 px-6 mt-8 mb-3'>START EXPLORING</a>
-            <a href="#" className='block bg-[#747474] text-white font-bold text-center text-[0.950rem] py-4'>SCHEDULE EXCURSION</a>
+            <div className='flex flex-col gap-4 mt-8'>
+                <Button href="#" backgroundColor="#747474" content="START EXPLORING"/>
+                <Button href="#" backgroundColor="#747474" content="SCHEDULE EXCURSION"/>
+            </div>
             <a href="#" className='flex items-center mt-52 gap-4'>
                 <Image src={ExitIcon} width={25} height={25}/>
                 Exit
