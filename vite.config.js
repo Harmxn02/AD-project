@@ -5,9 +5,9 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
     plugins: [react()],
     build: {
-        outDir: "src/assets/js/dist",
+        outDir: "src/assets/js/build",
         rollupOptions: {
-            input: "src/assets/js/App.jsx"
+            input: "src/App.jsx"
         },
     }
     // Other configuration options as needed
