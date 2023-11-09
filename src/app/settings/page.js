@@ -5,7 +5,9 @@ export default function Home() {
   return (
     <div className='flex'>
       <Sidebar />
-      <Account />
+      <section className='pt-16 pl-24'>
+        <Account/>
+      </section>
     </div>
   )
 }

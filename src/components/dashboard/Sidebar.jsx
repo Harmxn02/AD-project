@@ -57,7 +57,7 @@ const Sidebar = () => {
                 <li>
                     <Link href="/transactions" className={`flex items-center gap-4 ${pathname === '/transactions' ? 'text-[#62A0AA]' : 'text-[#000000]'}`}>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill={pathname === '/transactions' ? '#62A0AA' : '#000000'} xmlns="http://www.w3.org/2000/svg">
-                            <path d="M2 7H20M16 2L21 7L16 12M22 17H4M8 12L3 17L8 22" stroke={pathname === '/transactions' ? '#62A0AA' : '#000000'} stroke-width="2"/>
+                            <path d="M2 7H20M16 2L21 7L16 12M22 17H4M8 12L3 17L8 22" stroke={pathname === '/transactions' ? '#62A0AA' : '#000000'} strokeWidth="2"/>
                         </svg>
                         Transactions
                     </Link>
