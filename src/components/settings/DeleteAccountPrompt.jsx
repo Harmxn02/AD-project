@@ -1,5 +1,6 @@
 import React from "react";
 import Title from "../utility/Title";
+import Link from "next/link";
 
 const DeleteAccountPrompt = () => {
 	return (
@@ -29,8 +30,8 @@ const DeleteAccountPrompt = () => {
 					</div>
 
 					<div className='flex gap-5'>
-                        <a href="#todo" className='border border-black px-4 py-3 font-medium'>Delete account</a>
-                        <a href="#todo" className='border border-black px-4 py-3 font-medium'>Cancel</a>
+                        <Link href="/settings/account-deleted" className='border border-black px-4 py-3 font-medium'>Delete account</Link>
+                        <Link href="/settings" className='border border-black px-4 py-3 font-medium'>Cancel</Link>
                     </div>
 				</div>
 			</div>

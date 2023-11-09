@@ -13,7 +13,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className='bg-[#F6F6F6]'>
       <body className={inter.className}>
-        <Sidebar />
         {children}
       </body>
     </html>
