@@ -35,7 +35,7 @@ const Header = () => {
             <button
                 key={index}
                 onClick={() => handleButtonClick(button.title)}
-                className={`font-medium py-1 px-4 ${activeButton === button.title ? 'bg-gray-300' : ''}`}
+                className={`font-medium py-1 px-4 ${activeButton === button.title ? 'bg-[#747474]' : ''}`}
             >
                 {button.title}
             </button>
