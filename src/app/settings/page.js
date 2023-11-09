@@ -1,7 +1,11 @@
 import Account from '@/components/settings/Account'
+import Sidebar from '@/components/dashboard/Sidebar'
 
 export default function Home() {
   return (
-    <Account />
+    <div className='flex'>
+      <Sidebar />
+      <Account />
+    </div>
   )
 }
