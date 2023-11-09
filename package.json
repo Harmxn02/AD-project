@@ -14,7 +14,7 @@
     "validate-local-win": "npm run validate-html && npm run validate-sonar-local-win",
     "test": "jest --coverage --watchAll --env=jsdom",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && robocopy . src/js/build/  index.html",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
