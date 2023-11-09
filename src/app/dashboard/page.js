@@ -7,6 +7,7 @@ export default function Home() {
       <Sidebar />
       <section className='pt-16 px-24 w-full'>
         <Header />
+        <p>dsdsqqds</p>
       </section>
     </div>
   )

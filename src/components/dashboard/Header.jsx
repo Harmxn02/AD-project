@@ -29,7 +29,7 @@ const Header = () => {
     };
 
   return (
-    <header className='flex justify-between'>
+    <header className='flex justify-between mb-12'>
         <div className='flex gap-12'>
             {buttons.map((button, index) => (
             <button
