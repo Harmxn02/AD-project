@@ -1,7 +1,5 @@
 import React from "react";
 import Title from "../utility/Title";
-import Head from "next/head";
-import Link from "next/link";
 
 const Transactions = () => {
 	const transactions = [
