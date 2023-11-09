@@ -40,9 +40,8 @@ const Account = () => {
                     {/* CONTENT */}
                     <div>
                         <h3 className='font-medium text-2xl'>DANGER ZONE</h3>
-                        <p className='font-light'>Delete your account. This is a 
-                            <span className='uppercase font-bold'> PERMANENT</span> and 
-                            <span className='uppercase font-bold'> IRREVERSIBLE</span>  change.</p>
+                        <p className='font-light'>Delete your account. This is a<strong className='font-bold'> PERMANENT</strong>and<strong className='font-bold'> IRREVERSIBLE</strong> change.
+                        </p>
                     </div>
 
                     <div className='flex gap-5'>
@@ -51,7 +50,7 @@ const Account = () => {
                 </div>
             </div>
 
-    
+
 
 
 
