@@ -29,7 +29,7 @@ const Header = () => {
     };
 
   return (
-    <div className='flex justify-between'>
+    <header className='flex justify-between'>
         <div className='flex gap-12'>
             {buttons.map((button, index) => (
             <button
@@ -42,7 +42,7 @@ const Header = () => {
             ))}
         </div>
         <button className='bg-[#747474] text-white px-4 py-2'>CREATE SCREENSHOT</button>
-    </div>
+    </header>
   )
 }
 
