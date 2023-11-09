@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import LOGO from "../../app/logo.svg"
+import LOGO from "../../app/icon.svg"
 
 function Homescreen() {
 	return (
