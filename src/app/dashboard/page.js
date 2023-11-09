@@ -1,3 +1,4 @@
+import Header from '@/components/dashboard/Header'
 import Sidebar from '@/components/dashboard/Sidebar'
 
 export default function Home() {
@@ -5,7 +6,7 @@ export default function Home() {
     <div className='flex'>
       <Sidebar />
       <section className='pt-16 px-24 w-full'>
-        <p>test content</p>
+        <Header />
       </section>
     </div>
   )
