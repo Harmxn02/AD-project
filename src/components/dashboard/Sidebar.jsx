@@ -1,11 +1,12 @@
 import React from 'react'
 import Button from '../utility/Button'
+import Image from 'next/image'
+import Link from 'next/link'
 import ProfilePicture from '../../../public/avatar-profile.jpg'
 import HouseIcon from '../../../public/icons/house.svg'
 import SettingsIcon from '../../../public/icons/settings.svg'
 import TransactionIcon from '../../../public/icons/transaction.svg'
 import ExitIcon from '../../../public/icons/exit.svg'
-import Image from 'next/image'
 
 const Sidebar = () => {
   return (
@@ -38,32 +39,32 @@ const Sidebar = () => {
         <nav className='p-7'>
             <ul className='flex flex-col gap-5'>
                 <li>
-                    <a href="#" className='flex items-center gap-4'>
+                    <Link href="/dashboard" className='flex items-center gap-4'>
                         <Image src={HouseIcon} width={25} height={25}/>
                         Dashboard
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a href="#" className='flex items-center gap-4'>
+                    <Link href="/transactions" className='flex items-center gap-4'>
                         <Image src={TransactionIcon} width={25} height={25}/>
                         Transactions
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a href="#" className='flex items-center gap-4'>
+                    <Link href="/settings" className='flex items-center gap-4'>
                         <Image src={SettingsIcon} width={25} height={25}/>
                         Settings
-                    </a>
+                    </Link>
                 </li>
             </ul>
             <div className='flex flex-col gap-4 mt-8'>
                 <Button href="#" backgroundColor="#747474" content="START EXPLORING"/>
                 <Button href="#" backgroundColor="#747474" content="SCHEDULE EXCURSION"/>
             </div>
-            <a href="#" className='flex items-center mt-52 gap-4'>
+            <Link href="/" className='flex items-center mt-52 gap-4'>
                 <Image src={ExitIcon} width={25} height={25}/>
                 Exit
-            </a>
+            </Link>
         </nav>
     </header>
   )
