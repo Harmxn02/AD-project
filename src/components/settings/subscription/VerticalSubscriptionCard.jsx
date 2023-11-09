@@ -5,7 +5,7 @@ import PHOTO from "./landscape.jpg";
 const VerticalSubscriptionCard = () => {
 	return (
 		<div className="col-span-3 bg-white flex text-gray-900 border border-gray-100 shadow">
-			<div className="p-8 w-1/3 flex flex-col justify-around items-center">
+			<div className="p-8 w-1/3 flex flex-col justify-around items-start">
 				<h3 className="mb-4 text-2xl text-left font-medium">
 					Quick Explore
 				</h3>
