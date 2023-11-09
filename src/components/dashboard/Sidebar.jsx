@@ -30,8 +30,8 @@ const Sidebar = () => {
                 <p>315km</p>
             </div>
             <div className='border-t border-brandBlack p-3'>
-                <h4 className='font-bold'>Distance traveled</h4>
-                <p>315km</p>
+                <h4 className='font-bold'>Minutes flown</h4>
+                <p>142</p>
             </div>
             <div className='border-t border-b border-brandBlack p-3 col-span-2'>
                 <h4 className='font-bold'>Items collected</h4>
