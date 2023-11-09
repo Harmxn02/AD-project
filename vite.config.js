@@ -10,5 +10,4 @@ export default defineConfig({
             input: "src/main.jsx"
         },
     }
-    // Other configuration options as needed
 });
