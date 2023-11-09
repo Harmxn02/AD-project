@@ -6,7 +6,7 @@ const Button = (props) => {
   };
 
   return (
-    <a href={props.href} style={buttonStyle} className={`block text-white font-bold text-center text-[0.950rem] py-4`}>{props.content}</a>
+    <a href={props.href} style={buttonStyle} className={`block text-white font-bold text-center text-[0.850rem] py-4`}>{props.content}</a>
   )
 }
 
