@@ -1,6 +1,6 @@
 import React from 'react'
 import Title from '../utility/Title'
-
+import Link from 'next/link'
 
 const Account = () => {
   return (
@@ -45,7 +45,7 @@ const Account = () => {
                     </div>
 
                     <div className='flex gap-5'>
-                        <a href="#todo" className='border bg-black px-6 py-3 font-black text-white'>DELETE ACCOUNT</a>
+                        <Link href="settings/delete-account" className='border bg-black px-6 py-3 font-black text-white'>DELETE ACCOUNT</Link>
                     </div>
                 </div>
             </div>

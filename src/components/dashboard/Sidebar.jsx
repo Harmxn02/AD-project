@@ -6,9 +6,6 @@ import Button from '../utility/Button'
 import Image from 'next/image'
 import Link from 'next/link'
 import ProfilePicture from '../../../public/avatar-profile.jpg'
-import HouseIcon from '../../../public/icons/house.svg'
-import SettingsIcon from '../../../public/icons/settings.svg'
-import TransactionIcon from '../../../public/icons/transaction.svg'
 import ExitIcon from '../../../public/icons/exit.svg'
 
 const Sidebar = () => {
