@@ -35,4 +35,6 @@ deployment:
     - main
   script:
     - rm ./src/config.json
-    - scp -qr ./src/* gitlab-runner@project-2.ti.howest.be:/var/www/html/${year}/${CI_PROJECT_NAMESPACE##*/}/
+    - npm i
+    - npm run build
+    - scp -qr ./build/* gitlab-runner@project-2.ti.howest.be:/var/www/html/${year}/${CI_PROJECT_NAMESPACE##*/}/
