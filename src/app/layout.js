@@ -12,6 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className='bg-[#F6F6F6]'>
+      <head>
+        {/* <link>TODO ADD FAVICON AS SVG</link> */}
+        <link rel='icon' href='./logo.svg' />
+      </head>
       <body className={inter.className}>
         <Sidebar />
         {children}

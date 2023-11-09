@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import LOGO from "./X-Plore-logo-transparent-background.svg"
+import LOGO from "../../app/logo.svg"
 
 function Homescreen() {
 	return (
