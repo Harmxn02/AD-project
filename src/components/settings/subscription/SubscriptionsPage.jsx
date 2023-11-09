@@ -7,6 +7,9 @@ const SubscriptionsPage = () => {
 	];
 
 	return (
+		<div>
+			<Title content="Subscription Plans" />
+		</div>
 	);
 };
 
