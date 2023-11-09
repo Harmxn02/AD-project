@@ -71,7 +71,7 @@ const Transactions = () => {
 	return (
 		<section>
 			<Title content="Transactions" />
-			<div className="bg-white max-w-fit px-8 py-6 mb-12">
+			<div className="bg-white w-full px-8 py-6 mb-12">
 				<table>
 					<thead>
 						<tr className="text-left">
@@ -110,7 +110,7 @@ const Transactions = () => {
 			</div>
 
 			<Title content="Auction Proceeds"/>
-			<div className="bg-white max-w-fit px-8 py-6">
+			<div className="bg-white w-full px-8 py-6">
 				<table>
 					<thead>
 						<tr className="text-left">

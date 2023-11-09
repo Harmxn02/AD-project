@@ -1,6 +1,6 @@
 import React from 'react'
 import Title from '../utility/Title'
-
+import Link from 'next/link'
 
 const Account = () => {
   return (
@@ -40,18 +40,17 @@ const Account = () => {
                     {/* CONTENT */}
                     <div>
                         <h3 className='font-medium text-2xl'>DANGER ZONE</h3>
-                        <p className='font-light'>Delete your account. This is a 
-                            <span className='uppercase font-bold'> PERMANENT</span> and 
-                            <span className='uppercase font-bold'> IRREVERSIBLE</span>  change.</p>
+                        <p className='font-light'>Delete your account. This is a<strong className='font-bold'> PERMANENT</strong>and<strong className='font-bold'> IRREVERSIBLE</strong> change.
+                        </p>
                     </div>
 
                     <div className='flex gap-5'>
-                        <a href="#todo" className='border bg-black px-6 py-3 font-black text-white'>DELETE ACCOUNT</a>
+                        <Link href="settings/delete-account" className='border bg-black px-6 py-3 font-black text-white'>DELETE ACCOUNT</Link>
                     </div>
                 </div>
             </div>
 
-    
+
 
 
 
