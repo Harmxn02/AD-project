@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import React from "react";
 
 const ListItem = (props) => {
 	return (
@@ -18,11 +18,6 @@ const ListItem = (props) => {
 			<span>{props.content}</span>
 		</li>
 	);
-};
-
-// Prop validation using PropTypes
-ListItem.propTypes = {
-	content: PropTypes.string
 };
 
 export default ListItem;

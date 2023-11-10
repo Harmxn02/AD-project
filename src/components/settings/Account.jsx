@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom'
+import React from 'react'
 import Title from '../utility/Title'
+import Link from 'next/link'
 
 const Account = () => {
   return (
@@ -22,8 +23,8 @@ const Account = () => {
                     </div>
 
                     <div className='flex gap-5'>
-                        <Link to="#" className='border border-black px-4 py-3 font-medium'>Change subscription</Link>
-                        <Link to="#" className='border border-black px-4 py-3 font-medium'>Cancel subscription</Link>
+                        <a href="#todo" className='border border-black px-4 py-3 font-medium'>Change subscription</a>
+                        <a href="#todo" className='border border-black px-4 py-3 font-medium'>Cancel subscription</a>
                     </div>
                 </div>
             </div>
@@ -44,7 +45,7 @@ const Account = () => {
                     </div>
 
                     <div className='flex gap-5'>
-                        <Link to="/settings/delete-acount" className='border bg-black px-6 py-3 font-black text-white'>DELETE ACCOUNT</Link>
+                        <Link href="settings/delete-account" className='border bg-black px-6 py-3 font-black text-white'>DELETE ACCOUNT</Link>
                     </div>
                 </div>
             </div>
@@ -55,7 +56,7 @@ const Account = () => {
 
         </section>
     </>
-  );
-};
+  )
+}
 
-export default Account;
+export default Account

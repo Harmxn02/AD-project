@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
+import React from "react";
 import Title from "../utility/Title";
+import Link from "next/link";
 
 const DeleteAccountPrompt = () => {
 	return (
@@ -15,13 +16,22 @@ const DeleteAccountPrompt = () => {
 					<div>
 						<h3 className="font-medium text-2xl">Are you sure</h3>
 						<p className="font-light">
-							This action is <span className="uppercase font-bold"> PERMANENT </span> and cannot be <span className="uppercase font-bold"> REVERSED </span>
+							This action is
+							<span className="uppercase font-bold">
+								{" "}
+								PERMANENT
+							</span>{" "}
+							and can not be
+							<span className="uppercase font-bold">
+								{" "}
+								REVERSED
+							</span>{" "}
 						</p>
 					</div>
 
 					<div className='flex gap-5'>
-                    	<Link to="/settings/account-deleted" className='border border-black px-4 py-3 font-medium'>Delete account</Link>
-                        <Link to="/settings" className='border border-black px-4 py-3 font-medium'>Cancel</Link>
+                        <Link href="/settings/account-deleted" className='border border-black px-4 py-3 font-medium'>Delete account</Link>
+                        <Link href="/settings" className='border border-black px-4 py-3 font-medium'>Cancel</Link>
                     </div>
 				</div>
 			</div>
