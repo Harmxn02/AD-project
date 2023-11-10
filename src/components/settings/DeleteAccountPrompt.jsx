@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Title from "../utility/Title";
 
 const DeleteAccountPrompt = () => {
@@ -18,20 +19,10 @@ const DeleteAccountPrompt = () => {
 						</p>
 					</div>
 
-					<div className="flex gap-5">
-						<a
-							href="/settings/account-deleted"
-							className="border border-black px-4 py-3 font-medium"
-						>
-							Delete account
-						</a>
-						<a
-							href="/settings"
-							className="border border-black px-4 py-3 font-medium"
-						>
-							Cancel
-						</a>
-					</div>
+					<div className='flex gap-5'>
+                    	<Link to="/settings/account-deleted" className='border border-black px-4 py-3 font-medium'>Delete account</Link>
+                        <Link to="/settings" className='border border-black px-4 py-3 font-medium'>Cancel</Link>
+                    </div>
 				</div>
 			</div>
 		</>
