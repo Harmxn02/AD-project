@@ -1,39 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Test from './components/Test'
+// import Header from './components/dashboard/Header'
+// import Sidebar from './components/dashboard/Sidebar'
+// import Homescreen from './components/homescreen/Homescreen'
+
+// import fetchData from '../api';
+// const data = await fetchData("/plans");
+
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
+import TransactionsList from './pages/Transactions';
+import Settings from './pages/Settings';
+import AccountDeletedPage from './pages/AccountDeleted';
+import DeleteAccount from './pages/DeleteAccount';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div>
+      {/* <BrowserRouter>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/transactions" element={<TransactionsList />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/settings/delete-acount" element={<DeleteAccount />} />
+          <Route path="/settings/account-deleted" element={<AccountDeletedPage />} />
+        </Routes>
+      </BrowserRouter> */}
 
-      <Test/>
-
-    </>
+      <h2>Test</h2>
+    </div>
   )
 }
 
-export default App
+export default App;
