@@ -45,6 +45,30 @@ const Transactions = () => {
 			subscription: "Magellan",
 			amount: "300.00 ADRA",
 		},
+		{
+			id: "INV004",
+			date: "08.08.2084",
+			subscription: "Magellan",
+			amount: "450.00 ADRA",
+		},
+		{
+			id: "INV005",
+			date: "08.09.2084",
+			subscription: "Magellan",
+			amount: "550.00 ADRA",
+		},
+		{
+			id: "INV006",
+			date: "08.10.2084",
+			subscription: "Magellan",
+			amount: "200.00 ADRA",
+		},
+		{
+			id: "INV007",
+			date: "08.11.2084",
+			subscription: "Magellan",
+			amount: "300.00 ADRA",
+		},
 	];
 
 	const auction_proceeds = [
@@ -66,14 +90,26 @@ const Transactions = () => {
 			subscription: "Sent",
 			amount: "350.00 ADRA",
 		},
+		{
+			id: "INV003",
+			date: "08.07.2084",
+			subscription: "Sent",
+			amount: "350.00 ADRA",
+		},
+		{
+			id: "INV003",
+			date: "08.07.2084",
+			subscription: "Sent",
+			amount: "350.00 ADRA",
+		},
 	];
 
 	return (
 		<section>
 			<Title content="Transactions" />
-			<div className="bg-white w-full px-8 py-6 mb-12">
+			<div className="bg-white w-full px-8 pb-6 mb-12 max-h-[400px] overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent shadow">
 				<table>
-					<thead>
+					<thead className="sticky top-0 bg-white w-full">
 						<tr className="text-left">
 							<th className="w-[12.5%] h-12 pl-10">Transaction ID</th>
 							<th className="w-[12.5%] h-12">Date</th>
@@ -110,9 +146,9 @@ const Transactions = () => {
 			</div>
 
 			<Title content="Auction Proceeds"/>
-			<div className="bg-white w-full px-8 py-6">
+			<div className="bg-white w-full px-8 pb-6 max-h-[260px] overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent shadow">
 				<table>
-					<thead>
+					<thead className="sticky top-0 bg-white w-full">
 						<tr className="text-left">
 							<th className="w-[12.5%] h-12 pl-10">
 								Transaction ID
