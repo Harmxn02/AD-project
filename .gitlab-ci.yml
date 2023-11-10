@@ -35,4 +35,4 @@ deployment:
     - main
   script:
     - rm ./src/config.json
-    - scp -qr ./build/* gitlab-runner@project-2.ti.howest.be:/var/www/html/${year}/${CI_PROJECT_NAMESPACE##*/}/
+    - scp -qr ./dist/* gitlab-runner@project-2.ti.howest.be:/var/www/html/${year}/${CI_PROJECT_NAMESPACE##*/}/
