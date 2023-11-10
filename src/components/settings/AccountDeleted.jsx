@@ -1,4 +1,4 @@
-function Homescreen() {
+function AccountDeleted() {
 	return (
 		<div className="h-screen flex flex-col justify-center items-center gap-12">
 			<p className="text-4xl font-black text-black">
@@ -14,4 +14,4 @@ function Homescreen() {
 	);
 }
 
-export default Homescreen;
+export default AccountDeleted;
