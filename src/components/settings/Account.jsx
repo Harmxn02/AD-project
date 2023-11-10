@@ -1,5 +1,4 @@
 import Title from '../utility/Title'
-import Link from 'next/link'
 
 const Account = () => {
   return (
@@ -44,7 +43,7 @@ const Account = () => {
                     </div>
 
                     <div className='flex gap-5'>
-                        <Link href="settings/delete-account" className='border bg-black px-6 py-3 font-black text-white'>DELETE ACCOUNT</Link>
+                        <a href="settings/delete-account" className='border bg-black px-6 py-3 font-black text-white'>DELETE ACCOUNT</a>
                     </div>
                 </div>
             </div>
