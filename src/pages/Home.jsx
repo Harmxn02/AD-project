@@ -1,6 +1,6 @@
 import Homescreen from "../components/homescreen/Homescreen"
 
-export default function() {
+export default function Home() {
   return (
     <Homescreen />
   )
