@@ -15,16 +15,7 @@ const DeleteAccountPrompt = () => {
 					<div>
 						<h3 className="font-medium text-2xl">Are you sure</h3>
 						<p className="font-light">
-							This action is
-							<span className="uppercase font-bold">
-								{" "}
-								PERMANENT
-							</span>{" "}
-							and can not be
-							<span className="uppercase font-bold">
-								{" "}
-								REVERSED
-							</span>{" "}
+							This action is <span className="uppercase font-bold"> PERMANENT </span> and cannot be <span className="uppercase font-bold"> REVERSED </span>
 						</p>
 					</div>
 

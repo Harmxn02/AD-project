@@ -55,7 +55,7 @@ const Account = () => {
 
         </section>
     </>
-  )
-}
+  );
+};
 
-export default Account
+export default Account;
