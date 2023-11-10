@@ -11,12 +11,12 @@ const BarChart = () => {
     let myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['Label 1', 'Label 2', 'Label 3'],
+        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
         datasets: [
           {
-            label: 'Dataset 1',
-            data: [10, 20, 30],
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            data: [10, 20, 30, 15, 25, 35, 45],
+            label: 'Minutes Flown',
+            backgroundColor: '#62A0AA73',
             borderColor: 'rgba(75, 192, 192, 1)',
             borderWidth: 1,
           },
@@ -26,8 +26,14 @@ const BarChart = () => {
         scales: {
           y: {
             beginAtZero: true,
+            ticks: {
+                stepSize: 5,
+            },
           },
         },
+        plugins: {
+            legend: false,
+        }
       },
     });
 
