@@ -1,75 +1,19 @@
 import React from "react";
 import Title from "../utility/Title";
 
+import { GetAPI } from "../utility/api"
+
 const Transactions = () => {
-	const transactions = [
-		{
-			id: "INV001",
-			date: "08.05.2084",
-			subscription: "Magellan",
-			amount: "250.00 ADRA",
-		},
-		{
-			id: "INV002",
-			date: "08.06.2084",
-			subscription: "Magellan",
-			amount: "150.00 ADRA",
-		},
-		{
-			id: "INV003",
-			date: "08.07.2084",
-			subscription: "Magellan",
-			amount: "350.00 ADRA",
-		},
-		{
-			id: "INV004",
-			date: "08.08.2084",
-			subscription: "Magellan",
-			amount: "450.00 ADRA",
-		},
-		{
-			id: "INV005",
-			date: "08.09.2084",
-			subscription: "Magellan",
-			amount: "550.00 ADRA",
-		},
-		{
-			id: "INV006",
-			date: "08.10.2084",
-			subscription: "Magellan",
-			amount: "200.00 ADRA",
-		},
-		{
-			id: "INV007",
-			date: "08.11.2084",
-			subscription: "Magellan",
-			amount: "300.00 ADRA",
-		},
-		{
-			id: "INV004",
-			date: "08.08.2084",
-			subscription: "Magellan",
-			amount: "450.00 ADRA",
-		},
-		{
-			id: "INV005",
-			date: "08.09.2084",
-			subscription: "Magellan",
-			amount: "550.00 ADRA",
-		},
-		{
-			id: "INV006",
-			date: "08.10.2084",
-			subscription: "Magellan",
-			amount: "200.00 ADRA",
-		},
-		{
-			id: "INV007",
-			date: "08.11.2084",
-			subscription: "Magellan",
-			amount: "300.00 ADRA",
-		},
-	];
+	const transactions = GetAPI("/transactions");
+
+	if (transactions === null) {
+		// this prevents map from not working, because the data is empty
+		console.log("When this component was rendered, transactions == ", transactions)
+		return;
+	}
+
+	console.log("TR: ", transactions)
+
 
 	const auction_proceeds = [
 		{
@@ -118,7 +62,7 @@ const Transactions = () => {
 						</tr>
 					</thead>
 					<tbody>
-						{transactions.map((transaction, index) => (
+						{/* {transactions.map((transaction, index) => (
 							<tr
 								key={transaction.id}
 								className={`${
@@ -134,13 +78,38 @@ const Transactions = () => {
 									{transaction.date}
 								</td>
 								<td className="h-12 text-sm">
-									{transaction.subscription}
+									{transaction.subscriptionId}
+								</td>
+								<td className="h-12 text-sm">
+									{transaction.amount}
+								</td>
+							</tr>
+						))} */}
+
+						{transactions.map((transaction, index) => (
+							<tr
+								key={transaction.id}
+								className={`${
+								index % 2 === 0
+									? "bg-[#DFE5EB]"
+									: "bg-white"
+								}`}
+							>
+								<td className="h-12 text-sm font-bold pl-10">
+									{transaction.id}
+								</td>
+								<td className="h-12 text-sm">
+									{new Date(transaction.date).toLocaleDateString()} {/* Convert timestamp to date */}
+								</td>
+								<td className="h-12 text-sm">
+									{transaction.subscriptionId}
 								</td>
 								<td className="h-12 text-sm">
 									{transaction.amount}
 								</td>
 							</tr>
 						))}
+
 					</tbody>
 				</table>
 			</div>
