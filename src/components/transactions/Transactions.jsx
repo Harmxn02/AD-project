@@ -74,7 +74,9 @@ const Transactions = () => {
 				<table>
 					<thead>
 						<tr className="text-left">
-							<th className="w-[12.5%] h-12 pl-10">Transaction ID</th>
+							<th className="w-[12.5%] h-12 pl-10">
+								Transaction ID
+							</th>
 							<th className="w-[12.5%] h-12">Date</th>
 							<th className="w-[12.5%] h-12">Subscription</th>
 							<th className="w-[12.5%] h-12">Amount</th>
@@ -108,7 +110,7 @@ const Transactions = () => {
 				</table>
 			</div>
 
-			<Title content="Auction Proceeds"/>
+			<Title content="Auction Proceeds" />
 			<div className="bg-white w-full px-8 py-6">
 				<table>
 					<thead>

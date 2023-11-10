@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Button from '../utility/Button'
 import ProfilePicture from '../../assets/avatar-profile.jpg'
@@ -80,4 +80,4 @@ const Sidebar = () => {
   )
 }
 
-export default Sidebar
+export default Sidebar;
