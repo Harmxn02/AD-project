@@ -1,4 +1,3 @@
-import Image from "next/image";
 import PHOTO from "./landscape.jpg";
 
 const VerticalSubscriptionCard = () => {
@@ -24,7 +23,7 @@ const VerticalSubscriptionCard = () => {
 				</a>
 			</div>
 			<div className="w-2/3">
-				<Image
+				<img
 					className="w-full h-64 object-cover"
 					alt="random image"
 					src={PHOTO}
