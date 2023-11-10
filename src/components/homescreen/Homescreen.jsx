@@ -1,4 +1,4 @@
-import LOGO from "../../assets/icons/logo.svg"
+import LOGO from "../../assets/icons/logo.svg";
 
 function Homescreen() {
 	return (
