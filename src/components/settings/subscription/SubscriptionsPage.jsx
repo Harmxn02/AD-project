@@ -29,7 +29,7 @@ const SubscriptionsPage = ()=> {
 			<Title content="Subscription Plans" />
 			<div className="flex justify-between">
 				{plans ? ( plans.map((subscription) => (
-					<SubscriptionCard isLast={subscription.id === plans.length - 1}  key={subscription.id} price={subscription.price} name={subscription.name}>
+					<SubscriptionCard isLast={subscription.id === plans.length}  key={subscription.id} price={subscription.price} name={subscription.name}>
 						{subscription.perks.map((perk) => (
 							<ListItem key={perk.id} content={perk} />
 						))}
