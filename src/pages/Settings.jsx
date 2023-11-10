@@ -1,8 +1,11 @@
 import React from 'react'
+import Sidebar from '../components/dashboard/Sidebar'
 
 const Settings = () => {
   return (
-    <div>Settings</div>
+    <div className='flex'>
+      <Sidebar />
+    </div>
   )
 }
 

@@ -1,8 +1,11 @@
 import React from 'react'
+import Sidebar from '../components/dashboard/Sidebar'
 
 const Transactions = () => {
   return (
-    <div>Transactions</div>
+    <div className='flex'>
+      <Sidebar />
+    </div>
   )
 }
 
