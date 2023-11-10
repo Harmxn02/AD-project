@@ -17,7 +17,7 @@ import DeleteAccount from './pages/DeleteAccount';
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
@@ -26,7 +26,9 @@ function App() {
           <Route path="/settings/delete-acount" element={<DeleteAccount />} />
           <Route path="/settings/account-deleted" element={<AccountDeletedPage />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+
+      <h2>Test</h2>
     </div>
   )
 }
