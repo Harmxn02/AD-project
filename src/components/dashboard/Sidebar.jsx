@@ -71,7 +71,7 @@ const Sidebar = () => {
                 <Button href="#" backgroundColor="#62A0AA" content="START EXPLORING"/>
                 <Button href="#" backgroundColor="#62A0AA" content="SCHEDULE EXCURSION"/>
             </div>
-            <Link href="/" className='flex items-center mt-52 gap-4'>
+            <Link to="/" className='flex items-center mt-52 gap-4'>
                 <img src={ExitIcon} width={25} height={25}/>
                 Exit
             </Link>

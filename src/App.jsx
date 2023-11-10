@@ -3,7 +3,7 @@ import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import TransactionsList from './pages/Transactions';
 import Settings from './pages/Settings';
-import AccountDeleted from './pages/AccountDeleted';
+import AccountDeletedPage from './pages/AccountDeleted';
 import DeleteAccount from './pages/DeleteAccount';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
           <Route path="/transactions" element={<TransactionsList />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/settings/delete-acount" element={<DeleteAccount />} />
-          <Route path="/settings/account-deleted" element={<AccountDeleted />} />
+          <Route path="/settings/account-deleted" element={<AccountDeletedPage />} />
         </Routes>
       </BrowserRouter>
     </div>

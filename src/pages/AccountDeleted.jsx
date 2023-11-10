@@ -1,12 +1,11 @@
 import React from 'react'
 import Sidebar from '../components/dashboard/Sidebar'
+import AccountDeleted from '../components/settings/AccountDeleted'
 
-const AccountDeleted = () => {
+const AccountDeletedPage = () => {
   return (
-    <div className='flex'>
-      <Sidebar />
-    </div>
+    <AccountDeleted/>
   )
 }
 
-export default AccountDeleted
+export default AccountDeletedPage
