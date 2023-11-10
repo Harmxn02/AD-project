@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
@@ -10,12 +9,6 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  useEffect(() => {
-    const redirectUrl = 'https://google.com';
-
-    window.location.replace(redirectUrl);
-  }, []);
-
   return (
     <html lang="en" className='bg-[#F6F6F6]'>
       <body className={inter.className}>
