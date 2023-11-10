@@ -1,6 +1,6 @@
 import React from 'react'
 import Title from '../utility/Title'
-import BarChart from '../../components/dashboard/charts/barChart'
+import BarChart from '@/components/dashboard/charts/barChart'
 
 const Statistics = () => {
   return (
