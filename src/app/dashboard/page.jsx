@@ -1,5 +1,6 @@
 import Header from '@/components/dashboard/Header'
 import Sidebar from '@/components/dashboard/Sidebar'
+import Statistics from '../../components/dashboard/Statistics'
 
 export default function Home() {
   return (
@@ -7,7 +8,7 @@ export default function Home() {
       <Sidebar />
       <section className='pt-16 px-24 w-full'>
         <Header />
-        <p>dsdsqqds</p>
+        <Statistics />
       </section>
     </div>
   )
