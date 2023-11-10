@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
+    "chart.js": "^4.4.0",
+=======
     "isomorphic-fetch": "^3.0.0",
+>>>>>>> 87590cbc67095f602fa15778333db92483283039
     "next": "14.0.2",
     "react": "^18",
     "react-dom": "^18"
