@@ -1,7 +1,9 @@
 import Homescreen from "../components/homescreen/Homescreen"
 
-export default function() {
+const Home = () => {
   return (
     <Homescreen />
   )
 }
+
+export default Home
