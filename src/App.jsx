@@ -11,7 +11,7 @@ function App() {
       <Homescreen/> */}
 
     </>
-  )
+  );
 }
 
 export default App;
