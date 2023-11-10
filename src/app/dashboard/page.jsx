@@ -3,10 +3,9 @@
 
 import Header from '@/components/dashboard/Header'
 import Sidebar from '@/components/dashboard/Sidebar'
-import Statistics from '../../components/dashboard/Statistics'
+import Statistics from '@/components/dashboard/Statistics'
 
 export default function Home() {
-
   return (
     <div className='flex'>
       <Sidebar />
