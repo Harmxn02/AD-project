@@ -1,6 +1,6 @@
+import { useEffect } from 'react'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Sidebar from '@/components/dashboard/Sidebar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -10,6 +10,12 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  useEffect(() => {
+    const redirectUrl = 'https://google.com';
+
+    window.location.replace(redirectUrl);
+  }, []);
+
   return (
     <html lang="en" className='bg-[#F6F6F6]'>
       <body className={inter.className}>
