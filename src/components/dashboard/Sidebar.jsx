@@ -120,8 +120,7 @@ const Sidebar = () => {
 					/>
 				</div>
 				<a href="/" className="flex items-center mt-52 gap-4">
-					<img src={ExitIcon} width={25} height={25} />
-					Exit
+                <img src={ExitIcon} width={25} height={25} />Exit
 				</a>
 			</nav>
 		</header>

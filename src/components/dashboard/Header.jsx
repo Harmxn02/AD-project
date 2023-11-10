@@ -31,9 +31,9 @@ const Header = () => {
 	return (
 		<header className="flex justify-between mb-12">
 			<div className="flex gap-12">
-				{buttons.map((button, index) => (
+				{buttons.map((button) => (
 					<button
-						key={index}
+						key={button.index}
 						onClick={() => handleButtonClick(button.title)}
 						className={`font-medium py-2 px-4 ${
 							activeButton === button.title
