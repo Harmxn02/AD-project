@@ -1,4 +1,4 @@
-import Title from '../utility/Title'
+import Title from '../utility/Title';
 
 const Account = () => {
   return (
@@ -57,4 +57,4 @@ const Account = () => {
   )
 }
 
-export default Account
+export default Account;

@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const SubscriptionCard = ({ price, name, isLast, children }) => {
 	return (
@@ -39,7 +39,6 @@ const SubscriptionCard = ({ price, name, isLast, children }) => {
 						Every month you have access to:
 					</p>
 					<ul
-						role="list"
 						className={`mb-8  space-y-4 text-left h-44
 					
 						${isLast ? "text-white" : " text-black"}`}
@@ -60,10 +59,10 @@ const SubscriptionCard = ({ price, name, isLast, children }) => {
 
 // Prop validation using PropTypes
 SubscriptionCard.propTypes = {
-	price: PropTypes.string.isRequired, 
-	name: PropTypes.string.isRequired, 
-	isLast: PropTypes.bool.isRequired, 
-	children: PropTypes.node, 
+	price: PropTypes.string.isRequired,
+	name: PropTypes.string.isRequired,
+	isLast: PropTypes.bool.isRequired,
+	children: PropTypes.node
 };
 
 export default SubscriptionCard;
