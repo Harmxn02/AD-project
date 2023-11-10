@@ -35,7 +35,7 @@ const SubscriptionsPage = ()=> {
 		console.log("test")
 	}, []);
 
-	// waitBefore();
+
 
 
 
@@ -49,11 +49,6 @@ const SubscriptionsPage = ()=> {
 	return (
 		<div>
 
-{/* {		apiData ? (
-          <p>{JSON.stringify(apiData, null, 2)}</p>
-        ): (
-          <p>Loading ...</p>
-        )}	 */}
 
 			<Title content="Subscription Plans" />
 			<div className="flex justify-between">
