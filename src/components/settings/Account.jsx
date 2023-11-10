@@ -1,4 +1,5 @@
-import Title from '../utility/Title';
+import { Link } from 'react-router-dom'
+import Title from '../utility/Title'
 
 const Account = () => {
   return (
@@ -21,8 +22,8 @@ const Account = () => {
                     </div>
 
                     <div className='flex gap-5'>
-                        <a href="#todo" className='border border-black px-4 py-3 font-medium'>Change subscription</a>
-                        <a href="#todo" className='border border-black px-4 py-3 font-medium'>Cancel subscription</a>
+                        <Link to="#" className='border border-black px-4 py-3 font-medium'>Change subscription</Link>
+                        <Link to="#" className='border border-black px-4 py-3 font-medium'>Cancel subscription</Link>
                     </div>
                 </div>
             </div>
@@ -43,7 +44,7 @@ const Account = () => {
                     </div>
 
                     <div className='flex gap-5'>
-                        <a href="settings/delete-account" className='border bg-black px-6 py-3 font-black text-white'>DELETE ACCOUNT</a>
+                        <Link to="/settings/delete-acount" className='border bg-black px-6 py-3 font-black text-white'>DELETE ACCOUNT</Link>
                     </div>
                 </div>
             </div>
