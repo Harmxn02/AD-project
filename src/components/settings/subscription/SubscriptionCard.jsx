@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
 const SubscriptionCard = ({ price, name, isLast, children }) => {
 	return (
@@ -55,6 +56,14 @@ const SubscriptionCard = ({ price, name, isLast, children }) => {
 			</div>
 		</div>
 	);
+};
+
+// Prop validation using PropTypes
+SubscriptionCard.propTypes = {
+	price: PropTypes.string.isRequired, 
+	name: PropTypes.string.isRequired, 
+	isLast: PropTypes.bool.isRequired, 
+	children: PropTypes.node, 
 };
 
 export default SubscriptionCard;
