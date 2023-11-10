@@ -1,12 +1,21 @@
 {
-  "name": "my-project",
+  "name": "2023-adria-client",
+  "license": "UNLICENSED",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "validate-html": "java -jar node_modules/vnu-jar/build/dist/vnu.jar --Werror --filterpattern \".*(v-|@).*\" --filterfile .vnuignore --skip-non-html ./src",
+    "validate-sonar-ci": "node_modules/sonar-scanner/bin/sonar-scanner",
+    "validate-sonar-local-mac": "node_modules/sonar-scanner/bin/sonar-scanner -Dsonar.host.url=https://sonarqube.ti.howest.be",
+    "validate-sonar-local-win": ".\\node_modules\\sonar-scanner\\bin\\sonar-scanner -Dsonar.host.url=https://sonarqube.ti.howest.be",
+    "validate-ci": "npm run validate-html && npm run validate-sonar-ci",
+    "validate-local-mac": "npm run validate-html && npm run validate-sonar-local-mac",
+    "validate-local-win": "npm run validate-html && npm run validate-sonar-local-win",
+    "test": "jest --coverage --watchAll --env=jsdom"
   },
   "dependencies": {
     "chart.js": "^4.4.0",
@@ -26,5 +35,18 @@
     "tailwind-scrollbar": "^3.0.5",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "testResultsProcessor": "jest-sonar-reporter",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "jestSonar": {
+    "reportPath": "reports",
+    "reportFile": "test-report.xml",
+    "indent": 4
   }
 }
