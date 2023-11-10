@@ -22,7 +22,7 @@ const ListItem = (props) => {
 
 // Prop validation using PropTypes
 ListItem.propTypes = {
-	content: PropTypes.string,
+	content: PropTypes.string
 };
 
 export default ListItem;
