@@ -1,3 +1,11 @@
+// import Header from './components/dashboard/Header'
+// import Sidebar from './components/dashboard/Sidebar'
+// import Homescreen from './components/homescreen/Homescreen'
+
+// import fetchData from '../api';
+// const data = await fetchData("/plans");
+
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
