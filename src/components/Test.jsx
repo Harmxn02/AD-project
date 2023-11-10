@@ -1,6 +1,6 @@
 const Test = () => {
   return (
-    <div>Testing if components work</div>
+    <div className="font-bold">Added Tailwind.CSS</div>
   )
 }
 
