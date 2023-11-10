@@ -62,7 +62,7 @@ SubscriptionCard.propTypes = {
 	price: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
 	isLast: PropTypes.bool.isRequired,
-	children: PropTypes.node,
+	children: PropTypes.node
 };
 
 export default SubscriptionCard;

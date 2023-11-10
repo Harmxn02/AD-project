@@ -8,7 +8,7 @@ function Title(props) {
 
 // Prop validation using PropTypes
 Title.propTypes = {
-	content: PropTypes.string,
+	content: PropTypes.string
 };
 
 export default Title;
