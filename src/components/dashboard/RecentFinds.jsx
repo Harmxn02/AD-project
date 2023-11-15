@@ -38,7 +38,7 @@ const RecentFinds = () => {
 
 	return (
 		<>
-			<Title content="Recent X-Plorations" />
+			<Title content="Recent Finds" />
 
 			<div className="w-full flex flex-col gap-5">
 				{recent_finds.map((find, index) => (
