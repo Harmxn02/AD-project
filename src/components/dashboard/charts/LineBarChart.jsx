@@ -9,7 +9,7 @@ const LineBarChart = (props) => {
 	useEffect(() => {
 		const ctx = chartRef.current.getContext("2d");
 
-		let myChart = new Chart(ctx, {
+		const myChart = new Chart(ctx, {
 			type: "bar",
 			data: {
 				labels: props.labels,
