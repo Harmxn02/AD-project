@@ -1,7 +1,6 @@
 import React from "react";
-import Button from "../utility/Button";
-import Title from "../utility/Title";
-import Toggle from "../utility/Toggle";
+import Title from "@/components/utility/Title";
+import Toggle from "@/components/utility/Toggle";
 
 const PrivacyAndPersonalization = () => {
 	return (
