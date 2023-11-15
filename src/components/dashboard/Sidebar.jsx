@@ -12,7 +12,7 @@ const Sidebar = () => {
   const pathname = usePathname();
 
   return (
-    <header className='bg-white w-[250px] h-screen'>
+    <header className='bg-white w-[250px] h-screen relative'>
         <div className='p-8 text-center'>
             <Image
                 src={ProfilePicture}
@@ -68,11 +68,11 @@ const Sidebar = () => {
                     </Link>
                 </li>
             </ul>
-            <div className='flex flex-col gap-4 mt-8'>
+            <div className='flex flex-col gap-2 mt-8'>
                 <Button href="#" backgroundColor="#62A0AA" content="START EXPLORING"/>
                 <Button href="#" backgroundColor="#62A0AA" content="SCHEDULE EXCURSION"/>
             </div>
-            <Link href="/" className='flex items-center mt-52 gap-4'>
+            <Link href="/" className='absolute bottom-0 w-full pb-4'>
                 <Image alt="exit icon" src={ExitIcon} width={25} height={25}/>
                 Exit
             </Link>
