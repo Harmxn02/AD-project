@@ -1,7 +1,9 @@
-"use client"
+"use client";
 
 import React from "react";
 import Title from "@/components/utility/Title";
+
+import Loading from "@/components/utility/Loading";
 
 import { GetAPI } from "../utility/api";
 
@@ -10,11 +12,14 @@ const Transactions = () => {
 
 	if (transactions === null) {
 		// this prevents map from not working, because the data is empty
-		console.log("When this component was rendered, transactions == ", transactions)
-		return;
+		console.log(
+			"When this component was rendered, transactions == ",
+			transactions
+		);
+		return <Loading />;
 	}
 
-	console.log("TR: ", transactions)
+	console.log("TR: ", transactions);
 
 	const auction_proceeds = [
 		{
@@ -62,7 +67,9 @@ const Transactions = () => {
 				<table>
 					<thead className="sticky top-0 bg-white w-full">
 						<tr className="text-left">
-							<th className="w-[12.5%] h-12 pl-10">Transaction ID</th>
+							<th className="w-[12.5%] h-12 pl-10">
+								Transaction ID
+							</th>
 							<th className="w-[12.5%] h-12">Date</th>
 							<th className="w-[12.5%] h-12">Subscription</th>
 							<th className="w-[12.5%] h-12">Amount</th>
@@ -97,16 +104,19 @@ const Transactions = () => {
 							<tr
 								key={transaction.id}
 								className={`${
-								index % 2 === 0
-									? "bg-[#DFE5EB]"
-									: "bg-white"
+									index % 2 === 0
+										? "bg-[#DFE5EB]"
+										: "bg-white"
 								}`}
 							>
 								<td className="h-12 text-sm font-bold pl-10">
 									{transaction.id}
 								</td>
 								<td className="h-12 text-sm">
-									{new Date(transaction.date).toLocaleDateString()} {/* Convert timestamp to date */}
+									{new Date(
+										transaction.date
+									).toLocaleDateString()}{" "}
+									{/* Convert timestamp to date */}
 								</td>
 								<td className="h-12 text-sm">
 									{transaction.subscriptionId}
@@ -116,12 +126,11 @@ const Transactions = () => {
 								</td>
 							</tr>
 						))}
-
 					</tbody>
 				</table>
 			</div>
 
-			<Title content="Auction Proceeds"/>
+			<Title content="Auction Proceeds" />
 			<div className="bg-white w-full px-8 pb-6 max-h-[260px] overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent shadow">
 				<table>
 					<thead className="sticky top-0 bg-white w-full">

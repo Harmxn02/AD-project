@@ -3,9 +3,9 @@ import React from "react";
 const SubscriptionCard = ({ price, name, isLast, children }) => {
 	return (
 		<div className="grid-cols-1">
-			<div className="mx-auto max-w-screen-xl py-10">
+			<div className="mx-auto py-10">
 				<div
-					className={`flex flex-col mx-auto w-96 text-center text-gray-900 border border-gray-100 shadow p-8 
+					className={`flex flex-col mx-auto w-[22rem] text-center text-gray-900 border border-gray-100 shadow p-8 
 						${isLast ? "bg-[#3E3E3E] text-white" : "bg-white text-black"}`}
 				>
 					<h3
@@ -30,7 +30,10 @@ const SubscriptionCard = ({ price, name, isLast, children }) => {
 						</span>
 						<span className="text-gray-400">/month</span>
 					</div>
-					<div className="bg-black h-px my-8 "></div>
+					<div className={`h-px my-8 ${
+						isLast ? "bg-white" : " bg-black"
+					}`}
+					></div>
 					<p
 						className={`text-left  font-medium mb-4 ${
 							isLast ? "text-white" : "text-[#6D6D6D]"
