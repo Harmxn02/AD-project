@@ -122,7 +122,7 @@ const Transactions = () => {
 									{transaction.subscriptionId}
 								</td>
 								<td className="h-12 text-sm">
-									{transaction.amount}
+									{transaction.amount} ADCO
 								</td>
 							</tr>
 						))}
