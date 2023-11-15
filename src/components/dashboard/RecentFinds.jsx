@@ -5,6 +5,7 @@ const RecentFinds = () => {
     const recent_finds = [
 		{
 			id: 1,
+			colour: "bg-[#E74C3C]",
 			image_url: "#",
 			item_name: "Rosetta Stone",
 			coordinates: "30.79° N, 31.00° E",
@@ -12,6 +13,7 @@ const RecentFinds = () => {
 		},
 		{
 			id: 2,
+			colour: "bg-[#2ECC71]",
 			image_url: "#",
 			item_name: "Terracota Army",
 			coordinates: "34.38° N, 109.27° E",
@@ -19,6 +21,7 @@ const RecentFinds = () => {
 		},
 		{
 			id: 3,
+			colour: "bg-[#F1C40F]",
 			image_url: "#",
 			item_name: "Mona Lisa",
 			coordinates: "48.86° N, 2.34° E",
@@ -36,6 +39,9 @@ const RecentFinds = () => {
 						key={find.id}
 						className="h-16 bg-white shadow flex flex-row items-center justify-between gap-5"
 					>
+						<div key={index} className={`${find.colour} w-16 h-full flex justify-center text-white items-center`}>
+							<div>ICON</div>
+						</div>
 
 						<div className="w-3/6 flex items-center h-full border-black border-r-4">
 							<p className="font-bold text-lg">
