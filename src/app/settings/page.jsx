@@ -1,6 +1,5 @@
 import Account from '@/components/settings/Account';
 import Sidebar from '@/components/dashboard/Sidebar';
-import SubscriptionsPage from "@/components/settings/subscription/SubscriptionsPage";
 import PrivacyAndPersonalization from '@/components/settings/PrivacyAndPersonalization';
 
 export default function Home() {
@@ -10,10 +9,6 @@ export default function Home() {
       <section className='pt-16 pb-8 px-24 w-full max-h-screen overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent'>
         <Account/>
         <PrivacyAndPersonalization/>
-
-        {/* should be under settings > change subscription, routing not yet implemented */}
-        {/* Im putting it here, so we can see something when we render the client */}
-        <SubscriptionsPage />
       </section>
     </div>
   )
