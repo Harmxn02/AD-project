@@ -73,7 +73,7 @@ const Sidebar = () => {
                 <Button href="#" backgroundColor="#62A0AA" content="SCHEDULE EXCURSION"/>
             </div>
             <Link href="/" className='absolute bottom-0 w-full pb-4'>
-                <Image alt="exit icon" src={ExitIcon} width={25} height={25}/>
+                <Image className='inline-block mr-2' alt="exit icon" src={ExitIcon} width={25} height={25}/>
                 Exit
             </Link>
         </nav>
