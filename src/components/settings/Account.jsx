@@ -49,11 +49,6 @@ const Account = () => {
                     </div>
                 </div>
             </div>
-
-
-
-
-
         </section>
     </>
   )
