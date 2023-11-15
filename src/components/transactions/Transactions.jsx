@@ -19,11 +19,9 @@ const Transactions = () => {
 		return <Loading />;
 	}
 
-	/* 
-	TEMPORARY FIX for API giving "incorrect" data.
+	/* TEMPORARY FIX for API giving "incorrect" data.
 	the Subscription field should return the name of the subscription instead of just the subscriptionId
-	until the API is updated with the correct information, this is a temporary fix
-	*/
+	until the API is updated with the correct information, this is a temporary fix */
 
 	transactions.forEach((transaction) => {
 		if (transaction.subscriptionId === 1) {
