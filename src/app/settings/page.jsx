@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className='flex'>
       <Sidebar />
-      <section className='pt-16 px-24 w-full'>
+      <section className='pt-16 pb-8 px-24 w-full max-h-screen overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent'>
         <Account/>
         <PrivacyAndPersonalization/>
 
