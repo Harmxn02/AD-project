@@ -1,25 +1,26 @@
 import React from "react";
 import Title from "@/components/utility/Title";
+import Image from "../../../node_modules/next/image";
 
 const RecentXplorations = () => {
 	const recent_xplorations = [
 		{
 			id: 1,
-			image_url: "#",
+			image_path: "FRANCE",
 			countries_visited: "France",
 			duration: "2 hours and 22 minutes",
 			date: "08/08/2084",
 		},
 		{
 			id: 2,
-			image_url: "#",
+			image_path: "EGYPT",
 			countries_visited: "Egypt - United Kingdom",
 			duration: "8 hours and 44 minutes",
 			date: "14/07/2084",
 		},
 		{
 			id: 3,
-			image_url: "#",
+			image_path: "CHINA",
 			countries_visited: "China - India - Japan",
 			duration: "26 hours and 35 minutes",
 			date: "29/06/2084",
@@ -36,8 +37,9 @@ const RecentXplorations = () => {
 						key={exploration.id}
 						className="h-16 bg-white shadow flex flex-row items-center justify-between gap-5"
 					>
-						{/* todo REPLACE: with <Image/> tag */}
-						<div className="bg-black w-16 h-full">image</div>
+						{/* <div className="bg-black w-16 h-full">image</div> */}
+						<Image src={`/icons/flags/${exploration.image_path}.svg`} width={256} height={256} className="w-16 h-16" alt="country flag"></Image>
+						
 
 						<div className="w-3/6 flex items-center h-full border-black border-r-4">
 							<p className="font-bold text-lg">
