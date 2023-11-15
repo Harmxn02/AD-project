@@ -23,7 +23,7 @@ const SubscriptionsPage = ()=> {
 	console.log("PL", plans);
 
 	return (
-		<div>
+		<section className="mb-12">
 
 
 			<Title content="Subscription Plans" />
@@ -39,8 +39,8 @@ const SubscriptionsPage = ()=> {
 					<p>Loading ...</p>
 				)}
 			</div>
-				<VerticalSubscriptionCard/>
-		</div>
+			<VerticalSubscriptionCard/>
+		</section>
 	);
 };
 
