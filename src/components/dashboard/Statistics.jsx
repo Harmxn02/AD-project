@@ -4,6 +4,15 @@ import BarChart from '@/components/dashboard/charts/BarChart'
 import RadarChartStacked from '@/components/dashboard/charts/RadarChartStacked'
 
 const Statistics = () => {
+    const labels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    const data = [{
+        data: [10, 20, 30, 15, 25, 35, 45],
+        label: 'Minutes Flown',
+        backgroundColor: '#62A0AA73',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1,
+    }];
+
   return (
     <section>
         <Title content="Statistics" />
@@ -12,7 +21,7 @@ const Statistics = () => {
                 <h3 className='text-[1.125rem] font-semibold'>Minutes flown</h3>
                 <p className='font-light'>Charting flight durations within a specific time frame, offering a clear overview for analysis.</p>
                 <div className="w-full mt-4 h-[25rem]">
-                    <BarChart />
+                    <BarChart labels={labels} dataObject={data} />
                 </div>
             </div>
             <div className='max-w-[600px] h-full'>
