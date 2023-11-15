@@ -2,8 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar {
+	display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
 @layer utilities {
-    .shadow {
-        @apply shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]
-    }
+	.shadow {
+		@apply shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px];
+	}
 }
