@@ -1,5 +1,5 @@
 import React from "react";
-import Title from "../utility/Title";
+import Title from "@/components/utility/Title";
 import Link from "next/link";
 
 const DeleteAccountPrompt = () => {
