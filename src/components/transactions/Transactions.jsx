@@ -1,10 +1,12 @@
+"use client"
+
 import React from "react";
 import Title from "../utility/Title";
 
-import { GetAPI } from "../utility/api"
+import { GetAPI } from "../utility/api";
 
 const Transactions = () => {
-	const transactions = GetAPI("/transactions");
+	let transactions = GetAPI("/transactions");
 
 	if (transactions === null) {
 		// this prevents map from not working, because the data is empty
