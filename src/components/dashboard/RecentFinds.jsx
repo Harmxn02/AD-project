@@ -1,15 +1,14 @@
-import React from 'react';
+import React from "react";
 import Title from "@/components/utility/Title";
-import Image from '../../../node_modules/next/image';
+import Image from "../../../node_modules/next/image";
 
 // icons
-import Red from '../../../public/icons/finds_toAuction.svg';
-import Green from '../../../public/icons/finds_sold.svg';
-import Yellow from '../../../public/icons/finds_auctioned.svg';
-
+import Red from "../../../public/icons/finds_toAuction.svg";
+import Green from "../../../public/icons/finds_sold.svg";
+import Yellow from "../../../public/icons/finds_auctioned.svg";
 
 const RecentFinds = () => {
-    const recent_finds = [
+	const recent_finds = [
 		{
 			id: 1,
 			colour: "bg-[#E74C3C]",
@@ -46,7 +45,10 @@ const RecentFinds = () => {
 						key={find.id}
 						className="h-16 bg-white shadow flex flex-row items-center justify-between gap-5"
 					>
-						<div key={index} className={`${find.colour} w-16 h-full flex justify-center text-white items-center`}>
+						<div
+							key={index}
+							className={`${find.colour} w-16 h-full flex justify-center text-white items-center`}
+						>
 							<Image alt="icon" src={find.image_url}></Image>
 						</div>
 
@@ -59,15 +61,13 @@ const RecentFinds = () => {
 							<p className="text-brandBlack font-semibold">
 								{find.coordinates}
 							</p>
-							<p className="font-bold text-sm">
-								{find.date}
-							</p>
+							<p className="font-bold text-sm">{find.date}</p>
 						</div>
 					</div>
 				))}
 			</div>
 		</>
 	);
-}
+};
 
-export default RecentFinds
+export default RecentFinds;

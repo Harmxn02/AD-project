@@ -30,9 +30,10 @@ const SubscriptionCard = ({ price, name, isLast, children }) => {
 						</span>
 						<span className="text-gray-400">/month</span>
 					</div>
-					<div className={`h-px my-8 ${
-						isLast ? "bg-white" : " bg-black"
-					}`}
+					<div
+						className={`h-px my-8 ${
+							isLast ? "bg-white" : " bg-black"
+						}`}
 					></div>
 					<p
 						className={`text-left  font-medium mb-4 ${

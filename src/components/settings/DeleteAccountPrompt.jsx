@@ -1,7 +1,7 @@
 import React from "react";
 import Title from "@/components/utility/Title";
 import Link from "next/link";
-import Image from '../../../node_modules/next/image';
+import Image from "../../../node_modules/next/image";
 
 // icons
 import Danger from "../../../public/icons/section_icons/danger.svg";
@@ -13,7 +13,11 @@ const DeleteAccountPrompt = () => {
 			<div className="bg-white w-4/6 border border-[#B3B3B3] py-6 px-4 flex gap-5 ">
 				<div>
 					{/* ICON */}
-					<Image alt="Danger icon" className='w-8 h-8' src={Danger} ></Image>
+					<Image
+						alt="Danger icon"
+						className="w-8 h-8"
+						src={Danger}
+					></Image>
 				</div>
 				<div className="flex flex-col gap-4">
 					{/* CONTENT */}
@@ -33,10 +37,20 @@ const DeleteAccountPrompt = () => {
 						</p>
 					</div>
 
-					<div className='flex gap-5'>
-                        <Link href="/settings/data-deleted" className='border border-black px-4 py-3 font-medium'>Delete data</Link>
-                        <Link href="/settings" className='border border-black px-4 py-3 font-medium'>Cancel</Link>
-                    </div>
+					<div className="flex gap-5">
+						<Link
+							href="/settings/data-deleted"
+							className="border border-black px-4 py-3 font-medium"
+						>
+							Delete data
+						</Link>
+						<Link
+							href="/settings"
+							className="border border-black px-4 py-3 font-medium"
+						>
+							Cancel
+						</Link>
+					</div>
 				</div>
 			</div>
 		</>
