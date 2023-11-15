@@ -24,8 +24,6 @@ const Revenue = () => {
         }
     ];
 
-    console.log(dataCombined)
-
   return (
     <section className='mt-12'>
         <Title content="Revenue" />
