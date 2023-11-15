@@ -8,7 +8,7 @@ const Revenue = () => {
     const dataCombined = [
         {
             type: 'line',
-            label: 'Adriacoin earned',
+            label: 'ADCO earned',
             data: [43.21, 9.54, 0, 0, 98.65, 0.52, 0, 2.47],
             backgroundColor: '#315e65',
             borderColor: 'rgba(49, 94, 101, 1)',
@@ -16,7 +16,7 @@ const Revenue = () => {
         },
         {
             type: 'bar',
-            label: 'Adriacoin earned',
+            label: 'ADCO earned',
             data: [43.21, 9.54, 0, 0, 98.65, 0.52, 0, 2.47],
             backgroundColor: '#62A0AA73',
             borderColor: 'rgba(75, 192, 192, 1)',
