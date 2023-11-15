@@ -1,6 +1,11 @@
-import React from 'react'
-import Title from '@/components/utility/Title'
-import Link from 'next/link'
+import React from 'react';
+import Title from '@/components/utility/Title';
+import Link from 'next/link';
+import Image from '../../../node_modules/next/image';
+
+// icons
+import User from "../../../public/icons/section_icons/user.svg";
+import Danger from "../../../public/icons/section_icons/danger.svg";
 
 const Account = () => {
   return (
@@ -13,7 +18,7 @@ const Account = () => {
 
                 <div>
                     {/* ICON */}
-                    <div className='w-8 h-8 bg-black'></div>
+                    <Image alt="User icon" className='w-8 h-8' src={User} ></Image>
                 </div>
                 <div className='flex flex-col gap-4'>
                     {/* CONTENT */}
@@ -34,7 +39,7 @@ const Account = () => {
 
                 <div>
                     {/* ICON */}
-                    <div className='w-8 h-8 bg-black'></div>
+                    <Image alt="User icon" className='w-8 h-8' src={Danger} ></Image>
                 </div>
                 <div className='flex flex-col gap-4'>
                     {/* CONTENT */}
