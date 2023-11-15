@@ -3,18 +3,19 @@
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 
-const BarChart = () => {
+const RadarChartStacked = () => {
   const chartRef = useRef(null);
 
   useEffect(() => {
     const ctx = chartRef.current.getContext('2d');
+
     let myChart = new Chart(ctx, {
-      type: 'bar',
+      type: 'radar',
       data: {
-        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        labels: ['Europe', 'Asia', 'Africa', 'S-America', 'N-America', 'Antarctica', 'Oceania'],
         datasets: [
           {
-            data: [10, 20, 30, 15, 25, 35, 45],
+            data: [40, 40, 50, 10, 40, 30, 40],
             label: 'Minutes Flown',
             backgroundColor: '#62A0AA73',
             borderColor: 'rgba(75, 192, 192, 1)',
@@ -23,14 +24,11 @@ const BarChart = () => {
         ],
       },
       options: {
-        maintainAspectRatio: false,
         scales: {
-          y: {
-            beginAtZero: true,
-            ticks: {
-                stepSize: 5,
-            },
-          },
+            r: {
+                suggestedMin: 0,
+                suggestedMax: 60,
+            }
         },
         plugins: {
             legend: false,
@@ -48,4 +46,4 @@ const BarChart = () => {
   );
 };
 
-export default BarChart;
+export default RadarChartStacked;
