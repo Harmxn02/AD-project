@@ -73,7 +73,7 @@ const Sidebar = () => {
                 <Button href="#" backgroundColor="#62A0AA" content="SCHEDULE EXCURSION"/>
             </div>
             <Link href="/" className='flex items-center mt-52 gap-4'>
-                <Image src={ExitIcon} width={25} height={25}/>
+                <Image alt="exit icon" src={ExitIcon} width={25} height={25}/>
                 Exit
             </Link>
         </nav>

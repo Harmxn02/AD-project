@@ -27,7 +27,7 @@ const VerticalSubscriptionCard = () => {
 			<div className="w-2/3">
 				<Image
 					className="w-full h-64 object-cover"
-					alt="random image"
+					alt="banner image for quick explore"
 					src={PHOTO}
 				/>
 			</div>
