@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react";
-import Title from "../utility/Title";
+import Title from "@/components/utility/Title";
 
 import { GetAPI } from "../utility/api";
 
@@ -15,7 +15,6 @@ const Transactions = () => {
 	}
 
 	console.log("TR: ", transactions)
-
 
 	const auction_proceeds = [
 		{

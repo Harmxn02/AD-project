@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { usePathname } from 'next/navigation'
-import Button from '../utility/Button'
+import Button from '@/components/utility/Button'
 import Image from 'next/image'
 import Link from 'next/link'
 import ProfilePicture from '../../../public/avatar-profile.jpg'
