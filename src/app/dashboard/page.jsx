@@ -1,6 +1,4 @@
 "use client"
-// import fetch from 'isomorphic-fetch'
-
 import Header from '@/components/dashboard/Header';
 import Sidebar from '@/components/dashboard/Sidebar';
 import Statistics from '@/components/dashboard/Statistics';
