@@ -19,6 +19,23 @@ const Transactions = () => {
 		return <Loading />;
 	}
 
+
+	/* 
+	TEMPORARY FIX for API giving "incorrect" data.
+	the Subscription field should return the name of the subscription instead of just the subscriptionId
+	until the API is updated with the correct information, this is a temporary fix
+	*/
+	
+	transactions.forEach(transaction => {
+		if (transaction.subscriptionId == 1) {
+			transaction.subscriptionId = "Lewis and Clark"
+		} else if (transaction.subscriptionId == 2) {
+			transaction.subscriptionId = "Marco Polo"
+		} else if (transaction.subscriptionId == 3) {
+			transaction.subscriptionId = "Magellan"
+		}
+	})
+
 	console.log("TR: ", transactions);
 
 	const auction_proceeds = [
