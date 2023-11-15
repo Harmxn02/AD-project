@@ -2,7 +2,6 @@ import React from "react";
 import Title from "@/components/utility/Title";
 import Image from "../../../node_modules/next/image";
 
-// icons
 import Red from "../../../public/icons/finds_toAuction.svg";
 import Green from "../../../public/icons/finds_sold.svg";
 import Yellow from "../../../public/icons/finds_auctioned.svg";

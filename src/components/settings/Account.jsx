@@ -3,7 +3,6 @@ import Title from "@/components/utility/Title";
 import Link from "next/link";
 import Image from "../../../node_modules/next/image";
 
-// icons
 import User from "../../../public/icons/section_icons/user.svg";
 import Danger from "../../../public/icons/section_icons/danger.svg";
 
