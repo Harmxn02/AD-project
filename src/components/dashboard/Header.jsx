@@ -1,10 +1,8 @@
 "use client";
 
-import React, { useState } from 'react'
+import React from 'react'
 
-const Header = () => {
-    const [activeButton, setActiveButton] = useState("DAY");
-
+const Header = ({ activeButton, onButtonClick }) => {
     const buttons = [
         {
             title: "DAY",
@@ -24,17 +22,13 @@ const Header = () => {
         },
     ];
 
-    const handleButtonClick = (title) => {
-        setActiveButton(title);
-    };
-
   return (
     <header className='flex justify-between mb-12'>
         <div className='flex gap-12'>
             {buttons.map((button, index) => (
             <button
                 key={index}
-                onClick={() => handleButtonClick(button.title)}
+                onClick={() => onButtonClick(button.title)}
                 className={`font-medium py-2 px-4 ${activeButton === button.title ? 'bg-[#747474] text-white' : ''}`}
             >
                 {button.title}
