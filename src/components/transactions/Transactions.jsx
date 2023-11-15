@@ -8,7 +8,7 @@ import Loading from "@/components/utility/Loading";
 import { GetAPI } from "../utility/api";
 
 const Transactions = () => {
-	let transactions = GetAPI("/transactions");
+	const transactions = GetAPI("/transactions");
 
 	if (transactions === null) {
 		// this prevents map from not working, because the data is empty
