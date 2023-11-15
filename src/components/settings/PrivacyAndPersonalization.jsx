@@ -1,6 +1,12 @@
 import React from "react";
 import Title from "@/components/utility/Title";
 import Toggle from "@/components/utility/Toggle";
+import Image from '../../../node_modules/next/image';
+
+// icons
+import Payment from "../../../public/icons/section_icons/payment.svg";
+import Marketing from "../../../public/icons/section_icons/marketing.svg";
+
 
 const PrivacyAndPersonalization = () => {
 	return (
@@ -18,7 +24,7 @@ const PrivacyAndPersonalization = () => {
 				<div className="bg-white w-4/6 border border-[#B3B3B3] py-6 px-4 flex gap-5">
 					<div>
 						{/* ICON */}
-						<div className="w-8 h-8 bg-black"></div>
+						<Image alt="Payment icon" className='w-8 h-8' src={Payment} ></Image>
 					</div>
 					<div className="flex flex-col gap-4">
 						{/* CONTENT */}
@@ -39,7 +45,7 @@ const PrivacyAndPersonalization = () => {
 				<div className="bg-white w-4/6 border border-[#B3B3B3] py-6 px-4 flex gap-5">
 					<div>
 						{/* ICON */}
-						<div className="w-8 h-8 bg-black"></div>
+						<Image alt="Marketing icon" className='w-8 h-8' src={Marketing} ></Image>
 					</div>
 					<div className="flex flex-col gap-4">
 						{/* CONTENT */}
