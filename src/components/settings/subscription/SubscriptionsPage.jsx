@@ -6,6 +6,8 @@ import SubscriptionCard from "./SubscriptionCard";
 import ListItem from "./ListItem";
 import VerticalSubscriptionCard from "./VerticalSubscriptionCard";
 
+import Loading from "@/components/utility/Loading";
+
 import { GetAPI } from "@/components/utility/api";
 
 const SubscriptionsPage = ()=> {
@@ -16,7 +18,7 @@ const SubscriptionsPage = ()=> {
 	if (plans === null) {
 		// this prevents map from not working if the data is empty
 		console.log("When this component was rendered, plans == ", plans)
-		return;
+		return <Loading/>
 	}
 
 	plans = plans.slice(0, 3)
