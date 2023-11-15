@@ -92,35 +92,11 @@ const Transactions = () => {
 						</tr>
 					</thead>
 					<tbody>
-						{/* {transactions.map((transaction, index) => (
+						{transactions.map((transaction) => (
 							<tr
 								key={transaction.id}
 								className={`${
-									index % 2 === 0
-										? "bg-[#DFE5EB]"
-										: "bg-white"
-								}`}
-							>
-								<td className="h-12 text-sm font-bold  pl-10">
-									{transaction.id}
-								</td>
-								<td className="h-12 text-sm">
-									{transaction.date}
-								</td>
-								<td className="h-12 text-sm">
-									{transaction.subscriptionId}
-								</td>
-								<td className="h-12 text-sm">
-									{transaction.amount}
-								</td>
-							</tr>
-						))} */}
-
-						{transactions.map((transaction, index) => (
-							<tr
-								key={transaction.id}
-								className={`${
-									index % 2 === 0
+									transaction.id % 2 === 0
 										? "bg-[#DFE5EB]"
 										: "bg-white"
 								}`}
@@ -160,11 +136,11 @@ const Transactions = () => {
 						</tr>
 					</thead>
 					<tbody>
-						{auction_proceeds.map((auction_proceed, index) => (
+						{auction_proceeds.map((auction_proceed) => (
 							<tr
 								key={auction_proceed.id}
 								className={`${
-									index % 2 === 0
+									auction_proceed.id % 2 === 0
 										? "bg-[#DFE5EB]"
 										: "bg-white"
 								}`}

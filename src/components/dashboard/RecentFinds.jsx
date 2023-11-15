@@ -40,13 +40,13 @@ const RecentFinds = () => {
 			<Title content="Recent X-Plorations" />
 
 			<div className="w-full flex flex-col gap-5">
-				{recent_finds.map((find, index) => (
+				{recent_finds.map((find) => (
 					<div
 						key={find.id}
 						className="h-16 bg-white shadow flex flex-row items-center justify-between gap-5"
 					>
 						<div
-							key={index}
+							key={find.id}
 							className={`${find.colour} w-16 h-full flex justify-center text-white items-center`}
 						>
 							<Image alt="icon" src={find.image_url}></Image>
