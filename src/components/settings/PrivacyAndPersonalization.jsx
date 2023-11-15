@@ -1,3 +1,7 @@
+import React from "react";
+import Button from "../utility/Button";
+import Title from "../utility/Title";
+import Toggle from "../utility/Toggle";
 
 const PrivacyAndPersonalization = () => {
 	return (
@@ -27,6 +31,9 @@ const PrivacyAndPersonalization = () => {
 								Send me messages for payment reminders.
 							</p>
 						</div>
+
+						<Toggle/>
+						
 					</div>
 				</div>
 			</section>
