@@ -39,7 +39,7 @@ const RecentXplorations = () => {
 					>
 						{/* <div className="bg-black w-16 h-full">image</div> */}
 						<Image src={`/icons/flags/${exploration.image_path}.svg`} width={256} height={256} className="w-16 h-16" alt="country flag"></Image>
-						
+
 
 						<div className="w-3/6 flex items-center h-full border-black border-r-4">
 							<p className="font-bold text-lg">
