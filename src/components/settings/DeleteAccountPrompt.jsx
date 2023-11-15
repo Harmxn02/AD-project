@@ -5,7 +5,7 @@ import Link from "next/link";
 const DeleteAccountPrompt = () => {
 	return (
 		<>
-			<Title content="Delete Account?" />
+			<Title content="Delete Data?" />
 			<div className="bg-white w-4/6 border border-[#B3B3B3] py-6 px-4 flex gap-5 ">
 				<div>
 					{/* ICON */}
@@ -30,7 +30,7 @@ const DeleteAccountPrompt = () => {
 					</div>
 
 					<div className='flex gap-5'>
-                        <Link href="/settings/account-deleted" className='border border-black px-4 py-3 font-medium'>Delete account</Link>
+                        <Link href="/settings/data-deleted" className='border border-black px-4 py-3 font-medium'>Delete data</Link>
                         <Link href="/settings" className='border border-black px-4 py-3 font-medium'>Cancel</Link>
                     </div>
 				</div>
