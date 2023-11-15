@@ -23,8 +23,8 @@ const Account = () => {
                     </div>
 
                     <div className='flex gap-5'>
-                        <a href="#todo" className='border border-black px-4 py-3 font-medium'>Change subscription</a>
-                        <a href="#todo" className='border border-black px-4 py-3 font-medium'>Cancel subscription</a>
+                        <Link href="settings/subscriptions" className='border border-black px-4 py-3 font-medium'>Change subscription</Link>
+                        <Link href="#todo" className='border border-black px-4 py-3 font-medium'>Cancel subscription</Link>
                     </div>
                 </div>
             </div>
