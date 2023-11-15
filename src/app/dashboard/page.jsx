@@ -4,6 +4,7 @@ import Sidebar from '@/components/dashboard/Sidebar';
 import Statistics from '@/components/dashboard/Statistics';
 import RecentXplorations from "@/components/dashboard/RecentXplorations";
 import RecentFinds from "@/components/dashboard/RecentFinds";
+import Revenue from "@/components/dashboard/Revenue";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <Statistics />
         <RecentFinds/>
         <RecentXplorations />
+        <Revenue />
       </section>
     </div>
   )

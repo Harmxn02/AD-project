@@ -3,11 +3,12 @@
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 
-const BarChart = (props) => {
+const LineBarChart = (props) => {
   const chartRef = useRef(null);
 
   useEffect(() => {
     const ctx = chartRef.current.getContext('2d');
+
     let myChart = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -18,14 +19,19 @@ const BarChart = (props) => {
         maintainAspectRatio: false,
         scales: {
           y: {
+            position: 'left',
+            beginAtZero: true,
+          },
+          y1: {
+            position: 'right',
             beginAtZero: true,
             ticks: {
-                stepSize: 5,
+              stepSize: 5,
             },
           },
         },
         plugins: {
-            legend: false,
+          legend: false,
         }
       },
     });
@@ -40,4 +46,4 @@ const BarChart = (props) => {
   );
 };
 
-export default BarChart;
+export default LineBarChart;
