@@ -23,6 +23,7 @@ const BarChart = () => {
         ],
       },
       options: {
+        maintainAspectRatio: false,
         scales: {
           y: {
             beginAtZero: true,
