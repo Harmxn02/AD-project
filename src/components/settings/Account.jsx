@@ -12,10 +12,8 @@ const Account = () => {
 		<>
 			<Title content="Account" />
 			<section className="flex flex-col gap-5">
-				{/* Active Subscription */}
 				<div className="bg-white w-4/6 border border-[#B3B3B3] py-6 px-4 flex gap-5 ">
 					<div>
-						{/* ICON */}
 						<Image
 							alt="User icon"
 							className="w-8 h-8"
@@ -23,7 +21,6 @@ const Account = () => {
 						></Image>
 					</div>
 					<div className="flex flex-col gap-4">
-						{/* CONTENT */}
 						<div>
 							<h3 className="font-medium text-2xl">
 								Active Subscription
@@ -50,10 +47,8 @@ const Account = () => {
 					</div>
 				</div>
 
-				{/* Danger Zone */}
 				<div className="bg-white w-4/6 border border-[#B3B3B3] py-6 px-4 flex gap-5 ">
 					<div>
-						{/* ICON */}
 						<Image
 							alt="User icon"
 							className="w-8 h-8"
@@ -61,7 +56,6 @@ const Account = () => {
 						></Image>
 					</div>
 					<div className="flex flex-col gap-4">
-						{/* CONTENT */}
 						<div>
 							<h3 className="font-medium text-2xl">
 								DANGER ZONE

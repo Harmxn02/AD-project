@@ -34,7 +34,6 @@ const PrivacyAndPersonalization = () => {
 
 				<div className="bg-white w-4/6 border border-[#B3B3B3] py-6 px-4 flex gap-5">
 					<div>
-						{/* ICON */}
 						<Image
 							alt="Payment icon"
 							className="w-8 h-8"
@@ -42,7 +41,6 @@ const PrivacyAndPersonalization = () => {
 						></Image>
 					</div>
 					<div className="flex flex-col gap-4">
-						{/* CONTENT */}
 						<div>
 							<h3 className="font-medium text-2xl">
 								Payment Reminders
@@ -58,7 +56,6 @@ const PrivacyAndPersonalization = () => {
 
 				<div className="bg-white w-4/6 border border-[#B3B3B3] py-6 px-4 flex gap-5">
 					<div>
-						{/* ICON */}
 						<Image
 							alt="Marketing icon"
 							className="w-8 h-8"
@@ -66,7 +63,6 @@ const PrivacyAndPersonalization = () => {
 						></Image>
 					</div>
 					<div className="flex flex-col gap-4">
-						{/* CONTENT */}
 						<div>
 							<h3 className="font-medium text-2xl">
 								Marketing Communication

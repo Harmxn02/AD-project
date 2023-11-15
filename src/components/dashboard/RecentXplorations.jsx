@@ -37,7 +37,6 @@ const RecentXplorations = () => {
 						key={exploration.id}
 						className="h-16 bg-white shadow flex flex-row items-center justify-between gap-5"
 					>
-						{/* <div className="bg-black w-16 h-full">image</div> */}
 						<Image
 							src={`/icons/flags/${exploration.image_path}.svg`}
 							width={256}

@@ -108,7 +108,6 @@ const Transactions = () => {
 									{new Date(
 										transaction.date
 									).toLocaleDateString()}{" "}
-									{/* Convert timestamp to date */}
 								</td>
 								<td className="h-12 text-sm">
 									{transaction.subscriptionId}

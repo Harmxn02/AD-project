@@ -12,7 +12,6 @@ const DeleteAccountPrompt = () => {
 			<Title content="Delete Data?" />
 			<div className="bg-white w-4/6 border border-[#B3B3B3] py-6 px-4 flex gap-5 ">
 				<div>
-					{/* ICON */}
 					<Image
 						alt="Danger icon"
 						className="w-8 h-8"
@@ -20,7 +19,6 @@ const DeleteAccountPrompt = () => {
 					></Image>
 				</div>
 				<div className="flex flex-col gap-4">
-					{/* CONTENT */}
 					<div>
 						<h3 className="font-medium text-2xl">Are you sure</h3>
 						<p className="font-light">
