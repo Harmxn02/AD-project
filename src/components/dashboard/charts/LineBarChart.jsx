@@ -21,9 +21,6 @@ const LineBarChart = (props) => {
           y: {
             position: 'left',
             beginAtZero: true,
-            ticks: {
-              stepSize: 5,
-            },
           },
           y1: {
             position: 'right',
