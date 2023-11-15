@@ -5,7 +5,7 @@ const SubscriptionCard = ({ price, name, isLast, children }) => {
 		<div className="grid-cols-1">
 			<div className="mx-auto py-10">
 				<div
-					className={`flex flex-col mx-auto w-80 text-center text-gray-900 border border-gray-100 shadow p-8 
+					className={`flex flex-col mx-auto w-[22rem] text-center text-gray-900 border border-gray-100 shadow p-8 
 						${isLast ? "bg-[#3E3E3E] text-white" : "bg-white text-black"}`}
 				>
 					<h3
