@@ -36,16 +36,22 @@ const Transactions = () => {
 			amount: "350.00 ADRA",
 		},
 		{
-			id: "INV003",
-			date: "08.07.2084",
+			id: "INV004",
+			date: "08.05.2084",
 			subscription: "Sent",
 			amount: "350.00 ADRA",
 		},
 		{
-			id: "INV003",
-			date: "08.07.2084",
+			id: "INV005",
+			date: "08.09.2084",
 			subscription: "Sent",
-			amount: "350.00 ADRA",
+			amount: "150.00 ADRA",
+		},
+		{
+			id: "INV006",
+			date: "08.10.2084",
+			subscription: "Sent",
+			amount: "50.00 ADRA",
 		},
 	];
 
