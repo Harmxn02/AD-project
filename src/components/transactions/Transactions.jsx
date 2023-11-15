@@ -1,7 +1,7 @@
 import React from "react";
-import Title from "../utility/Title";
+import Title from "@/components/utility/Title";
 
-import { GetAPI } from "../utility/api"
+import { GetAPI } from "@/components/utility/api"
 
 const Transactions = () => {
 	const transactions = GetAPI("/transactions");
@@ -13,7 +13,6 @@ const Transactions = () => {
 	}
 
 	console.log("TR: ", transactions)
-
 
 	const auction_proceeds = [
 		{

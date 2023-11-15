@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react";
-import Title from "../../utility/Title";
+import Title from "@/components/utility/Title";
 import SubscriptionCard from "./SubscriptionCard";
 import ListItem from "./ListItem";
 import VerticalSubscriptionCard from "./VerticalSubscriptionCard";
