@@ -26,11 +26,11 @@ const Transactions = () => {
 	*/
 
 	transactions.forEach((transaction) => {
-		if (transaction.subscriptionId == 1) {
+		if (transaction.subscriptionId === 1) {
 			transaction.subscriptionId = "Lewis and Clark";
-		} else if (transaction.subscriptionId == 2) {
+		} else if (transaction.subscriptionId === 2) {
 			transaction.subscriptionId = "Marco Polo";
-		} else if (transaction.subscriptionId == 3) {
+		} else if (transaction.subscriptionId === 3) {
 			transaction.subscriptionId = "Magellan";
 		}
 	});
