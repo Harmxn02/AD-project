@@ -21,7 +21,7 @@ const Sidebar = () => {
                 height={80}
                 className='w-[80px] h-[80px] rounded-full m-auto mb-4'
             />
-            <h3 className='text-brandCyan'>Alexander Karpenko</h3>
+            <h3 className='text-brandCyan font-bold'>Alexander Karpenko</h3>
             <h3 className='text-[0.875rem] text-brandBlack'>A.Karpenko@adriamail.com</h3>
         </div>
         <div className='grid grid-cols-2 text-center'>
