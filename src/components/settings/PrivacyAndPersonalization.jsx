@@ -4,7 +4,7 @@ import Toggle from "@/components/utility/Toggle";
 
 const PrivacyAndPersonalization = () => {
 	return (
-		<div>
+		<div className="mt-12">
 			<Title content="Privacy and Personalization" />
 			<section className="flex flex-col gap-5">
 				<div>
@@ -32,7 +32,7 @@ const PrivacyAndPersonalization = () => {
 						</div>
 
 						<Toggle/>
-						
+
 					</div>
 				</div>
 
@@ -67,7 +67,7 @@ const PrivacyAndPersonalization = () => {
 							</div>
 						</div>
 
-						
+
 					</div>
 				</div>
 			</section>

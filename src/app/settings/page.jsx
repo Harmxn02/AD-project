@@ -8,7 +8,7 @@ export default function Home() {
     <div className='flex'>
       <Sidebar />
       <section className='pt-16 px-24 w-full'>
-        <Account/>    
+        <Account/>
         <PrivacyAndPersonalization/>
 
         {/* should be under settings > change subscription, routing not yet implemented */}
