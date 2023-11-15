@@ -8,7 +8,7 @@ const Revenue = () => {
     const dataCombined = [
         {
             type: 'line',
-            label: 'Ⓐ Earned',
+            label: 'Adriacoin earned',
             data: [43.21, 9.54, 0, 0, 98.65, 0.52, 0, 2.47],
             backgroundColor: '#315e65',
             borderColor: 'rgba(49, 94, 101, 1)',
@@ -16,7 +16,7 @@ const Revenue = () => {
         },
         {
             type: 'bar',
-            label: 'Ⓐ Earned',
+            label: 'Adriacoin earned',
             data: [43.21, 9.54, 0, 0, 98.65, 0.52, 0, 2.47],
             backgroundColor: '#62A0AA73',
             borderColor: 'rgba(75, 192, 192, 1)',
@@ -28,8 +28,7 @@ const Revenue = () => {
 
   return (
     <section className='mt-12'>
-        <Title content="Revenue (in Ⓐ)" />
-        <h3 className='text-[1.125rem] font-semibold'>Minutes flown</h3>
+        <Title content="Revenue" />
         <p className='font-light'>An overview of revenue changes within a specific timeframe for quick analysis.</p>
             <div className="w-full mt-4 h-[25rem]">
                 <LineBarChart labels={labels} dataObject={dataCombined} />
