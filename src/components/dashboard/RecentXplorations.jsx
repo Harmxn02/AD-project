@@ -27,8 +27,8 @@ const RecentXplorations = () => {
 	];
 
 	return (
-		<>
-			<Title content="Recent X-Plorations" />
+		<section className="mt-12">
+			<Title content="Recent finds" />
 
 			<div className="w-full flex flex-col gap-5">
 				{recent_xplorations.map((exploration) => (
@@ -55,7 +55,7 @@ const RecentXplorations = () => {
 					</div>
 				))}
 			</div>
-		</>
+		</section>
 	);
 };
 
