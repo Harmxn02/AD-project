@@ -10,7 +10,7 @@ const Revenue = () => {
             type: 'line',
             label: 'ADCO earned',
             data: [43.21, 9.54, 0, 0, 98.65, 0.52, 0, 2.47],
-            backgroundColor: '#315e65',
+            backgroundColor: 'rgba(49, 94, 101, 1)',
             borderColor: 'rgba(49, 94, 101, 1)',
             borderWidth: 3
         },
@@ -18,7 +18,7 @@ const Revenue = () => {
             type: 'bar',
             label: 'ADCO earned',
             data: [43.21, 9.54, 0, 0, 98.65, 0.52, 0, 2.47],
-            backgroundColor: '#62A0AA73',
+            backgroundColor: 'rgba(98, 160, 170, 0.45)',
             borderColor: 'rgba(75, 192, 192, 1)',
             borderWidth: 1
         }
