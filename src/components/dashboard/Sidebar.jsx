@@ -48,7 +48,7 @@ const Sidebar = () => {
 							className={`flex items-center gap-4 ${
 								pathname.startsWith("/dashboard")
 									? "text-[#62A0AA]"
-									: "text-[#000000]"
+									: "text-brandBlack"
 							}`}
 						>
 							<svg
@@ -64,7 +64,7 @@ const Sidebar = () => {
 								fill={
 									pathname.startsWith("/dashboard")
 										? "#62A0AA"
-										: "#000000"
+										: "#4C4C4C"
 								}
 							>
 								<path
@@ -82,7 +82,7 @@ const Sidebar = () => {
 							className={`flex items-center gap-4 ${
 								pathname.startsWith("/transactions")
 									? "text-[#62A0AA]"
-									: "text-[#000000]"
+									: "text-brandBlack"
 							}`}
 						>
 							<svg
@@ -92,7 +92,7 @@ const Sidebar = () => {
 								fill={
 									pathname.startsWith("/transactions")
 										? "#62A0AA"
-										: "#000000"
+										: "#4C4C4C"
 								}
 								xmlns="http://www.w3.org/2000/svg"
 							>
@@ -101,7 +101,7 @@ const Sidebar = () => {
 									stroke={
 										pathname.startsWith("/transactions")
 											? "#62A0AA"
-											: "#000000"
+											: "#4C4C4C"
 									}
 									strokeWidth="2"
 								/>
@@ -115,7 +115,7 @@ const Sidebar = () => {
 							className={`flex items-center gap-4 ${
 								pathname.startsWith("/settings")
 									? "text-[#62A0AA]"
-									: "text-[#000000]"
+									: "text-brandBlack"
 							}`}
 						>
 							<svg
@@ -125,7 +125,7 @@ const Sidebar = () => {
 								fill={
 									pathname.startsWith === "/settings"
 										? "#62A0AA"
-										: "#000000"
+										: "#4C4C4C"
 								}
 								xmlns="http://www.w3.org/2000/svg"
 							>
@@ -134,7 +134,7 @@ const Sidebar = () => {
 									fill={
 										pathname.startsWith("/settings")
 											? "#62A0AA"
-											: "#000000"
+											: "#4C4C4C"
 									}
 								/>
 							</svg>
