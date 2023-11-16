@@ -1,20 +1,39 @@
-"use client"
+"use client";
 
 import React from "react";
 import Title from "@/components/utility/Title";
 
+import Loading from "@/components/utility/Loading";
+
 import { GetAPI } from "../utility/api";
 
 const Transactions = () => {
-	let transactions = GetAPI("/transactions");
+	const transactions = GetAPI("/transactions");
 
 	if (transactions === null) {
 		// this prevents map from not working, because the data is empty
-		console.log("When this component was rendered, transactions == ", transactions)
-		return;
+		console.log(
+			"When this component was rendered, transactions == ",
+			transactions
+		);
+		return <Loading />;
 	}
 
-	console.log("TR: ", transactions)
+	/* TEMPORARY FIX for API giving "incorrect" data.
+	the Subscription field should return the name of the subscription instead of just the subscriptionId
+	until the API is updated with the correct information, this is a temporary fix */
+
+	transactions.forEach((transaction) => {
+		if (transaction.subscriptionId === 1) {
+			transaction.subscriptionId = "Lewis and Clark";
+		} else if (transaction.subscriptionId === 2) {
+			transaction.subscriptionId = "Marco Polo";
+		} else if (transaction.subscriptionId === 3) {
+			transaction.subscriptionId = "Magellan";
+		}
+	});
+
+	console.log("TR: ", transactions);
 
 	const auction_proceeds = [
 		{
@@ -62,51 +81,31 @@ const Transactions = () => {
 				<table>
 					<thead className="sticky top-0 bg-white w-full">
 						<tr className="text-left">
-							<th className="w-[12.5%] h-12 pl-10">Transaction ID</th>
+							<th className="w-[12.5%] h-12 pl-10">
+								Transaction ID
+							</th>
 							<th className="w-[12.5%] h-12">Date</th>
 							<th className="w-[12.5%] h-12">Subscription</th>
 							<th className="w-[12.5%] h-12">Amount</th>
 						</tr>
 					</thead>
 					<tbody>
-						{/* {transactions.map((transaction, index) => (
+						{transactions.map((transaction) => (
 							<tr
 								key={transaction.id}
 								className={`${
-									index % 2 === 0
+									transaction.id % 2 === 0
 										? "bg-[#DFE5EB]"
 										: "bg-white"
-								}`}
-							>
-								<td className="h-12 text-sm font-bold  pl-10">
-									{transaction.id}
-								</td>
-								<td className="h-12 text-sm">
-									{transaction.date}
-								</td>
-								<td className="h-12 text-sm">
-									{transaction.subscriptionId}
-								</td>
-								<td className="h-12 text-sm">
-									{transaction.amount}
-								</td>
-							</tr>
-						))} */}
-
-						{transactions.map((transaction, index) => (
-							<tr
-								key={transaction.id}
-								className={`${
-								index % 2 === 0
-									? "bg-[#DFE5EB]"
-									: "bg-white"
 								}`}
 							>
 								<td className="h-12 text-sm font-bold pl-10">
 									{transaction.id}
 								</td>
 								<td className="h-12 text-sm">
-									{new Date(transaction.date).toLocaleDateString()} {/* Convert timestamp to date */}
+									{new Date(
+										transaction.date
+									).toLocaleDateString()}{" "}
 								</td>
 								<td className="h-12 text-sm">
 									{transaction.subscriptionId}
@@ -116,12 +115,11 @@ const Transactions = () => {
 								</td>
 							</tr>
 						))}
-
 					</tbody>
 				</table>
 			</div>
 
-			<Title content="Auction Proceeds"/>
+			<Title content="Auction Proceeds" />
 			<div className="bg-white w-full px-8 pb-6 max-h-[260px] overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent shadow">
 				<table>
 					<thead className="sticky top-0 bg-white w-full">
@@ -135,11 +133,11 @@ const Transactions = () => {
 						</tr>
 					</thead>
 					<tbody>
-						{auction_proceeds.map((auction_proceed, index) => (
+						{auction_proceeds.map((auction_proceed) => (
 							<tr
 								key={auction_proceed.id}
 								className={`${
-									index % 2 === 0
+									auction_proceed.id % 2 === 0
 										? "bg-[#DFE5EB]"
 										: "bg-white"
 								}`}
