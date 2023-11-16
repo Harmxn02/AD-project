@@ -3,7 +3,7 @@ import React from "react";
 import LOGO from "../../app/icon.svg";
 import Link from "next/link";
 
-function Homescreen() {
+const Homescreen = () => {
 	return (
 		<div className="h-screen bg-[#2D2D2D] flex flex-col justify-center items-center gap-24">
 			<Image alt="logo" src={LOGO} />
