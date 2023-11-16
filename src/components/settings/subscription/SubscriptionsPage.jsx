@@ -8,7 +8,7 @@ import VerticalSubscriptionCard from "./VerticalSubscriptionCard";
 
 import Loading from "@/components/utility/Loading";
 
-import { getAPI } from "@/components/utility/api";
+import { getAPI } from "../../../assets/js/api";
 
 const SubscriptionsPage = () => {
 	// normally `const endpoint`, but I need to splice the first 3 elements
