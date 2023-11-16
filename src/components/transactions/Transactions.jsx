@@ -5,10 +5,10 @@ import Title from "@/components/utility/Title";
 
 import Loading from "@/components/utility/Loading";
 
-import { getAPI } from "../../assets/js/api";
+import { GetAPI } from "../../assets/js/api";
 
 const Transactions = () => {
-	const transactions = getAPI("/transactions");
+	const transactions = GetAPI("/transactions");
 
 	if (transactions === null) {
 		// this prevents map from not working, because the data is empty

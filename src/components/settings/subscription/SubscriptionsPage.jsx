@@ -8,11 +8,11 @@ import VerticalSubscriptionCard from "./VerticalSubscriptionCard";
 
 import Loading from "@/components/utility/Loading";
 
-import { getAPI } from "../../../assets/js/api";
+import { GetAPI } from "../../../assets/js/api";
 
 const SubscriptionsPage = () => {
 	// normally `const endpoint`, but I need to splice the first 3 elements
-	let plans = getAPI("/plans");
+	let plans = GetAPI("/plans");
 
 	if (plans === null) {
 		// this prevents map from not working if the data is empty
