@@ -137,7 +137,7 @@ const Transactions = () => {
 							<tr
 								key={auction_proceed.id}
 								className={`${
-									auction_proceed.id % 2 === 0
+									auction_proceed.id.slice(-1) % 2 === 0
 										? "bg-[#DFE5EB]"
 										: "bg-white"
 								}`}
