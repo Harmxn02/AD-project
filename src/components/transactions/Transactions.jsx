@@ -5,7 +5,7 @@ import Title from "@/components/utility/Title";
 
 import Loading from "@/components/utility/Loading";
 
-import { getAPI } from "../utility/api";
+import { getAPI } from "../../assets/js/api";
 
 const Transactions = () => {
 	const transactions = getAPI("/transactions");
