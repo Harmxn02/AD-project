@@ -42,7 +42,7 @@ const DeleteAccountPrompt = () => {
 							Delete data
 						</Link>
 						<Link
-							href={settingsPathname}
+							href="/settings"
 							className="border border-black px-4 py-3 font-medium"
 						>
 							Cancel
