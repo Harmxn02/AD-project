@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-export const GetAPI = (path) => {
+export const getAPI = (path) => {
 	const [apiData, setApiData] = useState(null);
 	const URL = `https://project-2.ti.howest.be/2023-2024/group-17/api`;
 
