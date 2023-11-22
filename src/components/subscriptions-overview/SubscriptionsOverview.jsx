@@ -46,6 +46,7 @@ const SubscriptionsOverview = () => {
 						name="Lewis & Clark"
 						description="Soar into adventure with 10 flight hours, expert training, and support."
 						price="21.99"
+						period="month"
 						features={[
 							"10 hours flight time",
 							"Specialized training",
@@ -57,6 +58,7 @@ const SubscriptionsOverview = () => {
 						name="Marco Polo"
 						description="Elevate your journey with 24 hours of flight, plus priority access."
 						price="44.99"
+						period="month"
 						features={[
 							"Comprehensive benefits from Lewis & Clark",
 							"24/7 access to customer support",
@@ -69,6 +71,7 @@ const SubscriptionsOverview = () => {
 						name="Magellan"
 						description="Unleash boundless exploration with 48 hours, 24/7 support, and unlimited rentals."
 						price="84.99"
+						period="month"
 						features={[
 							"Unmatched perks from Marco Polo tier",
 							"48 hours of flexible flight time every month",
@@ -82,6 +85,7 @@ const SubscriptionsOverview = () => {
 						name="Quick Explore"
 						description="Dive into discovery at just $3.29 per hour. Start exploring now!"
 						price="3.29"
+						period="hour"
 						features={[
 							"Discover with no strings attached",
 							"Seamless trial experience, no commitment",
