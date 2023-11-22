@@ -31,7 +31,7 @@ const PrivacyAndPersonalization = () => {
 					</div>
 				</div>
 
-				<div className="bg-white w-4/6 border border-[#B3B3B3] py-6 px-4 flex gap-5">
+				<div className="bg-white w-4/6 border border-brandGrey py-6 px-4 flex gap-5">
 					<div>
 						<Image
 							alt="Payment icon"
@@ -53,7 +53,7 @@ const PrivacyAndPersonalization = () => {
 					</div>
 				</div>
 
-				<div className="bg-white w-4/6 border border-[#B3B3B3] py-6 px-4 flex gap-5">
+				<div className="bg-white w-4/6 border border-brandGrey py-6 px-4 flex gap-5">
 					<div>
 						<Image
 							alt="Marketing icon"

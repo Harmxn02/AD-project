@@ -93,7 +93,7 @@ const SubscriptionsOverview = () => {
 					<h3 className="text-5xl text-black mb-4">
 						Simple and
 						<br /> Transparant{" "}
-						<span className="bg-gradient-to-r from-[#d292ff] to-brandCyan bg-clip-text text-transparent">
+						<span className="bg-gradient-to-r from-brandPink to-brandCyan bg-clip-text text-transparent">
 							pricing
 						</span>
 					</h3>

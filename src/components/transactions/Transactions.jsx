@@ -77,7 +77,7 @@ const Transactions = () => {
                                 key={transaction.id}
                                 className={`${
                                     transaction.id % 2 === 0
-                                        ? "bg-[#DFE5EB]"
+                                        ? "bg-alternatingTransaction"
                                         : "bg-white"
                                 }`}
                             >
@@ -120,7 +120,7 @@ const Transactions = () => {
                                 key={auction_proceed.id}
                                 className={`${
                                     auction_proceed.id.slice(-1) % 2 === 0
-                                        ? "bg-[#DFE5EB]"
+                                        ? "bg-alternatingTransaction"
                                         : "bg-white"
                                 }`}
                             >
