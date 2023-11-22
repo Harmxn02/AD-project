@@ -68,8 +68,9 @@ const Homescreen = () => {
 						</svg>
 					</nav>
 
-					<div className="pt-80 px-8 text-[#d292ff] text-4xl">
-						<p className="font-bold py-2 first-letter:uppercase lowercase">
+						<p className="text-sm opacity-50">
+							{splashText[currentIndex].id} / {splashText.length}
+						</p>
 							{splashText[currentIndex].title}
 						</p>
 
