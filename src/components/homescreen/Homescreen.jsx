@@ -49,7 +49,7 @@ const Homescreen = () => {
 						</Link>
 						
 						<Link
-							href="#"
+							href="/explore-plans"
 							className="text-white rounded-md max-w-fit font-semibold bg-blue-600 hover:bg-[#0000FF] px-12 py-3"
 						>
 							Explore plans
