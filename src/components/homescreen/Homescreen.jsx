@@ -4,6 +4,23 @@ import LOGO from "../../app/icon.svg";
 import Link from "next/link";
 
 const Homescreen = () => {
+
+	const splashText = [
+		{
+			title: 	"Escape Gravity, Explore Earth: ",
+			subtitle: "our Gateway to Ravaged Beauty!",
+		},
+		{
+			title: 	"Unleash Your Inner Explorer: ",
+			subtitle: "Drone Rentals for Earth's Echoes.",
+		},
+		{
+			title: 	"Beyond the Stars, Within Your Reach: ",
+			subtitle: "Roam Earth's Remnants with Our Drones!",
+		},
+
+	]
+
 	return (
 		<div className="h-screen w-screen relative">
 			<div className="w-screen h-screen flex">
