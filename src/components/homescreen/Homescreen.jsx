@@ -40,12 +40,22 @@ const Homescreen = () => {
 					{/* RIGHT */}
 					<p className="text-white text-3xl font-bold">Get started</p>
 
-					<Link
-						href="/dashboard"
-						className="text-white rounded-md max-w-fit font-semibold bg-[#0000FF] px-12 py-3"
-					>
-						Enter dashboard
-					</Link>
+					<div className="flex gap-3">
+						<Link
+							href="/dashboard"
+							className="text-white rounded-md max-w-fit font-semibold bg-blue-600 hover:bg-[#0000FF] px-12 py-3"
+						>
+							Enter dashboard
+						</Link>
+						
+						<Link
+							href="#"
+							className="text-white rounded-md max-w-fit font-semibold bg-blue-600 hover:bg-[#0000FF] px-12 py-3"
+						>
+							Explore plans
+						</Link>
+
+					</div>
 
 					<div className="absolute flex flex-col justify-center gap-6 bottom-10">
 						<div className="flex gap-2 justify-center">
