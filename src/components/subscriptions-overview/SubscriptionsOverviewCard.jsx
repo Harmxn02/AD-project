@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Link from "next/link";
+import Image from "next/image";
 
 const SubscriptionsOverviewCard = ({ name, description, price, features }) => {
   SubscriptionsOverviewCard.propTypes = {
@@ -11,19 +12,19 @@ const SubscriptionsOverviewCard = ({ name, description, price, features }) => {
   };
 
   return (
-    <div className="bg-gray-300 w-full rounded-lg p-4">
+    <div className="bg-white w-full rounded-lg p-6 border border-gray-300">
       <h3 className="text-[1.5rem]">{name}</h3>
       <p className="text-[0.875rem] text-brandBlack">{description}</p>
       <p className="text-[2rem] my-6 font-semibold">
-        ADCO {price} <span className="text-[1rem] text-brandBlack font-">/month</span>
+        ADCO {price} <span className="text-[1rem] text-brandBlack font-normal">/month</span>
       </p>
       <Link
-        href="#"
+        href="/settings/subscriptions"
         className="rounded-full border-2 border-black px-4 py-[0.375rem] inline-block"
       >
-        Buy {name}
+        Buy {name} <Image src="/icons/arrow-right.svg" width={20} height={20} className="inline-block"/>
       </Link>
-      <div className="w-full bg-black h-[2px] my-6"></div>
+      <div className="w-full bg-gray-200 h-[1px] my-6"></div>
       <ul className="flex flex-col gap-5">
         {features.map((feature) => (
           <li className="flex items-center space-x-3">

@@ -3,8 +3,8 @@ import SubscriptionsOverviewCard from "@/components/subscriptions-overview/Subsc
 
 const SubscriptionsOverview = () => {
   return (
-    <div className="px-8 py-6">
-      <header className="z-10 flex items-center gap-2">
+    <div className="px-8 py-6 bg-gradient-to-t from-gray-200 to-white">
+      <header className="flex items-center gap-2 mb-3">
         <Link href="/" className="flex items-center gap-2">
           <h1 className="text-black text-2xl font-bold">X-Plor</h1>
           <svg
@@ -26,19 +26,19 @@ const SubscriptionsOverview = () => {
           </svg>
         </Link>
       </header>
-      <main className="flex flex-col justify-center items-center mt-12">
+      <main className="flex flex-col justify-center items-center">
         <div className="text-center">
-          <h3 className="text-brandCyan mb-2">Pricing</h3>
+          <h3 className="text-brandCyan mb-2">Our plans</h3>
           <h3 className="text-5xl text-black mb-4">
             Simple and
-            <br /> Transparant pricing
+            <br /> Transparant <span className="bg-gradient-to-r from-brandCyan to-brandBlack bg-clip-text text-transparent">pricing</span>
           </h3>
           <p className="text-brandBlack">
             Prices that follow the growth of the business, so you will never be
             paying more than you need.
           </p>
         </div>
-        <section className="flex w-full gap-12 mt-12">
+        <section className="flex w-full gap-12 mt-12 justify-between">
           <SubscriptionsOverviewCard
             name="Lewis & Clark"
             description="Soar into adventure with 10 flight hours, expert training, and support."
