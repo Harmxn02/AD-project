@@ -5,28 +5,30 @@ import React, { useEffect, useState } from "react";
 import LOGO from "../../app/icon.svg";
 import Link from "next/link";
 
+import { Typewriter } from 'react-simple-typewriter'
+
 const Homescreen = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const splashText = [
 		{
 			title: "Escape Gravity, Explore Earth",
-			subtitle: "our Gateway to Ravaged Beauty!",
+			subtitle: "our Gateway to Ravaged Beauty ",
 		},
 		{
 			title: "Unleash Your Inner Explorer",
-			subtitle: "Drone Rentals for Earth's Echoes.",
+			subtitle: "Drone Rentals for Earth's Echoes ",
 		},
 		{
 			title: "Beyond the Stars, Within Your Reach",
-			subtitle: "Roam Earth's Remnants with Our Drones!",
+			subtitle: "Roam Earth's Remnants with Our Drones ",
 		},
 	];
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
-			// Increment the index after 3 seconds
+			// Increment the index after 12 seconds
 			setCurrentIndex((prevIndex) => (prevIndex + 1) % splashText.length);
-		}, 5000);
+		}, 6000);
 
 		// Clear the timeout to avoid memory leaks
 		return () => clearTimeout(timer);
@@ -67,9 +69,32 @@ const Homescreen = () => {
 						<p className="font-bold py-2 first-letter:uppercase lowercase">
 							{splashText[currentIndex].title}
 						</p>
-						<p className="font-normal lowercase">
-							{splashText[currentIndex].subtitle}
-						</p>
+
+						{/* <p className="font-normal lowercase">{splashText[currentIndex].subtitle}</p> */}
+
+						{/* <Typewriter
+							className="font-normal lowercase"
+							options={{
+								strings: [splashText[currentIndex].subtitle],
+								autoStart: true,
+								loop: false,
+							}}
+						/> */}
+
+						<span className="font-normal lowercase">
+							<Typewriter
+								key={currentIndex} // Add key prop to force remount on currentIndex change
+								words={[splashText[currentIndex].subtitle]}
+								loop={5}
+								cursor
+								cursorStyle='_'
+								typeSpeed={30}
+								deleteSpeed={10000}
+								delaySpeed={2000}
+							/>
+						</span>
+
+
 					</div>
 				</div>
 
