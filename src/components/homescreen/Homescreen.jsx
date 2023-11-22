@@ -70,17 +70,6 @@ const Homescreen = () => {
 							{splashText[currentIndex].title}
 						</p>
 
-						{/* <p className="font-normal lowercase">{splashText[currentIndex].subtitle}</p> */}
-
-						{/* <Typewriter
-							className="font-normal lowercase"
-							options={{
-								strings: [splashText[currentIndex].subtitle],
-								autoStart: true,
-								loop: false,
-							}}
-						/> */}
-
 						<span className="font-normal lowercase">
 							<Typewriter
 								key={currentIndex} // Add key prop to force remount on currentIndex change
