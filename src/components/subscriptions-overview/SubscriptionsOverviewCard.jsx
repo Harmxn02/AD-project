@@ -23,7 +23,7 @@ const SubscriptionsOverviewCard = ({ name, description, price, period, features 
         href="/settings/subscriptions"
         className="rounded-full border-2 border-black px-4 py-[0.375rem] inline-block"
       >
-        Buy {name} <Image src="/icons/arrow-right.svg" width={20} height={20} className="inline-block"/>
+        Buy {name} <Image src="/icons/arrow-right.svg" width={20} height={20} className="inline-block" alt="arrow right"/>
       </Link>
       <div className="w-full bg-gray-200 h-[1px] my-6"></div>
       <ul className="flex flex-col gap-5">
