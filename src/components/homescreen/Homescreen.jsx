@@ -1,15 +1,48 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import LOGO from "../../app/icon.svg";
 import Link from "next/link";
 
+import { Typewriter } from "react-simple-typewriter";
+
 const Homescreen = () => {
+	const [currentIndex, setCurrentIndex] = useState(0);
+	const splashText = [
+		{
+			id: 1,
+			title: "Escape Gravity, Explore Earth",
+			subtitle: "our Gateway to Ravaged Beauty ",
+		},
+		{
+			id: 2,
+			title: "Unleash Your Inner Explorer",
+			subtitle: "Drone Rentals for Earth's Echoes ",
+		},
+		{
+			id: 3,
+			title: "Beyond the Stars, Within Your Reach",
+			subtitle: "Roam Earth's Remnants with Our Drones ",
+		},
+	];
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			// Increment the index after 12 seconds
+			setCurrentIndex((prevIndex) => (prevIndex + 1) % splashText.length);
+		}, 6000);
+
+		// Clear the timeout to avoid memory leaks
+		return () => clearTimeout(timer);
+	}, [currentIndex, splashText.length]);
+
 	return (
 		<div className="h-screen w-screen relative">
 			<div className="w-screen h-screen flex">
 				<div className="w-3/5 bg-[#00002e]">
 					{/* LEFT */}
-					<nav className="absolute z-10 bg-[#00002e] flex items-center gap-2 px-8 py-6">
+					<nav className="h-[10vh] z-10 bg-[#00002e] flex items-center gap-2 px-8 py-6">
 						<h1 className="text-[#d292ff] text-2xl font-bold">
 							X-Plor
 						</h1>
@@ -34,27 +67,49 @@ const Homescreen = () => {
 							/>
 						</svg>
 					</nav>
+
+					<div className="h-[90vh] flex flex-col text-4xl justify-center px-8 text-[#d292ff] ">
+						<p className="text-xs font-extralight">
+							{splashText[currentIndex].id} / {splashText.length}
+						</p>
+
+						<p className="font-bold py-2 first-letter:uppercase lowercase">
+							{splashText[currentIndex].title}
+						</p>
+
+						<span className="font-normal lowercase">
+							<Typewriter
+								key={currentIndex} // Add key prop to force remount on currentIndex change
+								words={[splashText[currentIndex].subtitle]}
+								loop={5}
+								cursor
+								cursorStyle="_"
+								typeSpeed={30}
+								deleteSpeed={10000}
+								delaySpeed={2000}
+							/>
+						</span>
+					</div>
 				</div>
 
-				<div className="relative w-2/5 bg-black flex flex-col gap-4 justify-center items-center">
+				<div className="w-2/5 bg-black flex flex-col gap-8 justify-center items-center">
 					{/* RIGHT */}
 					<p className="text-white text-3xl font-bold">Get started</p>
 
-					<div className="flex gap-3">
+					<div className="flex flex-col justify-center items-center xl:flex-row gap-3">
 						<Link
 							href="/dashboard"
 							className="text-white rounded-md max-w-fit font-semibold bg-blue-600 hover:bg-[#0000FF] px-12 py-3"
 						>
 							Enter dashboard
 						</Link>
-						
+
 						<Link
 							href="/explore-plans"
 							className="text-white rounded-md max-w-fit font-semibold bg-blue-600 hover:bg-[#0000FF] px-12 py-3"
 						>
 							Explore plans
 						</Link>
-
 					</div>
 
 					<div className="absolute flex flex-col justify-center gap-6 bottom-10">
