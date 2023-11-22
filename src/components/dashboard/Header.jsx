@@ -65,33 +65,24 @@ const Header = ({ activeButton, onButtonClick }) => {
                     </button>
                 ))}
             </div>
-			<div className="flex items-center gap-6">
-				<button className="bg-[#747474] text-white px-4 py-2">
-					CREATE SCREENSHOT
-				</button>
-				<button
-					className={isFullscreen ? "hidden" : ""}
-					onClick={handleFullscreenToggle}
-				>
-					<Image
-						src="/icons/fullscreen.svg"
-						alt="fullscreen icon"
-						width={25}
-						height={25}
-					/>
-				</button>
-				<button
-					className={!isFullscreen ? "hidden" : ""}
-					onClick={handleFullscreenToggle}
-				>
-					<Image
-						src="/icons/exit-fullscreen.svg"
-						alt="exit fullscreen icon"
-						width={25}
-						height={25}
-					/>
-				</button>
-			</div>
+            <button
+                className="bg-[#747474] text-white px-4 py-2 flex gap-4"
+                onClick={handleFullscreenToggle}
+            >
+                {isFullscreen ? " EXIT FULLSCREEN" : " ENTER FULLSCREEN"}
+				<Image
+                    src={`/icons/${
+                        isFullscreen ? "exit-fullscreen" : "fullscreen"
+                    }.svg`}
+                    alt={
+                        isFullscreen
+                            ? "exit fullscreen icon"
+                            : "fullscreen icon"
+                    }
+                    width={20}
+                    height={20}
+                />
+            </button>
         </header>
     );
 };
