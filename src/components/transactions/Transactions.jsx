@@ -14,25 +14,6 @@ const Transactions = () => {
 		return <Loading />;
 	}
 
-    /* TEMPORARY FIX for API giving "incorrect" data.
-	the Subscription field should return the name of the subscription instead of just the subscriptionId
-	until the API is updated with the correct information, this is a temporary fix */
-
-    transactions.forEach((transaction) => {
-        switch (transaction.subscriptionId) {
-            case 1:
-                transaction.subscriptionId = "Lewis and Clark";
-                break;
-            case 2:
-                transaction.subscriptionId = "Marco Polo";
-                break;
-            case 3:
-                transaction.subscriptionId = "Magellan";
-                break;
-            default:
-                break;
-        }
-    });
 
 	console.log("TR: ", transactions);
 
@@ -109,7 +90,7 @@ const Transactions = () => {
                                     ).toLocaleDateString()}{" "}
                                 </td>
                                 <td className="h-12 text-sm">
-                                    {transaction.subscriptionId}
+                                    {transaction.subscription.plan.name}
                                 </td>
                                 <td className="h-12 text-sm">
                                     {transaction.amount} ADCO
