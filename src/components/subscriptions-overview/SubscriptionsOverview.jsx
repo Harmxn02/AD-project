@@ -3,7 +3,7 @@ import SubscriptionsOverviewCard from "@/components/subscriptions-overview/Subsc
 
 const SubscriptionsOverview = () => {
 	return (
-		<div className="px-8 py-6 bg-gradient-to-t from-gray-200 to-white">
+		<div className="min-h-screen px-8 py-6 bg-gradient-to-t from-gray-200 to-white">
 			<header className="flex items-center gap-2 mb-3">
 				<Link href="/" className="flex items-center gap-2">
 					<h1 className="text-black text-2xl font-bold">X-Plor</h1>
