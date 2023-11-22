@@ -10,8 +10,8 @@ import ExitIcon from "../../../public/icons/exit.svg";
 
 const Sidebar = () => {
 	const pathname = usePathname();
-	const settingsPathname = "/settings"
-	const transactionsPathname = "/transactions"
+	const settingsPathname = "/settings";
+	const transactionsPathname = "/transactions";
 
 	return (
 		<header className="bg-white w-[250px] h-screen relative">
