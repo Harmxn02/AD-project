@@ -24,6 +24,11 @@ const SubscriptionsOverview = () => {
 					</svg>
 				</Link>
 			</header>
+			<main className="text-center">
+				<h3>Pricing</h3>
+				<h3>Simple and Transparant pricing</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sed sequi explicabo. Assumenda, enim in laudantium aut est quibusdam facilis.</p>
+			</main>
 		</div>
 	);
 };
