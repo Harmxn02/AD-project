@@ -1,6 +1,67 @@
 import Link from "next/link";
 import SubscriptionsOverviewCard from "@/components/subscriptions-overview/SubscriptionsOverviewCard";
 
+const subscriptionPlans = [
+	{
+		id: 1,
+		name: "Lewis & Clark",
+		description:
+			"Soar into adventure with 10 flight hours, expert training, and support.",
+		price: "21.99",
+		period: "month",
+		features: [
+			"10 hours flight time",
+			"Specialized training",
+			"Customer support",
+			"Max 1 rental per week",
+		],
+	},
+	{
+		id: 2,
+		name: "Marco Polo",
+		description:
+			"Elevate your journey with 24 hours of flight, plus priority access.",
+		price: "44.99",
+		period: "month",
+		features: [
+			"Comprehensive benefits from Lewis & Clark",
+			"24/7 access to customer support",
+			"Exclusive discounts on additional rentals",
+			"Customized travel recommendations",
+			"Access to members-only events and experiences",
+		],
+	},
+	{
+		id: 3,
+		name: "Magellan",
+		description:
+			"Unleash boundless exploration with 48 hours, 24/7 support, and unlimited rentals.",
+		price: "84.99",
+		period: "month",
+		features: [
+			"Unmatched perks from Marco Polo tier",
+			"48 hours of flexible flight time every month",
+			"24/7 concierge-level customer support",
+			"Exclusive access to premium destinations",
+			"Unlimited opportunities for spontaneous adventures",
+			"Personalized VIP travel consultations",
+		],
+	},
+	{
+		id: 4,
+		name: "Quick Explore",
+		description:
+			"Dive into discovery at just $3.29 per hour. Start exploring now!",
+		price: "3.29",
+		period: "hour",
+		features: [
+			"Discover with no strings attached",
+			"Seamless trial experience, no commitment",
+			"Pay-as-you-go adventure, zero waste",
+		],
+	},
+];
+
 const SubscriptionsOverview = () => {
 	return (
 		<div className="min-h-screen px-8 py-6 bg-gradient-to-t from-gray-200 to-white">
@@ -42,56 +103,16 @@ const SubscriptionsOverview = () => {
 					</p>
 				</div>
 				<section className="flex w-full gap-12 mt-12 justify-between">
-					<SubscriptionsOverviewCard
-						name="Lewis & Clark"
-						description="Soar into adventure with 10 flight hours, expert training, and support."
-						price="21.99"
-						period="month"
-						features={[
-							"10 hours flight time",
-							"Specialized training",
-							"Customer support",
-							"Max 1 rental per week",
-						]}
-					/>
-					<SubscriptionsOverviewCard
-						name="Marco Polo"
-						description="Elevate your journey with 24 hours of flight, plus priority access."
-						price="44.99"
-						period="month"
-						features={[
-							"Comprehensive benefits from Lewis & Clark",
-							"24/7 access to customer support",
-							"Exclusive discounts on additional rentals",
-							"Customized travel recommendations",
-							"Access to members-only events and experiences",
-						]}
-					/>
-					<SubscriptionsOverviewCard
-						name="Magellan"
-						description="Unleash boundless exploration with 48 hours, 24/7 support, and unlimited rentals."
-						price="84.99"
-						period="month"
-						features={[
-							"Unmatched perks from Marco Polo tier",
-							"48 hours of flexible flight time every month",
-							"24/7 concierge-level customer support",
-							"Exclusive access to premium destinations",
-							"Unlimited opportunities for spontaneous adventures",
-							"Personalized VIP travel consultations",
-						]}
-					/>
-					<SubscriptionsOverviewCard
-						name="Quick Explore"
-						description="Dive into discovery at just $3.29 per hour. Start exploring now!"
-						price="3.29"
-						period="hour"
-						features={[
-							"Discover with no strings attached",
-							"Seamless trial experience, no commitment",
-							"Pay-as-you-go adventure, zero waste",
-						]}
-					/>
+					{subscriptionPlans.map((plan) => (
+						<SubscriptionsOverviewCard
+							key={plan.id}
+							name={plan.name}
+							description={plan.description}
+							price={plan.price}
+							period={plan.period}
+							features={plan.features}
+						/>
+					))}
 				</section>
 			</main>
 		</div>
