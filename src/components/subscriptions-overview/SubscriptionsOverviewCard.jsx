@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Link from "next/link";
 import Image from "next/image";
 
-const SubscriptionsOverviewCard = ({ name, description, price, features }) => {
+const SubscriptionsOverviewCard = ({ name, description, price, period, features }) => {
   SubscriptionsOverviewCard.propTypes = {
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
@@ -17,7 +17,7 @@ const SubscriptionsOverviewCard = ({ name, description, price, features }) => {
       <h3 className="text-[1.5rem]">{name}</h3>
       <p className="text-[0.875rem] text-brandBlack">{description}</p>
       <p className="text-[2rem] my-6 font-semibold">
-        ADCO {price} <span className="text-[1rem] text-brandBlack font-normal">/{preiod}</span>
+        ADCO {price} <span className="text-[1rem] text-brandBlack font-normal">/{period}</span>
       </p>
       <Link
         href="/settings/subscriptions"
