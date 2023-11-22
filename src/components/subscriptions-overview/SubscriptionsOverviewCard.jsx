@@ -8,6 +8,7 @@ const SubscriptionsOverviewCard = ({ name, description, price, features }) => {
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
+    period: PropTypes.string.isRequired,
     features: PropTypes.array.isRequired,
   };
 
@@ -16,7 +17,7 @@ const SubscriptionsOverviewCard = ({ name, description, price, features }) => {
       <h3 className="text-[1.5rem]">{name}</h3>
       <p className="text-[0.875rem] text-brandBlack">{description}</p>
       <p className="text-[2rem] my-6 font-semibold">
-        ADCO {price} <span className="text-[1rem] text-brandBlack font-normal">/month</span>
+        ADCO {price} <span className="text-[1rem] text-brandBlack font-normal">/{preiod}</span>
       </p>
       <Link
         href="/settings/subscriptions"
