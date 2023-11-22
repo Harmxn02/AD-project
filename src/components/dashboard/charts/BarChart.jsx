@@ -3,38 +3,38 @@ import Chart from "chart.js/auto";
 import PropTypes from "prop-types";
 
 const BarChart = (props) => {
-	const chartRef = useRef(null);
+    const chartRef = useRef(null);
 
-	useEffect(() => {
-		const ctx = chartRef.current.getContext("2d");
-		const myChart = new Chart(ctx, {
-			type: "bar",
-			data: {
-				labels: props.labels,
-				datasets: props.dataObject,
-			},
-			options: {
-				maintainAspectRatio: false,
-				scales: {
-					y: {
-						beginAtZero: true,
-						ticks: {
-							stepSize: 5,
-						},
-					},
-				},
-				plugins: {
-					legend: false,
-				},
-			},
-		});
+    useEffect(() => {
+        const ctx = chartRef.current.getContext("2d");
+        const myChart = new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: props.labels,
+                datasets: props.dataObject,
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 5,
+                        },
+                    },
+                },
+                plugins: {
+                    legend: false,
+                },
+            },
+        });
 
-		return () => {
-			myChart.destroy();
-		};
-	}, [props.dataObject, props.labels]);
+        return () => {
+            myChart.destroy();
+        };
+    }, []);
 
-	return <canvas ref={chartRef}></canvas>;
+    return <canvas ref={chartRef}></canvas>;
 };
 
 BarChart.propTypes = {

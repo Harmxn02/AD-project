@@ -25,29 +25,30 @@ const Statistics = ({ activeButton }) => {
     },
   ];
 
-  let dataToRender;
-  let prefixTitle;
+	let dataToRender;
+	let prefixTitle;
 
-  switch (activeButton) {
-    case "DAY":
-      dataToRender = data; // later we add daily data to this
-      prefixTitle = "Daily";
-      break;
-    case "WEEK":
-      dataToRender = data; // later we add weekly data to this
-      prefixTitle = "Weekly";
-      break;
-    case "MONTH":
-      dataToRender = data; // later we add monthly data to this
-      prefixTitle = "Monthly";
-      break;
-    case "YEAR":
-      dataToRender = data; // later we add yearly data to this
-      prefixTitle = "Yearly";
-      break;
-    default:
-      break;
-  }
+	switch (activeButton) {
+		case "DAY":
+			dataToRender = data; //later we add daily data to this
+			prefixTitle = "Daily";
+			break;
+		case "WEEK":
+			dataToRender = data; //later we add weekly data to this
+			prefixTitle = "Weekly";
+			break;
+		case "MONTH":
+			dataToRender = data; //later we add monthly data to this
+			prefixTitle = "Monthly";
+			break;
+		case "YEAR":
+			dataToRender = data; //later we add yearly data to this
+			prefixTitle = "Yearly";
+			break;
+		default:
+			dataToRender = data;
+			prefixTitle = "Daily";
+	}
 
   return (
     <section>
