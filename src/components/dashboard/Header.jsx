@@ -70,7 +70,7 @@ const Header = ({ activeButton, onButtonClick }) => {
                 onClick={handleFullscreenToggle}
             >
                 {isFullscreen ? " EXIT FULLSCREEN" : " ENTER FULLSCREEN"}
-				<Image
+                <Image
                     src={`/icons/${
                         isFullscreen ? "exit-fullscreen" : "fullscreen"
                     }.svg`}
