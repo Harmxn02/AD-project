@@ -51,7 +51,6 @@ const SubscriptionCard = ({ price, name, isLast, children }) => {
 						Every month you have access to:
 					</p>
 					<ul
-						role="list"
 						className={`mb-8  space-y-4 text-left h-44
 					
 						${isLast ? "text-white" : " text-black"}`}
