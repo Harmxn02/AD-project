@@ -97,14 +97,14 @@ const Homescreen = () => {
 					<div className="flex flex-col justify-center items-center xl:flex-row gap-3">
 						<Link
 							href="/dashboard"
-							className="text-white rounded-md max-w-fit font-semibold bg-blue-600 hover:bg-[#0000FF] px-12 py-3"
+							className="text-white rounded-md max-w-fit font-semibold bg-[#3c46ff] hover:bg-blue-600 px-12 py-3"
 						>
 							Enter dashboard
 						</Link>
 
 						<Link
 							href="/explore-plans"
-							className="text-white rounded-md max-w-fit font-semibold bg-blue-600 hover:bg-[#0000FF] px-12 py-3"
+							className="text-white rounded-md max-w-fit font-semibold bg-[#3c46ff] hover:bg-blue-600 px-12 py-3"
 						>
 							Explore plans
 						</Link>
