@@ -58,7 +58,7 @@ const RecentFinds = () => {
 								<p className="text-brandBlack font-semibold">
 									{`${find.latitude}° N, ${find.longitude}° E`}
 								</p>
-								<p className="font-bold text-sm">{find.date}</p>
+								<p className="font-bold text-sm">{new Date(find.date).toLocaleDateString()}</p>
 							</div>
 						</div>
 					);
