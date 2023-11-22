@@ -8,7 +8,7 @@ const SubscriptionCard = ({ price, name, isLast, children }) => {
 		isLast: PropTypes.bool.isRequired, // isLast should be a boolean and is required
 		children: PropTypes.node, // children can be any valid React node
 	};
-	
+
 	const sharedButtonStyles = "px-5 py-3 text-center";
 
 	return (
@@ -57,11 +57,12 @@ const SubscriptionCard = ({ price, name, isLast, children }) => {
 					>
 						{children}
 					</ul>
-					<a href="#" className={isLast ? sharedButtonStyles : `text-white bg-[#2C2C2C] font-medium px-5 py-3 text-center ${sharedButtonStyles}`}>
-						{
-							isLast ? 'Current plan' : `Switch to ${name}`
-						}
-					</a>
+					{
+							isLast ?
+							<p className={sharedButtonStyles}>
+								Current plan
+							</p> : <a href="#" className={`text-white bg-[#2C2C2C] font-medium px-5 py-3 text-center ${sharedButtonStyles}`}>{`Switch to ${name}`}</a>
+					}
 				</div>
 			</div>
 		</div>
