@@ -1,6 +1,6 @@
 import React from "react";
 import Title from "@/components/utility/Title";
-import Image from "../../../node_modules/next/image";
+import Image from "next/image";
 
 const RecentXplorations = () => {
 	const recent_xplorations = [

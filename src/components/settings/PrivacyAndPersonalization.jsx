@@ -1,7 +1,7 @@
 import React from "react";
 import Title from "@/components/utility/Title";
 import Toggle from "@/components/utility/Toggle";
-import Image from "../../../node_modules/next/image";
+import Image from "next/image";
 
 import Payment from "../../../public/icons/section_icons/payment.svg";
 import Marketing from "../../../public/icons/section_icons/marketing.svg";
