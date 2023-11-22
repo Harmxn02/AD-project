@@ -24,12 +24,18 @@ const Transactions = () => {
 	until the API is updated with the correct information, this is a temporary fix */
 
 	transactions.forEach((transaction) => {
-		if (transaction.subscriptionId === 1) {
-			transaction.subscriptionId = "Lewis and Clark";
-		} else if (transaction.subscriptionId === 2) {
-			transaction.subscriptionId = "Marco Polo";
-		} else if (transaction.subscriptionId === 3) {
-			transaction.subscriptionId = "Magellan";
+		switch (transaction.subscriptionId) {
+			case 1:
+				transaction.subscriptionId = "Lewis and Clark";
+				break;
+			case 2:
+				transaction.subscriptionId = "Marco Polo";
+				break;
+			case 3:
+				transaction.subscriptionId = "Magellan";
+				break;
+			default:
+				break;
 		}
 	});
 
