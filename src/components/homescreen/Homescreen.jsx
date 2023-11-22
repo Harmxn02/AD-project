@@ -9,30 +9,28 @@ const Homescreen = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const splashText = [
 		{
-			title: 	"Escape Gravity, Explore Earth",
+			title: "Escape Gravity, Explore Earth",
 			subtitle: "our Gateway to Ravaged Beauty!",
 		},
 		{
-			title: 	"Unleash Your Inner Explorer",
+			title: "Unleash Your Inner Explorer",
 			subtitle: "Drone Rentals for Earth's Echoes.",
 		},
 		{
-			title: 	"Beyond the Stars, Within Your Reach",
+			title: "Beyond the Stars, Within Your Reach",
 			subtitle: "Roam Earth's Remnants with Our Drones!",
 		},
-
 	];
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
-		  // Increment the index after 3 seconds
-		  setCurrentIndex((prevIndex) => (prevIndex + 1) % splashText.length);
+			// Increment the index after 3 seconds
+			setCurrentIndex((prevIndex) => (prevIndex + 1) % splashText.length);
 		}, 5000);
-	
+
 		// Clear the timeout to avoid memory leaks
 		return () => clearTimeout(timer);
-	  }, [currentIndex, splashText.length]);
-	
+	}, [currentIndex, splashText.length]);
 
 	return (
 		<div className="h-screen w-screen relative">
@@ -66,10 +64,13 @@ const Homescreen = () => {
 					</nav>
 
 					<div className="pt-80 px-8 text-[#d292ff] text-4xl">
-						<p className="font-bold py-2 first-letter:uppercase lowercase">{splashText[currentIndex].title}</p>
-						<p className="font-normal lowercase">{splashText[currentIndex].subtitle}</p>	
+						<p className="font-bold py-2 first-letter:uppercase lowercase">
+							{splashText[currentIndex].title}
+						</p>
+						<p className="font-normal lowercase">
+							{splashText[currentIndex].subtitle}
+						</p>
 					</div>
-
 				</div>
 
 				<div className="relative w-2/5 bg-black flex flex-col gap-4 justify-center items-center">
