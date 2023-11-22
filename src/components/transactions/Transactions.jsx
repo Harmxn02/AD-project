@@ -12,10 +12,6 @@ const Transactions = () => {
 
 	if (transactions === null) {
 		// this prevents map from not working, because the data is empty
-		console.log(
-			"When this component was rendered, transactions == ",
-			transactions
-		);
 		return <Loading />;
 	}
 
@@ -39,7 +35,6 @@ const Transactions = () => {
 		}
 	});
 
-	console.log("TR: ", transactions);
 
 	const auction_proceeds = [
 		{
