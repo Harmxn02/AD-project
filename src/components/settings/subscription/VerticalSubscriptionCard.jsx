@@ -19,7 +19,7 @@ const VerticalSubscriptionCard = () => {
 
 				<a
 					href="#"
-					className="text-white bg-[#2C2C2C] font-medium px-5 py-3 text-center "
+					className="text-white bg-planButtons font-medium px-5 py-3 text-center "
 				>
 					Start exploring now!
 				</a>
