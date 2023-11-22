@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const ListItem = (props) => {
 	return (
@@ -18,6 +19,10 @@ const ListItem = (props) => {
 			<span>{props.content}</span>
 		</li>
 	);
+};
+
+ListItem.propTypes = {
+	content: PropTypes.string.isRequired,
 };
 
 export default ListItem;
