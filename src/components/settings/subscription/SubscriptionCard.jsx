@@ -1,6 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
+import PropTypes from 'prop-types';
 
 const SubscriptionCard = ({ price, name, isLast, children }) => {
+	SubscriptionCard.propTypes = {
+		price: PropTypes.number.isRequired, // price should be a number and is required
+		name: PropTypes.string.isRequired, // name should be a string and is required
+		isLast: PropTypes.bool.isRequired, // isLast should be a boolean and is required
+		children: PropTypes.node, // children can be any valid React node
+	};
+	
 	const sharedButtonStyles = "px-5 py-3 text-center";
 
 	return (
