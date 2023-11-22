@@ -32,22 +32,22 @@ const BarChart = (props) => {
         return () => {
             myChart.destroy();
         };
-    }, []);
+    }, [props.dataObject, props.labels]);
 
     return <canvas ref={chartRef}></canvas>;
 };
 
 BarChart.propTypes = {
-	labels: PropTypes.arrayOf(PropTypes.string).isRequired,
-	dataObject: PropTypes.arrayOf(
-		PropTypes.shape({
-			label: PropTypes.string.isRequired,
-			data: PropTypes.arrayOf(PropTypes.number).isRequired,
-			backgroundColor: PropTypes.string.isRequired,
-			borderColor: PropTypes.string.isRequired,
-			borderWidth: PropTypes.number.isRequired,
-		})
-	).isRequired,
+    labels: PropTypes.arrayOf(PropTypes.string).isRequired,
+    dataObject: PropTypes.arrayOf(
+        PropTypes.shape({
+            label: PropTypes.string.isRequired,
+            data: PropTypes.arrayOf(PropTypes.number).isRequired,
+            backgroundColor: PropTypes.string.isRequired,
+            borderColor: PropTypes.string.isRequired,
+            borderWidth: PropTypes.number.isRequired,
+        })
+    ).isRequired,
 };
 
 export default BarChart;
