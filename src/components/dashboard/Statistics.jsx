@@ -44,8 +44,7 @@ const Statistics = ({ activeButton }) => {
 			prefixTitle = "Yearly";
 			break;
 		default:
-			dataToRender = data;
-			prefixTitle = "Daily";
+			break;
 	}
 
 	return (
