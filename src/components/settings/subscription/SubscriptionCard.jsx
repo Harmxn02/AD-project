@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
 const SubscriptionCard = ({ price, name, isLast, children }) => {
+	const sharedButtonStyles = "px-5 py-3 text-center";
+
 	return (
 		<div className="grid-cols-1">
 			<div className="mx-auto py-10">
 				<div
-					className={`flex flex-col mx-auto w-[22rem] text-center text-gray-900 border border-gray-100 shadow p-8 
+					className={`flex flex-col mx-auto w-[22rem] text-center text-gray-900 border border-gray-100 shadow p-8
 						${isLast ? "bg-[#3E3E3E] text-white" : "bg-white text-black"}`}
 				>
 					<h3
 						className={`mb-4 text-2xl text-left font-medium
 						${isLast ? "bg-[#3E3E3E] text-white" : "bg-white text-black"}
-						
+
 						`}
 					>
 						{name}
@@ -43,18 +45,14 @@ const SubscriptionCard = ({ price, name, isLast, children }) => {
 						Every month you have access to:
 					</p>
 					<ul
-						role="list"
-						className={`mb-8  space-y-4 text-left h-44
-					
-						${isLast ? "text-white" : " text-black"}`}
+						className={`mb-8 space-y-4 text-left h-44 ${isLast ? "text-white" : " text-black"}`}
 					>
 						{children}
 					</ul>
-					<a
-						href="#"
-						className="text-white bg-[#2C2C2C] font-medium px-5 py-3 text-center "
-					>
-						Get started
+					<a href="#" className={isLast ? sharedButtonStyles : `text-white bg-[#2C2C2C] font-medium px-5 py-3 text-center ${sharedButtonStyles}`}>
+						{
+							isLast ? 'Current plan' : `Switch to ${name}`
+						}
 					</a>
 				</div>
 			</div>
