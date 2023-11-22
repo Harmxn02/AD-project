@@ -11,14 +11,17 @@ const Homescreen = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const splashText = [
 		{
+			id: 1,
 			title: "Escape Gravity, Explore Earth",
 			subtitle: "our Gateway to Ravaged Beauty ",
 		},
 		{
+			id: 2,
 			title: "Unleash Your Inner Explorer",
 			subtitle: "Drone Rentals for Earth's Echoes ",
 		},
 		{
+			id: 3,
 			title: "Beyond the Stars, Within Your Reach",
 			subtitle: "Roam Earth's Remnants with Our Drones ",
 		},
