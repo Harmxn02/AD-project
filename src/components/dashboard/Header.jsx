@@ -30,18 +30,22 @@ const Header = ({ activeButton, onButtonClick }) => {
 
 	const buttons = [
 		{
+            id: 1,
 			title: "DAY",
 			action: "#",
 		},
 		{
+            id: 2,
 			title: "WEEK",
 			action: "#",
 		},
 		{
+            id: 3,
 			title: "MONTH",
 			action: "#",
 		},
 		{
+            id: 4,
 			title: "YEAR",
 			action: "#",
 		},
