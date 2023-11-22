@@ -83,7 +83,7 @@ const Transactions = () => {
     return (
         <section>
             <Title content="Transactions" />
-            <div className="bg-white w-full px-8 pb-6 mb-12 max-h-[400px] overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent shadow">
+            <div className="bg-white w-full px-8 pb-6 mb-12 max-h-[335px] overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent shadow">
                 <table>
                     <thead className="sticky top-0 bg-white w-full">
                         <tr className="text-left">
@@ -126,7 +126,7 @@ const Transactions = () => {
             </div>
 
             <Title content="Auction Proceeds" />
-            <div className="bg-white w-full px-8 pb-6 max-h-[260px] overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent shadow">
+            <div className="bg-white w-full px-8 pb-6 max-h-[335px] overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent shadow">
                 <table>
                     <thead className="sticky top-0 bg-white w-full">
                         <tr className="text-left">
