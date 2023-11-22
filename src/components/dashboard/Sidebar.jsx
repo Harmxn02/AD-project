@@ -50,7 +50,7 @@ const Sidebar = () => {
 							href="/dashboard"
 							className={`flex items-center gap-4 ${
 								pathname.startsWith("/dashboard")
-									? "text-[#62A0AA]"
+									? "text-brandCyan"
 									: "text-brandBlack"
 							}`}
 						>
@@ -84,7 +84,7 @@ const Sidebar = () => {
 							href={transactionsPathname}
 							className={`flex items-center gap-4 ${
 								pathname.startsWith(transactionsPathname)
-									? "text-[#62A0AA]"
+									? "text-brandCyan"
 									: "text-brandBlack"
 							}`}
 						>
@@ -117,7 +117,7 @@ const Sidebar = () => {
 							href={settingsPathname}
 							className={`flex items-center gap-4 ${
 								pathname.startsWith(settingsPathname)
-									? "text-[#62A0AA]"
+									? "text-brandCyan"
 									: "text-brandBlack"
 							}`}
 						>
