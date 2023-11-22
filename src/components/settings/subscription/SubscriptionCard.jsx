@@ -1,6 +1,14 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const SubscriptionCard = ({ price, name, isLast, children }) => {
+	SubscriptionCard.propTypes = {
+		price: PropTypes.number.isRequired, // price should be a number and is required
+		name: PropTypes.string.isRequired, // name should be a string and is required
+		isLast: PropTypes.bool.isRequired, // isLast should be a boolean and is required
+		children: PropTypes.node, // children can be any valid React node
+	};
+
 	return (
 		<div className="grid-cols-1">
 			<div className="mx-auto py-10">
@@ -30,9 +38,10 @@ const SubscriptionCard = ({ price, name, isLast, children }) => {
 						</span>
 						<span className="text-gray-400">/month</span>
 					</div>
-					<div className={`h-px my-8 ${
-						isLast ? "bg-white" : " bg-black"
-					}`}
+					<div
+						className={`h-px my-8 ${
+							isLast ? "bg-white" : " bg-black"
+						}`}
 					></div>
 					<p
 						className={`text-left  font-medium mb-4 ${
