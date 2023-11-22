@@ -20,8 +20,8 @@ const Toggle = (props) => {
 };
 
 Toggle.propTypes = {
-	value: PropTypes.string.isRequired,
-	text: PropTypes.string.isRequired,
+	value: PropTypes.string,
+	text: PropTypes.string,
 };
 
 export default Toggle;
