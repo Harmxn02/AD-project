@@ -1,6 +1,9 @@
 import React from "react";
 import Title from "@/components/utility/Title";
-import Image from "../../../node_modules/next/image";
+
+import Image from "next/image";
+import { GetAPI } from "../../assets/js/api";
+import Loading from "@/components/utility/Loading";
 
 import Red from "../../../public/icons/finds_toAuction.svg";
 import Green from "../../../public/icons/finds_sold.svg";
