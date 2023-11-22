@@ -7,15 +7,15 @@ const Homescreen = () => {
 
 	const splashText = [
 		{
-			title: 	"Escape Gravity, Explore Earth: ",
+			title: 	"Escape Gravity, Explore Earth",
 			subtitle: "our Gateway to Ravaged Beauty!",
 		},
 		{
-			title: 	"Unleash Your Inner Explorer: ",
+			title: 	"Unleash Your Inner Explorer",
 			subtitle: "Drone Rentals for Earth's Echoes.",
 		},
 		{
-			title: 	"Beyond the Stars, Within Your Reach: ",
+			title: 	"Beyond the Stars, Within Your Reach",
 			subtitle: "Roam Earth's Remnants with Our Drones!",
 		},
 
@@ -52,10 +52,13 @@ const Homescreen = () => {
 						</svg>
 					</nav>
 
-					<div className="pt-60 px-8 text-[#d292ff] text-4xl">
-						<p className="font-bold py-2">Give me ideas</p>
-						<p className="font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-					</div>
+					{splashText.map((splash) => (
+						<div key={splash.id} className="pt-80 px-8 text-[#d292ff] text-4xl">
+							<p className="font-bold py-2 first-letter:uppercase lowercase">{splash.title}</p>
+							<p className="font-normal lowercase">{splash.subtitle}</p>	
+						</div>
+					))}
+
 				</div>
 
 				<div className="relative w-2/5 bg-black flex flex-col gap-4 justify-center items-center">
