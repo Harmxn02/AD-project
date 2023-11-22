@@ -22,6 +22,7 @@ const Sidebar = () => {
 					width={80}
 					height={80}
 					className="w-[80px] h-[80px] rounded-full m-auto mb-4"
+					priority
 				/>
 				<h3 className="text-brandCyan font-bold">Alexander Karpenko</h3>
 				<h3 className="text-[0.875rem] text-brandBlack">
