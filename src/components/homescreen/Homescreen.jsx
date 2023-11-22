@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import LOGO from "../../app/icon.svg";
 import Link from "next/link";
 
-import { Typewriter } from 'react-simple-typewriter'
+import { Typewriter } from "react-simple-typewriter";
 
 const Homescreen = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -42,7 +42,7 @@ const Homescreen = () => {
 			<div className="w-screen h-screen flex">
 				<div className="w-3/5 bg-[#00002e]">
 					{/* LEFT */}
-					<nav className="absolute z-10 bg-[#00002e] flex items-center gap-2 px-8 py-6">
+					<nav className="h-[10vh] z-10 bg-[#00002e] flex items-center gap-2 px-8 py-6">
 						<h1 className="text-[#d292ff] text-2xl font-bold">
 							X-Plor
 						</h1>
@@ -68,9 +68,12 @@ const Homescreen = () => {
 						</svg>
 					</nav>
 
+					<div className="h-[90vh] flex flex-col text-4xl justify-center px-8 text-[#d292ff] ">
 						<p className="text-sm opacity-50">
 							{splashText[currentIndex].id} / {splashText.length}
 						</p>
+
+						<p className="font-bold py-2 first-letter:uppercase lowercase">
 							{splashText[currentIndex].title}
 						</p>
 
@@ -80,14 +83,12 @@ const Homescreen = () => {
 								words={[splashText[currentIndex].subtitle]}
 								loop={5}
 								cursor
-								cursorStyle='_'
+								cursorStyle="_"
 								typeSpeed={30}
 								deleteSpeed={10000}
 								delaySpeed={2000}
 							/>
 						</span>
-
-
 					</div>
 				</div>
 
