@@ -102,7 +102,7 @@ const Homescreen = () => {
 					{/* RIGHT */}
 					<p className="text-white text-3xl font-bold">Get started</p>
 
-					<div className="flex gap-3">
+					<div className="flex flex-col justify-center items-center xl:flex-row gap-3">
 						<Link
 							href="/dashboard"
 							className="text-white rounded-md max-w-fit font-semibold bg-blue-600 hover:bg-[#0000FF] px-12 py-3"
