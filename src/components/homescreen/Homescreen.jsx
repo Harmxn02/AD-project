@@ -1,10 +1,12 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import LOGO from "../../app/icon.svg";
 import Link from "next/link";
 
 const Homescreen = () => {
-
+	const [currentIndex, setCurrentIndex] = useState(0);
 	const splashText = [
 		{
 			title: 	"Escape Gravity, Explore Earth",
@@ -19,7 +21,18 @@ const Homescreen = () => {
 			subtitle: "Roam Earth's Remnants with Our Drones!",
 		},
 
-	]
+	];
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+		  // Increment the index after 3 seconds
+		  setCurrentIndex((prevIndex) => (prevIndex + 1) % splashText.length);
+		}, 5000);
+	
+		// Clear the timeout to avoid memory leaks
+		return () => clearTimeout(timer);
+	  }, [currentIndex, splashText.length]);
+	
 
 	return (
 		<div className="h-screen w-screen relative">
@@ -52,12 +65,10 @@ const Homescreen = () => {
 						</svg>
 					</nav>
 
-					{splashText.map((splash) => (
-						<div key={splash.id} className="pt-80 px-8 text-[#d292ff] text-4xl">
-							<p className="font-bold py-2 first-letter:uppercase lowercase">{splash.title}</p>
-							<p className="font-normal lowercase">{splash.subtitle}</p>	
-						</div>
-					))}
+					<div className="pt-80 px-8 text-[#d292ff] text-4xl">
+						<p className="font-bold py-2 first-letter:uppercase lowercase">{splashText[currentIndex].title}</p>
+						<p className="font-normal lowercase">{splashText[currentIndex].subtitle}</p>	
+					</div>
 
 				</div>
 
