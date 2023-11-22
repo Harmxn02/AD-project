@@ -98,7 +98,7 @@ const Homescreen = () => {
 					</div>
 				</div>
 
-				<div className="relative w-2/5 bg-black flex flex-col gap-4 justify-center items-center">
+				<div className="w-2/5 bg-black flex flex-col gap-8 justify-center items-center">
 					{/* RIGHT */}
 					<p className="text-white text-3xl font-bold">Get started</p>
 
