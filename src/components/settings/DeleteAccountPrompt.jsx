@@ -1,7 +1,7 @@
 import React from "react";
 import Title from "@/components/utility/Title";
 import Link from "next/link";
-import Image from "../../../node_modules/next/image";
+import Image from "next/image";
 
 import Danger from "../../../public/icons/section_icons/danger.svg";
 
