@@ -28,7 +28,7 @@ const SubscriptionsOverviewCard = ({ name, description, price, period, features 
       <div className="w-full bg-gray-200 h-[1px] my-6"></div>
       <ul className="flex flex-col gap-5">
         {features.map((feature) => (
-          <li className="flex items-center space-x-3">
+          <li className="flex items-center space-x-3" key={feature}>
             <svg
               className="flex-shrink-0 w-5 h-5 text-green-500 mr-3"
               fill="currentColor"
