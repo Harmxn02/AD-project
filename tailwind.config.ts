@@ -12,6 +12,9 @@ const config: Config = {
         brandCyan: "#62A0AA",
         brandBlack: "#4C4C4C",
 
+        // used for background of entire client
+        brandGrey: "#FAFAFA",
+
         // used for the most expensive plans
         brandBackground: "#3E3E3E",
       },

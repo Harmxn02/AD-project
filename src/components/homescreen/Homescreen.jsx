@@ -47,8 +47,6 @@ const Homescreen = () => {
 							X-Plor
 						</h1>
 
-						{/* <Image alt="logo" className="h-6 w-6" src={LOGO} /> */}
-
 						<svg
 							className="h-6 w-6"
 							width="349"

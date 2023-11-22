@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Button = (props) => {
 	const buttonStyle = {
@@ -14,6 +15,12 @@ const Button = (props) => {
 			{props.content}
 		</a>
 	);
+};
+
+Button.propTypes = {
+	backgroundColor: PropTypes.string.isRequired,
+	href: PropTypes.string.isRequired,
+	content: PropTypes.string.isRequired,
 };
 
 export default Button;
