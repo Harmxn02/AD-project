@@ -34,6 +34,11 @@ const Homescreen = () => {
 							/>
 						</svg>
 					</nav>
+
+					<div className="pt-60 px-8 text-[#d292ff] text-4xl">
+						<p className="font-bold py-2">Give me ideas</p>
+						<p className="font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+					</div>
 				</div>
 
 				<div className="relative w-2/5 bg-black flex flex-col gap-4 justify-center items-center">
@@ -47,14 +52,13 @@ const Homescreen = () => {
 						>
 							Enter dashboard
 						</Link>
-						
+
 						<Link
 							href="/explore-plans"
 							className="text-white rounded-md max-w-fit font-semibold bg-blue-600 hover:bg-[#0000FF] px-12 py-3"
 						>
 							Explore plans
 						</Link>
-
 					</div>
 
 					<div className="absolute flex flex-col justify-center gap-6 bottom-10">
