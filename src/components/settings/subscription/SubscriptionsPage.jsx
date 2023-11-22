@@ -16,7 +16,6 @@ const SubscriptionsPage = () => {
 
 	if (plans === null) {
 		// this prevents map from not working if the data is empty
-		console.log("When this component was rendered, plans == ", plans);
 		return <Loading />;
 	}
 
@@ -36,7 +35,7 @@ const SubscriptionsPage = () => {
 							name={subscription.name}
 						>
 							{subscription.perks.map((perk) => (
-								<ListItem key={perk.id} content={perk} />
+								<ListItem key={perk} content={perk} />
 							))}
 						</SubscriptionCard>
 					))

@@ -10,14 +10,9 @@ import { GetAPI } from "../../assets/js/api";
 const Transactions = () => {
     const transactions = GetAPI("/transactions");
 
-    if (transactions === null) {
-        // this prevents map from not working, because the data is empty
-        console.log(
-            "When this component was rendered, transactions == ",
-            transactions
-        );
-        return <Loading />;
-    }
+	if (transactions === null) {
+		return <Loading />;
+	}
 
     /* TEMPORARY FIX for API giving "incorrect" data.
 	the Subscription field should return the name of the subscription instead of just the subscriptionId
@@ -39,7 +34,7 @@ const Transactions = () => {
         }
     });
 
-    console.log("TR: ", transactions);
+	console.log("TR: ", transactions);
 
     const auction_proceeds = [
         {
