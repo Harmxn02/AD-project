@@ -67,7 +67,7 @@ const PrivacyAndPersonalization = () => {
 								Marketing Communication
 							</h3>
 							<p className="font-light">
-								Learn about new courses and programs,
+								Learn about new exploration areas,
 								scholarship opportunities and upcoming special
 								events.
 							</p>
