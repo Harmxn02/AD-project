@@ -117,9 +117,9 @@ const Homescreen = () => {
 						</div>
 
 						<div className="flex gap-3 items-center text-xs text-brandLightGrey">
-							<p>Terms of use</p>
+							<p className="hover:text-white transition-colors duration-500 cursor-not-allowed">Terms of use</p>
 							<p className="text-[0.5rem]">|</p>
-							<p>Privacy policy</p>
+							<p className="hover:text-white transition-colors duration-500 cursor-not-allowed">Privacy policy</p>
 						</div>
 					</div>
 				</div>
