@@ -7,6 +7,11 @@ import Loading from "@/components/utility/Loading";
 
 import { GetAPI } from "../../assets/js/api";
 
+
+// TODO: get server people to change timestamps in Transactions (API) endpoint to be in the year 2084
+// TODO: get server people to implement Auction Proceeds (API) endpoint
+
+
 const Transactions = () => {
     const transactions = GetAPI("/transactions");
 
