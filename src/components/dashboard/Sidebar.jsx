@@ -30,15 +30,15 @@ const Sidebar = () => {
 				</h3>
 			</div>
 			<div className="grid grid-cols-2 text-center">
-				<div className="border-t border-r border-brandBlack px-3 py-2">
+				<div className="border-t border-r border-brandGrey px-3 py-2">
 					<h4 className="font-bold">Distance traveled</h4>
 					<p>315km</p>
 				</div>
-				<div className="border-t border-brandBlack px-3 py-2">
+				<div className="border-t border-brandGrey px-3 py-2">
 					<h4 className="font-bold">Minutes flown</h4>
 					<p>142</p>
 				</div>
-				<div className="border-t border-b border-brandBlack px-3 py-2 col-span-2">
+				<div className="border-t border-b border-brandGrey px-3 py-2 col-span-2">
 					<h4 className="font-bold">Items collected</h4>
 					<p>3</p>
 				</div>
