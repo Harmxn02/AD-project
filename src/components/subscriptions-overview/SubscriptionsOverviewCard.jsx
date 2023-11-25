@@ -21,7 +21,7 @@ const SubscriptionsOverviewCard = ({ name, description, price, period, features 
       </p>
       <Link
         href="/settings/subscriptions"
-        className="rounded-full border-2 border-black px-4 py-[0.375rem] inline-block"
+        className="rounded-lg border border-black px-4 py-[0.375rem] inline-block"
       >
         Buy {name} <Image src="/icons/arrow-right.svg" width={20} height={20} className="inline-block" alt="arrow right"/>
       </Link>
