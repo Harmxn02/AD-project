@@ -46,7 +46,7 @@ const RecentFinds = () => {
 					return (
 						<div
 							key={find.id}
-							className="h-16 bg-white shadow flex flex-row items-center justify-between gap-5"
+							className="h-16 bg-white shadow-md flex flex-row items-center justify-between gap-5"
 						>
 							<div
 								key={find.id}
