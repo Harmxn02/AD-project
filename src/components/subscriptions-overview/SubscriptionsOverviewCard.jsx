@@ -7,7 +7,7 @@ const SubscriptionsOverviewCard = ({ name, description, price, period, features 
 	SubscriptionsOverviewCard.propTypes = {
 		name: PropTypes.string.isRequired,
 		description: PropTypes.string.isRequired,
-		price: PropTypes.number.isRequired,
+		price: PropTypes.string.isRequired,
     period: PropTypes.string.isRequired,
 		features: PropTypes.array.isRequired,
 	};
