@@ -64,9 +64,9 @@ const subscriptionPlans = [
 
 const SubscriptionsOverview = () => {
 	return (
-		<div className="min-h-screen px-8 py-6 bg-gradient-to-t from-gray-200 to-white">
+		<div className="min-h-screen px-8 bg-gradient-to-t from-gray-200 to-white">
 			<header className="flex items-center gap-2 mb-3">
-				<Link href="/" className="flex items-center gap-2">
+				<Link href="/" className="h-[10vh] z-10 flex items-center gap-2">
 					<h1 className="text-black text-2xl font-bold">X-Plor</h1>
 					<svg
 						className="h-6 w-6"
