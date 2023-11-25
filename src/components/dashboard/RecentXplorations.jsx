@@ -47,8 +47,8 @@ const RecentXplorations = () => {
 							alt="country flag"
 						></Image>
 
-						<div className="w-3/6 flex items-center h-full border-black border-r-4">
-							<p className="font-bold text-lg">
+						<div className="w-3/6 flex items-center h-full border-r-4">
+							<p className="font-medium text-lg">
 								{exploration.countries_visited}
 							</p>
 						</div>
@@ -56,7 +56,7 @@ const RecentXplorations = () => {
 							<p className="text-brandBlack font-semibold">
 								{exploration.duration}
 							</p>
-							<p className="font-bold text-sm">
+							<p className="font-medium text-sm">
 								{exploration.date}
 							</p>
 						</div>

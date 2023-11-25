@@ -55,14 +55,14 @@ const RecentFinds = () => {
 								<Image alt="icon" src={image_url}></Image>
 							</div>
 
-							<div className="w-3/6 flex items-center h-full border-black border-r-4">
-								<p className="font-bold text-lg">{find.name}</p>
+							<div className="w-3/6 flex items-center h-full border-r-4">
+								<p className="font-medium text-lg">{find.name}</p>
 							</div>
 							<div className="w-3/6 flex flex-row justify-between items-center px-8">
 								<p className="text-brandBlack font-semibold">
 									{`${find.latitude}° N, ${find.longitude}° E`}
 								</p>
-								<p className="font-bold text-sm">{new Date(find.date).toLocaleDateString()}</p>
+								<p className="font-medium text-sm">{new Date(find.date).toLocaleDateString("en-GB")}</p>
 							</div>
 						</div>
 					);
