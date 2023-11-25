@@ -48,8 +48,9 @@ const PrivacyAndPersonalization = () => {
 								Send me messages for payment reminders.
 							</p>
 						</div>
-
-						<Toggle />
+						<div>
+							<Toggle text="Carrier Pigeon" />
+						</div>
 					</div>
 				</div>
 
