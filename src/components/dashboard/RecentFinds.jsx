@@ -34,6 +34,10 @@ const RecentFinds = () => {
 	return (
 		<>
 			<Title content="Recent finds" />
+			
+			<p className="font-light pb-4">
+				An overview of your recent finds during past X-plorations, including the coordinates where you found them and their status on the auction.
+			</p>
 
 			<div className="w-full flex flex-col gap-5">
 				{finds.map((find) => {
