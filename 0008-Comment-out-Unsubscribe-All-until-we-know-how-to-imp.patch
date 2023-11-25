@@ -1,0 +1,37 @@
+From 673a8190b043bf279325ac7edd5dd096805087ff Mon Sep 17 00:00:00 2001
+From: Harman Singh <harman.singh@student.howest.be>
+Date: Sat, 25 Nov 2023 19:45:38 +0100
+Subject: [PATCH 08/13] Comment out "Unsubscribe All"until we know how to
+ implement this
+
+---
+ src/components/settings/PrivacyAndPersonalization.jsx | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/src/components/settings/PrivacyAndPersonalization.jsx b/src/components/settings/PrivacyAndPersonalization.jsx
+index d131bae..f7c1c0e 100644
+--- a/src/components/settings/PrivacyAndPersonalization.jsx
++++ b/src/components/settings/PrivacyAndPersonalization.jsx
+@@ -15,7 +15,9 @@ const PrivacyAndPersonalization = () => {
+ 					<h3 className="text-xl font-medium">
+ 						Notification Preferences
+ 					</h3>
+-					<div className="flex gap-5 my-4">
++					{/* Commented out until we know how to implement this */}
++					
++					{/* <div className="flex gap-5 my-4">
+ 						<a
+ 							href="#"
+ 							className="border border-black px-4 py-3 font-medium"
+@@ -28,7 +30,7 @@ const PrivacyAndPersonalization = () => {
+ 						>
+ 							Unsubscribe from all SMS
+ 						</a>
+-					</div>
++					</div> */}
+ 				</div>
+ 
+ 				<div className="bg-white w-4/6 border border-brandGrey py-6 px-4 flex gap-5">
+-- 
+2.37.0.windows.1
+

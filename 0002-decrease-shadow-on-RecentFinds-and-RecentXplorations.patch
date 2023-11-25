@@ -1,0 +1,39 @@
+From abf5a00090f5efb9c9b4a2099404d468634c4f6e Mon Sep 17 00:00:00 2001
+From: Harman Singh <harman.singh@student.howest.be>
+Date: Sat, 25 Nov 2023 19:43:13 +0100
+Subject: [PATCH 02/13] decrease shadow on RecentFinds and RecentXplorations
+
+---
+ src/components/dashboard/RecentFinds.jsx       | 2 +-
+ src/components/dashboard/RecentXplorations.jsx | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/components/dashboard/RecentFinds.jsx b/src/components/dashboard/RecentFinds.jsx
+index f4821c0..a5bc374 100644
+--- a/src/components/dashboard/RecentFinds.jsx
++++ b/src/components/dashboard/RecentFinds.jsx
+@@ -46,7 +46,7 @@ const RecentFinds = () => {
+ 					return (
+ 						<div
+ 							key={find.id}
+-							className="h-16 bg-white shadow flex flex-row items-center justify-between gap-5"
++							className="h-16 bg-white shadow-md flex flex-row items-center justify-between gap-5"
+ 						>
+ 							<div
+ 								key={find.id}
+diff --git a/src/components/dashboard/RecentXplorations.jsx b/src/components/dashboard/RecentXplorations.jsx
+index 893979e..f9e8c91 100644
+--- a/src/components/dashboard/RecentXplorations.jsx
++++ b/src/components/dashboard/RecentXplorations.jsx
+@@ -37,7 +37,7 @@ const RecentXplorations = () => {
+ 				{recent_xplorations.map((exploration) => (
+ 					<div
+ 						key={exploration.id}
+-						className="h-16 bg-white shadow flex flex-row items-center justify-between gap-5"
++						className="h-16 bg-white shadow-md flex flex-row items-center justify-between gap-5"
+ 					>
+ 						<Image
+ 							src={`/icons/flags/${exploration.image_path}.svg`}
+-- 
+2.37.0.windows.1
+
