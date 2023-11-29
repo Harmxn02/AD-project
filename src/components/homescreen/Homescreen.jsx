@@ -92,9 +92,9 @@ const Homescreen = () => {
 					</div>
 				</div>
 
-				<div className="w-2/5 bg-black flex flex-col gap-8 justify-center items-center">
+				<div className="w-2/5 bg-white flex flex-col gap-8 justify-center items-center">
 					{/* RIGHT */}
-					<p className="text-white text-3xl font-bold">Get started</p>
+					<p className="text-3xl font-bold text-brandBlack">Get started</p>
 
 					<div className="flex flex-col justify-center items-center xl:flex-row gap-3">
 						<Link
@@ -115,13 +115,17 @@ const Homescreen = () => {
 					<div className="absolute flex flex-col justify-center gap-6 bottom-10">
 						<div className="flex gap-2 justify-center">
 							<Image alt="logo" className="h-6 w-6" src={LOGO} />
-							<p className="text-white font-medium">X-Plor</p>
+							<p className="text-brandTeal font-medium">X-Plor</p>
 						</div>
 
 						<div className="flex gap-3 items-center text-xs text-brandLightGrey">
-							<p className="hover:text-white transition-colors duration-500 cursor-not-allowed">Terms of use</p>
+							<p className="hover:text-brandTeal transition-colors duration-500 cursor-not-allowed">
+								Terms of use
+							</p>
 							<p className="text-[0.5rem]">|</p>
-							<p className="hover:text-white transition-colors duration-500 cursor-not-allowed">Privacy policy</p>
+							<p className="hover:text-brandTeal transition-colors duration-500 cursor-not-allowed">
+								Privacy policy
+							</p>
 						</div>
 					</div>
 				</div>
