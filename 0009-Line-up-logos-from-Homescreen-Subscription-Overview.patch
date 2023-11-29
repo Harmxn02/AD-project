@@ -1,0 +1,28 @@
+From a0ec4d793c1ac6d2835cb0895a70e4223a94398c Mon Sep 17 00:00:00 2001
+From: Harman Singh <harman.singh@student.howest.be>
+Date: Sat, 25 Nov 2023 19:47:02 +0100
+Subject: [PATCH 09/13] Line up logos from Homescreen + Subscription Overview
+
+---
+ .../subscriptions-overview/SubscriptionsOverview.jsx          | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/components/subscriptions-overview/SubscriptionsOverview.jsx b/src/components/subscriptions-overview/SubscriptionsOverview.jsx
+index c4adafc..1f613ff 100644
+--- a/src/components/subscriptions-overview/SubscriptionsOverview.jsx
++++ b/src/components/subscriptions-overview/SubscriptionsOverview.jsx
+@@ -64,9 +64,9 @@ const subscriptionPlans = [
+ 
+ const SubscriptionsOverview = () => {
+ 	return (
+-		<div className="min-h-screen px-8 py-6 bg-gradient-to-t from-gray-200 to-white">
++		<div className="min-h-screen px-8 bg-gradient-to-t from-gray-200 to-white">
+ 			<header className="flex items-center gap-2 mb-3">
+-				<Link href="/" className="flex items-center gap-2">
++				<Link href="/" className="h-[10vh] z-10 flex items-center gap-2">
+ 					<h1 className="text-black text-2xl font-bold">X-Plor</h1>
+ 					<svg
+ 						className="h-6 w-6"
+-- 
+2.37.0.windows.1
+

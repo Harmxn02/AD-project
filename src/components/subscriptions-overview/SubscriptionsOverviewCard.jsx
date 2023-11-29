@@ -7,7 +7,7 @@ const SubscriptionsOverviewCard = ({ name, description, price, period, features 
 	SubscriptionsOverviewCard.propTypes = {
 		name: PropTypes.string.isRequired,
 		description: PropTypes.string.isRequired,
-		price: PropTypes.number.isRequired,
+		price: PropTypes.string.isRequired,
     period: PropTypes.string.isRequired,
 		features: PropTypes.array.isRequired,
 	};
@@ -17,11 +17,11 @@ const SubscriptionsOverviewCard = ({ name, description, price, period, features 
       <h3 className="text-[1.5rem]">{name}</h3>
       <p className="text-[0.875rem] text-brandBlack">{description}</p>
       <p className="text-[2rem] my-6 font-semibold">
-        ADCO {price} <span className="text-[1rem] text-brandBlack font-normal">/month</span>
+        ADCO {price} <span className="text-[1rem] text-brandBlack font-normal">/{period}</span>
       </p>
       <Link
         href="/settings/subscriptions"
-        className="rounded-full border-2 border-black px-4 py-[0.375rem] inline-block"
+        className="rounded-lg border border-black px-4 py-[0.375rem] inline-block"
       >
         Buy {name} <Image src="/icons/arrow-right.svg" width={20} height={20} className="inline-block" alt="arrow right"/>
       </Link>

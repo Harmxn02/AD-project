@@ -16,11 +16,11 @@ const SubscriptionCard = ({ price, name, isLast, children }) => {
 			<div className="mx-auto py-10">
 				<div
 					className={`flex flex-col mx-auto w-[22rem] text-center text-gray-900 border border-gray-100 shadow p-8
-						${isLast ? "bg-[#3E3E3E] text-white" : "bg-white text-black"}`}
+						${isLast ? "bg-lastPlan text-white" : "bg-white text-black"}`}
 				>
 					<h3
 						className={`mb-4 text-2xl text-left font-medium
-						${isLast ? "bg-[#3E3E3E] text-white" : "bg-white text-black"}
+						${isLast ? "bg-lastPlan text-white" : "bg-white text-black"}
 
 						`}
 					>
@@ -61,7 +61,7 @@ const SubscriptionCard = ({ price, name, isLast, children }) => {
 							isLast ?
 							<p className={sharedButtonStyles}>
 								Current plan
-							</p> : <a href="#" className={`text-white bg-[#2C2C2C] font-medium px-5 py-3 text-center ${sharedButtonStyles}`}>{`Switch to ${name}`}</a>
+							</p> : <a href="#" className={`text-white bg-planButtons font-medium px-5 py-3 text-center ${sharedButtonStyles}`}>{`Switch to ${name}`}</a>
 					}
 				</div>
 			</div>

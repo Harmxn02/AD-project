@@ -7,6 +7,11 @@ import Loading from "@/components/utility/Loading";
 
 import { GetAPI } from "../../assets/js/api";
 
+
+// TODO: get server people to change timestamps in Transactions (API) endpoint to be in the year 2084
+// TODO: get server people to implement Auction Proceeds (API) endpoint
+
+
 const Transactions = () => {
     const transactions = GetAPI("/transactions");
 
@@ -20,37 +25,37 @@ const Transactions = () => {
     const auction_proceeds = [
         {
             id: "INV001",
-            date: "08.05.2084",
+            date: "08/05/2084",
             subscription: "Not auctioned yet",
             amount: "250.00 ADRA",
         },
         {
             id: "INV002",
-            date: "08.06.2084",
+            date: "08/06/2084",
             subscription: "Processing",
             amount: "150.00 ADRA",
         },
         {
             id: "INV003",
-            date: "08.07.2084",
+            date: "08/07/2084",
             subscription: "Sent",
             amount: "350.00 ADRA",
         },
         {
             id: "INV004",
-            date: "08.05.2084",
+            date: "08/05/2084",
             subscription: "Sent",
             amount: "350.00 ADRA",
         },
         {
             id: "INV005",
-            date: "08.09.2084",
+            date: "08/09/2084",
             subscription: "Sent",
             amount: "150.00 ADRA",
         },
         {
             id: "INV006",
-            date: "08.10.2084",
+            date: "08/10/2084",
             subscription: "Sent",
             amount: "50.00 ADRA",
         },
@@ -59,7 +64,7 @@ const Transactions = () => {
     return (
         <section>
             <Title content="Transactions" />
-            <div className="bg-white w-full px-8 pb-6 mb-12 max-h-[335px] overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent shadow">
+            <div className="bg-white w-8/12 px-8 pb-6 mb-12 max-h-[335px] overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent shadow-md">
                 <table>
                     <thead className="sticky top-0 bg-white w-full">
                         <tr className="text-left">
@@ -77,7 +82,7 @@ const Transactions = () => {
                                 key={transaction.id}
                                 className={`${
                                     transaction.id % 2 === 0
-                                        ? "bg-[#DFE5EB]"
+                                        ? "bg-alternatingTransaction"
                                         : "bg-white"
                                 }`}
                             >
@@ -102,7 +107,7 @@ const Transactions = () => {
             </div>
 
             <Title content="Auction Proceeds" />
-            <div className="bg-white w-full px-8 pb-6 max-h-[335px] overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent shadow">
+            <div className="bg-white w-8/12 px-8 pb-6 max-h-[335px] overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent shadow-md">
                 <table>
                     <thead className="sticky top-0 bg-white w-full">
                         <tr className="text-left">
@@ -120,7 +125,7 @@ const Transactions = () => {
                                 key={auction_proceed.id}
                                 className={`${
                                     auction_proceed.id.slice(-1) % 2 === 0
-                                        ? "bg-[#DFE5EB]"
+                                        ? "bg-alternatingTransaction"
                                         : "bg-white"
                                 }`}
                             >

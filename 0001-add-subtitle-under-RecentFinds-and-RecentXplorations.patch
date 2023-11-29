@@ -1,0 +1,43 @@
+From 78374fab37b57e8f635b9cff7c32ebf4e84c2858 Mon Sep 17 00:00:00 2001
+From: Harman Singh <harman.singh@student.howest.be>
+Date: Sat, 25 Nov 2023 19:42:40 +0100
+Subject: [PATCH 01/13] add subtitle under RecentFinds and RecentXplorations
+
+---
+ src/components/dashboard/RecentFinds.jsx       | 4 ++++
+ src/components/dashboard/RecentXplorations.jsx | 4 +++-
+ 2 files changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/src/components/dashboard/RecentFinds.jsx b/src/components/dashboard/RecentFinds.jsx
+index d4392e0..f4821c0 100644
+--- a/src/components/dashboard/RecentFinds.jsx
++++ b/src/components/dashboard/RecentFinds.jsx
+@@ -34,6 +34,10 @@ const RecentFinds = () => {
+ 	return (
+ 		<>
+ 			<Title content="Recent finds" />
++			
++			<p className="font-light pb-4">
++				An overview of your recent finds during past X-plorations, including the coordinates where you found them and their status on the auction.
++			</p>
+ 
+ 			<div className="w-full flex flex-col gap-5">
+ 				{finds.map((find) => {
+diff --git a/src/components/dashboard/RecentXplorations.jsx b/src/components/dashboard/RecentXplorations.jsx
+index e807578..893979e 100644
+--- a/src/components/dashboard/RecentXplorations.jsx
++++ b/src/components/dashboard/RecentXplorations.jsx
+@@ -30,7 +30,9 @@ const RecentXplorations = () => {
+ 	return (
+ 		<section className="mt-12">
+ 			<Title content="Recent X-Plorations" />
+-
++			<p className="font-light pb-4">
++				An overview of your recently visited locations, including travel time.
++			</p>
+ 			<div className="w-full flex flex-col gap-5">
+ 				{recent_xplorations.map((exploration) => (
+ 					<div
+-- 
+2.37.0.windows.1
+

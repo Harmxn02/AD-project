@@ -30,12 +30,14 @@ const RecentXplorations = () => {
 	return (
 		<section className="mt-12">
 			<Title content="Recent X-Plorations" />
-
+			<p className="font-light pb-4">
+				An overview of your recently visited locations, including travel time.
+			</p>
 			<div className="w-full flex flex-col gap-5">
 				{recent_xplorations.map((exploration) => (
 					<div
 						key={exploration.id}
-						className="h-16 bg-white shadow flex flex-row items-center justify-between gap-5"
+						className="h-16 bg-white shadow-md flex flex-row items-center justify-between gap-5"
 					>
 						<Image
 							src={`/icons/flags/${exploration.image_path}.svg`}
@@ -45,8 +47,8 @@ const RecentXplorations = () => {
 							alt="country flag"
 						></Image>
 
-						<div className="w-3/6 flex items-center h-full border-black border-r-4">
-							<p className="font-bold text-lg">
+						<div className="w-3/6 flex items-center h-full border-r-4">
+							<p className="font-medium text-lg">
 								{exploration.countries_visited}
 							</p>
 						</div>
@@ -54,7 +56,7 @@ const RecentXplorations = () => {
 							<p className="text-brandBlack font-semibold">
 								{exploration.duration}
 							</p>
-							<p className="font-bold text-sm">
+							<p className="font-medium text-sm">
 								{exploration.date}
 							</p>
 						</div>

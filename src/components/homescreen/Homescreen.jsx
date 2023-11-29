@@ -40,10 +40,10 @@ const Homescreen = () => {
 	return (
 		<div className="h-screen w-screen relative">
 			<div className="w-screen h-screen flex">
-				<div className="w-3/5 bg-[#00002e]">
+				<div className="w-3/5 bg-brandDarkPurple">
 					{/* LEFT */}
-					<nav className="h-[10vh] z-10 bg-[#00002e] flex items-center gap-2 px-8 py-6">
-						<h1 className="text-[#d292ff] text-2xl font-bold">
+					<nav className="h-[10vh] z-10 bg-brandDarkPurple flex items-center gap-2 px-8 py-6">
+						<h1 className="text-brandPink text-2xl font-bold">
 							X-Plor
 						</h1>
 
@@ -66,7 +66,7 @@ const Homescreen = () => {
 						</svg>
 					</nav>
 
-					<div className="h-[90vh] flex flex-col text-4xl justify-center px-8 text-[#d292ff] ">
+					<div className="h-[90vh] flex flex-col text-4xl justify-center px-8 text-brandPink ">
 						<p className="text-xs font-extralight">
 							{splashText[currentIndex].id} / {splashText.length}
 						</p>
@@ -97,14 +97,14 @@ const Homescreen = () => {
 					<div className="flex flex-col justify-center items-center xl:flex-row gap-3">
 						<Link
 							href="/dashboard"
-							className="text-white rounded-md max-w-fit font-semibold bg-blue-600 hover:bg-[#0000FF] px-12 py-3"
+							className="text-white rounded-md max-w-fit font-semibold bg-brandBlue hover:bg-blue-600 px-12 py-3"
 						>
 							Enter dashboard
 						</Link>
 
 						<Link
 							href="/explore-plans"
-							className="text-white rounded-md max-w-fit font-semibold bg-blue-600 hover:bg-[#0000FF] px-12 py-3"
+							className="text-white rounded-md max-w-fit font-semibold bg-brandBlue hover:bg-blue-600 px-12 py-3"
 						>
 							Explore plans
 						</Link>
@@ -116,10 +116,10 @@ const Homescreen = () => {
 							<p className="text-white font-medium">X-Plor</p>
 						</div>
 
-						<div className="flex gap-3 items-center text-xs text-[#8e8ea0]">
-							<p>Terms of use</p>
+						<div className="flex gap-3 items-center text-xs text-brandLightGrey">
+							<p className="hover:text-white transition-colors duration-500 cursor-not-allowed">Terms of use</p>
 							<p className="text-[0.5rem]">|</p>
-							<p>Privacy policy</p>
+							<p className="hover:text-white transition-colors duration-500 cursor-not-allowed">Privacy policy</p>
 						</div>
 					</div>
 				</div>

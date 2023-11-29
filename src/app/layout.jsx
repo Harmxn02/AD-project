@@ -10,7 +10,7 @@ export const metadata = {
 };
 
 const RootLayout = ({ children }) => (
-	<html lang="en" className="bg-brandGrey">
+	<html lang="en" className="bg-brandBackground">
 		<body className={inter.className}>{children}</body>
 	</html>
 );

@@ -1,0 +1,25 @@
+From be647b13be1a7b128173b2561941ef7e0ec80b14 Mon Sep 17 00:00:00 2001
+From: Harman Singh <harman.singh@student.howest.be>
+Date: Sat, 25 Nov 2023 19:47:34 +0100
+Subject: [PATCH 10/13] descrease border-radius
+
+---
+ .../subscriptions-overview/SubscriptionsOverviewCard.jsx        | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/components/subscriptions-overview/SubscriptionsOverviewCard.jsx b/src/components/subscriptions-overview/SubscriptionsOverviewCard.jsx
+index c8d9277..f504002 100644
+--- a/src/components/subscriptions-overview/SubscriptionsOverviewCard.jsx
++++ b/src/components/subscriptions-overview/SubscriptionsOverviewCard.jsx
+@@ -21,7 +21,7 @@ const SubscriptionsOverviewCard = ({ name, description, price, period, features
+       </p>
+       <Link
+         href="/settings/subscriptions"
+-        className="rounded-full border-2 border-black px-4 py-[0.375rem] inline-block"
++        className="rounded-lg border border-black px-4 py-[0.375rem] inline-block"
+       >
+         Buy {name} <Image src="/icons/arrow-right.svg" width={20} height={20} className="inline-block" alt="arrow right"/>
+       </Link>
+-- 
+2.37.0.windows.1
+
