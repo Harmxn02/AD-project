@@ -1,7 +1,7 @@
 "use client";
 
 export const findCountry = (latitude, longitude) => {
-	let wc = require("which-country");
+	const wc = require("which-country");
 	const result = wc([latitude, longitude]);
 
 	if (result === null) {
