@@ -13,15 +13,15 @@ const SubscriptionsOverviewCard = ({ name, description, price, period, features 
 	};
 
   return (
-    <div className="bg-white w-full rounded-lg p-6 border border-gray-300">
-      <h3 className="text-[1.5rem]">{name}</h3>
+    <div className="bg-white w-full rounded-lg p-6 border border-gray-300 shadow-2xl shadow-brandPink">
+      <h3 className="text-[1.5rem] text-brandDarkPurple font-semibold">{name}</h3>
       <p className="text-[0.875rem] text-brandBlack">{description}</p>
       <p className="text-[2rem] my-6 font-semibold">
         ADCO {price} <span className="text-[1rem] text-brandBlack font-normal">/{period}</span>
       </p>
       <Link
         href="/settings/subscriptions"
-        className="rounded-lg border border-black px-4 py-[0.375rem] inline-block"
+        className="rounded-lg border bg-brandDarkPurple text-white px-4 py-[0.375rem] inline-block"
       >
         Buy {name} <Image src="/icons/arrow-right.svg" width={20} height={20} className="inline-block" alt="arrow right"/>
       </Link>
@@ -30,7 +30,7 @@ const SubscriptionsOverviewCard = ({ name, description, price, period, features 
         {features.map((feature) => (
           <li className="flex items-center space-x-3" key={feature}>
             <svg
-              className="flex-shrink-0 w-5 h-5 text-green-500 mr-3"
+              className="flex-shrink-0 w-5 h-5 text-brandPink mr-3"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
