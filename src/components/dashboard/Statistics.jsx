@@ -24,7 +24,7 @@ const Statistics = ({ activeButton }) => {
 
     if (regionTimeDataAPI === null) {
         return <Loading />;
-    };
+    }
 
     const flownTimeData = {
         dailyData: [
