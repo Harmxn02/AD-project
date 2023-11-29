@@ -22,9 +22,13 @@ const config: Config = {
         brandGreen: "#2ECC71",
         brandYellow: "#F1C40F",
 
-        // used for Homescreen
+        // previously used for Homescreen
         brandDarkPurple: "#00002e",
         brandPink: "#D292FF",
+        
+        // used for Homescreen
+        brandDarkGreen: "#002e2c",
+        brandLightGreen: "#92ffd0",
         brandBlue: "#3C46FF",
         brandLightGrey: "#8E8EA0",
         
