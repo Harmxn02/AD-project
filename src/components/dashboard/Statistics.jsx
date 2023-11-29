@@ -22,7 +22,9 @@ const Statistics = ({ activeButton }) => {
 
     let prefixTitle;
 
-    if (regionTimeDataAPI === null) return <Loading />;
+    if (regionTimeDataAPI === null) {
+        return <Loading />;
+    } 
 
     const flownTimeData = {
         dailyData: [
