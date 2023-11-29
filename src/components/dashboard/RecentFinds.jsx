@@ -4,7 +4,6 @@ import Title from "@/components/utility/Title";
 
 import Image from "next/image";
 import { GetAPI } from "../../assets/js/api";
-import { findCountry } from "../../assets/js/findCountry";
 import Loading from "@/components/utility/Loading";
 
 import RecentsContainer from "@/components/utility/Recents/RecentsContainer";
