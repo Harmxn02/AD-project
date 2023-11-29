@@ -47,7 +47,7 @@ const RecentXplorations = () => {
 							alt="country flag"
 						></Image>
 
-						<div className="w-3/6 flex items-center h-full border-r-4">
+						<div className="w-3/6 flex items-center h-full border-r-4 border-brandCyan">
 							<p className="font-medium text-lg">
 								{exploration.countries_visited}
 							</p>

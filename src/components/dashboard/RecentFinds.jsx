@@ -55,7 +55,7 @@ const RecentFinds = () => {
 								<Image alt="icon" src={image_url}></Image>
 							</div>
 
-							<div className="w-3/6 flex items-center h-full border-r-4">
+							<div className="w-3/6 flex items-center h-full border-r-4 border-brandCyan">
 								<p className="font-medium text-lg">{find.name}</p>
 							</div>
 							<div className="w-3/6 flex flex-row justify-between items-center px-8">
