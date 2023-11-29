@@ -17,37 +17,37 @@ const AuctionProceeds = () => {
 		{
 			id: "INV001",
 			date: "08/05/2084",
-			subscription: "Not auctioned yet",
+			status: "Not auctioned yet",
 			amount: "250.00 ADRA",
 		},
 		{
 			id: "INV002",
 			date: "08/06/2084",
-			subscription: "Processing",
+			status: "Processing",
 			amount: "150.00 ADRA",
 		},
 		{
 			id: "INV003",
 			date: "08/07/2084",
-			subscription: "Sent",
+			status: "Sent",
 			amount: "350.00 ADRA",
 		},
 		{
 			id: "INV004",
 			date: "08/05/2084",
-			subscription: "Sent",
+			status: "Sent",
 			amount: "350.00 ADRA",
 		},
 		{
 			id: "INV005",
 			date: "08/09/2084",
-			subscription: "Sent",
+			status: "Sent",
 			amount: "150.00 ADRA",
 		},
 		{
 			id: "INV006",
 			date: "08/10/2084",
-			subscription: "Sent",
+			status: "Sent",
 			amount: "50.00 ADRA",
 		},
 	];
@@ -83,7 +83,7 @@ const AuctionProceeds = () => {
 									{auction_proceed.date}
 								</TableDataCell>
 								<TableDataCell>
-									{auction_proceed.subscription}
+									{auction_proceed.status}
 								</TableDataCell>
 								<TableDataCell>
 									{auction_proceed.amount}
