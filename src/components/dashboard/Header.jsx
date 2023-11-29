@@ -43,12 +43,7 @@ const Header = ({ activeButton, onButtonClick }) => {
             id: 3,
 			title: "MONTH",
 			action: "#",
-		},
-		{
-            id: 4,
-			title: "YEAR",
-			action: "#",
-		},
+		}
 	];
 
 	return (
