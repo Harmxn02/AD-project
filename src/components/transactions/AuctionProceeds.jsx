@@ -52,7 +52,7 @@ const AuctionProceeds = () => {
 	return (
 		<section>
 			<Title content="Auction Proceeds" />
-			<div className="bg-white w-8/12 px-8 pb-6 max-h-[335px] overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent shadow-md">
+			<div className="bg-white px-8 pb-6 max-h-[335px] overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent shadow-md">
 				<table>
 					<thead className="sticky top-0 bg-white w-full">
 						<tr className="text-left">
