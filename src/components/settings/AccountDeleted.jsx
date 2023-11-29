@@ -1,7 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import LOGO from "../../app/icon_green.svg";
 
 const AccountDeleted = () => {
 	return (
