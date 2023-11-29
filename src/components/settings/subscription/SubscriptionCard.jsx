@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 const SubscriptionCard = ({ price, name, isLast, children }) => {
 	SubscriptionCard.propTypes = {
 		price: PropTypes.number.isRequired,
-		name: PropTypes.string.isRequired, 
-		isLast: PropTypes.bool.isRequired, 
-		children: PropTypes.node, 
+		name: PropTypes.string.isRequired,
+		isLast: PropTypes.bool.isRequired,
+		children: PropTypes.node,
 	};
 
 	const sharedButtonStyles = "px-5 py-3 text-center";
