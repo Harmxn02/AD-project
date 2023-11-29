@@ -3,6 +3,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Title from "@/components/utility/Title";
+import Subtitle from "@/components/utility/Subtitle";
+
+
 import BarChart from "@/components/dashboard/charts/BarChart";
 import RadarChartStacked from "@/components/dashboard/charts/RadarChartStacked";
 import Loading from "@/components/utility/Loading";
@@ -191,9 +194,7 @@ const Statistics = ({ activeButton }) => {
             <Title content={`${prefixTitle} Statistics`} />
             <div className="flex justify-between">
                 <div className="max-w-[600px] h-full">
-                    <h3 className="text-[1.125rem] font-semibold">
-                        Minutes flown
-                    </h3>
+                    <Subtitle content="Minutes flown"/>
                     <p className="font-light">
                         Charting flight durations within a specific time frame,
                         offering a clear overview for analysis.
@@ -206,7 +207,7 @@ const Statistics = ({ activeButton }) => {
                     </div>
                 </div>
                 <div className="max-w-[600px] h-full">
-                    <h3 className="text-[1.125rem] font-semibold">Regions</h3>
+                    <Subtitle content="Regions"/>
                     <p className="font-light">
                         A visual summary of flight time across regions,
                         highlighting minutes flown in a specified period.
