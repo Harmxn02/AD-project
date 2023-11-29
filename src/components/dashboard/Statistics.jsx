@@ -5,11 +5,13 @@ import BarChart from "@/components/dashboard/charts/BarChart";
 import RadarChartStacked from "@/components/dashboard/charts/RadarChartStacked";
 
 const Statistics = ({ activeButton }) => {
-    let dataToRender;
-    let prefixTitle;
-    let labels;
+    const flownTime = {
+        dataToRender: dataToRender,
+        prefixTitle: prefixTitle,
+        labels: labels
+    }
 
-    const data = {
+    const flownTimeData = {
         dailyData: [
             {
                 data: [10, 20, 30, 15, 25, 35, 45],
@@ -79,24 +81,24 @@ const Statistics = ({ activeButton }) => {
 
     switch (activeButton) {
         case "DAY":
-            dataToRender = data.dailyData; //later we add daily data to this
-            labels = data.dailyData[0].labels;
-            prefixTitle = "Daily";
+            flownTime.dataToRender = flownTimeData.dailyData; //later we add daily data to this
+            flownTime.labels = flownTimeData.dailyData[0].labels;
+            flownTime.prefixTitle = "Daily";
             break;
         case "WEEK":
-            dataToRender = data.weeklyData; //later we add weekly data to this
-            labels = data.weeklyData[0].labels;
-            prefixTitle = "Weekly";
+            flownTime.dataToRender = flownTimeData.weeklyData; //later we add weekly data to this
+            flownTime.labels = flownTimeData.weeklyData[0].labels;
+            flownTime.prefixTitle = "Weekly";
             break;
         case "MONTH":
-            dataToRender = data.monthlyData; //later we add monthly data to this
-            labels = data.monthlyData[0].labels;
-            prefixTitle = "Monthly";
+            flownTime.dataToRender = flownTimeData.monthlyData; //later we add monthly data to this
+            flownTime.labels = flownTimeData.monthlyData[0].labels;
+            flownTime.prefixTitle = "Monthly";
             break;
         default:
-            dataToRender = data.dailyData;
-            labels = data.dailyData[0].labels;
-            prefixTitle = "Daily";
+            flownTime.dataToRender = flownTimeData.dailyData;
+            flownTime.labels = flownTimeData.dailyData[0].labels;
+            flownTime.prefixTitle = "Daily";
     }
 
     return (
@@ -122,7 +124,7 @@ const Statistics = ({ activeButton }) => {
                         highlighting minutes flown in a specified period.
                     </p>
                     <div className="w-full h-[28rem] flex justify-center items-center">
-                        <RadarChartStacked />
+                        <RadarChartStacked labels={labels} dataObject={dataToRender}/>
                     </div>
                 </div>
             </div>
