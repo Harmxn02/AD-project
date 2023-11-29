@@ -30,12 +30,12 @@ const Transactions = () => {
                 <table className="w-full">
                     <thead className="sticky top-0 bg-white w-full">
                         <tr className="text-left">
-                            <th className="w-[12.5%] h-12 pl-10">
+                            <TableHeader pl="pl-10">
                                 Transaction ID
-                            </th>
-                            <th className="w-[12.5%] h-12">Date</th>
-                            <th className="w-[12.5%] h-12">Subscription</th>
-                            <th className="w-[12.5%] h-12">Amount</th>
+                            </TableHeader>
+                            <TableHeader>Date</TableHeader>
+                            <TableHeader>Subscription</TableHeader>
+                            <TableHeader>Amount</TableHeader>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,20 +48,20 @@ const Transactions = () => {
                                         : "bg-white"
                                 }`}
                             >
-                                <td className="h-12 text-sm font-bold pl-10">
+                                <TableDataCell extra_styling="font-bold pl-10">
                                     {transaction.id}
-                                </td>
-                                <td className="h-12 text-sm">
+                                </TableDataCell>
+                                <TableDataCell>
                                     {new Date(
                                         transaction.date
                                     ).toLocaleDateString()}{" "}
-                                </td>
-                                <td className="h-12 text-sm">
+                                </TableDataCell>
+                                <TableDataCell>
                                     {transaction.subscription.plan.name}
-                                </td>
-                                <td className="h-12 text-sm">
+                                </TableDataCell>
+                                <TableDataCell>
                                     {transaction.amount} ADCO
-                                </td>
+                                </TableDataCell>
                             </tr>
                         ))}
                     </tbody>
