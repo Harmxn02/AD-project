@@ -46,16 +46,16 @@ const RecentFinds = () => {
 					return (
 						<div
 							key={find.id}
-							className="h-16 bg-white shadow-md flex flex-row items-center justify-between gap-5"
+							className="h-16 bg-white rounded-xl shadow-md flex flex-row items-center justify-between gap-5"
 						>
 							<div
 								key={find.id}
-								className={`${colour} w-16 h-full flex justify-center text-white items-center`}
+								className={`${colour} w-16 h-full flex rounded-xl rounded-tr-none rounded-br-none justify-center text-white items-center`}
 							>
 								<Image alt="icon" src={image_url}></Image>
 							</div>
 
-							<div className="w-3/6 flex items-center h-full border-r-4 border-brandCyan">
+							<div className="w-3/6 flex items-center h-full border-r-4">
 								<p className="font-medium text-lg">{find.name}</p>
 							</div>
 							<div className="w-3/6 flex flex-row justify-between items-center px-8">
