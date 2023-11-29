@@ -3,7 +3,7 @@
 import React from "react";
 import Title from "@/components/utility/Title";
 
-import TableHeader from '@/components/utility/Table/TableHeader';
+import TableHeader from "@/components/utility/Table/TableHeader";
 import TableDataCell from "@/components/utility/Table/TableDataCell";
 
 import Loading from "@/components/utility/Loading";
@@ -55,7 +55,7 @@ const AuctionProceeds = () => {
 	return (
 		<section>
 			<Title content="Auction Proceeds" />
-			<div className="bg-white w-8/12 px-8 pb-6 max-h-[335px] overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent shadow-md">
+			<div className="bg-white w-8/12 px-8 pb-6 max-h-[335px] rounded-xl overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent shadow-md">
 				<table>
 					<thead className="sticky top-0 bg-white w-full">
 						<tr className="text-left">
@@ -75,7 +75,6 @@ const AuctionProceeds = () => {
 										: "bg-white"
 								}`}
 							>
-								
 								<TableDataCell extra_styling="font-bold pl-10">
 									{auction_proceed.id}
 								</TableDataCell>
