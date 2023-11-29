@@ -1,11 +1,15 @@
+"use client";
+
 import React from "react";
 import PropTypes from "prop-types";
 import Title from "@/components/utility/Title";
 import BarChart from "@/components/dashboard/charts/BarChart";
 import RadarChartStacked from "@/components/dashboard/charts/RadarChartStacked";
+import Loading from "@/components/utility/Loading";
+import { GetAPI } from "../../assets/js/api";
 
 const Statistics = ({ activeButton }) => {
-    let prefixTitle;
+    const regionTimeDataAPI = GetAPI("/flytimepercoordinate/1");
 
     const flownTime = {
         dataToRender: [],
@@ -15,6 +19,10 @@ const Statistics = ({ activeButton }) => {
     const regionTime = {
         dataToRender: [],
     };
+
+    let prefixTitle;
+
+    if (regionTimeDataAPI === null) return <Loading />;
 
     const flownTimeData = {
         dailyData: [
@@ -87,6 +95,30 @@ const Statistics = ({ activeButton }) => {
         ],
     };
 
+    function getContinentValuesPerPeriod(data, period) {
+        const resultArray = [];
+
+        const continentOrder = [
+            "europe",
+            "asia",
+            "africa",
+            "southAmerica",
+            "northAmerica",
+            "antarctica",
+            "australia",
+        ];
+
+        for (const continent of continentOrder) {
+            if (data.hasOwnProperty(continent)) {
+                const day = data[continent][period];
+
+                resultArray.push(day);
+            }
+        }
+
+        return resultArray;
+    }
+
     const regionTimeData = {
         labels: [
             "Europe",
@@ -95,11 +127,11 @@ const Statistics = ({ activeButton }) => {
             "S-America",
             "N-America",
             "Antarctica",
-            "Oceania",
+            "Australia",
         ],
         dailyData: [
             {
-                data: [40, 40, 50, 10, 40, 30, 40],
+                data: getContinentValuesPerPeriod(regionTimeDataAPI, "day"),
                 label: "Minutes Flown",
                 backgroundColor: "#62A0AA73",
                 borderColor: "rgba(75, 192, 192, 1)",
@@ -108,7 +140,7 @@ const Statistics = ({ activeButton }) => {
         ],
         weeklyData: [
             {
-                data: [40, 78, 65, 54, 18, 57, 26],
+                data: getContinentValuesPerPeriod(regionTimeDataAPI, "week"),
                 label: "Minutes Flown",
                 backgroundColor: "#62A0AA73",
                 borderColor: "rgba(75, 192, 192, 1)",
@@ -117,7 +149,7 @@ const Statistics = ({ activeButton }) => {
         ],
         monthlyData: [
             {
-                data: [40, 40, 50, 10, 40, 30, 40],
+                data: getContinentValuesPerPeriod(regionTimeDataAPI, "month"),
                 label: "Minutes Flown",
                 backgroundColor: "#62A0AA73",
                 borderColor: "rgba(75, 192, 192, 1)",
