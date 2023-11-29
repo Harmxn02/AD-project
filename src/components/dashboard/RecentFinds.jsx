@@ -5,6 +5,8 @@ import Image from "next/image";
 import { GetAPI } from "../../assets/js/api";
 import Loading from "@/components/utility/Loading";
 
+import RecentsContainer from "@/components/utility/Recents/RecentsContainer";
+
 import Red from "../../../public/icons/finds_toAuction.svg";
 import Green from "../../../public/icons/finds_sold.svg";
 import Yellow from "../../../public/icons/finds_auctioned.svg";
@@ -44,9 +46,8 @@ const RecentFinds = () => {
 					const { colour, image_url } = getColourAndImage(find);
 
 					return (
-						<div
+						<RecentsContainer
 							key={find.id}
-							className="h-16 bg-white rounded-xl shadow-md flex flex-row items-center justify-between gap-5"
 						>
 							<div
 								key={find.id}
@@ -64,7 +65,7 @@ const RecentFinds = () => {
 								</p>
 								<p className="font-medium text-sm">{new Date(find.date).toLocaleDateString("en-GB")}</p>
 							</div>
-						</div>
+						</RecentsContainer>
 					);
 				})}
 			</div>
