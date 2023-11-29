@@ -3,13 +3,15 @@ import Title from "@/components/utility/Title";
 import Link from "next/link";
 import Image from "next/image";
 
+import SettingsContainer from "@/components/utility/Settings/SettingsContainer";
+
 import Danger from "../../../public/icons/section_icons/danger.svg";
 
 const DeleteAccountPrompt = () => {
 	return (
 		<>
 			<Title content="Delete Data?" />
-			<div className="bg-white w-4/6 border border-brandGrey py-6 px-4 flex gap-5 ">
+			<SettingsContainer>
 				<div>
 					<Image
 						alt="Danger icon"
@@ -49,7 +51,7 @@ const DeleteAccountPrompt = () => {
 						</Link>
 					</div>
 				</div>
-			</div>
+			</SettingsContainer>
 		</>
 	);
 };
