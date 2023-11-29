@@ -112,7 +112,7 @@ const Homescreen = () => {
 						</Link>
 					</div>
 
-					<div className="absolute flex justify-center gap-6 bottom-10">
+					<div className="absolute flex flex-col justify-center gap-6 bottom-10">
 						<div className="flex gap-2 justify-center">
 							<Image alt="logo" className="h-6 w-6" src={LOGO} />
 							<p className="text-brandTeal font-medium">X-Plor</p>
