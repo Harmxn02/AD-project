@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import LOGO from "../../app/icon.svg";
+import LOGO from "../../app/icon_green.svg";
 import Link from "next/link";
 
 import { Typewriter } from "react-simple-typewriter";
