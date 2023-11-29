@@ -6,7 +6,7 @@ import Title from "@/components/utility/Title";
 import TableHeader from "@/components/utility/Table/TableHeader";
 import TableDataCell from "@/components/utility/Table/TableDataCell";
 
-import Loading from "@/components/utility/Loading";
+// import Loading from "@/components/utility/Loading";
 
 // import { GetAPI } from "../../assets/js/api";
 
