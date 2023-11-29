@@ -40,10 +40,10 @@ const Homescreen = () => {
 	return (
 		<div className="h-screen w-screen relative">
 			<div className="w-screen h-screen flex">
-				<div className="w-3/5 bg-brandDarkPurple">
+				<div className="w-3/5 bg-brandDarkGreen">
 					{/* LEFT */}
-					<nav className="h-[10vh] z-10 bg-brandDarkPurple flex items-center gap-2 px-8 py-6">
-						<h1 className="text-brandPink text-2xl font-bold">
+					<nav className="h-[10vh] z-10 bg-brandDarkGreen flex items-center gap-2 px-8 py-6">
+						<h1 className="text-brandLightGreen text-2xl font-bold">
 							X-Plor
 						</h1>
 
