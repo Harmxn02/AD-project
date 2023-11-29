@@ -107,7 +107,7 @@ const SubscriptionsOverview = () => {
 						will never be paying more than you need.
 					</p>
 				</div>
-				<section className="flex w-full gap-12 mt-12 pb-60 justify-between">
+				<section className="flex w-full gap-12 mt-12 pb-12 justify-between">
 					{subscriptionPlans.map((plan) => (
 						<SubscriptionsOverviewCard
 							key={plan.id}
