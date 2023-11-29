@@ -10,14 +10,11 @@ import Green from "../../../public/icons/finds_sold.svg";
 import Yellow from "../../../public/icons/finds_auctioned.svg";
 
 const getColourAndImage = (item) => {
-
-	//  this should not be based on item.id, but perhaps on a new variable 'item_status'
-	
-	if (item.id === 1) {
+	if (item.status === "found") {
 		return { colour: "bg-[#E74C3C]", image_url: Red };
-	} else if (item.id === 2) {
+	} else if (item.status === "auctioned") {
 		return { colour: "bg-[#2ECC71]", image_url: Green };
-	} else if (item.id === 3) {
+	} else if (item.status === "in auction") {
 		return { colour: "bg-[#F1C40F]", image_url: Yellow };
 	} else {
 		return { colour: "bg-black", image_url: Yellow };
