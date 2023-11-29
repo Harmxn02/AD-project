@@ -68,7 +68,7 @@ const Homescreen = () => {
 						</svg>
 					</nav>
 
-					<div className="h-[90vh] flex flex-col text-4xl justify-center px-8 text-brandPink ">
+					<div className="h-[90vh] flex flex-col text-4xl justify-center px-8 text-brandLightGreen ">
 						<p className="text-xs font-extralight">
 							{splashText[currentIndex].id} / {splashText.length}
 						</p>
