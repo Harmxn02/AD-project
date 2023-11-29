@@ -9,7 +9,7 @@ const TableHeader = ({ children, pl }) => {
 
 TableHeader.propTypes = {
 	children: PropTypes.node.isRequired,
-	pl: PropTypes.number,
+	pl: PropTypes.string,
 };
 
 export default TableHeader;

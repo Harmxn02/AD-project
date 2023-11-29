@@ -9,7 +9,7 @@ const TableDataCell = ({ children, extra_styling }) => {
 
 TableDataCell.propTypes = {
 	children: PropTypes.node.isRequired,
-	extra_styling: PropTypes.number,
+	extra_styling: PropTypes.string,
 };
 
 export default TableDataCell;
