@@ -32,7 +32,7 @@ const RadarChartStacked = (props) => {
         return () => {
             myChart.destroy();
         };
-    }, []);
+    }, [props.dataObject, props.labels]);
 
     return <canvas ref={chartRef}></canvas>;
 };
