@@ -4,6 +4,8 @@ import React from "react";
 import Title from "@/components/utility/Title";
 
 import TableHeader from '@/components/utility/Table/TableHeader';
+import TableDataCell from "@/components/utility/Table/TableDataCell";
+
 import Loading from "@/components/utility/Loading";
 
 // import { GetAPI } from "../../assets/js/api";
@@ -73,18 +75,19 @@ const AuctionProceeds = () => {
 										: "bg-white"
 								}`}
 							>
-								<td className="h-12 text-sm font-bold  pl-10">
+								
+								<TableDataCell extra_styling="font-bold pl-10">
 									{auction_proceed.id}
-								</td>
-								<td className="h-12 text-sm">
+								</TableDataCell>
+								<TableDataCell>
 									{auction_proceed.date}
-								</td>
-								<td className="h-12 text-sm">
+								</TableDataCell>
+								<TableDataCell>
 									{auction_proceed.subscription}
-								</td>
-								<td className="h-12 text-sm">
+								</TableDataCell>
+								<TableDataCell>
 									{auction_proceed.amount}
-								</td>
+								</TableDataCell>
 							</tr>
 						))}
 					</tbody>
