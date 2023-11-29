@@ -3,21 +3,21 @@
 import React from "react";
 import Title from "@/components/utility/Title";
 
+import TableHeader from "@/components/utility/Table/TableHeader";
+import TableDataCell from "@/components/utility/Table/TableDataCell";
+
 import Loading from "@/components/utility/Loading";
 
 import { GetAPI } from "../../assets/js/api";
 
-
 // TODO: get server people to change timestamps in Transactions (API) endpoint to be in the year 2084
 
-
 const Transactions = () => {
-    const transactions = GetAPI("/transactions");
+	const transactions = GetAPI("/transactions");
 
 	if (transactions === null) {
 		return <Loading />;
 	}
-
 
 	console.log("TR: ", transactions);
 
@@ -26,7 +26,7 @@ const Transactions = () => {
     return (
         <section>
             <Title content="Transactions" />
-            <div className="bg-white px-8 pb-6 mb-12 max-h-[335px] overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent shadow-md">
+            <div className="bg-white px-8 pb-6 mb-12 max-h-[335px] rounded-xl overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent shadow-md">
                 <table className="w-full">
                     <thead className="sticky top-0 bg-white w-full">
                         <tr className="text-left">

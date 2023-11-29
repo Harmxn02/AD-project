@@ -1,6 +1,7 @@
 import React from "react";
 import Title from "@/components/utility/Title";
 import Image from "next/image";
+import RecentsContainer from "@/components/utility/Recents/RecentsContainer";
 
 const RecentXplorations = () => {
 	const recent_xplorations = [
@@ -35,19 +36,18 @@ const RecentXplorations = () => {
 			</p>
 			<div className="w-full flex flex-col gap-5">
 				{recent_xplorations.map((exploration) => (
-					<div
+					<RecentsContainer
 						key={exploration.id}
-						className="h-16 bg-white shadow-md flex flex-row items-center justify-between gap-5"
 					>
 						<Image
 							src={`/icons/flags/${exploration.image_path}.svg`}
 							width={256}
 							height={256}
-							className="w-16 h-16"
+							className="w-16 h-16 rounded-xl rounded-tr-none rounded-br-none "
 							alt="country flag"
 						></Image>
 
-						<div className="w-3/6 flex items-center h-full border-r-4 border-brandCyan">
+						<div className="w-3/6 flex items-center h-full border-r-4">
 							<p className="font-medium text-lg">
 								{exploration.countries_visited}
 							</p>
@@ -60,7 +60,7 @@ const RecentXplorations = () => {
 								{exploration.date}
 							</p>
 						</div>
-					</div>
+					</RecentsContainer>
 				))}
 			</div>
 		</section>
