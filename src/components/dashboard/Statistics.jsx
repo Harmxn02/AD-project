@@ -5,11 +5,16 @@ import BarChart from "@/components/dashboard/charts/BarChart";
 import RadarChartStacked from "@/components/dashboard/charts/RadarChartStacked";
 
 const Statistics = ({ activeButton }) => {
+    let prefixTitle;
+
     const flownTime = {
-        dataToRender: dataToRender,
-        prefixTitle: prefixTitle,
-        labels: labels
-    }
+        dataToRender: [],
+        labels: [],
+    };
+
+    const regionTime = {
+        dataToRender: [],
+    };
 
     const flownTimeData = {
         dailyData: [
@@ -32,7 +37,10 @@ const Statistics = ({ activeButton }) => {
         ],
         weeklyData: [
             {
-                data: [512, 478, 68, 15, 425, 135, 196],
+                data: [
+                    512, 478, 68, 15, 425, 135, 196, 147, 187, 177, 872, 342,
+                    146,
+                ],
                 label: "Minutes Flown",
                 backgroundColor: "#62A0AA73",
                 borderColor: "rgba(75, 192, 192, 1)",
@@ -79,26 +87,69 @@ const Statistics = ({ activeButton }) => {
         ],
     };
 
+    const regionTimeData = {
+        labels: [
+            "Europe",
+            "Asia",
+            "Africa",
+            "S-America",
+            "N-America",
+            "Antarctica",
+            "Oceania",
+        ],
+        dailyData: [
+            {
+                data: [40, 40, 50, 10, 40, 30, 40],
+                label: "Minutes Flown",
+                backgroundColor: "#62A0AA73",
+                borderColor: "rgba(75, 192, 192, 1)",
+                borderWidth: 1,
+            },
+        ],
+        weeklyData: [
+            {
+                data: [40, 785, 645, 54, 27, 98, 21, 18, 57, 26, 87, 97],
+                label: "Minutes Flown",
+                backgroundColor: "#62A0AA73",
+                borderColor: "rgba(75, 192, 192, 1)",
+                borderWidth: 1,
+            },
+        ],
+        monthlyData: [
+            {
+                data: [40, 40, 50, 10, 40, 30, 40],
+                label: "Minutes Flown",
+                backgroundColor: "#62A0AA73",
+                borderColor: "rgba(75, 192, 192, 1)",
+                borderWidth: 1,
+            },
+        ],
+    };
+
     switch (activeButton) {
         case "DAY":
-            flownTime.dataToRender = flownTimeData.dailyData; //later we add daily data to this
+            flownTime.dataToRender = flownTimeData.dailyData;
             flownTime.labels = flownTimeData.dailyData[0].labels;
-            flownTime.prefixTitle = "Daily";
+            regionTime.dataToRender = regionTimeData.dailyData;
+            prefixTitle = "Daily";
             break;
         case "WEEK":
-            flownTime.dataToRender = flownTimeData.weeklyData; //later we add weekly data to this
+            flownTime.dataToRender = flownTimeData.weeklyData;
             flownTime.labels = flownTimeData.weeklyData[0].labels;
-            flownTime.prefixTitle = "Weekly";
+            regionTime.dataToRender = regionTimeData.weeklyData;
+            prefixTitle = "Weekly";
             break;
         case "MONTH":
-            flownTime.dataToRender = flownTimeData.monthlyData; //later we add monthly data to this
+            flownTime.dataToRender = flownTimeData.monthlyData;
             flownTime.labels = flownTimeData.monthlyData[0].labels;
-            flownTime.prefixTitle = "Monthly";
+            regionTime.dataToRender = regionTimeData.monthlyData;
+            prefixTitle = "Monthly";
             break;
         default:
             flownTime.dataToRender = flownTimeData.dailyData;
             flownTime.labels = flownTimeData.dailyData[0].labels;
-            flownTime.prefixTitle = "Daily";
+            regionTime.dataToRender = regionTimeData.dailyData[0].data;
+            prefixTitle = "Daily";
     }
 
     return (
@@ -114,7 +165,10 @@ const Statistics = ({ activeButton }) => {
                         offering a clear overview for analysis.
                     </p>
                     <div className="w-full mt-4 h-[25rem]">
-                        <BarChart labels={labels} dataObject={dataToRender} />
+                        <BarChart
+                            labels={flownTime.labels}
+                            dataObject={flownTime.dataToRender}
+                        />
                     </div>
                 </div>
                 <div className="max-w-[600px] h-full">
@@ -124,7 +178,10 @@ const Statistics = ({ activeButton }) => {
                         highlighting minutes flown in a specified period.
                     </p>
                     <div className="w-full h-[28rem] flex justify-center items-center">
-                        <RadarChartStacked labels={labels} dataObject={dataToRender}/>
+                        <RadarChartStacked
+                            labels={regionTimeData.labels}
+                            dataObject={regionTime.dataToRender}
+                        />
                     </div>
                 </div>
             </div>
