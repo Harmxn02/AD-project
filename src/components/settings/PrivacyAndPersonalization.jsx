@@ -18,7 +18,6 @@ const PrivacyAndPersonalization = () => {
 						Notification Preferences
 					</h3>
 					{/* Commented out until we know how to implement this */}
-					
 					{/* <div className="flex gap-5 my-4">
 						<a
 							href="#"
