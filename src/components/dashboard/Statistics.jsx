@@ -64,7 +64,7 @@ const Statistics = ({ activeButton }) => {
         ],
         monthlyData: [
             {
-                data: [512, 478, 68, 15, 425, 135, 196],
+                data: [512, 478, 68, 15, 425, 135, 196, 752, 358, 125, 36, 887],
                 label: "Minutes Flown",
                 backgroundColor: "#62A0AA73",
                 borderColor: "rgba(75, 192, 192, 1)",
@@ -108,7 +108,7 @@ const Statistics = ({ activeButton }) => {
         ],
         weeklyData: [
             {
-                data: [40, 785, 645, 54, 27, 98, 21, 18, 57, 26, 87, 97],
+                data: [40, 78, 65, 54, 18, 57, 26],
                 label: "Minutes Flown",
                 backgroundColor: "#62A0AA73",
                 borderColor: "rgba(75, 192, 192, 1)",
