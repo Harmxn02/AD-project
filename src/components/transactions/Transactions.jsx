@@ -3,6 +3,7 @@
 import React from "react";
 import Title from "@/components/utility/Title";
 
+import TableHeader from '@/components/utility/Table/TableHeader';
 import Loading from "@/components/utility/Loading";
 
 import { GetAPI } from "../../assets/js/api";
@@ -30,12 +31,10 @@ const Transactions = () => {
                 <table>
                     <thead className="sticky top-0 bg-white w-full">
                         <tr className="text-left">
-                            <th className="w-[12.5%] h-12 pl-10">
-                                Transaction ID
-                            </th>
-                            <th className="w-[12.5%] h-12">Date</th>
-                            <th className="w-[12.5%] h-12">Subscription</th>
-                            <th className="w-[12.5%] h-12">Amount</th>
+                            <TableHeader pl="10">Transaction ID</TableHeader>
+							<TableHeader>Date</TableHeader>
+							<TableHeader>Subscription</TableHeader>
+							<TableHeader>Amount</TableHeader>
                         </tr>
                     </thead>
                     <tbody>
