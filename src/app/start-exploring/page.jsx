@@ -32,6 +32,7 @@ const page = () => {
 			<section className="pb-8 pt-16 px-24 w-full max-h-screen overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent">
 				<Title content="Start Exploring" />
 
+				<div className="grid grid-cols-2 gap-4 rounded-md shadow-md bg-white ">
 					<Container>
 						<Subtitle>Area 1</Subtitle>
 						<Paragraph>
