@@ -26,7 +26,7 @@ const Transactions = () => {
     return (
         <section>
             <Title content="Transactions" />
-            <div className="bg-white px-8 pb-6 mb-12 max-h-[335px] rounded-xl overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent shadow-md">
+            <div className="bg-white px-8 pb-6 mb-12 max-h-[335px] rounded-xl overflow-y-auto scrollbar scrollbar-thumb-brandTeal scrollbar-track-transparent shadow-md">
                 <table className="w-full">
                     <thead className="sticky top-0 bg-white w-full">
                         <tr className="text-left">
