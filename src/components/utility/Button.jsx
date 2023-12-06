@@ -6,7 +6,7 @@ const Button = (props) => {
 	return (
 		<a
 			href={props.href}
-			className={`block rounded-md text-white bg-brandTeal hover:bg-slate-900 font-bold text-center text-[0.850rem] py-4`}
+			className={`block rounded-md text-white bg-brandTeal hover:bg-brandBlack font-bold text-center text-[0.850rem] py-4`}
 		>
 			{props.content}
 		</a>
