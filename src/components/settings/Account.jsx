@@ -8,6 +8,17 @@ import Danger from "../../../public/icons/section_icons/danger.svg";
 
 import SettingsContainer from "@/components/utility/Settings/SettingsContainer";
 
+const Button = (props) => {
+	return (
+		<Link
+			href={props.href}
+			className="rounded-md bg-[#24292f] hover:bg-[#0d131d] text-white border shadow-sm px-4 py-3 font-medium"
+		>
+			{props.children}
+		</Link>
+	);
+};
+
 const Account = () => {
 	return (
 		<>
