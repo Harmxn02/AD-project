@@ -43,18 +43,10 @@ const Account = () => {
 						</div>
 
 						<div className="flex gap-5">
-							<Link
-								href="settings/subscriptions"
-								className="border border-black px-4 py-3 font-medium"
-							>
+							<Button href="settings/subscriptions">
 								Change subscription
-							</Link>
-							<Link
-								href="#todo"
-								className="border border-black px-4 py-3 font-medium"
-							>
-								Cancel subscription
-							</Link>
+							</Button>
+							<Button href="#todo">Cancel subscription</Button>
 						</div>
 					</div>
 				</SettingsContainer>
