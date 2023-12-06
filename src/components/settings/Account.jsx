@@ -66,14 +66,14 @@ const Account = () => {
 							</h3>
 							<p className="font-light">
 								Delete your data. This is a
-								<strong className="font-bold uppercase">
+								<strong className="font-semibold">
 									{" "}
-									PERMANENT
-								</strong>
+									permanent
+								</strong>{" "}
 								and
-								<strong className="font-bold uppercase">
+								<strong className="font-semibold">
 									{" "}
-									IRREVERSIBLE
+									irreversible
 								</strong>{" "}
 								change.
 							</p>
