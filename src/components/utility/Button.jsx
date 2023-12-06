@@ -14,7 +14,6 @@ const Button = (props) => {
 };
 
 Button.propTypes = {
-	backgroundColor: PropTypes.string.isRequired,
 	href: PropTypes.string.isRequired,
 	content: PropTypes.string.isRequired,
 };
