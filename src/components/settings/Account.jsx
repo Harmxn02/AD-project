@@ -6,7 +6,20 @@ import Image from "next/image";
 import User from "../../../public/icons/section_icons/user.svg";
 import Danger from "../../../public/icons/section_icons/danger.svg";
 
+import SettingsSubtitle from "@/components/utility/Settings/SettingsSubtitle";
+import SettingsTitle from "@/components/utility/Settings/SettingsTitle";
 import SettingsContainer from "@/components/utility/Settings/SettingsContainer";
+
+const Button = (props) => {
+	return (
+		<Link
+			href={props.href}
+			className="rounded-md bg-brandTeal hover:bg-teal-800 text-white px-4 py-3 font-medium"
+		>
+			{props.children}
+		</Link>
+	);
+};
 
 const Account = () => {
 	return (
@@ -23,27 +36,17 @@ const Account = () => {
 					</div>
 					<div className="flex flex-col gap-4">
 						<div>
-							<h3 className="font-medium text-2xl">
-								Active Subscription
-							</h3>
-							<p className="font-light">
+							<SettingsTitle>Active Subscription</SettingsTitle>
+							<SettingsSubtitle>
 								Change or cancel your active subscription.
-							</p>
+							</SettingsSubtitle>
 						</div>
 
 						<div className="flex gap-5">
-							<Link
-								href="settings/subscriptions"
-								className="border border-black px-4 py-3 font-medium"
-							>
+							<Button href="settings/subscriptions">
 								Change subscription
-							</Link>
-							<Link
-								href="#todo"
-								className="border border-black px-4 py-3 font-medium"
-							>
-								Cancel subscription
-							</Link>
+							</Button>
+							<Button href="#todo">Cancel subscription</Button>
 						</div>
 					</div>
 				</SettingsContainer>
@@ -58,30 +61,28 @@ const Account = () => {
 					</div>
 					<div className="flex flex-col gap-4">
 						<div>
-							<h3 className="font-medium text-2xl">
-								DANGER ZONE
-							</h3>
-							<p className="font-light">
+							<SettingsTitle>DANGER ZONE</SettingsTitle>
+							<SettingsSubtitle>
 								Delete your data. This is a
-								<strong className="font-bold uppercase">
+								<strong className="font-semibold">
 									{" "}
-									PERMANENT
-								</strong>
+									permanent
+								</strong>{" "}
 								and
-								<strong className="font-bold uppercase">
+								<strong className="font-semibold">
 									{" "}
-									IRREVERSIBLE
+									irreversible
 								</strong>{" "}
 								change.
-							</p>
+							</SettingsSubtitle>
 						</div>
 
 						<div className="flex gap-5">
 							<Link
 								href="settings/delete-data"
-								className="border bg-black px-6 py-3 font-black text-white uppercase"
+								className="rounded-md bg-brandRed hover:bg-red-600 px-6 py-3 font-semibold text-white"
 							>
-								DELETE DATA
+								Delete data
 							</Link>
 						</div>
 					</div>

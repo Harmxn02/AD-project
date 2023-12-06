@@ -42,7 +42,7 @@ const RecentFinds = () => {
 				An overview of your recent finds during past X-plorations, including the coordinates where you found them and their status on the auction.
 			</p>
 
-			<div className="w-full flex flex-col gap-5">
+			<div className="w-full flex flex-col gap-5 max-h-[280px] overflow-y-auto scrollbar-thin scrollbar-thumb-brandTeal scrollbar-track-transparent">
 				{finds.map((find) => {
 					const { colour, image_url } = getColourAndImage(find);
 
@@ -52,13 +52,17 @@ const RecentFinds = () => {
 						>
 							<div
 								key={find.id}
-								className={`${colour} w-16 h-full flex rounded-xl rounded-tr-none rounded-br-none justify-center text-white items-center`}
+								className={`${colour} w-16 h-16 flex rounded-xl rounded-tr-none rounded-br-none justify-center text-white items-center`}
 							>
 								<Image alt="icon" src={image_url}></Image>
 							</div>
 
 							<div className="w-3/6 flex items-center h-full border-r-4">
-								<p className="font-medium text-lg">{find.name}</p>
+								<p className="font-medium text-lg">{find.name} 
+								
+							{/* temporary */} <span className="font-light text-xs">session: {find.sessionId}</span>
+
+								</p>
 							</div>
 							<div className="w-3/6 flex flex-row justify-between items-center px-8">
 								<p className="text-brandBlack font-semibold">

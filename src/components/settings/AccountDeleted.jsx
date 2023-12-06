@@ -37,7 +37,9 @@ const AccountDeleted = () => {
 					Data succesfully deleted
 				</p>
 
-				<span className="font-normal lowercase">welcome to a fresh start</span>
+				<span className="font-normal lowercase">
+					welcome to a fresh start
+				</span>
 
 				<Link
 					href="/"
