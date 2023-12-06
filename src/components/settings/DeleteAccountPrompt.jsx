@@ -3,6 +3,8 @@ import Title from "@/components/utility/Title";
 import Link from "next/link";
 import Image from "next/image";
 
+import SettingsSubtitle from "@/components/utility/Settings/Subtitle";
+import SettingsTitle from "@/components/utility/Settings/SettingsTitle";
 import SettingsContainer from "@/components/utility/Settings/SettingsContainer";
 
 import Danger from "../../../public/icons/section_icons/danger.svg";
@@ -21,8 +23,8 @@ const DeleteAccountPrompt = () => {
 				</div>
 				<div className="flex flex-col gap-4">
 					<div>
-						<h3 className="font-medium text-2xl">Are you sure?</h3>
-						<p className="font-light">
+						<SettingsTitle>Are you sure?</SettingsTitle>
+						<SettingsSubtitle>
 							This action is
 							<strong className="font-semibold">
 								{" "}
@@ -33,7 +35,7 @@ const DeleteAccountPrompt = () => {
 								{" "}
 								reversed
 							</strong>{" "}
-						</p>
+						</SettingsSubtitle>
 					</div>
 
 					<div className="flex gap-5">

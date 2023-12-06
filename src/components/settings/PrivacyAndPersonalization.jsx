@@ -3,6 +3,8 @@ import Title from "@/components/utility/Title";
 import Toggle from "@/components/utility/Toggle";
 import Image from "next/image";
 
+import SettingsSubtitle from "@/components/utility/Settings/Subtitle";
+import SettingsTitle from "@/components/utility/Settings/SettingsTitle";
 import SettingsContainer from "@/components/utility/Settings/SettingsContainer";
 
 import Payment from "../../../public/icons/section_icons/payment.svg";
@@ -29,12 +31,10 @@ const PrivacyAndPersonalization = () => {
 					</div>
 					<div className="flex flex-col gap-4">
 						<div>
-							<h3 className="font-medium text-2xl">
-								Payment Reminders
-							</h3>
-							<p className="font-light">
+							<SettingsTitle>Payment Reminders</SettingsTitle>
+							<SettingsSubtitle>
 								Send me messages for payment reminders.
-							</p>
+							</SettingsSubtitle>
 						</div>
 						<div>
 							<Toggle text="Carrier Pigeon" />
@@ -52,14 +52,13 @@ const PrivacyAndPersonalization = () => {
 					</div>
 					<div className="flex flex-col gap-4">
 						<div>
-							<h3 className="font-medium text-2xl">
+							<SettingsTitle>
 								Marketing Communication
-							</h3>
-							<p className="font-light">
-								Learn about new exploration areas,
-								scholarship opportunities and upcoming special
-								events.
-							</p>
+							</SettingsTitle>
+							<SettingsSubtitle>
+								Learn about new exploration areas, scholarship
+								opportunities and upcoming special events.
+							</SettingsSubtitle>
 							<div className="my-6">
 								<p className="my-2">Upcoming special events</p>
 								<Toggle text="Email" />
