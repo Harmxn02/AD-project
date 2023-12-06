@@ -12,6 +12,24 @@ import ChestIcon from "../../../public/icons/sidebar_statistics/chest.svg";
 import RulerIcon from "../../../public/icons/sidebar_statistics/ruler.svg";
 import ClockIcon from "../../../public/icons/sidebar_statistics/clock.svg";
 
+const sidebar_statistics = [
+	{
+		icon: ChestIcon,
+		title: "Distance traveled",
+		value: "315km",
+	},
+	{
+		icon: ClockIcon,
+		title: "Minutes flown",
+		value: "142 minutes",
+	},
+	{
+		icon: ChestIcon,
+		title: "Items collected",
+		value: "3 items",
+	},
+];
+
 const SidebarLink = ({ href, icon, text, currentPath, customColor }) => {
 	const isActive = currentPath.startsWith(href);
 
@@ -132,36 +150,23 @@ const Sidebar = () => {
 			</div>
 
 			<div className="px-3 mb-4 flex-col gap-2">
-					<div className="flex items-center gap-3 border-b border-t py-2">
-						<Image src={RulerIcon} alt="chest icon" />
+				{sidebar_statistics.map((item, index) => (
+					<div
+						key={index}
+						className={`flex items-center gap-3 border-b py-2 ${
+							index === 0 ? "border-t" : " "
+						}`}
+					>
+						<Image src={item.icon} alt={`${item.title} icon`} />
 						<div>
 							<h4 className="font-semibold text-sm text-brandTeal">
-								Distance traveled
+								{item.title}
 							</h4>
-							<p className="text-xs">315km</p>
+							<p className="text-xs">{item.value}</p>
 						</div>
 					</div>
-
-					<div className="flex items-center gap-3 border-b py-2">
-						<Image src={ClockIcon} alt="chest icon" />
-						<div>
-							<h4 className="font-semibold text-sm text-brandTeal">
-								Minutes flown
-							</h4>
-							<p className="text-xs">142 minutes</p>
-						</div>
-					</div>
-
-					<div className="flex items-center gap-3 border-b py-2">
-						<Image src={ChestIcon} alt="chest icon" />
-						<div>
-							<h4 className="font-semibold text-sm text-brandTeal">
-								Items collected
-							</h4>
-							<p className="text-xs">3 items</p>
-						</div>
-					</div>
-				</div>
+				))}
+			</div>
 
 
 			<nav className="pr-7 py-7 ">
@@ -186,17 +191,9 @@ const Sidebar = () => {
 					/>
 				</ul>
 
-
-
 				<div className="flex pl-7 flex-col gap-2 mt-8">
-					<Button
-						href="#"
-						content="START EXPLORING"
-					/>
-					<Button
-						href="#"
-						content="SCHEDULE EXCURSION"
-					/>
+					<Button href="#" content="START EXPLORING" />
+					<Button href="#" content="SCHEDULE EXCURSION" />
 				</div>
 				<Link href="/" className="absolute bottom-0 w-full pb-4 pl-7">
 					<Image
