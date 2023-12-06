@@ -12,7 +12,14 @@ const SidebarLink = ({ href, icon, text, currentPath, customColor }) => {
 	const isActive = currentPath.startsWith(href);
 
 	return (
-		<li>
+		<li className="flex items-center">
+			
+			{/* the line left of the selected item */}
+			<div active={href} className={`w-1 h-6 ml-3 mr-3
+				${isActive ? "bg-brandTeal" : "bg-white"}`}></div>
+
+
+
 			<Link
 				href={href}
 				className={`flex items-center gap-4 ${
@@ -131,7 +138,7 @@ const Sidebar = () => {
 					<p>3</p>
 				</div>
 			</div>
-			<nav className="p-7">
+			<nav className="pr-7 py-7 ">
 				<ul className="flex flex-col gap-5">
 					<SidebarLink
 						href="/dashboard"
@@ -152,7 +159,7 @@ const Sidebar = () => {
 						currentPath={pathname}
 					/>
 				</ul>
-				<div className="flex flex-col gap-2 mt-8">
+				<div className="flex pl-7 flex-col gap-2 mt-8">
 					<Button
 						href="#"
 						content="START EXPLORING"
@@ -162,7 +169,7 @@ const Sidebar = () => {
 						content="SCHEDULE EXCURSION"
 					/>
 				</div>
-				<Link href="/" className="absolute bottom-0 w-full pb-4">
+				<Link href="/" className="absolute bottom-0 w-full pb-4 pl-7">
 					<Image
 						className="inline-block mr-2"
 						alt="exit icon"
