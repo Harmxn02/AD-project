@@ -168,7 +168,6 @@ const Sidebar = () => {
 				))}
 			</div>
 
-
 			<nav className="pr-7 py-7 ">
 				<ul className="flex flex-col gap-5">
 					<SidebarLink
@@ -190,9 +189,8 @@ const Sidebar = () => {
 						currentPath={pathname}
 					/>
 				</ul>
-
 				<div className="flex pl-7 flex-col gap-2 mt-8">
-					<Button href="#" content="START EXPLORING" />
+					<Button href="/start-exploring" content="START EXPLORING" />
 					<Button href="#" content="SCHEDULE EXCURSION" />
 				</div>
 				<Link href="/" className="absolute bottom-0 w-full pb-4 pl-7">
