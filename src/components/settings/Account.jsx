@@ -12,7 +12,7 @@ const Button = (props) => {
 	return (
 		<Link
 			href={props.href}
-			className="rounded-md bg-[#24292f] hover:bg-[#0d131d] text-white border shadow-sm px-4 py-3 font-medium"
+			className="rounded-md bg-gray-800 hover:bg-gray-950 text-white px-4 py-3 font-medium"
 		>
 			{props.children}
 		</Link>
