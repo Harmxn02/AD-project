@@ -14,7 +14,7 @@ import ClockIcon from "../../../public/icons/sidebar_statistics/clock.svg";
 
 const sidebar_statistics = [
 	{
-		icon: ChestIcon,
+		icon: RulerIcon,
 		title: "Distance traveled",
 		value: "315km",
 	},
