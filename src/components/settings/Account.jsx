@@ -14,7 +14,7 @@ const Button = (props) => {
 	return (
 		<Link
 			href={props.href}
-			className="rounded-md bg-brandTeal hover:bg-brandBlack text-white px-4 py-3 font-medium"
+			className="rounded-md bg-brandTeal hover:bg-teal-800 text-white px-4 py-3 font-medium"
 		>
 			{props.children}
 		</Link>
@@ -80,7 +80,7 @@ const Account = () => {
 						<div className="flex gap-5">
 							<Link
 								href="settings/delete-data"
-								className="rounded-md bg-red-500 hover:bg-red-600 px-6 py-3 font-semibold text-white uppercase"
+								className="rounded-md bg-brandRed hover:bg-red-600 px-6 py-3 font-semibold text-white"
 							>
 								Delete data
 							</Link>
