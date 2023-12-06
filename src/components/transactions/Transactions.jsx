@@ -60,7 +60,7 @@ const Transactions = () => {
                                     {transaction.subscription.plan.name}
                                 </TableDataCell>
                                 <TableDataCell>
-                                    {transaction.amount} ADCO
+                                    {parseFloat(transaction.amount).toFixed(2)} ADCO
                                 </TableDataCell>
                             </tr>
                         ))}
