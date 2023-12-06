@@ -55,7 +55,7 @@ const Header = ({ activeButton, onButtonClick }) => {
 						onClick={() => onButtonClick(button.title)}
 						className={`font-medium py-2 px-4 ${
 							activeButton === button.title
-								? "bg-brandCyan text-white"
+								? "bg-brandTeal text-white"
 								: ""
 						}`}
 					>
@@ -64,7 +64,7 @@ const Header = ({ activeButton, onButtonClick }) => {
 				))}
 			</div>
 			<button
-				className="bg-brandCyan text-white px-4 py-2 flex gap-4"
+				className="bg-brandTeal text-white px-4 py-2 flex gap-4"
 				onClick={handleFullscreenToggle}
 			>
 				{isFullscreen ? " EXIT FULLSCREEN" : " ENTER FULLSCREEN"}
