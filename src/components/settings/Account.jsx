@@ -82,9 +82,9 @@ const Account = () => {
 						<div className="flex gap-5">
 							<Link
 								href="settings/delete-data"
-								className="border bg-black px-6 py-3 font-black text-white uppercase"
+								className="rounded-md bg-red-500 px-6 py-3 font-semibold text-white uppercase"
 							>
-								DELETE DATA
+								Delete data
 							</Link>
 						</div>
 					</div>
