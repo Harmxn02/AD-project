@@ -3,7 +3,7 @@ import Title from "@/components/utility/Title";
 import Toggle from "@/components/utility/Toggle";
 import Image from "next/image";
 
-import SettingsSubtitle from "@/components/utility/Settings/Subtitle";
+import SettingsSubtitle from "@/components/utility/Settings/SettingsSubtitle";
 import SettingsTitle from "@/components/utility/Settings/SettingsTitle";
 import SettingsContainer from "@/components/utility/Settings/SettingsContainer";
 

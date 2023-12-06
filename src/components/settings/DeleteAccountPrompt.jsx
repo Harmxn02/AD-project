@@ -3,7 +3,7 @@ import Title from "@/components/utility/Title";
 import Link from "next/link";
 import Image from "next/image";
 
-import SettingsSubtitle from "@/components/utility/Settings/Subtitle";
+import SettingsSubtitle from "@/components/utility/Settings/SettingsSubtitle";
 import SettingsTitle from "@/components/utility/Settings/SettingsTitle";
 import SettingsContainer from "@/components/utility/Settings/SettingsContainer";
 
