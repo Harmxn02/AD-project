@@ -8,22 +8,28 @@ import Link from "next/link";
 import ProfilePicture from "../../../public/avatar-profile.jpg";
 import ExitIcon from "../../../public/icons/exit.svg";
 
+import ChestIcon from "../../../public/icons/sidebar_statistics/chest.svg";
+import RulerIcon from "../../../public/icons/sidebar_statistics/ruler.svg";
+import ClockIcon from "../../../public/icons/sidebar_statistics/clock.svg";
+
 const SidebarLink = ({ href, icon, text, currentPath, customColor }) => {
 	const isActive = currentPath.startsWith(href);
 
 	return (
 		<li className="flex items-center">
-			
 			{/* the line left of the selected item */}
-			<div active={href} className={`w-1 h-6 ml-3 mr-3
-				${isActive ? "bg-brandTeal" : "bg-white"}`}></div>
-
-
+			<div
+				active={href}
+				className={`w-1 h-6 ml-3 mr-3
+				${isActive ? "bg-brandTeal" : "bg-white"}`}
+			></div>
 
 			<Link
 				href={href}
 				className={`flex items-center gap-4 ${
-					isActive ? "text-brandTeal font-semibold" : "text-brandBlack"
+					isActive
+						? "text-brandTeal font-semibold"
+						: "text-brandBlack"
 				}`}
 			>
 				{React.cloneElement(icon, {
@@ -124,20 +130,40 @@ const Sidebar = () => {
 					A.Karpenko@adriamail.com
 				</h3>
 			</div>
-			<div className="grid grid-cols-2 text-center">
-				<div className="border-t border-r border-brandGrey px-3 py-2">
-					<h4 className="font-bold">Distance traveled</h4>
-					<p>315km</p>
+
+			<div className="px-3 mb-4 flex-col gap-2">
+					<div className="flex items-center gap-3 border-b border-t py-2">
+						<Image src={RulerIcon} alt="chest icon" />
+						<div>
+							<h4 className="font-semibold text-sm text-brandTeal">
+								Distance traveled
+							</h4>
+							<p className="text-xs">315km</p>
+						</div>
+					</div>
+
+					<div className="flex items-center gap-3 border-b py-2">
+						<Image src={ClockIcon} alt="chest icon" />
+						<div>
+							<h4 className="font-semibold text-sm text-brandTeal">
+								Minutes flown
+							</h4>
+							<p className="text-xs">142 minutes</p>
+						</div>
+					</div>
+
+					<div className="flex items-center gap-3 border-b py-2">
+						<Image src={ChestIcon} alt="chest icon" />
+						<div>
+							<h4 className="font-semibold text-sm text-brandTeal">
+								Items collected
+							</h4>
+							<p className="text-xs">3 items</p>
+						</div>
+					</div>
 				</div>
-				<div className="border-t border-brandGrey px-3 py-2">
-					<h4 className="font-bold">Minutes flown</h4>
-					<p>142</p>
-				</div>
-				<div className="border-t border-b border-brandGrey px-3 py-2 col-span-2">
-					<h4 className="font-bold">Items collected</h4>
-					<p>3</p>
-				</div>
-			</div>
+
+
 			<nav className="pr-7 py-7 ">
 				<ul className="flex flex-col gap-5">
 					<SidebarLink
@@ -159,6 +185,9 @@ const Sidebar = () => {
 						currentPath={pathname}
 					/>
 				</ul>
+
+
+
 				<div className="flex pl-7 flex-col gap-2 mt-8">
 					<Button
 						href="#"
