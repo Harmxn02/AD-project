@@ -2,15 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Button = (props) => {
-	const buttonStyle = {
-		backgroundColor: props.backgroundColor,
-	};
 
 	return (
 		<a
 			href={props.href}
-			style={buttonStyle}
-			className={`block text-white font-bold text-center text-[0.850rem] py-4`}
+			className={`block rounded-md text-white bg-brandTeal hover:bg-slate-900 font-bold text-center text-[0.850rem] py-4`}
 		>
 			{props.content}
 		</a>

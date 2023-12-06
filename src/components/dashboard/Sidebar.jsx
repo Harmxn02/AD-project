@@ -155,12 +155,10 @@ const Sidebar = () => {
 				<div className="flex flex-col gap-2 mt-8">
 					<Button
 						href="#"
-						backgroundColor="#54696c"
 						content="START EXPLORING"
 					/>
 					<Button
 						href="#"
-						backgroundColor="#54696c"
 						content="SCHEDULE EXCURSION"
 					/>
 				</div>
