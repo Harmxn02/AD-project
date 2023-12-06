@@ -17,8 +17,7 @@ const PrivacyAndPersonalization = () => {
 					<h3 className="text-xl font-medium">
 						Notification Preferences
 					</h3>
-					{/* Commented out until we know how to implement this */}
-					{/* <div className="flex gap-5 my-4">
+					<div className="flex gap-5 my-4">
 						<a
 							href="#"
 							className="border border-black px-4 py-3 font-medium"
@@ -31,7 +30,7 @@ const PrivacyAndPersonalization = () => {
 						>
 							Unsubscribe from all SMS
 						</a>
-					</div> */}
+					</div>
 				</div>
 
 				<SettingsContainer>
