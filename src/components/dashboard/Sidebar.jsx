@@ -154,7 +154,7 @@ const Sidebar = () => {
 				</ul>
 				<div className="flex flex-col gap-2 mt-8">
 					<Button
-						href="#"
+						href="/start-exploring"
 						backgroundColor="#62A0AA"
 						content="START EXPLORING"
 					/>
