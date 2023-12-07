@@ -32,7 +32,7 @@ const AuctionProceeds = () => {
 				<table className="w-full">
 					<thead className="sticky top-0 bg-white w-full">
 						<tr className="text-left">
-							<TableHeader pl="10">Transaction ID</TableHeader>
+							<TableHeader pl="10">Auction ID</TableHeader>
 							<TableHeader>Date</TableHeader>
 							<TableHeader>Status</TableHeader>
 							<TableHeader>Amount</TableHeader>
