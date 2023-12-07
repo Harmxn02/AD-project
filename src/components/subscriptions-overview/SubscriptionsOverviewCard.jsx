@@ -19,7 +19,7 @@ const SubscriptionsOverviewCard = ({
 	};
 
 	return (
-		<div className="bg-white w-full rounded-lg p-6 border border-gray-300 shadow-xl shadow-[#599e80]">
+		<div className="bg-white w-full rounded-lg p-6 border border-gray-300">
 			<h3 className="text-[1.5rem] text-brandDarkGreen font-semibold">
 				{name}
 			</h3>
