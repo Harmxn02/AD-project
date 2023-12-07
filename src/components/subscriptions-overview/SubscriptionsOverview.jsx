@@ -8,29 +8,12 @@ import { GetAPI } from "@/assets/js/api";
 const SubscriptionsOverview = () => {
 
 
-	const descriptions = [
-		{
-			id: 1,
-			description:
-				"Soar into adventure with 10 flight hours, expert training, and support.",
-		},
-		{
-			id: 2,
-			description:
-				"Elevate your journey with 24 hours of flight, plus priority access.",
-		},
-		{
-			id: 3,
-			description:
-				"Unleash boundless exploration with 48 hours, 24/7 support, and unlimited rentals.",
-		},
-		{
-			id: 4,
-			description:
-				"Dive into discovery at just $3.29 per hour. Start exploring now!",
-		},
-	];
-
+	const descriptions = {
+		1:"Soar into adventure with 10 flight hours, expert training, and support.",
+		2:"Elevate your journey with 24 hours of flight, plus priority access.",
+		3:"Unleash boundless exploration with 48 hours, 24/7 support, and unlimited rentals.",
+		4:"Dive into discovery at just $3.29 per hour. Start exploring now!",
+	};
 
 
 	const explorePlans = GetAPI("/plans");
@@ -94,7 +77,7 @@ const SubscriptionsOverview = () => {
 						<SubscriptionsOverviewCard
 							key={plan.id}
 							name={plan.name}
-							description={plan.description}
+							description={descriptions[plan.id]}
 							price={plan.price}
 							period={plan.period}
 							features={plan.perks}
