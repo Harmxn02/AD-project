@@ -32,7 +32,7 @@ const SubscriptionsOverviewCard = ({
 			</p>
 			<Link
 				href="/settings/subscriptions"
-				className="rounded-lg border bg-brandDarkGreen text-white px-4 py-[0.375rem] inline-block"
+				className="rounded-lg border bg-brandDarkGreen hover:bg-teal-800 transition-colors duration-500 text-white px-4 py-[0.375rem] inline-block"
 			>
 				Buy {name}{" "}
 				<Image
