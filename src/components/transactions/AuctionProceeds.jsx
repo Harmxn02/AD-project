@@ -31,7 +31,7 @@ const AuctionProceeds = () => {
 							<tr
 								key={auction_proceed.id}
 								className={`${
-									auction_proceed.id.slice(-1) % 2 === 0
+									auction_proceed.id % 2 === 0
 										? "bg-alternatingTransaction"
 										: "bg-white"
 								}`}
@@ -40,13 +40,13 @@ const AuctionProceeds = () => {
 									{auction_proceed.id}
 								</TableDataCell>
 								<TableDataCell>
-									{auction_proceed.date}
+									{ new Date(auction_proceed.date).toLocaleDateString()}
 								</TableDataCell>
 								<TableDataCell>
-									{auction_proceed.status}
+									{(auction_proceed.status).replace(/_/g, ' ').toLowerCase()}
 								</TableDataCell>
 								<TableDataCell>
-									{auction_proceed.amount}
+									{parseFloat(auction_proceed.amount).toFixed(2)} ADCO
 								</TableDataCell>
 							</tr>
 						))}
