@@ -6,47 +6,24 @@ import Title from "@/components/utility/Title";
 import TableHeader from "@/components/utility/Table/TableHeader";
 import TableDataCell from "@/components/utility/Table/TableDataCell";
 
-// TODO: get server people to implement Auction Proceeds (API) endpoint
+import { GetAPI } from "../../assets/js/api";
 
 const AuctionProceeds = () => {
-	const auction_proceeds = [
-		{
-			id: "INV001",
-			date: "08/05/2084",
-			status: "Not auctioned yet",
-			amount: "250.00 ADRA",
-		},
-		{
-			id: "INV002",
-			date: "08/06/2084",
-			status: "Processing",
-			amount: "150.00 ADRA",
-		},
-		{
-			id: "INV003",
-			date: "08/07/2084",
-			status: "Sent",
-			amount: "350.00 ADRA",
-		},
-		{
-			id: "INV004",
-			date: "08/05/2084",
-			status: "Sent",
-			amount: "350.00 ADRA",
-		},
-		{
-			id: "INV005",
-			date: "08/09/2084",
-			status: "Sent",
-			amount: "150.00 ADRA",
-		},
-		{
-			id: "INV006",
-			date: "08/10/2084",
-			status: "Sent",
-			amount: "50.00 ADRA",
-		},
-	];
+	const auction_proceeds = GetAPI("/auctions");
+
+	if (auction_proceeds === null) {
+		return (
+			<div>
+				{/* Potential Loader? */}
+				<Title content="Auction Proceeds" />
+				<div className="h-[335px] w-full rounded-xl shadow-md animate-pulse text-brandBackground">
+					Loader
+				</div>
+			</div>
+		);
+	}
+
+	console.log("AU: ", auction_proceeds);
 
 	return (
 		<section>
@@ -55,7 +32,7 @@ const AuctionProceeds = () => {
 				<table className="w-full">
 					<thead className="sticky top-0 bg-white w-full">
 						<tr className="text-left">
-							<TableHeader pl="10">Transaction ID</TableHeader>
+							<TableHeader pl="10">Auction ID</TableHeader>
 							<TableHeader>Date</TableHeader>
 							<TableHeader>Status</TableHeader>
 							<TableHeader>Amount</TableHeader>
@@ -66,7 +43,7 @@ const AuctionProceeds = () => {
 							<tr
 								key={auction_proceed.id}
 								className={`${
-									auction_proceed.id.slice(-1) % 2 === 0
+									auction_proceed.id % 2 === 0
 										? "bg-alternatingTransaction"
 										: "bg-white"
 								}`}
@@ -75,13 +52,20 @@ const AuctionProceeds = () => {
 									{auction_proceed.id}
 								</TableDataCell>
 								<TableDataCell>
-									{auction_proceed.date}
+									{new Date(
+										auction_proceed.date
+									).toLocaleDateString()}
 								</TableDataCell>
 								<TableDataCell>
-									{auction_proceed.status}
+									{auction_proceed.status
+										.replace(/_/g, " ")
+										.toLowerCase()}
 								</TableDataCell>
 								<TableDataCell>
-									{auction_proceed.amount}
+									{parseFloat(auction_proceed.amount).toFixed(
+										2
+									)}{" "}
+									ADCO
 								</TableDataCell>
 							</tr>
 						))}
