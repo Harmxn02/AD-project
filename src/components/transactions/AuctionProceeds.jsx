@@ -9,8 +9,10 @@ import Skeleton from "./Skeleton";
 
 import { GetAPI } from "../../assets/js/api";
 
+const AdriaID = 1;
+
 const AuctionProceeds = () => {
-	const auction_proceeds = GetAPI("/auctions");
+	const auction_proceeds = GetAPI(`/auctions/${AdriaID}`);
 
 	if (auction_proceeds === null) {
 		return (
