@@ -24,7 +24,7 @@ const SubscriptionsOverviewCard = ({
 				{name}
 			</h3>
 			<p className="text-[0.875rem] text-brandBlack">{description}</p>
-			<p className="text-[2rem] my-6 font-semibold">
+			<p className="text-[2rem] my-2 font-semibold">
 				ADCO {price}{" "}
 				<span className="text-[1rem] text-brandBlack font-normal">
 					/{period}
