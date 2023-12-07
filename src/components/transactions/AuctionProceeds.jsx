@@ -39,7 +39,7 @@ const AuctionProceeds = () => {
 						</tr>
 					</thead>
 					<tbody className="[&>*:nth-child(odd)]:bg-white [&>*:nth-child(even)]:bg-alternatingTransaction">
-						{auction_proceeds.map((auction_proceed, index) => (
+						{auction_proceeds.map((auction_proceed) => (
 							<tr key={auction_proceed.id}>
 								<TableDataCell extra_styling="font-bold pl-10">
 									{auction_proceed.id}
