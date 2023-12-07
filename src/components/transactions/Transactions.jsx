@@ -6,15 +6,19 @@ import Title from "@/components/utility/Title";
 import TableHeader from "@/components/utility/Table/TableHeader";
 import TableDataCell from "@/components/utility/Table/TableDataCell";
 
-import Loading from "@/components/utility/Loading";
-
 import { GetAPI } from "../../assets/js/api";
 
 const Transactions = () => {
 	const transactions = GetAPI("/transactions");
 
 	if (transactions === null) {
-		return <Loading />;
+		return (
+            <div>
+                {/* Potential Loader? */}
+                <Title content="Transactions" />
+                <div className="h-[335px] w-full rounded-xl shadow-md animate-pulse text-brandBackground">Loader</div>
+            </div>
+        )
 	}
 
 	console.log("TR: ", transactions);

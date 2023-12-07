@@ -10,6 +10,17 @@ import { GetAPI } from "../../assets/js/api";
 
 const AuctionProceeds = () => {
 	const auction_proceeds = GetAPI("/auctions");
+
+	if (auction_proceeds === null) {
+		return ( 
+		<div>
+			{/* Potential Loader? */}
+			<Title content="Auction Proceeds" />
+			<div className="h-[335px] w-full rounded-xl shadow-md animate-pulse text-brandBackground">Loader</div>
+		</div>
+		)
+	}
+
 	console.log("AU: ", auction_proceeds);
 
 
