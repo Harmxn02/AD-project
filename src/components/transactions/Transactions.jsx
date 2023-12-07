@@ -5,6 +5,7 @@ import Title from "@/components/utility/Title";
 
 import TableHeader from "@/components/utility/Table/TableHeader";
 import TableDataCell from "@/components/utility/Table/TableDataCell";
+import Skeleton from "./Skeleton";
 
 import { GetAPI } from "../../assets/js/api";
 
@@ -14,11 +15,8 @@ const Transactions = () => {
 	if (transactions === null) {
 		return (
 			<div>
-				{/* Potential Loader? */}
 				<Title content="Transactions" />
-				<div className="h-[335px] w-full rounded-xl shadow-md animate-pulse text-brandBackground">
-					Loader
-				</div>
+				<Skeleton />
 			</div>
 		);
 	}
