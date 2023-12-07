@@ -36,16 +36,9 @@ const Transactions = () => {
 							<TableHeader>Amount</TableHeader>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody className="[&>*:nth-child(odd)]:bg-white [&>*:nth-child(even)]:bg-alternatingTransaction">
 						{transactions.map((transaction) => (
-							<tr
-								key={transaction.id}
-								className={`${
-									transaction.id % 2 === 0
-										? "bg-alternatingTransaction"
-										: "bg-white"
-								}`}
-							>
+							<tr key={transaction.id}>
 								<TableDataCell extra_styling="font-bold pl-10">
 									{transaction.id}
 								</TableDataCell>

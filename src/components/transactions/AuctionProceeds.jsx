@@ -38,16 +38,9 @@ const AuctionProceeds = () => {
 							<TableHeader>Amount</TableHeader>
 						</tr>
 					</thead>
-					<tbody>
-						{auction_proceeds.map((auction_proceed) => (
-							<tr
-								key={auction_proceed.id}
-								className={`${
-									auction_proceed.id % 2 === 0
-										? "bg-alternatingTransaction"
-										: "bg-white"
-								}`}
-							>
+					<tbody className="[&>*:nth-child(odd)]:bg-white [&>*:nth-child(even)]:bg-alternatingTransaction">
+						{auction_proceeds.map((auction_proceed, index) => (
+							<tr key={auction_proceed.id}>
 								<TableDataCell extra_styling="font-bold pl-10">
 									{auction_proceed.id}
 								</TableDataCell>
