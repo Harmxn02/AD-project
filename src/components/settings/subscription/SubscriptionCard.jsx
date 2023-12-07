@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const SubscriptionCard = ({ price, name, isLast, children }) => {
 	SubscriptionCard.propTypes = {
@@ -53,16 +53,20 @@ const SubscriptionCard = ({ price, name, isLast, children }) => {
 						Every month you have access to:
 					</p>
 					<ul
-						className={`mb-8 space-y-4 text-left h-60 ${isLast ? "text-white" : " text-black"}`}
+						className={`mb-8 space-y-4 text-left h-60 ${
+							isLast ? "text-white" : " text-black"
+						}`}
 					>
 						{children}
 					</ul>
-					{
-							isLast ?
-							<p className={`${sharedButtonStyles}`}>
-								Current plan
-							</p> : <a href="#" className={`text-white font-medium px-5 py-3 text-center ${sharedButtonStyles}`}>{`Switch to ${name}`}</a>
-					}
+					{isLast ? (
+						<p className={`${sharedButtonStyles}`}>Current plan</p>
+					) : (
+						<a
+							href="#"
+							className={`text-white font-medium px-5 py-3 text-center ${sharedButtonStyles}`}
+						>{`Switch to ${name}`}</a>
+					)}
 				</div>
 			</div>
 		</div>
