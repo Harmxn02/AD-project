@@ -7,13 +7,11 @@ import { GetAPI } from "@/assets/js/api";
 import Loading from "@/components/utility/Loading";
 
 const SubscriptionsOverview = () => {
-
-
 	const descriptions = {
-		1:"Soar into adventure with 10 flight hours, expert training, and support.",
-		2:"Elevate your journey with 24 hours of flight, plus priority access.",
-		3:"Unleash boundless exploration with 48 hours, 24/7 support, and unlimited rentals.",
-		4:"Dive into discovery at just $3.29 per hour. Start exploring now!",
+		1: "Soar into adventure with 10 flight hours, expert training, and support.",
+		2: "Elevate your journey with 24 hours of flight, plus priority access.",
+		3: "Unleash boundless exploration with 48 hours, 24/7 support, and unlimited rentals.",
+		4: "Dive into discovery at just $3.29 per hour. Start exploring now!",
 	};
 
 	const periods = {
@@ -21,8 +19,7 @@ const SubscriptionsOverview = () => {
 		2: "month",
 		3: "month",
 		4: "hour",
-	}
-
+	};
 
 	const explorePlans = GetAPI("/plans");
 
