@@ -16,16 +16,19 @@ import ClockIcon from "../../../public/icons/sidebar_statistics/clock.svg";
 
 const sidebar_statistics = [
 	{
+		id: 1,
 		icon: RulerIcon,
 		title: "Distance traveled",
 		value: "315km",
 	},
 	{
+		id: 2,
 		icon: ClockIcon,
 		title: "Minutes flown",
 		value: "142 minutes",
 	},
 	{
+		id: 3,
 		icon: ChestIcon,
 		title: "Items collected",
 		value: "3 items",
@@ -49,7 +52,6 @@ const SidebarLink = ({ href, icon, text, currentPath, customColor }) => {
 		<li className="flex items-center">
 			{/* the line left of the selected item */}
 			<div
-				active={href}
 				className={`w-1 h-6 ml-3 mr-3
 				${isActive ? "bg-brandTeal" : "bg-white"}`}
 			></div>
@@ -162,11 +164,11 @@ const Sidebar = () => {
 			</div>
 
 			<div className="px-3 mb-4 flex-col gap-2">
-				{sidebar_statistics.map((item, index) => (
+				{sidebar_statistics.map((item) => (
 					<div
-						key={index}
+						key={item.id}
 						className={`flex items-center gap-3 border-b py-2 ${
-							index === 0 ? "border-t" : " "
+							item.id === 0 ? "border-t" : " "
 						}`}
 					>
 						<Image src={item.icon} alt={`${item.title} icon`} />
