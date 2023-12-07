@@ -3,6 +3,8 @@ import Title from "@/components/utility/Title";
 import Link from "next/link";
 import Image from "next/image";
 
+import PropTypes from "prop-types";
+
 import User from "../../../public/icons/section_icons/user.svg";
 import Danger from "../../../public/icons/section_icons/danger.svg";
 
@@ -11,10 +13,16 @@ import SettingsTitle from "@/components/utility/Settings/SettingsTitle";
 import SettingsContainer from "@/components/utility/Settings/SettingsContainer";
 
 const Button = (props) => {
+
+	Button.propTypes = {
+		href: PropTypes.string.isRequired,
+		children: PropTypes.node.isRequired,
+	};
+
 	return (
 		<Link
 			href={props.href}
-			className="rounded-md bg-brandTeal hover:bg-teal-800 text-white px-4 py-3 font-medium"
+			className="rounded-md bg-brandTeal hover:bg-teal-800 transition-colors duration-500 text-white px-4 py-3 font-medium"
 		>
 			{props.children}
 		</Link>
