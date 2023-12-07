@@ -9,7 +9,7 @@ const SubscriptionCard = ({ price, name, isLast, children }) => {
 		children: PropTypes.node,
 	};
 
-	const sharedButtonStyles = "px-5 py-3 text-center";
+	const sharedButtonStyles = "px-5 py-3 text-center bg-planButtons ";
 
 	return (
 		<div className="grid-cols-1">
@@ -59,9 +59,9 @@ const SubscriptionCard = ({ price, name, isLast, children }) => {
 					</ul>
 					{
 							isLast ?
-							<p className={sharedButtonStyles}>
+							<p className={`${sharedButtonStyles}`}>
 								Current plan
-							</p> : <a href="#" className={`text-white bg-planButtons font-medium px-5 py-3 text-center ${sharedButtonStyles}`}>{`Switch to ${name}`}</a>
+							</p> : <a href="#" className={`text-white font-medium px-5 py-3 text-center ${sharedButtonStyles}`}>{`Switch to ${name}`}</a>
 					}
 				</div>
 			</div>
