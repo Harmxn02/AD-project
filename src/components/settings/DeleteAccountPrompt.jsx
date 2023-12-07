@@ -61,12 +61,12 @@ const DeleteAccountPrompt = () => {
 							{isDeleteButtonActive ? (
 								<Link
 									href="/settings/data-deleted"
-									className="border rounded-md bg-red-500 hover:bg-red-600 text-white uppercase px-6 py-3 font-semibold"
+									className="border rounded-md bg-red-500 hover:bg-red-600 text-white px-6 py-3 font-semibold"
 								>
 									Delete data
 								</Link>
 							) : (
-								<div className="border rounded-md bg-gray-300 cursor-not-allowed uppercase px-6 py-3 font-semibold">
+								<div className="border rounded-md bg-gray-300 cursor-not-allowed px-6 py-3 font-semibold">
 									Delete data
 								</div>
 							)}
