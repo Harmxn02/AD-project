@@ -59,7 +59,9 @@ const AuctionProceeds = () => {
 								<TableDataCell>
 									{auction_proceed.status
 										.replace(/_/g, " ")
-										.toLowerCase()}
+										.toLowerCase()
+										.replace(/^\w/, (c) => c.toUpperCase())
+										}
 								</TableDataCell>
 								<TableDataCell>
 									{parseFloat(auction_proceed.amount).toFixed(
