@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 import { usePathname } from "next/navigation";
 import Button from "@/components/utility/Button";
@@ -36,7 +36,6 @@ const sidebar_statistics = [
 ];
 
 const SidebarLink = ({ href, icon, text, currentPath, customColor }) => {
-	
 	SidebarLink.propTypes = {
 		href: PropTypes.string.isRequired,
 		icon: PropTypes.element.isRequired,
@@ -44,8 +43,7 @@ const SidebarLink = ({ href, icon, text, currentPath, customColor }) => {
 		currentPath: PropTypes.string.isRequired,
 		customColor: PropTypes.string,
 	};
-	
-	
+
 	const isActive = currentPath.startsWith(href);
 
 	return (
