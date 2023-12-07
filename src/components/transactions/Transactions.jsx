@@ -32,7 +32,7 @@ const Transactions = () => {
 				<table className="w-full">
 					<thead className="sticky top-0 bg-white w-full">
 						<tr className="text-left">
-							<TableHeader pl="pl-10">Transaction ID</TableHeader>
+							<TableHeader pl="10">Transaction ID</TableHeader>
 							<TableHeader>Date</TableHeader>
 							<TableHeader>Subscription</TableHeader>
 							<TableHeader>Amount</TableHeader>
