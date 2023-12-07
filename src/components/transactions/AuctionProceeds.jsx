@@ -12,17 +12,18 @@ const AuctionProceeds = () => {
 	const auction_proceeds = GetAPI("/auctions");
 
 	if (auction_proceeds === null) {
-		return ( 
-		<div>
-			{/* Potential Loader? */}
-			<Title content="Auction Proceeds" />
-			<div className="h-[335px] w-full rounded-xl shadow-md animate-pulse text-brandBackground">Loader</div>
-		</div>
-		)
+		return (
+			<div>
+				{/* Potential Loader? */}
+				<Title content="Auction Proceeds" />
+				<div className="h-[335px] w-full rounded-xl shadow-md animate-pulse text-brandBackground">
+					Loader
+				</div>
+			</div>
+		);
 	}
 
 	console.log("AU: ", auction_proceeds);
-
 
 	return (
 		<section>
@@ -51,13 +52,20 @@ const AuctionProceeds = () => {
 									{auction_proceed.id}
 								</TableDataCell>
 								<TableDataCell>
-									{ new Date(auction_proceed.date).toLocaleDateString()}
+									{new Date(
+										auction_proceed.date
+									).toLocaleDateString()}
 								</TableDataCell>
 								<TableDataCell>
-									{(auction_proceed.status).replace(/_/g, ' ').toLowerCase()}
+									{auction_proceed.status
+										.replace(/_/g, " ")
+										.toLowerCase()}
 								</TableDataCell>
 								<TableDataCell>
-									{parseFloat(auction_proceed.amount).toFixed(2)} ADCO
+									{parseFloat(auction_proceed.amount).toFixed(
+										2
+									)}{" "}
+									ADCO
 								</TableDataCell>
 							</tr>
 						))}
