@@ -54,12 +54,18 @@ const AuctionProceeds = () => {
 								<TableDataCell>
 									{new Date(
 										auction_proceed.date
-									).toLocaleDateString()}
+									).toLocaleDateString(undefined, {
+										year: "numeric",
+										month: "2-digit",
+										day: "2-digit",
+									})}
 								</TableDataCell>
 								<TableDataCell>
 									{auction_proceed.status
 										.replace(/_/g, " ")
-										.toLowerCase()}
+										.toLowerCase()
+										.replace(/^\w/, (c) => c.toUpperCase())
+										}
 								</TableDataCell>
 								<TableDataCell>
 									{parseFloat(auction_proceed.amount).toFixed(
