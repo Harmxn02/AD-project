@@ -4,6 +4,7 @@ import Link from "next/link";
 import SubscriptionsOverviewCard from "@/components/subscriptions-overview/SubscriptionsOverviewCard";
 import { GetAPI } from "@/assets/js/api";
 
+import Loading from "@/components/utility/Loading";
 
 const SubscriptionsOverview = () => {
 
@@ -20,8 +21,8 @@ const SubscriptionsOverview = () => {
 
 	if (explorePlans == null) {
 		return (
-			<div>
-				<p>Loading ...</p>
+			<div className="bg-brandDarkGreen">
+				<Loading />
 			</div>
 		);
 	}
