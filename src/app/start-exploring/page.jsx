@@ -20,7 +20,7 @@ const Container = (props) => {
 const StartButton = () => {
 	return (
 		<div className="py-6">
-			<a href="#todo" className="bg-brandGreen rounded-md px-4 py-3 text-white">Explore now</a>
+			<a href="#todo" className="bg-brandTeal rounded-md px-4 py-3 text-white">Explore now</a>
 		</div>
 	);
 };
