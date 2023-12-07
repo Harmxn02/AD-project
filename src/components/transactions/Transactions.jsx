@@ -43,13 +43,9 @@ const Transactions = () => {
 									{transaction.id}
 								</TableDataCell>
 								<TableDataCell>
-									{new Date(
-										transaction.date
-									).toLocaleDateString(undefined, {
-										year: "numeric",
-										month: "2-digit",
-										day: "2-digit",
-									})}{" "}
+									{new Intl.DateTimeFormat("en-GB").format(
+										new Date(transaction.date)
+									)}
 								</TableDataCell>
 								<TableDataCell>
 									{transaction.subscription.plan.name}

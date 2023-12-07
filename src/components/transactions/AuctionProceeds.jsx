@@ -45,26 +45,18 @@ const AuctionProceeds = () => {
 									{auction_proceed.id}
 								</TableDataCell>
 								<TableDataCell>
-									{new Date(
-										auction_proceed.date
-									).toLocaleDateString(undefined, {
-										year: "numeric",
-										month: "2-digit",
-										day: "2-digit",
-									})}
+									{new Intl.DateTimeFormat("en-GB").format(
+										new Date(auction_proceed.date)
+									)}
 								</TableDataCell>
 								<TableDataCell>
 									{auction_proceed.status
 										.replace(/_/g, " ")
 										.toLowerCase()
-										.replace(/^\w/, (c) => c.toUpperCase())
-										}
+										.replace(/^\w/, (c) => c.toUpperCase())}
 								</TableDataCell>
 								<TableDataCell>
-									{parseFloat(auction_proceed.amount).toFixed(
-										2
-									)}{" "}
-									ADCO
+									{auction_proceed.amount.toFixed(2)} ADCO
 								</TableDataCell>
 							</tr>
 						))}

@@ -19,12 +19,12 @@ const SubscriptionsOverviewCard = ({
 	};
 
 	return (
-		<div className="bg-white w-full rounded-lg p-6 border border-gray-300 shadow-xl shadow-[#599e80]">
+		<div className="bg-white w-full rounded-lg p-6 border border-gray-300">
 			<h3 className="text-[1.5rem] text-brandDarkGreen font-semibold">
 				{name}
 			</h3>
 			<p className="text-[0.875rem] text-brandBlack">{description}</p>
-			<p className="text-[2rem] my-6 font-semibold">
+			<p className="text-[2rem] my-2 font-semibold">
 				ADCO {price}{" "}
 				<span className="text-[1rem] text-brandBlack font-normal">
 					/{period}
@@ -32,7 +32,7 @@ const SubscriptionsOverviewCard = ({
 			</p>
 			<Link
 				href="/settings/subscriptions"
-				className="rounded-lg border bg-brandDarkGreen text-white px-4 py-[0.375rem] inline-block"
+				className="rounded-lg border bg-brandDarkGreen hover:bg-teal-800 transition-colors duration-500 text-white px-4 py-[0.375rem] inline-block"
 			>
 				Buy {name}{" "}
 				<Image
