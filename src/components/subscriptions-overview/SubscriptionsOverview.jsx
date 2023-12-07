@@ -16,6 +16,13 @@ const SubscriptionsOverview = () => {
 		4:"Dive into discovery at just $3.29 per hour. Start exploring now!",
 	};
 
+	const periods = {
+		1: "month",
+		2: "month",
+		3: "month",
+		4: "hour",
+	}
+
 
 	const explorePlans = GetAPI("/plans");
 
@@ -80,7 +87,7 @@ const SubscriptionsOverview = () => {
 							name={plan.name}
 							description={descriptions[plan.id]}
 							price={plan.price}
-							period={plan.period}
+							period={periods[plan.id]}
 							features={plan.perks}
 						/>
 					))}
