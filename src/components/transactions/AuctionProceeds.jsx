@@ -6,47 +6,12 @@ import Title from "@/components/utility/Title";
 import TableHeader from "@/components/utility/Table/TableHeader";
 import TableDataCell from "@/components/utility/Table/TableDataCell";
 
-// TODO: get server people to implement Auction Proceeds (API) endpoint
+import { GetAPI } from "../../assets/js/api";
 
 const AuctionProceeds = () => {
-	const auction_proceeds = [
-		{
-			id: "INV001",
-			date: "08/05/2084",
-			status: "Not auctioned yet",
-			amount: "250.00 ADRA",
-		},
-		{
-			id: "INV002",
-			date: "08/06/2084",
-			status: "Processing",
-			amount: "150.00 ADRA",
-		},
-		{
-			id: "INV003",
-			date: "08/07/2084",
-			status: "Sent",
-			amount: "350.00 ADRA",
-		},
-		{
-			id: "INV004",
-			date: "08/05/2084",
-			status: "Sent",
-			amount: "350.00 ADRA",
-		},
-		{
-			id: "INV005",
-			date: "08/09/2084",
-			status: "Sent",
-			amount: "150.00 ADRA",
-		},
-		{
-			id: "INV006",
-			date: "08/10/2084",
-			status: "Sent",
-			amount: "50.00 ADRA",
-		},
-	];
+	const auction_proceeds = GetAPI("/auctions");
+	console.log("AU: ", auction_proceeds);
+
 
 	return (
 		<section>
