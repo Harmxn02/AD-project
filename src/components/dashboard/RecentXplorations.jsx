@@ -2,8 +2,6 @@ import React from "react";
 import Title from "@/components/utility/Title";
 import Image from "next/image";
 import RecentsContainer from "@/components/utility/Recents/RecentsContainer";
-import { GetAPI } from "@/assets/js/api";
-import { findCountry } from "@/assets/js/findCountry";
 
 const RecentXplorations = () => {
 	const recent_xplorations = [
@@ -29,22 +27,6 @@ const RecentXplorations = () => {
 			date: "29/06/2084",
 		},
 	];
-
-	// let test = GetAPI("/sessions");
-
-	// if (test == null) {
-	// 	return;
-	// }
-
-	// console.log("test: ", test[0]);
-
-	// const end_latitude = test[0].endLatitude;
-	// const end_longitude = test[0].endLongitude;
-	// console.log("end: ", findCountry(end_longitude, end_latitude));
-
-	// const start_latitude = test[0].startLatitude;
-	// const start_longitude = test[0].startLongitude;
-	// console.log("start: ", findCountry(start_longitude, start_latitude));
 
 	return (
 		<section className="mt-12">
