@@ -21,8 +21,6 @@ const Transactions = () => {
 		);
 	}
 
-	console.log("TR: ", transactions);
-
 	return (
 		<section>
 			<Title content="Transactions" />

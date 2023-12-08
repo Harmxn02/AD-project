@@ -33,8 +33,6 @@ const RecentFinds = () => {
 		return <Loading />;
 	}
 
-	console.log("FI: ", finds);
-
 	return (
 		<>
 			<Title content="Recent finds" />

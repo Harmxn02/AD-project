@@ -64,8 +64,6 @@ const Sidebar = () => {
     return <Loading />;
   }
 
-  console.log("Statistics: ", statistics);
-
   const dashboardIcon = (
     <svg
       version="1.0"

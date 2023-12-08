@@ -8,7 +8,6 @@ export const findCountry = (latitude, longitude) => {
 		return "not valid coordinates";
 	}
 
-	console.log(result);
 	return result;
 };
 

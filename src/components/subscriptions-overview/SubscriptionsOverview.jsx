@@ -31,8 +31,6 @@ const SubscriptionsOverview = () => {
 		);
 	}
 
-	console.log("EX-PL:", explorePlans);
-
 	return (
 		<div className="selection:bg-[#62a0aa71] min-h-screen px-8 bg-brandDarkGreen">
 			<header className="flex items-center gap-2 mb-3">

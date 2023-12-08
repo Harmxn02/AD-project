@@ -20,7 +20,6 @@ const SubscriptionsPage = () => {
 	}
 
 	plans = plans.slice(0, 3);
-	console.log("PL", plans);
 
 	return (
 		<section className="mb-12">

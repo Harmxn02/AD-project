@@ -22,8 +22,6 @@ const AuctionProceeds = () => {
 		);
 	}
 
-	console.log("AU: ", auction_proceeds);
-
 	return (
 		<section>
 			<Title content="Auction Proceeds" />
