@@ -1,7 +1,7 @@
 "use client";
 
 import Account from "@/components/settings/Account";
-import Sidebar from "@/components/dashboard/Sidebar";
+import Layout from "@/components/utility/Layout";
 import PrivacyAndPersonalization from "@/components/settings/PrivacyAndPersonalization";
 
 import { useEffect } from "react";
@@ -28,12 +28,11 @@ export default function Home() {
 	}, []);
 
 	return (
-		<div className="flex">
-			<Sidebar />
+		<Layout>
 			<section className="pt-16 pb-8 px-24 w-full max-h-screen overflow-y-auto scrollbar scrollbar-thumb-brandTeal scrollbar-track-transparent">
 				<Account />
 				<PrivacyAndPersonalization />
 			</section>
-		</div>
+		</Layout>
 	);
 }

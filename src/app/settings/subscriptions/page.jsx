@@ -1,13 +1,12 @@
-import Sidebar from "@/components/dashboard/Sidebar";
 import SubscriptionsPage from "@/components/settings/subscription/SubscriptionsPage";
+import Layout from "@/components/utility/Layout";
 
 export default function Home() {
 	return (
-		<div className="flex">
-			<Sidebar />
+		<Layout>
 			<section className="pt-16 px-24 w-full max-h-screen overflow-y-auto scrollbar scrollbar-thumb-brandTeal scrollbar-track-transparent">
 				<SubscriptionsPage />
 			</section>
-		</div>
+		</Layout>
 	);
 }

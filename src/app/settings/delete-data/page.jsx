@@ -1,13 +1,12 @@
 import DeleteAccountPrompt from "@/components/settings/DeleteAccountPrompt";
-import Sidebar from "@/components/dashboard/Sidebar";
+import Layout from "@/components/utility/Layout";
 
 export default function Home() {
 	return (
-		<div className="flex">
-			<Sidebar />
+		<Layout>
 			<section className="pt-16 px-24 w-full">
 				<DeleteAccountPrompt />
 			</section>
-		</div>
+		</Layout>
 	);
 }
