@@ -2,6 +2,25 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Toggle = (props) => {
+	const updatePreferences = (e) => {
+		const toggle = e.target;
+		const keys = toggle.id.split(".");
+
+		const preferencesObject = JSON.parse(localStorage.getItem("preferences"));
+
+		if (keys.length === 1) {
+		  // Handle single-level key (e.g., "carrierPigeon")
+		  preferencesObject[keys[0]] = toggle.checked;
+		} else {
+		  // Handle nested keys (e.g., "upcomingSpecialEvents.email" or "upcomingSpecialEvents.sms")
+		  const keyToUpdate = keys[0];
+		  const valueToUpdate = keys[1];
+		  preferencesObject[keyToUpdate][valueToUpdate] = toggle.checked;
+		}
+
+		localStorage.setItem("preferences", JSON.stringify(preferencesObject));
+	  };
+
 	return (
 		<div>
 			<label className="relative inline-flex items-center cursor-pointer">
@@ -22,14 +41,11 @@ const Toggle = (props) => {
 	);
 };
 
-function updatePreferences(e) {
-	console.log(e.target)
-}
-
 Toggle.propTypes = {
 	value: PropTypes.string,
 	text: PropTypes.string,
-	state: PropTypes.bool
+	state: PropTypes.bool,
+	id: PropTypes.string.isRequired,
 };
 
 export default Toggle;
