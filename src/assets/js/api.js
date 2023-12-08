@@ -11,7 +11,7 @@ export const GetAPI = (path) => {
 
 		const fetchData = async () => {
 			try {
-				const response = await fetch(URL + path);
+				const response = await fetch(URL + path, { cache: 'force-cache' });
 				await response.json().then((data) => {
 					if (isMounted) {
 						const firstKey = Object.keys(data)[0];
