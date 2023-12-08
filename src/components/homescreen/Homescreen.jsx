@@ -143,7 +143,9 @@ const Homescreen = () => {
 function initializePreferencesLocalStorage() {
     const preferencesExists = localStorage.getItem("preferences");
 
-    if (preferencesExists) { return; }
+    if (preferencesExists){
+        return;
+    }
 
     const preferencesObject = {
         carrierPigeon: false,
