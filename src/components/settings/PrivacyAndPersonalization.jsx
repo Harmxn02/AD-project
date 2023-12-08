@@ -75,8 +75,8 @@ const PrivacyAndPersonalization = () => {
 								<p className="my-2">
 									Educational opportunities
 								</p>
-								<Toggle text="Email" state={preferences.educationalOppurtunities.email}/>
-								<Toggle text="SMS" state={preferences.educationalOppurtunities.sms}/>
+								<Toggle text="Email" state={preferences.educationalOpportunities.email}/>
+								<Toggle text="SMS" state={preferences.educationalOpportunities.sms}/>
 							</div>
 						</div>
 					</div>
