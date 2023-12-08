@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "@/components/dashboard/Sidebar";
+import Layout from "@/components/utility/Layout";
 import Title from "@/components/utility/Title";
 
 import PropTypes from "prop-types";
@@ -43,8 +43,7 @@ const StartButton = () => {
 
 const page = () => {
 	return (
-		<div className="flex">
-			<Sidebar />
+		<Layout>
 			<section className="pb-8 pt-16 px-24 w-full max-h-screen overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent">
 				<Title content="Start Exploring" />
 
@@ -82,7 +81,7 @@ const page = () => {
 					</Container>
 				</div>
 			</section>
-		</div>
+		</Layout>
 	);
 };
 
