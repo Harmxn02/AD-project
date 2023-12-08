@@ -17,27 +17,6 @@ import ChestIcon from "../../../public/icons/sidebar_statistics/chest.svg";
 import RulerIcon from "../../../public/icons/sidebar_statistics/ruler.svg";
 import ClockIcon from "../../../public/icons/sidebar_statistics/clock.svg";
 
-const sidebar_statistics = [
-  {
-    id: 1,
-    icon: RulerIcon,
-    title: "Distance traveled",
-    value: "315km",
-  },
-  {
-    id: 2,
-    icon: ClockIcon,
-    title: "Minutes flown",
-    value: "142 minutes",
-  },
-  {
-    id: 3,
-    icon: ChestIcon,
-    title: "Items collected",
-    value: "3 items",
-  },
-];
-
 const SidebarLink = ({ href, icon, text, currentPath, customColor }) => {
   SidebarLink.propTypes = {
     href: PropTypes.string.isRequired,
