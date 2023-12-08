@@ -11,6 +11,8 @@ import Payment from "../../../public/icons/section_icons/payment.svg";
 import Marketing from "../../../public/icons/section_icons/marketing.svg";
 
 const PrivacyAndPersonalization = () => {
+	const preferences = JSON.parse(localStorage.getItem("preferences"));
+
 	return (
 		<div className="mt-12">
 			<Title content="Privacy and Personalization" />
@@ -37,7 +39,7 @@ const PrivacyAndPersonalization = () => {
 							</SettingsSubtitle>
 						</div>
 						<div>
-							<Toggle text="Carrier Pigeon" />
+							<Toggle text="Carrier Pigeon" state={preferences.carrierPigeon} id="carrierPigeon"/>
 						</div>
 					</div>
 				</SettingsContainer>
@@ -61,20 +63,20 @@ const PrivacyAndPersonalization = () => {
 							</SettingsSubtitle>
 							<div className="my-6">
 								<p className="my-2">Upcoming special events</p>
-								<Toggle text="Email" />
-								<Toggle text="SMS" />
+								<Toggle text="Email" state={preferences.upcomingSpecialEvents.email} id="upcomingSpecialEvents.email"/>
+								<Toggle text="SMS" state={preferences.upcomingSpecialEvents.sms} id="upcomingSpecialEvents.sms"/>
 							</div>
 							<div className="my-6">
 								<p className="my-2">New exploration areas</p>
-								<Toggle text="Email" />
-								<Toggle text="SMS" />
+								<Toggle text="Email" state={preferences.newExplorationAreas.email} id="newExplorationAreas.email"/>
+								<Toggle text="SMS" state={preferences.newExplorationAreas.sms} id="newExplorationAreas.sms"/>
 							</div>
 							<div className="my-6">
 								<p className="my-2">
 									Educational opportunities
 								</p>
-								<Toggle text="Email" />
-								<Toggle text="SMS" />
+								<Toggle text="Email" state={preferences.educationalOpportunities.email} id="educationalOpportunities.email"/>
+								<Toggle text="SMS" state={preferences.educationalOpportunities.sms} id="educationalOpportunities.sms"/>
 							</div>
 						</div>
 					</div>
