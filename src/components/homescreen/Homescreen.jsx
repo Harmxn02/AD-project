@@ -37,7 +37,9 @@ const Homescreen = () => {
         return () => clearTimeout(timer);
     }, [currentIndex, splashText.length]);
 
-    initializePreferencesLocalStorage();
+    useEffect(() => {
+        initializePreferencesLocalStorage()
+    }, []);
 
     return (
         <div className="h-screen w-screen relative">
