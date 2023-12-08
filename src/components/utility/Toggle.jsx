@@ -5,10 +5,11 @@ const Toggle = (props) => {
     const updatePreferences = (e) => {
         const toggle = e.target;
         const keys = toggle.id.split(".");
+        let preferencesObject;
 
-        const preferencesObject = JSON.parse(
-            localStorage.getItem("preferences")
-        );
+        if (typeof window !== "undefined") {
+            preferencesObject = JSON.parse(localStorage.getItem("preferences"));
+        }
 
         if (keys.length === 1) {
             // Handle single-level key (e.g., "carrierPigeon")
@@ -20,7 +21,9 @@ const Toggle = (props) => {
             preferencesObject[keyToUpdate][valueToUpdate] = toggle.checked;
         }
 
-        localStorage.setItem("preferences", JSON.stringify(preferencesObject));
+        if (typeof window !== "undefined") {
+            localStorage.setItem("preferences", JSON.stringify(preferencesObject));
+        }
     };
 
     return (
