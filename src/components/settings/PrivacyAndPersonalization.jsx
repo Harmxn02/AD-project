@@ -11,7 +11,11 @@ import Payment from "../../../public/icons/section_icons/payment.svg";
 import Marketing from "../../../public/icons/section_icons/marketing.svg";
 
 const PrivacyAndPersonalization = () => {
-	const preferences = JSON.parse(localStorage.getItem("preferences"));
+	let preferences;
+
+	useEffect(() => {
+        preferences = JSON.parse(localStorage.getItem("preferences"));
+    }, []);
 
 	return (
 		<div className="mt-12">
