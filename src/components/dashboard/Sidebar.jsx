@@ -56,7 +56,7 @@ const SidebarLink = ({ href, icon, text, currentPath, customColor }) => {
 
 			<Link
 				href={href}
-				className={`flex items-center gap-4 ${
+				className={`flex items-center gap-4 hover:opacity-80 hover:text-brandDarkGreen ${
 					isActive
 						? "text-brandTeal font-semibold"
 						: "text-brandBlack"
