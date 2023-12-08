@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -5,11 +7,9 @@ const Toggle = (props) => {
     const updatePreferences = (e) => {
         const toggle = e.target;
         const keys = toggle.id.split(".");
-        let preferencesObject;
-
-        if (typeof window !== "undefined") {
-            preferencesObject = JSON.parse(localStorage.getItem("preferences"));
-        }
+        const preferencesObject = JSON.parse(
+            localStorage.getItem("preferences")
+        );
 
         if (keys.length === 1) {
             // Handle single-level key (e.g., "carrierPigeon")
@@ -21,9 +21,7 @@ const Toggle = (props) => {
             preferencesObject[keyToUpdate][valueToUpdate] = toggle.checked;
         }
 
-        if (typeof window !== "undefined") {
-            localStorage.setItem("preferences", JSON.stringify(preferencesObject));
-        }
+        localStorage.setItem("preferences", JSON.stringify(preferencesObject));
     };
 
     return (

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Title from "@/components/utility/Title";
 import Toggle from "@/components/utility/Toggle";
@@ -11,12 +13,8 @@ import Payment from "../../../public/icons/section_icons/payment.svg";
 import Marketing from "../../../public/icons/section_icons/marketing.svg";
 
 const PrivacyAndPersonalization = () => {
-    let preferences;
+    const preferences = JSON.parse(localStorage.getItem("preferences"));
 
-    if (typeof window !== "undefined") {
-        preferences = JSON.parse(localStorage.getItem("preferences"));
-    }
-    
     return (
         <div className="mt-12">
             <Title content="Privacy and Personalization" />

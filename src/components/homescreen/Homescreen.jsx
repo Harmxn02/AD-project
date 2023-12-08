@@ -141,10 +141,7 @@ const Homescreen = () => {
 };
 
 function initializePreferencesLocalStorage() {
-    let preferencesExists;
-    if (typeof window !== "undefined") {
-        preferencesExists = localStorage.getItem("preferences");
-    }
+    const preferencesExists = localStorage.getItem("preferences");
 
     if (preferencesExists) return;
 
@@ -164,9 +161,7 @@ function initializePreferencesLocalStorage() {
         },
     };
 
-    if (typeof window !== "undefined") {
-        localStorage.setItem("preferences", JSON.stringify(preferencesObject));
-    }
+    localStorage.setItem("preferences", JSON.stringify(preferencesObject));
 }
 
 export default Homescreen;
