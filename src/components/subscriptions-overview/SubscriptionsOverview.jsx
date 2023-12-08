@@ -1,68 +1,38 @@
+"use client";
+
 import Link from "next/link";
 import SubscriptionsOverviewCard from "@/components/subscriptions-overview/SubscriptionsOverviewCard";
+import { GetAPI } from "@/assets/js/api";
 
-const subscriptionPlans = [
-	{
-		id: 1,
-		name: "Lewis & Clark",
-		description:
-			"Soar into adventure with 10 flight hours, expert training, and support.",
-		price: "21.99",
-		period: "month",
-		features: [
-			"10 hours flight time",
-			"Specialized training",
-			"Customer support",
-			"Max 1 rental per week",
-		],
-	},
-	{
-		id: 2,
-		name: "Marco Polo",
-		description:
-			"Elevate your journey with 24 hours of flight, plus priority access.",
-		price: "44.99",
-		period: "month",
-		features: [
-			"Comprehensive benefits from Lewis & Clark",
-			"24/7 access to customer support",
-			"Exclusive discounts on additional rentals",
-			"Customized travel recommendations",
-			"Access to members-only events and experiences",
-		],
-	},
-	{
-		id: 3,
-		name: "Magellan",
-		description:
-			"Unleash boundless exploration with 48 hours, 24/7 support, and unlimited rentals.",
-		price: "84.99",
-		period: "month",
-		features: [
-			"Unmatched perks from Marco Polo tier",
-			"48 hours of flexible flight time every month",
-			"24/7 concierge-level customer support",
-			"Exclusive access to premium destinations",
-			"Unlimited opportunities for spontaneous adventures",
-			"Personalized VIP travel consultations",
-		],
-	},
-	{
-		id: 4,
-		name: "Quick Explore",
-		description:
-			"Dive into discovery at just $3.29 per hour. Start exploring now!",
-		price: "3.29",
-		period: "hour",
-		features: [
-			"Discover with no strings attached",
-			"Seamless trial experience, no commitment",
-			"Pay-as-you-go adventure, zero waste",
-		],
-	},
-];
+import Loading from "@/components/utility/Loading";
 
 const SubscriptionsOverview = () => {
+	const descriptions = {
+		1: "Soar into adventure with 10 flight hours, expert training, and support.",
+		2: "Elevate your journey with 24 hours of flight, plus priority access.",
+		3: "Unleash boundless exploration with 48 hours, 24/7 support, and unlimited rentals.",
+		4: "Dive into discovery at just $3.29 per hour. Start exploring now!",
+	};
+
+	const periods = {
+		1: "month",
+		2: "month",
+		3: "month",
+		4: "hour",
+	};
+
+	const explorePlans = GetAPI("/plans");
+
+	if (explorePlans == null) {
+		return (
+			<div className="bg-brandDarkGreen">
+				<Loading />
+			</div>
+		);
+	}
+
+	console.log("EX-PL:", explorePlans);
+
 	return (
 		<div className="selection:bg-[#62a0aa71] min-h-screen px-8 bg-brandDarkGreen">
 			<header className="flex items-center gap-2 mb-3">
@@ -108,14 +78,14 @@ const SubscriptionsOverview = () => {
 					</p>
 				</div>
 				<section className="flex w-full gap-12 mt-12 pb-8 justify-between">
-					{subscriptionPlans.map((plan) => (
+					{explorePlans.map((plan) => (
 						<SubscriptionsOverviewCard
 							key={plan.id}
 							name={plan.name}
-							description={plan.description}
+							description={descriptions[plan.id]}
 							price={plan.price}
-							period={plan.period}
-							features={plan.features}
+							period={periods[plan.id]}
+							features={plan.perks}
 						/>
 					))}
 				</section>

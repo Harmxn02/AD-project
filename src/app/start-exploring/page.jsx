@@ -2,25 +2,41 @@ import React from "react";
 import Sidebar from "@/components/dashboard/Sidebar";
 import Title from "@/components/utility/Title";
 
+import PropTypes from "prop-types";
+
 import Image from "next/image";
 import Landscape from "../../../public/landscape.jpg";
 
 const Subtitle = (props) => {
+	Subtitle.propTypes = {
+		children: PropTypes.node.isRequired,
+	};
 	return <h3 className="font-semibold text-2xl">{props.children}</h3>;
 };
 
 const Paragraph = (props) => {
+	Paragraph.propTypes = {
+		children: PropTypes.node.isRequired,
+	};
 	return <p className="py-2">{props.children}</p>;
 };
 
 const Container = (props) => {
+	Container.propTypes = {
+		children: PropTypes.node.isRequired,
+	};
 	return <div className="p-10">{props.children}</div>;
 };
 
 const StartButton = () => {
 	return (
 		<div className="py-6">
-			<a href="#todo" className="bg-brandGreen rounded-md px-4 py-3 text-white">Explore now</a>
+			<a
+				href="#todo"
+				className="bg-brandTeal rounded-md px-4 py-3 text-white"
+			>
+				Explore now
+			</a>
 		</div>
 	);
 };

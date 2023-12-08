@@ -26,7 +26,8 @@ const getColourAndImage = (item) => {
 };
 
 const RecentFinds = () => {
-	const finds = GetAPI("/items");
+	const AdriaID = 1;
+	const finds = GetAPI(`/items/${AdriaID}`);
 
 	if (finds === null) {
 		return <Loading />;
@@ -58,10 +59,10 @@ const RecentFinds = () => {
 							</div>
 
 							<div className="w-3/6 flex items-center h-full border-r-4">
-								<p className="font-medium text-lg">{find.name} 
-								
-							{/* temporary */} <span className="font-light text-xs">session: {find.sessionId}</span>
-
+								<p className="font-medium text-lg">{find.name}
+									<span className="font-light text-xs">
+										{/* temporary */}
+										session: {find.sessionId}</span>
 								</p>
 							</div>
 							<div className="w-3/6 flex flex-row justify-between items-center px-8">

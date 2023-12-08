@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const SubscriptionCard = ({ price, name, isLast, children }) => {
 	SubscriptionCard.propTypes = {
@@ -9,13 +9,13 @@ const SubscriptionCard = ({ price, name, isLast, children }) => {
 		children: PropTypes.node,
 	};
 
-	const sharedButtonStyles = "px-5 py-3 text-center";
+	const sharedButtonStyles = "px-5 py-3 text-center bg-planButtons ";
 
 	return (
 		<div className="grid-cols-1">
 			<div className="mx-auto py-10">
 				<div
-					className={`flex flex-col mx-auto w-[22rem] text-center text-gray-900 border border-gray-100 shadow p-8
+					className={`flex flex-col mx-auto w-[29rem] text-center text-gray-900 border border-gray-300 shadow-md p-8
 						${isLast ? "bg-lastPlan text-white" : "bg-white text-black"}`}
 				>
 					<h3
@@ -53,16 +53,20 @@ const SubscriptionCard = ({ price, name, isLast, children }) => {
 						Every month you have access to:
 					</p>
 					<ul
-						className={`mb-8 space-y-4 text-left h-44 ${isLast ? "text-white" : " text-black"}`}
+						className={`mb-8 space-y-4 text-left h-60 ${
+							isLast ? "text-white" : " text-black"
+						}`}
 					>
 						{children}
 					</ul>
-					{
-							isLast ?
-							<p className={sharedButtonStyles}>
-								Current plan
-							</p> : <a href="#" className={`text-white bg-planButtons font-medium px-5 py-3 text-center ${sharedButtonStyles}`}>{`Switch to ${name}`}</a>
-					}
+					{isLast ? (
+						<p className={`${sharedButtonStyles}`}>Current plan</p>
+					) : (
+						<a
+							href="#"
+							className={`text-white font-medium px-5 py-3 text-center ${sharedButtonStyles}`}
+						>{`Switch to ${name}`}</a>
+					)}
 				</div>
 			</div>
 		</div>

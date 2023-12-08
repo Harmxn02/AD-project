@@ -32,13 +32,12 @@ const RecentXplorations = () => {
 		<section className="mt-12">
 			<Title content="Recent X-Plorations" />
 			<p className="font-light pb-4">
-				An overview of your recently visited locations, including travel time.
+				An overview of your recently visited locations, including travel
+				time.
 			</p>
 			<div className="w-full flex flex-col gap-5">
 				{recent_xplorations.map((exploration) => (
-					<RecentsContainer
-						key={exploration.id}
-					>
+					<RecentsContainer key={exploration.id}>
 						<Image
 							src={`/icons/flags/${exploration.image_path}.svg`}
 							width={256}
