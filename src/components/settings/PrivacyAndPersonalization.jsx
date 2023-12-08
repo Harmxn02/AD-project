@@ -12,11 +12,11 @@ import Marketing from "../../../public/icons/section_icons/marketing.svg";
 
 const PrivacyAndPersonalization = () => {
     let preferences;
-	
+
     if (typeof window !== "undefined") {
         preferences = JSON.parse(localStorage.getItem("preferences"));
     }
-
+    
     return (
         <div className="mt-12">
             <Title content="Privacy and Personalization" />

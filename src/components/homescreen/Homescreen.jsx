@@ -38,7 +38,7 @@ const Homescreen = () => {
     }, [currentIndex, splashText.length]);
 
     useEffect(() => {
-        initializePreferencesLocalStorage()
+        initializePreferencesLocalStorage();
     }, []);
 
     return (
@@ -141,7 +141,10 @@ const Homescreen = () => {
 };
 
 function initializePreferencesLocalStorage() {
-    const preferencesExists = localStorage.getItem("preferences");
+    let preferencesExists;
+    if (typeof window !== "undefined") {
+        preferencesExists = localStorage.getItem("preferences");
+    }
 
     if (preferencesExists) return;
 
@@ -161,7 +164,9 @@ function initializePreferencesLocalStorage() {
         },
     };
 
-    localStorage.setItem("preferences", JSON.stringify(preferencesObject));
+    if (typeof window !== "undefined") {
+        localStorage.setItem("preferences", JSON.stringify(preferencesObject));
+    }
 }
 
 export default Homescreen;
