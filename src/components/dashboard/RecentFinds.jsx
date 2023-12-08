@@ -26,8 +26,8 @@ const getColourAndImage = (item) => {
 };
 
 const RecentFinds = () => {
-	const AdriaID = 1;
-	const finds = GetAPI(`/items/${AdriaID}`);
+	const adriaId = 1;
+	const finds = GetAPI(`/items/${adriaId}`);
 
 	if (finds === null) {
 		return <Loading />;

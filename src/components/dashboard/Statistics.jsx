@@ -12,8 +12,8 @@ import Loading from "@/components/utility/Loading";
 import { GetAPI } from "../../assets/js/api";
 
 const Statistics = ({ activeButton }) => {
-    const AdriaID = 1;
-    const regionTimeDataAPI = GetAPI(`/flytimepercoordinate/${AdriaID}`);
+    const adriaId = 1;
+    const regionTimeDataAPI = GetAPI(`/flytimepercoordinate/${adriaId}`);
 
     const flownTime = {
         dataToRender: [],
