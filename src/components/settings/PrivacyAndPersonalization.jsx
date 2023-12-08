@@ -11,6 +11,7 @@ import Payment from "../../../public/icons/section_icons/payment.svg";
 import Marketing from "../../../public/icons/section_icons/marketing.svg";
 
 const PrivacyAndPersonalization = () => {
+	console.log(localStorage.getItem("preferences"))
 	return (
 		<div className="mt-12">
 			<Title content="Privacy and Personalization" />

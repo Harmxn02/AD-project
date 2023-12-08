@@ -140,7 +140,7 @@ const Homescreen = () => {
 
 function initializePreferencesLocalStorage() {
     const preferencesExists = localStorage.getItem("preferences");
-	
+
     if (preferencesExists) return;
 
     const preferencesObject = {
@@ -159,7 +159,7 @@ function initializePreferencesLocalStorage() {
         },
     };
 
-    localStorage.setItem("preferences", preferencesObject);
+    localStorage.setItem("preferences", JSON.stringify(preferencesObject));
 }
 
 export default Homescreen;
