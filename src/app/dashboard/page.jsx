@@ -4,7 +4,7 @@ import Statistics from "@/components/dashboard/Statistics";
 import RecentXplorations from "@/components/dashboard/RecentXplorations";
 import RecentFinds from "@/components/dashboard/RecentFinds";
 import Revenue from "@/components/dashboard/Revenue";
-import Layout from "@/components/utility/Layout"
+import Layout from "@/components/utility/Layout";
 import { useState } from "react";
 
 export default function Home() {
