@@ -39,7 +39,9 @@ const SidebarSkeleton = () => {
 						<h4 className="font-semibold text-sm text-brandTeal">
 							{data.title}
 						</h4>
-                        <div className="w-12 h-4 bg-brandBlack animate-pulse" ></div>
+                        <div className="h-4 flex items-center">
+                            <div className="w-12 h-2 bg-gray-200 rounded-full animate-pulse"></div>
+                        </div>
 					</div>
 				</div>
 			))}
