@@ -16,7 +16,7 @@ const Transactions = () => {
 		return (
 			<div>
 				<Title content="Transactions" />
-				<Skeleton />
+				<Skeleton firstCol = "Transaction ID" />
 			</div>
 		);
 	}
