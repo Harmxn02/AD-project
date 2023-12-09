@@ -4,7 +4,7 @@ import Title from "@/components/utility/Title";
 
 import Image from "next/image";
 import { GetAPI } from "../../assets/js/api";
-import Loading from "@/components/utility/Loading";
+import RecentFindsSkeleton from "./RecentFindsSkeleton";
 
 import RecentsContainer from "@/components/utility/Recents/RecentsContainer";
 
@@ -30,7 +30,7 @@ const RecentFinds = () => {
 	const finds = GetAPI(`/items/${adriaId}`);
 
 	if (finds === null) {
-		return <Loading />;
+		return <RecentFindsSkeleton />;
 	}
 
 	return (
