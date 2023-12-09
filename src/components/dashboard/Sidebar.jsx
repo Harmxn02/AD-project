@@ -55,15 +55,12 @@ const SidebarLink = ({ href, icon, text, currentPath, customColor }) => {
 };
 
 const QuickStats = () => {
-
 	const adriaId = 1;
 	const statistics = GetAPI(`/members/${adriaId}/statistics`);
 
 	if (!statistics) {
-		return (
-			<div className="h-[159px] mb-4"></div>
-		)
-  }
+		return <div className="h-[159px] mb-4"></div>;
+	}
 
 	return (
 		<div className="px-3 mb-4 flex-col gap-2">
@@ -187,7 +184,6 @@ const Sidebar = () => {
 			</div>
 
 			<QuickStats />
-
 
 			<nav className="pr-7 py-7 ">
 				<ul className="flex flex-col gap-5">
