@@ -44,7 +44,7 @@ const RecentXplorations = () => {
     "An overview of your recently visited locations, including travel time.";
 
   if (recent_xplorations === null) {
-    return <RecentXSkeleton title={title} description={description} />;
+    return <RecentXSkeleton title={title} description={description}/>;
   }
 
   return (
