@@ -34,7 +34,7 @@ const SidebarSkeleton = () => {
 					key={data.id}
 					className={`flex items-center gap-3 border-b py-2`}
 				>
-                    <Image priority src={data.icon} alt={data.icon_alt} />
+                    <Image src={data.icon} alt={data.icon_alt} />
 					<div>
 						<h4 className="font-semibold text-sm text-brandTeal">
 							{data.title}
