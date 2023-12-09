@@ -27,15 +27,6 @@ const formatTimeDifference = (startTime, endTime) => {
   }
 };
 
-const formattedStartDate = (startTime) => {
-  const startDate = new Date(startTime);
-  const day = String(startDate.getDate()).padStart(2, "0");
-  const month = String(startDate.getMonth() + 1).padStart(2, "0");
-  const year = startDate.getFullYear();
-
-  return `${day}/${month}/${year}`;
-};
-
 const RecentXplorations = () => {
   const adriaId = 1;
   const recent_xplorations = GetAPI(`/sessions/${adriaId}`);
@@ -78,7 +69,7 @@ const RecentXplorations = () => {
                 )}
               </p>
               <p className="font-medium text-sm">
-                {formattedStartDate(exploration.startTime)}
+                {new Intl.DateTimeFormat("en-GB").format(new Date(exploration.startTime))}
               </p>
             </div>
           </RecentsContainer>
