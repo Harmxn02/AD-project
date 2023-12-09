@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Title from "@/components/utility/Title";
 const RecentXSkeleton = (props) => {
   return (
-    <>
+    <div className={props.className}>
       <Title content={props.title} />
 
       <p className="font-light pb-4">
@@ -43,13 +43,14 @@ const RecentXSkeleton = (props) => {
           </div>
         </RecentsContainer>
       </div>
-    </>
+    </div>
   );
 };
 
 RecentXSkeleton.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  className: PropTypes.string
 };
 
 export default RecentXSkeleton;
