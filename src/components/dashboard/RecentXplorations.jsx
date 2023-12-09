@@ -46,6 +46,8 @@ const RecentXplorations = () => {
 		);
 	}
 
+	const temp_exploration_image_path = "FRANCE";
+
 	return (
 		<section className="mt-12">
 			<Title content={title} />
@@ -55,7 +57,8 @@ const RecentXplorations = () => {
 					<RecentsContainer key={exploration.id}>
 						<Image
 							/* this will be the first item in the exploration.countriesVisited array the api will return, capitalize it and then find the svg.*/
-							src={`/icons/flags/${exploration.image_path}.svg`}
+							src={`/icons/flags/${temp_exploration_image_path}.svg`}
+							// src={`/icons/flags/${exploration.image_path}.svg`}
 							width={256}
 							height={256}
 							className="w-16 h-16 rounded-xl rounded-tr-none rounded-br-none "
