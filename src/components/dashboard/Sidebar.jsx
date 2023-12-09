@@ -15,6 +15,7 @@ import ExitIcon from "../../../public/icons/exit.svg";
 import ChestIcon from "../../../public/icons/sidebar_statistics/chest.svg";
 import RulerIcon from "../../../public/icons/sidebar_statistics/ruler.svg";
 import ClockIcon from "../../../public/icons/sidebar_statistics/clock.svg";
+import SidebarSkeleton from "./SidebarSkeleton";
 
 const SidebarLink = ({ href, icon, text, currentPath }) => {
 	SidebarLink.propTypes = {
@@ -58,7 +59,7 @@ const QuickStats = () => {
 	const statistics = GetAPI(`/members/${adriaId}/statistics`);
 
 	if (!statistics) {
-		return <div className="h-[159px] mb-4"></div>;
+		return <SidebarSkeleton />;
 	}
 
 	const quickStatsData = [
