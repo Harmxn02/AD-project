@@ -7,7 +7,6 @@ import { GetAPI } from "../../assets/js/api";
 
 import { usePathname } from "next/navigation";
 import Button from "@/components/utility/Button";
-import Loading from "@/components/utility/Loading";
 import Image from "next/image";
 import Link from "next/link";
 import ProfilePicture from "../../../public/avatar-profile.jpg";
@@ -55,16 +54,62 @@ const SidebarLink = ({ href, icon, text, currentPath, customColor }) => {
 	);
 };
 
+const QuickStats = () => {
+
+	const adriaId = 1;
+	const statistics = GetAPI(`/members/${adriaId}/statistics`);
+
+	if (!statistics) {
+		return (
+			<div className="h-[159px] mb-4"></div>
+		)
+  }
+
+	return (
+		<div className="px-3 mb-4 flex-col gap-2">
+			<div className={`flex items-center gap-3 border-b py-2`}>
+				<Image src={RulerIcon} alt={`ruler icon`} />
+				<div>
+					<h4 className="font-semibold text-sm text-brandTeal">
+						Distance traveled
+					</h4>
+					<p className="text-xs">
+						{statistics.distanceTraveled !== null
+						? statistics.distanceTraveled
+						: 'Data not available'}
+			  		</p>
+				</div>
+			</div>
+			<div className={`flex items-center gap-3 border-b py-2`}>
+				<Image src={ClockIcon} alt={`clock icon`} />
+				<div>
+					<h4 className="font-semibold text-sm text-brandTeal">
+						Minutes flown
+					</h4>
+					<p className="text-xs">{statistics.minutesFlown !== null
+						? statistics.minutesFlown
+						: 'Data not available'}</p>
+				</div>
+			</div>
+			<div className={`flex items-center gap-3 border-b py-2`}>
+				<Image src={ChestIcon} alt={`chest icon`} />
+				<div>
+					<h4 className="font-semibold text-sm text-brandTeal">
+						Items collected
+					</h4>
+					<p className="text-xs">{statistics.itemsCollected !== null
+						? statistics.itemsCollected
+						: 'Data not available'}</p>
+				</div>
+			</div>
+		</div>
+	);
+};
+
 const Sidebar = () => {
 	const pathname = usePathname();
 	const settingsPathname = "/settings";
 	const transactionsPathname = "/transactions";
-	const adriaId = 1;
-	const statistics = GetAPI(`/members/${adriaId}/statistics`);
-
-	if (statistics === null) {
-		return <Loading />;
-	}
 
 	const dashboardIcon = (
 		<svg
@@ -149,35 +194,8 @@ const Sidebar = () => {
 				</h3>
 			</div>
 
-			<div className="px-3 mb-4 flex-col gap-2">
-				<div className={`flex items-center gap-3 border-b py-2`}>
-					<Image src={RulerIcon} alt={`ruler icon`} />
-					<div>
-						<h4 className="font-semibold text-sm text-brandTeal">
-							Distance traveled
-						</h4>
-						<p className="text-xs">{statistics.distanceTraveled}</p>
-					</div>
-				</div>
-				<div className={`flex items-center gap-3 border-b py-2`}>
-					<Image src={ClockIcon} alt={`clock icon`} />
-					<div>
-						<h4 className="font-semibold text-sm text-brandTeal">
-							Minutes flown
-						</h4>
-						<p className="text-xs">{statistics.minutesFlown}</p>
-					</div>
-				</div>
-				<div className={`flex items-center gap-3 border-b py-2`}>
-					<Image src={ChestIcon} alt={`chest icon`} />
-					<div>
-						<h4 className="font-semibold text-sm text-brandTeal">
-							Items collected
-						</h4>
-						<p className="text-xs">{statistics.itemsCollected}</p>
-					</div>
-				</div>
-			</div>
+			<QuickStats />
+
 
 			<nav className="pr-7 py-7 ">
 				<ul className="flex flex-col gap-5">
