@@ -68,38 +68,30 @@ const QuickStats = () => {
 	return (
 		<div className="px-3 mb-4 flex-col gap-2">
 			<div className={`flex items-center gap-3 border-b py-2`}>
-				<Image src={RulerIcon} alt={`ruler icon`} />
+				<Image src={RulerIcon} alt="ruler icon" />
 				<div>
 					<h4 className="font-semibold text-sm text-brandTeal">
 						Distance traveled
 					</h4>
-					<p className="text-xs">
-						{statistics.distanceTraveled !== null
-						? statistics.distanceTraveled
-						: 'Data not available'}
-			  		</p>
+					<p className="text-xs">{statistics.distanceTraveled} km</p>
 				</div>
 			</div>
 			<div className={`flex items-center gap-3 border-b py-2`}>
-				<Image src={ClockIcon} alt={`clock icon`} />
+				<Image src={ClockIcon} alt="clock icon" />
 				<div>
 					<h4 className="font-semibold text-sm text-brandTeal">
 						Minutes flown
 					</h4>
-					<p className="text-xs">{statistics.minutesFlown !== null
-						? statistics.minutesFlown
-						: 'Data not available'}</p>
+					<p className="text-xs">{statistics.minutesFlown} minutes</p>
 				</div>
 			</div>
 			<div className={`flex items-center gap-3 border-b py-2`}>
-				<Image src={ChestIcon} alt={`chest icon`} />
+				<Image src={ChestIcon} alt="chest icon" />
 				<div>
 					<h4 className="font-semibold text-sm text-brandTeal">
 						Items collected
 					</h4>
-					<p className="text-xs">{statistics.itemsCollected !== null
-						? statistics.itemsCollected
-						: 'Data not available'}</p>
+					<p className="text-xs">{statistics.itemsCollected} items</p>
 				</div>
 			</div>
 		</div>
