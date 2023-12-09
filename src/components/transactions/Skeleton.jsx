@@ -28,20 +28,20 @@ const Skeleton = (props) => {
 						<TableHeader>Amount</TableHeader>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody className="[&>*:nth-child(odd)]:bg-white [&>*:nth-child(even)]:bg-gray-300 animate-pulse">
 					{numberOfRows.map((row) => (
 						<tr key={row.id}>
 							<TableDataCell extra_styling="font-bold pl-10">
-								<div className="w-[5ch] h-3 bg-gray-200 rounded-full animate-pulse"></div>
+								<div className="w-[5ch] h-2 bg-gray-200 rounded-full animate-pulse"></div>
 							</TableDataCell>
 							<TableDataCell>
-								<div className="w-[15ch] h-3 bg-gray-200 rounded-full animate-pulse"></div>
+								<div className="w-[15ch] h-2 bg-gray-200 rounded-full animate-pulse"></div>
 							</TableDataCell>
 							<TableDataCell>
-								<div className="w-[15ch] h-3 bg-gray-200 rounded-full animate-pulse"></div>
+								<div className="w-[15ch] h-2 bg-gray-200 rounded-full animate-pulse"></div>
 							</TableDataCell>
 							<TableDataCell>
-								<div className="w-[10ch] h-3 bg-gray-200 rounded-full animate-pulse"></div>
+								<div className="w-[10ch] h-2 bg-gray-200 rounded-full animate-pulse"></div>
 							</TableDataCell>
 						</tr>
 					))}
