@@ -15,7 +15,7 @@ import ExitIcon from "../../../public/icons/exit.svg";
 import ChestIcon from "../../../public/icons/sidebar_statistics/chest.svg";
 import RulerIcon from "../../../public/icons/sidebar_statistics/ruler.svg";
 import ClockIcon from "../../../public/icons/sidebar_statistics/clock.svg";
-import SidebarSkeleton from "./SidebarSkeleton";
+import SidebarSkeleton from "@/components/utility/skeletons/SidebarSkeleton";
 
 const SidebarLink = ({ href, icon, text, currentPath }) => {
 	SidebarLink.propTypes = {

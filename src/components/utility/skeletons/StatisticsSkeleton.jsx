@@ -3,7 +3,7 @@ import Title from "@/components/utility/Title";
 import Subtitle from "@/components/utility/Subtitle";
 
 import Image from "next/image";
-import Logo from "../../../public/icons/logo.svg";
+import Logo from "../../../../public/icons/logo.svg";
 
 // Kan ook deze icon gebruiken
 // import Logo from "../../../public/icons/fullscreen.svg";

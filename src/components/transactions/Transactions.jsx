@@ -5,7 +5,7 @@ import Title from "@/components/utility/Title";
 
 import TableHeader from "@/components/utility/Table/TableHeader";
 import TableDataCell from "@/components/utility/Table/TableDataCell";
-import Skeleton from "./Skeleton";
+import Skeleton from "@/components/utility/skeletons/TransactionsSkeleton";
 
 import { GetAPI } from "../../assets/js/api";
 
@@ -16,7 +16,7 @@ const Transactions = () => {
 		return (
 			<div>
 				<Title content="Transactions" />
-				<Skeleton firstCol = "Transaction ID" />
+				<Skeleton firstCol="Transaction ID" />
 			</div>
 		);
 	}

@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 
-import ChestIcon from "../../../public/icons/sidebar_statistics/chest.svg";
-import RulerIcon from "../../../public/icons/sidebar_statistics/ruler.svg";
-import ClockIcon from "../../../public/icons/sidebar_statistics/clock.svg";
+import ChestIcon from "../../../../public/icons/sidebar_statistics/chest.svg";
+import RulerIcon from "../../../../public/icons/sidebar_statistics/ruler.svg";
+import ClockIcon from "../../../../public/icons/sidebar_statistics/clock.svg";
 
 const SidebarSkeleton = () => {
 	const skeletonData = [
