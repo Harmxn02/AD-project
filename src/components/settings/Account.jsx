@@ -71,17 +71,7 @@ const Account = () => {
 						<div>
 							<SettingsTitle>DANGER ZONE</SettingsTitle>
 							<SettingsSubtitle>
-								Delete your data. This is a
-								<strong className="font-semibold">
-									{" "}
-									permanent
-								</strong>{" "}
-								and
-								<strong className="font-semibold">
-									{" "}
-									irreversible
-								</strong>{" "}
-								change.
+								Delete your data. This is a<strong className="font-semibold"> permanent </strong>and<strong className="font-semibold"> irreversible </strong>change.
 							</SettingsSubtitle>
 						</div>
 
