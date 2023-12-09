@@ -17,7 +17,7 @@ const AuctionProceeds = () => {
 		return (
 			<div className="mt-12">
 				<Title content="Auction Proceeds" />
-				<Skeleton />
+				<Skeleton firstCol = "Auction ID" />
 			</div>
 		);
 	}
