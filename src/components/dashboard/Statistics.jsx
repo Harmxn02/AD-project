@@ -9,7 +9,7 @@ import BarChart from "@/components/dashboard/charts/BarChart";
 import RadarChartStacked from "@/components/dashboard/charts/RadarChartStacked";
 import { GetAPI } from "../../assets/js/api";
 
-import StatisticsSkeleton from "./StatisticsSkeleton";
+import StatisticsSkeleton from "@/components/utility/skeletons/StatisticsSkeleton";
 
 const Statistics = ({ activeButton }) => {
 	const adriaId = 1;

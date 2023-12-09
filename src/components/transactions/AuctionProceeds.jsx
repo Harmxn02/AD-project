@@ -5,7 +5,7 @@ import Title from "@/components/utility/Title";
 
 import TableHeader from "@/components/utility/Table/TableHeader";
 import TableDataCell from "@/components/utility/Table/TableDataCell";
-import Skeleton from "./Skeleton";
+import Skeleton from "@/components/utility/skeletons/TransactionsSkeleton";
 
 import { GetAPI } from "../../assets/js/api";
 
@@ -17,7 +17,7 @@ const AuctionProceeds = () => {
 		return (
 			<div className="mt-12">
 				<Title content="Auction Proceeds" />
-				<Skeleton firstCol = "Auction ID" />
+				<Skeleton firstCol="Auction ID" />
 			</div>
 		);
 	}

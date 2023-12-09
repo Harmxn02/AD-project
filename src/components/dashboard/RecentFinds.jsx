@@ -4,7 +4,7 @@ import Title from "@/components/utility/Title";
 
 import Image from "next/image";
 import { GetAPI } from "../../assets/js/api";
-import RecentFindsSkeleton from "./RecentFindsSkeleton";
+import RecentFindsSkeleton from "@/components/utility/skeletons/RecentFindsSkeleton";
 
 import RecentsContainer from "@/components/utility/Recents/RecentsContainer";
 
