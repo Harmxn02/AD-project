@@ -1,69 +1,89 @@
 import React from "react";
 import Title from "@/components/utility/Title";
+import { GetAPI } from "../../assets/js/api";
+import RecentXSkeleton from "@/components/utility/skeletons/RecentXSkeleton";
 import Image from "next/image";
 import RecentsContainer from "@/components/utility/Recents/RecentsContainer";
 
+const formatTimeDifference = (startTime, endTime) => {
+  const startDateTime = new Date(startTime);
+  const endDateTime = new Date(endTime);
+
+  const timeDifference = endDateTime - startDateTime;
+
+  const hours = Math.floor(timeDifference / (1000 * 60 * 60));
+  const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+  const formatUnit = (value, unit) =>
+    `${value} ${unit}${value !== 1 ? "s" : ""}`;
+
+  if (hours > 0) {
+    return (
+      formatUnit(hours, "hour") +
+      (minutes > 0 ? ` ${formatUnit(minutes, "minute")}` : "")
+    );
+  } else {
+    return formatUnit(minutes, "minute");
+  }
+};
+
+const formattedStartDate = (startTime) => {
+  const startDate = new Date(startTime);
+  const day = String(startDate.getDate()).padStart(2, "0");
+  const month = String(startDate.getMonth() + 1).padStart(2, "0");
+  const year = startDate.getFullYear();
+
+  return `${day}/${month}/${year}`;
+};
+
 const RecentXplorations = () => {
-	const recent_xplorations = [
-		{
-			id: 1,
-			image_path: "FRANCE",
-			countries_visited: "France",
-			duration: "2 hours and 22 minutes",
-			date: "08/08/2084",
-		},
-		{
-			id: 2,
-			image_path: "EGYPT",
-			countries_visited: "Egypt - United Kingdom",
-			duration: "8 hours and 44 minutes",
-			date: "14/07/2084",
-		},
-		{
-			id: 3,
-			image_path: "CHINA",
-			countries_visited: "China - India - Japan",
-			duration: "26 hours and 35 minutes",
-			date: "29/06/2084",
-		},
-	];
+  const adriaId = 1;
+  const recent_xplorations = GetAPI(`/sessions/${adriaId}`);
+  const title = "Recent X-Plorations";
+  const description =
+    "An overview of your recently visited locations, including travel time.";
 
-	return (
-		<section className="mt-12">
-			<Title content="Recent X-Plorations" />
-			<p className="font-light pb-4">
-				An overview of your recently visited locations, including travel
-				time.
-			</p>
-			<div className="w-full flex flex-col gap-5">
-				{recent_xplorations.map((exploration) => (
-					<RecentsContainer key={exploration.id}>
-						<Image
-							src={`/icons/flags/${exploration.image_path}.svg`}
-							width={256}
-							height={256}
-							className="w-16 h-16 rounded-xl rounded-tr-none rounded-br-none "
-							alt="country flag"
-						></Image>
+  if (recent_xplorations === null) {
+    return <RecentXSkeleton title={title} description={description} />;
+  }
 
-						<div className="w-3/6 flex items-center h-full border-r-4">
-							<p className="font-medium text-lg">
-								{exploration.countries_visited}
-							</p>
-						</div>
-						<div className="w-3/6 flex flex-row justify-between items-center px-8">
-							<p className="text-brandBlack font-semibold">
-								{exploration.duration}
-							</p>
-							<p className="font-medium text-sm">
-								{exploration.date}
-							</p>
-						</div>
-					</RecentsContainer>
-				))}
-			</div>
-		</section>
-	);
+  return (
+    <section className="mt-12">
+      <Title content={title} />
+      <p className="font-light pb-4">{description}</p>
+      <div className="w-full flex flex-col gap-5 pr-2 max-h-[280px] overflow-y-auto scrollbar-thin scrollbar-thumb-brandTeal scrollbar-track-transparent">
+        {recent_xplorations.map((exploration) => (
+          <RecentsContainer key={exploration.id}>
+            <Image
+              src={`/icons/flags/${exploration.image_path}.svg`} /* this will be the first item in the exploration.countriesVisited array the api will return, capitalize it and then find the svg.*/
+              width={256}
+              height={256}
+              className="w-16 h-16 rounded-xl rounded-tr-none rounded-br-none "
+              alt="country flag"
+            ></Image>
+
+            <div className="w-3/6 flex items-center h-full border-r-4">
+              <p className="font-medium text-lg">
+                {/*exploration.countriesVisited   THIS WILL BE IMPLEMENTED SERVER SIDE LATER*/}
+                China - Japan (placeholders for now)
+              </p>
+            </div>
+            <div className="w-3/6 flex flex-row justify-between items-center px-8">
+              <p className="text-brandBlack font-semibold">
+                {formatTimeDifference(
+                  exploration.startTime,
+                  exploration.endTime
+                )}
+              </p>
+              <p className="font-medium text-sm">
+                {formattedStartDate(exploration.startTime)}
+              </p>
+            </div>
+          </RecentsContainer>
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default RecentXplorations;
