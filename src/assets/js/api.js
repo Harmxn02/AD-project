@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 export const GetAPI = (path) => {
 	const [apiData, setApiData] = useState(null);
 	const URL = `https://project-2.ti.howest.be/2023-2024/group-17/api`;
-	
+
 	// voor caching
 	//  { cache: 'force-cache' }
-	
+
 	useEffect(() => {
 		let isMounted = true;
 
