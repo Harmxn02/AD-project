@@ -16,13 +16,12 @@ import ChestIcon from "../../../public/icons/sidebar_statistics/chest.svg";
 import RulerIcon from "../../../public/icons/sidebar_statistics/ruler.svg";
 import ClockIcon from "../../../public/icons/sidebar_statistics/clock.svg";
 
-const SidebarLink = ({ href, icon, text, currentPath, customColor }) => {
+const SidebarLink = ({ href, icon, text, currentPath }) => {
 	SidebarLink.propTypes = {
 		href: PropTypes.string.isRequired,
 		icon: PropTypes.element.isRequired,
 		text: PropTypes.string.isRequired,
 		currentPath: PropTypes.string.isRequired,
-		customColor: PropTypes.string,
 	};
 
 	const isActive = currentPath.startsWith(href);
