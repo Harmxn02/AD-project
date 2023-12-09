@@ -2,10 +2,8 @@ import React from "react";
 import RecentsContainer from "@/components/utility/Recents/RecentsContainer";
 import Title from "@/components/utility/Title";
 const RecentFindsSkeleton = () => {
-
-
-    // Recent X-Plorations will just be a copy of this, 
-    // but with a different Title and subtitle
+	// Recent X-Plorations will just be a copy of this,
+	// but with a different Title and subtitle
 
 	return (
 		<>
@@ -29,7 +27,7 @@ const RecentFindsSkeleton = () => {
 					</div>
 				</RecentsContainer>
 
-                <RecentsContainer>
+				<RecentsContainer>
 					<div className="bg-gray-200 animate-pulse w-16 h-16 flex rounded-xl rounded-tr-none rounded-br-none justify-center text-white items-center"></div>
 					<div className="w-3/6 flex items-center h-full border-r-4">
 						<div className="h-[1rem] w-[30ch] rounded-full bg-gray-200 animate-pulse"></div>
@@ -40,7 +38,7 @@ const RecentFindsSkeleton = () => {
 					</div>
 				</RecentsContainer>
 
-                <RecentsContainer>
+				<RecentsContainer>
 					<div className="bg-gray-200 animate-pulse w-16 h-16 flex rounded-xl rounded-tr-none rounded-br-none justify-center text-white items-center"></div>
 					<div className="w-3/6 flex items-center h-full border-r-4">
 						<div className="h-[1rem] w-[30ch] rounded-full bg-gray-200 animate-pulse"></div>
@@ -50,7 +48,6 @@ const RecentFindsSkeleton = () => {
 						<div className="h-[1rem] w-[8ch] rounded-full bg-gray-200 animate-pulse"></div>
 					</div>
 				</RecentsContainer>
-
 			</div>
 		</>
 	);
