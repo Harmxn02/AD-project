@@ -62,35 +62,46 @@ const QuickStats = () => {
 		return <div className="h-[159px] mb-4"></div>;
 	}
 
+	const quickStatsData = [
+		{
+			id: 1,
+			icon: RulerIcon,
+			icon_alt: "ruler icon",
+			title: "Distance traveled",
+			statistic: statistics.distanceTraveled,
+		},
+		{
+			id: 2,
+			icon: ClockIcon,
+			icon_alt: "clock icon",
+			title: "Minutes flown",
+			statistic: statistics.minutesFlown,
+		},
+		{
+			id: 3,
+			icon: ChestIcon,
+			icon_alt: "chest icon",
+			title: "Items collected",
+			statistic: statistics.itemsCollected,
+		},
+	];
+
 	return (
 		<div className="px-3 mb-4 flex-col gap-2">
-			<div className={`flex items-center gap-3 border-b py-2`}>
-				<Image src={RulerIcon} alt="ruler icon" />
-				<div>
-					<h4 className="font-semibold text-sm text-brandTeal">
-						Distance traveled
-					</h4>
-					<p className="text-xs">{statistics.distanceTraveled} km</p>
+			{quickStatsData.map((data) => (
+				<div
+					key={data.id}
+					className={`flex items-center gap-3 border-b py-2`}
+				>
+					<Image src={data.icon} alt={data.icon_alt} />
+					<div>
+						<h4 className="font-semibold text-sm text-brandTeal">
+							{data.title}
+						</h4>
+						<p className="text-xs">{data.statistic}</p>
+					</div>
 				</div>
-			</div>
-			<div className={`flex items-center gap-3 border-b py-2`}>
-				<Image src={ClockIcon} alt="clock icon" />
-				<div>
-					<h4 className="font-semibold text-sm text-brandTeal">
-						Minutes flown
-					</h4>
-					<p className="text-xs">{statistics.minutesFlown} minutes</p>
-				</div>
-			</div>
-			<div className={`flex items-center gap-3 border-b py-2`}>
-				<Image src={ChestIcon} alt="chest icon" />
-				<div>
-					<h4 className="font-semibold text-sm text-brandTeal">
-						Items collected
-					</h4>
-					<p className="text-xs">{statistics.itemsCollected} items</p>
-				</div>
-			</div>
+			))}
 		</div>
 	);
 };
