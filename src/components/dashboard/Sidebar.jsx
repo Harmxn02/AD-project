@@ -68,7 +68,7 @@ const QuickStats = () => {
 			icon: RulerIcon,
 			icon_alt: "ruler icon",
 			title: "Distance traveled",
-			statistic: statistics.distanceTraveled,
+			statistic: statistics.distanceTraveled + " kilometres",
 		},
 		{
 			id: 2,
