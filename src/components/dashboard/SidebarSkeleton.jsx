@@ -1,21 +1,29 @@
 import React from "react";
+import Image from "next/image";
+
+import ChestIcon from "../../../public/icons/sidebar_statistics/chest.svg";
+import RulerIcon from "../../../public/icons/sidebar_statistics/ruler.svg";
+import ClockIcon from "../../../public/icons/sidebar_statistics/clock.svg";
 
 const SidebarSkeleton = () => {
 	const skeletonData = [
 		{
 			id: 1,
+			icon: RulerIcon,
+			icon_alt: "ruler icon",
 			title: "Distance traveled",
-			statistic: "0000",
 		},
 		{
 			id: 2,
+			icon: ClockIcon,
+			icon_alt: "clock icon",
 			title: "Minutes flown",
-			statistic: "0000",
 		},
 		{
 			id: 3,
+			icon: ChestIcon,
+			icon_alt: "chest icon",
 			title: "Items collected",
-			statistic: "0",
 		},
 	];
 
@@ -26,7 +34,7 @@ const SidebarSkeleton = () => {
 					key={data.id}
 					className={`flex items-center gap-3 border-b py-2`}
 				>
-					<div className="w-6 h-6 bg-white"></div>
+                    <Image priority src={data.icon} alt={data.icon_alt} />
 					<div>
 						<h4 className="font-semibold text-sm text-brandTeal">
 							{data.title}
