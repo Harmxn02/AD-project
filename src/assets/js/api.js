@@ -5,13 +5,15 @@ import { useEffect, useState } from "react";
 export const GetAPI = (path) => {
 	const [apiData, setApiData] = useState(null);
 	const URL = `https://project-2.ti.howest.be/2023-2024/group-17/api`;
-
+	
+	// voor caching
+	//  { cache: 'force-cache' }
+	
 	useEffect(() => {
 		let isMounted = true;
 
 		const fetchData = async () => {
 			try {
-				//  { cache: 'force-cache' }
 				const response = await fetch(URL + path);
 				await response.json().then((data) => {
 					if (isMounted) {
