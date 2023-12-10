@@ -19,7 +19,7 @@ const StatisticsSkeleton = () => {
 						Charting flight durations within a specific time frame,
 						offering a clear overview for analysis.
 					</p>
-					<div className="w-full mt-4 h-[25rem]">
+					<div className="w-full mt-4 h-[27rem]">
 						<div className="h-[24rem] animate-pulse rounded-xl bg-gray-200 flex justify-center items-center">
                             <Image src={Logo} alt="logo" width={200} />
                         </div>
@@ -31,7 +31,7 @@ const StatisticsSkeleton = () => {
 						A visual summary of flight time across regions,
 						highlighting minutes flown in a specified period.
 					</p>
-					<div className="w-full mt-4 h-[28rem]">
+					<div className="w-full mt-4 h-[27rem]">
 						<div className="h-[24rem] animate-pulse rounded-xl bg-gray-200 flex justify-center items-center">
                             <Image src={Logo} alt="logo" width={200} />
                         </div>
