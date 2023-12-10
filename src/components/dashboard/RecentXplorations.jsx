@@ -45,6 +45,8 @@ const RecentXplorations = () => {
 			/>
 		);
 	}
+	// this will be the first item in the exploration.countriesVisited array the api will return, capitalize it and then find the svg.
+	// src={`/icons/flags/${exploration.image_path}.svg`}
 
 	console.log("RX: ", recent_xplorations);
 
@@ -58,19 +60,19 @@ const RecentXplorations = () => {
 				{recent_xplorations.map((exploration) => (
 					<RecentsContainer key={exploration.id}>
 						<Image
-							/* this will be the first item in the exploration.countriesVisited array the api will return, capitalize it and then find the svg.*/
-							src={`/icons/flags/${temp_exploration_image_path}.svg`}
-							// src={`/icons/flags/${exploration.image_path}.svg`}
+							src={`/icons/flags/FRANCE.svg`}
 							width={256}
 							height={256}
 							className="w-16 h-16 rounded-xl rounded-tr-none rounded-br-none "
 							alt="country flag"
 						></Image>
 
+						{/* first country */}
+						<div>{exploration.countriesVisited[0]}</div>
+
 						<div className="w-3/6 flex items-center h-full border-r-4">
 							<p className="font-medium text-lg">
-								{/*exploration.countriesVisited   THIS WILL BE IMPLEMENTED SERVER SIDE LATER*/}
-								{(exploration.countriesVisited).join(" - ")}
+								{exploration.countriesVisited.join(" - ")}
 							</p>
 						</div>
 						<div className="w-3/6 flex flex-row justify-between items-center px-8">
