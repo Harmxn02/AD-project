@@ -21,8 +21,8 @@ export default function Home() {
 					activeButton={activeButton}
 					onButtonClick={handleButtonClick}
 				/>
-				{/* <Statistics activeButton={activeButton} />
-				<RecentFinds /> */}
+				<Statistics activeButton={activeButton} />
+				<RecentFinds />
 				<RecentXplorations />
 				<Revenue />
 			</section>
