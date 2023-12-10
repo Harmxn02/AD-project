@@ -45,6 +45,18 @@ const RecentXplorations = () => {
 			/>
 		);
 	}
+
+
+	const formatCountryString = (country) => {
+		// Convert to string, replace spaces with underscores, remove accents, and remove single quotes
+		return String(country)
+		  .toUpperCase()
+		  .replace(/\s+/g, "_")
+		  .normalize("NFD")
+		  .replace(/[\u0300-\u036f]/g, "")
+		  .replace(/'/g, "");
+	};
+
 	// this will be the first item in the exploration.countriesVisited array the api will return, capitalize it and then find the svg.
 	// src={`/icons/flags/${exploration.image_path}.svg`}
 
@@ -59,16 +71,18 @@ const RecentXplorations = () => {
 			<div className="w-full flex flex-col gap-5 pr-2 max-h-[280px] overflow-y-auto scrollbar-thin scrollbar-thumb-brandTeal scrollbar-track-transparent">
 				{recent_xplorations.map((exploration) => (
 					<RecentsContainer key={exploration.id}>
-						<Image
-							src={`/icons/flags/FRANCE.svg`}
-							width={256}
-							height={256}
-							className="w-16 h-16 rounded-xl rounded-tr-none rounded-br-none "
-							alt="country flag"
-						></Image>
+						<div className="w-16 h-16">
+							<Image
+								src={`/icons/country-flags/${formatCountryString(exploration.countriesVisited[0])}.svg`}
+								width={256}
+								height={256}
+								className="w-[5.3rem] h-16 rounded-xl rounded-tr-none rounded-br-none "
+								alt="country flag"
+							></Image>
 
-						{/* first country */}
-						<div>{exploration.countriesVisited[0]}</div>
+						</div>
+
+						<div>{`/icons/country-flags/${formatCountryString(exploration.countriesVisited[0])}.svg`}</div>
 
 						<div className="w-3/6 flex items-center h-full border-r-4">
 							<p className="font-medium text-lg">
