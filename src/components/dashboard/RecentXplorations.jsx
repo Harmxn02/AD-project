@@ -46,6 +46,8 @@ const RecentXplorations = () => {
 		);
 	}
 
+	console.log("RX: ", recent_xplorations);
+
 	const temp_exploration_image_path = "FRANCE";
 
 	return (
@@ -68,7 +70,7 @@ const RecentXplorations = () => {
 						<div className="w-3/6 flex items-center h-full border-r-4">
 							<p className="font-medium text-lg">
 								{/*exploration.countriesVisited   THIS WILL BE IMPLEMENTED SERVER SIDE LATER*/}
-								China - Japan (placeholders for now)
+								{(exploration.countriesVisited).join(" - ")}
 							</p>
 						</div>
 						<div className="w-3/6 flex flex-row justify-between items-center px-8">
