@@ -75,29 +75,38 @@ const RecentXplorations = () => {
 							alt="country flag"
 						></Image>
 
-						{/* THIS PART SHOWS WHICH COUNTRY'S SVG FILE IS BEING FETCHED */}
-						{/* IF THE CORRECT IMAGE ISNT SHOWING, ITS BECAUSE EITHER:
+						<div className="w-3/6 flex items-center h-full border-r-4">
+							<p className="font-medium text-lg">
+								{exploration.countriesVisited.join(" - ")}
+							</p>
+
+							
+
+
+							{/* 
+							
+							THIS PART SHOWS WHICH COUNTRY'S SVG FILE IS BEING FETCHED
+							IF THE CORRECT IMAGE ISNT SHOWING, ITS BECAUSE EITHER:
 							- THE FILE HAS A DIFFERENT NAME THAN WHAT WE GET FROM API -> solution: change name of file
 							- THE FILE DOES NOT EXIST IN THE SVG FOLDER -> solution: add the svg file to the folder
 						
 							IF THE URL SAYS "undefined.svg", that means the API endpoint returns an empty array for "countriesVisited"
 							-> solution: add countries in the server
 							
-							
 							!!! this is temporary
 
-						*/}
+							*/}
 
-						<div className="text-[.5rem] min-w-fit">
-							{`${formatCountryString(
-								exploration.countriesVisited[0],
-							)}.svg`}
-						</div>
+							{/* <---------------- start of temporary feature ----------------> */}
 
-						<div className="w-3/6 flex items-center h-full border-r-4">
-							<p className="font-medium text-lg">
-								{exploration.countriesVisited.join(" - ")}
-							</p>
+							<div className="pl-4 text-[.5rem] min-w-fit">
+								{`${formatCountryString(
+									exploration.countriesVisited[0],
+								)}.svg`}
+							</div>
+
+							{/* <---------------- end of temporary feature ----------------> */}
+
 						</div>
 						<div className="w-3/6 flex flex-row justify-between items-center px-8">
 							<p className="text-brandBlack font-semibold">
