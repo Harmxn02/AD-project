@@ -56,12 +56,7 @@ const RecentXplorations = () => {
 			.replace(/'/g, "");
 	};
 
-	// this will be the first item in the exploration.countriesVisited array the api will return, capitalize it and then find the svg.
-	// src={`/icons/flags/${exploration.image_path}.svg`}
-
 	console.log("RX: ", recent_xplorations);
-
-	const temp_exploration_image_path = "FRANCE";
 
 	return (
 		<section className="mt-12">
@@ -80,9 +75,24 @@ const RecentXplorations = () => {
 							alt="country flag"
 						></Image>
 
-						<div>{`/icons/country-flags/${formatCountryString(
-							exploration.countriesVisited[0],
-						)}.svg`}</div>
+						{/* THIS PART SHOWS WHICH COUNTRY'S SVG FILE IS BEING FETCHED */}
+						{/* IF THE CORRECT IMAGE ISNT SHOWING, ITS BECAUSE EITHER:
+							- THE FILE HAS A DIFFERENT NAME THAN WHAT WE GET FROM API -> solution: change name of file
+							- THE FILE DOES NOT EXIST IN THE SVG FOLDER -> solution: add the svg file to the folder
+						
+							IF THE URL SAYS "undefined.svg", that means the API endpoint returns an empty array for "countriesVisited"
+							-> solution: add countries in the server
+							
+							
+							!!! this is temporary
+
+						*/}
+
+						<div className="text-[.5rem] min-w-fit">
+							{`${formatCountryString(
+								exploration.countriesVisited[0],
+							)}.svg`}
+						</div>
 
 						<div className="w-3/6 flex items-center h-full border-r-4">
 							<p className="font-medium text-lg">
