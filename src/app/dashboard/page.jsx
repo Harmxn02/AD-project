@@ -5,7 +5,12 @@ import RecentXplorations from "@/components/dashboard/RecentXplorations";
 import RecentFinds from "@/components/dashboard/RecentFinds";
 import Revenue from "@/components/dashboard/Revenue";
 import Layout from "@/components/utility/Layout";
-import { useState } from "react";
+import React, { useState } from "react";
+
+const MemoizedStatistics = React.memo(Statistics);
+const MemoizedRecentFinds = React.memo(RecentFinds);
+const MemoizedRecentXplorations = React.memo(RecentXplorations);
+const MemoizedRevenue = React.memo(Revenue);
 
 export default function Home() {
 	const [activeButton, setActiveButton] = useState("DAY");
@@ -21,10 +26,10 @@ export default function Home() {
 					activeButton={activeButton}
 					onButtonClick={handleButtonClick}
 				/>
-				<Statistics activeButton={activeButton} />
-				<RecentFinds />
-				<RecentXplorations />
-				<Revenue />
+				<MemoizedStatistics activeButton={activeButton} />
+				<MemoizedRecentFinds />
+				<MemoizedRecentXplorations />
+				<MemoizedRevenue />
 			</section>
 		</Layout>
 	);

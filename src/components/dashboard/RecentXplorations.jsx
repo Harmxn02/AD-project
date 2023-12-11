@@ -80,19 +80,19 @@ const RecentXplorations = () => {
 								{exploration.countriesVisited.join(" - ")}
 							</p>
 
-							
 
 
-							{/* 
-							
+
+							{/*
+
 							THIS PART SHOWS WHICH COUNTRY'S SVG FILE IS BEING FETCHED
 							IF THE CORRECT IMAGE ISNT SHOWING, ITS BECAUSE EITHER:
 							- THE FILE HAS A DIFFERENT NAME THAN WHAT WE GET FROM API -> solution: change name of file
 							- THE FILE DOES NOT EXIST IN THE SVG FOLDER -> solution: add the svg file to the folder
-						
+
 							IF THE URL SAYS "undefined.svg", that means the API endpoint returns an empty array for "countriesVisited"
 							-> solution: add countries in the server
-							
+
 							!!! this is temporary
 
 							*/}

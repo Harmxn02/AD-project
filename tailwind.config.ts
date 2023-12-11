@@ -25,18 +25,15 @@ const config: Config = {
         // previously used for Homescreen
         brandDarkPurple: "#00002e",
         brandPink: "#D292FF",
-        
         // used for Homescreen
         brandDarkGreen: "#002e2c",
         brandLightGreen: "#92ffd0",
         brandBlue: "#3C46FF",
         brandLightGrey: "#8E8EA0",
-        
         // used for specific areas
         lastPlan: "#3E3E3E",
         alternatingTransaction: "#DFE5EB",
         planButtons: "#2C2C2C",
-        
       },
     },
   },
