@@ -107,7 +107,7 @@ const QuickStats = () => {
 };
 
 const Sidebar = () => {
-	const pathname = usePathname();
+	const pathname = usePathname() || "";
 	const settingsPathname = "/settings";
 	const transactionsPathname = "/transactions";
 
