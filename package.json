@@ -15,12 +15,12 @@
     "validate-ci": "npm run validate-html && npm run validate-sonar-ci",
     "validate-local-mac": "npm run validate-html && npm run validate-sonar-local-mac",
     "validate-local-win": "npm run validate-html && npm run validate-sonar-local-win",
-    "test": "jest --coverage --watchAll --env=jsdom"
+    "test": "jest --coverage --watchAll --env=jsdom",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@vercel/analytics": "^1.1.1",
     "chart.js": "^4.4.0",
-    "next": "14.0.2",
     "react": "^18",
     "react-dom": "^18",
     "react-simple-typewriter": "^5.0.1",
@@ -32,8 +32,10 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "cypress": "^13.6.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.2",
+    "next": "^14.0.4",
     "postcss": "^8",
     "prettier": "^3.1.0",
     "tailwind-scrollbar": "^3.0.5",
