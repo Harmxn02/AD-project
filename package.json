@@ -15,8 +15,7 @@
     "validate-ci": "npm run validate-html && npm run validate-sonar-ci",
     "validate-local-mac": "npm run validate-html && npm run validate-sonar-local-mac",
     "validate-local-win": "npm run validate-html && npm run validate-sonar-local-win",
-    "test": "jest --coverage --watchAll --env=jsdom",
-    "cypress:open": "cypress open"
+    "test": "jest --coverage --watchAll --env=jsdom"
   },
   "dependencies": {
     "@vercel/analytics": "^1.1.1",
