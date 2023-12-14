@@ -1,7 +1,4 @@
 import React from "react";
-import SubscriptionsOverview from "../../subscriptions-overview/SubscriptionsOverview";
-import SubscriptionsOverviewCard from "../../subscriptions-overview/SubscriptionsOverviewCard";
-
 import SubscriptionOverviewCardSkeleton from "./SubscriptionOverviewCardSkeleton";
 import Link from "next/link";
 
