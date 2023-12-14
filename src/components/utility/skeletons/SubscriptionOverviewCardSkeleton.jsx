@@ -17,33 +17,20 @@ const SubscriptionOverviewCardSkeleton = () => {
 			<div className="w-[15ch] h-6 bg-gray-200 animate-pulse mb-4"></div>
 
 			{/* descriptionm 2 lines */}
-			<div className="flex flex-col gap-2">
+			<div className="flex flex-col gap-1">
 				<div className="w-[35ch] h-4 bg-gray-200 animate-pulse"></div>
 				<div className="w-[10ch] h-4 bg-gray-200 animate-pulse"></div>
 			</div>
 
-			<p className="text-[2rem] my-2 font-semibold">
-				ADCO 00.00{" "}
-				<span className="text-[1rem] text-brandBlack font-normal">
-					/period
-				</span>
-			</p>
 
-			{/* <Link
-				href="/settings/subscriptions"
-				className="rounded-lg border bg-brandDarkGreen hover:bg-teal-800 transition-colors duration-500 text-white px-4 py-[0.375rem] inline-block"
-			>
-				Buy {name}{" "}
-				<Image
-					src="/icons/arrow-right.svg"
-					width={20}
-					height={20}
-					className="inline-block"
-					alt="arrow right"
-				/>
-			</Link> */}
+            {/* price */}
+            <div className="flex gap-2 my-4 items-baseline">
+				<div className="w-[20ch] h-8 bg-gray-200 animate-pulse"></div>
+				<div className="w-[5ch] h-4 bg-gray-200 animate-pulse"></div>
+			</div>
 
-			<div className="rounded-lg bg-brandDarkGreen px-4 py-[0.375rem] h-9 max-w-[190px]"></div>
+
+			<div className="rounded-lg bg-gray-200 px-4 py-[0.375rem] h-9 max-w-[190px]"></div>
 
 			<div className="w-full bg-gray-200 h-[1px] my-6"></div>
 			<ul className="flex flex-col gap-5">
