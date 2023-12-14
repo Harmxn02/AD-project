@@ -6,12 +6,10 @@ const SubscriptionOverviewCardSkeleton = () => {
 		{ id: 2 },
 		{ id: 3 },
 		{ id: 4 },
-		{ id: 5 },
-		{ id: 6 },
 	];
 
 	return (
-		<div className="bg-white w-full rounded-lg p-6 border border-gray-300">
+		<div className="bg-white min-h-[547px] w-full rounded-lg p-6 border border-gray-300">
 
 			{/* plan name */}
 			<div className="w-[15ch] h-6 bg-gray-200 animate-pulse mb-4"></div>
@@ -30,14 +28,14 @@ const SubscriptionOverviewCardSkeleton = () => {
 			</div>
 
 
-			<div className="rounded-lg bg-gray-200 px-4 py-[0.375rem] h-9 max-w-[190px]"></div>
+			<div className="rounded-lg bg-brandDarkGreen animate-pulse px-4 py-[0.375rem] h-9 max-w-[190px]"></div>
 
 			<div className="w-full bg-gray-200 h-[1px] my-6"></div>
 			<ul className="flex flex-col gap-5">
 				{numberOfFeatures.map((row) => (
 					<li key={row.id} className="flex items-center space-x-3">
 						<svg
-							className="flex-shrink-0 w-5 h-5 text-brandGreen mr-3"
+							className="flex-shrink-0 w-5 h-5 text-brandGreen animate-pulse mr-3"
 							fill="currentColor"
 							viewBox="0 0 20 20"
 							xmlns="http://www.w3.org/2000/svg"
