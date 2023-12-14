@@ -27,9 +27,7 @@ const Statistics = ({ activeButton }) => {
 	let prefixTitle;
 
 	if (!regionTimeDataAPI) {
-		return (
-			<StatisticsSkeleton />
-		);
+		return <StatisticsSkeleton />;
 	}
 
 	const flownTimeData = {
