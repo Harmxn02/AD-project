@@ -19,14 +19,10 @@ const SubscriptionOverviewCardSkeleton = () => {
 			{/* plan name */}
 			<div></div>
 
-			<p className="text-[0.875rem] text-brandBlack">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit.
-				Quaerat, inventore tenetur!
-			</p>
-			<div>
+			<div className="flex flex-col gap-2">
 				{/* descriptionm 2 lines */}
-				<div></div>
-				<div></div>
+				<div className="w-[35ch] h-4 bg-gray-200 animate-pulse"></div>
+				<div className="w-[10ch] h-4 bg-gray-200 animate-pulse"></div>
 			</div>
 
 			<p className="text-[2rem] my-2 font-semibold">
