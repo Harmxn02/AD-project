@@ -1,49 +1,121 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Title from "@/components/utility/Title";
 import LineBarChart from "@/components/dashboard/charts/LineBarChart";
+import StatisticsSkeleton from "@/components/utility/skeletons/StatisticsSkeleton";
 
-const Revenue = () => {
-	const labels = [
-		"Monday",
-		"Tuesday",
-		"Wednesday",
-		"Thursday",
-		"Friday",
-		"Saturday",
-		"Sunday",
-	];
+import { GetAPI } from "../../assets/js/api";
 
-	const dataCombined = [
-		{
-			type: "line",
-			label: "ADCO earned",
-			data: [43.21, 9.54, 0, 0, 98.65, 0.52, 0, 2.47],
-			backgroundColor: "rgba(49, 94, 101, 1)",
-			borderColor: "rgba(49, 94, 101, 1)",
-			borderWidth: 3,
-		},
-		{
-			type: "bar",
-			label: "ADCO earned",
-			data: [43.21, 9.54, 0, 0, 98.65, 0.52, 0, 2.47],
-			backgroundColor: "rgba(98, 160, 170, 0.45)",
-			borderColor: "rgba(75, 192, 192, 1)",
-			borderWidth: 1,
-		},
-	];
+const Revenue = ({ activeButton }) => {
+	const adriaId = 1;
+	const revenueDataAPI = GetAPI(`/revenue/${adriaId}`);
+
+	const revenue = {
+		dataToRender: [],
+		labels: [],
+	};
+
+	let prefixTitle;
+
+	if (!revenueDataAPI) {
+		return <StatisticsSkeleton />;
+	}
+
+	const revenueData = {
+		dailyData: [
+			{
+				type: "line",
+				label: "ADCO earned",
+				data: revenueDataAPI.daily,
+				backgroundColor: "rgba(49, 94, 101, 1)",
+				borderColor: "rgba(49, 94, 101, 1)",
+				borderWidth: 1,
+			},
+			{
+				type: "bar",
+				label: "ADCO earned",
+				data: revenueDataAPI.daily,
+				backgroundColor: "rgba(98, 160, 170, 0.45)",
+				borderColor: "rgba(75, 192, 192, 1)",
+				borderWidth: 1,
+			}
+		],
+		weeklyData: [
+			{
+				type: "line",
+				label: "ADCO earned",
+				data: revenueDataAPI.weekly,
+				backgroundColor: "rgba(49, 94, 101, 1)",
+				borderColor: "rgba(49, 94, 101, 1)",
+				borderWidth: 1,
+			},
+			{
+				type: "bar",
+				label: "ADCO earned",
+				data: revenueDataAPI.weekly,
+				backgroundColor: "rgba(98, 160, 170, 0.45)",
+				borderColor: "rgba(75, 192, 192, 1)",
+				borderWidth: 1,
+			}
+		],
+		monthlyData: [
+			{
+				type: "line",
+				label: "ADCO earned",
+				data: revenueDataAPI.monthly,
+				backgroundColor: "rgba(49, 94, 101, 1)",
+				borderColor: "rgba(49, 94, 101, 1)",
+				borderWidth: 1,
+			},
+			{
+				type: "bar",
+				label: "ADCO earned",
+				data: revenueDataAPI.monthly,
+				backgroundColor: "rgba(98, 160, 170, 0.45)",
+				borderColor: "rgba(75, 192, 192, 1)",
+				borderWidth: 1,
+			}
+		],
+	};
+
+	switch (activeButton) {
+		case "DAY":
+			revenue.dataToRender = revenueData.dailyData;
+			revenue.labels = revenueData.dailyData[0].labels;
+			prefixTitle = "Daily";
+			break;
+		case "WEEK":
+			revenue.dataToRender = revenueData.weeklyData;
+			revenue.labels = revenueData.weeklyData[0].labels;
+			prefixTitle = "Weekly";
+			break;
+		case "MONTH":
+			revenue.dataToRender = revenueData.monthlyData;
+			revenue.labels = revenueData.monthlyData[0].labels;
+			prefixTitle = "Monthly";
+			break;
+		default:
+			revenue.dataToRender = revenueData.dailyData;
+			revenue.labels = revenueData.dailyData[0].labels;
+			prefixTitle = "Daily";
+	}
 
 	return (
 		<section className="mt-12">
-			<Title content="Revenue" />
+			<Title content={`${prefixTitle} Revenue`} />
 			<p className="font-light">
 				An overview of revenue changes within a specific timeframe for
 				quick analysis.
 			</p>
 			<div className="w-full mt-4 h-[25rem]">
-				<LineBarChart labels={labels} dataObject={dataCombined} />
+				<LineBarChart labels={revenue.labels} dataObject={revenue.dataToRender} />
 			</div>
 		</section>
 	);
+};
+
+Revenue.propTypes = {
+	activeButton: PropTypes.string.isRequired,
 };
 
 export default Revenue;

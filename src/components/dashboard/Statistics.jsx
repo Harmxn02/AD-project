@@ -14,6 +14,7 @@ import StatisticsSkeleton from "@/components/utility/skeletons/StatisticsSkeleto
 const Statistics = ({ activeButton }) => {
 	const adriaId = 1;
 	const regionTimeDataAPI = GetAPI(`/flytimepercoordinate/${adriaId}`);
+	const flownTimeDataAPI = GetAPI(`/flytime/${adriaId}`);
 
 	const flownTime = {
 		dataToRender: [],
@@ -26,82 +27,9 @@ const Statistics = ({ activeButton }) => {
 
 	let prefixTitle;
 
-	if (!regionTimeDataAPI) {
-		return (
-			<StatisticsSkeleton />
-		);
+	if (!(regionTimeDataAPI && flownTimeDataAPI)) {
+		return <StatisticsSkeleton />;
 	}
-
-	const flownTimeData = {
-		dailyData: [
-			{
-				data: [10, 20, 30, 15, 25, 35, 45],
-				label: "Minutes Flown",
-				backgroundColor: "#62A0AA73",
-				borderColor: "rgba(75, 192, 192, 1)",
-				borderWidth: 1,
-				labels: [
-					"Monday",
-					"Tuesday",
-					"Wednesday",
-					"Thursday",
-					"Friday",
-					"Saturday",
-					"Sunday",
-				],
-			},
-		],
-		weeklyData: [
-			{
-				data: [
-					512, 478, 68, 15, 425, 135, 196, 147, 187, 177, 872, 342,
-					146,
-				],
-				label: "Minutes Flown",
-				backgroundColor: "#62A0AA73",
-				borderColor: "rgba(75, 192, 192, 1)",
-				borderWidth: 1,
-				labels: [
-					"W1",
-					"W2",
-					"W3",
-					"W4",
-					"W5",
-					"W6",
-					"W7",
-					"W8",
-					"W9",
-					"W10",
-					"W11",
-					"W12",
-					"W13",
-				],
-			},
-		],
-		monthlyData: [
-			{
-				data: [512, 478, 68, 15, 425, 135, 196, 752, 358, 125, 36, 887],
-				label: "Minutes Flown",
-				backgroundColor: "#62A0AA73",
-				borderColor: "rgba(75, 192, 192, 1)",
-				borderWidth: 1,
-				labels: [
-					"JAN",
-					"FEB",
-					"MARCH",
-					"APRIL",
-					"MAY",
-					"JUNE",
-					"JULY",
-					"AUG",
-					"SEP",
-					"OCT",
-					"NOV",
-					"DEC",
-				],
-			},
-		],
-	};
 
 	function getContinentValuesPerPeriod(data, period) {
 		const resultArray = [];
@@ -126,6 +54,36 @@ const Statistics = ({ activeButton }) => {
 
 		return resultArray;
 	}
+
+	const flownTimeData = {
+		dailyData: [
+			{
+				data: flownTimeDataAPI.daily,
+				label: "Minutes Flown",
+				backgroundColor: "#62A0AA73",
+				borderColor: "rgba(75, 192, 192, 1)",
+				borderWidth: 1
+			},
+		],
+		weeklyData: [
+			{
+				data: flownTimeDataAPI.weekly,
+				label: "Minutes Flown",
+				backgroundColor: "#62A0AA73",
+				borderColor: "rgba(75, 192, 192, 1)",
+				borderWidth: 1
+			},
+		],
+		monthlyData: [
+			{
+				data: flownTimeDataAPI.monthly,
+				label: "Minutes Flown",
+				backgroundColor: "#62A0AA73",
+				borderColor: "rgba(75, 192, 192, 1)",
+				borderWidth: 1
+			},
+		],
+	};
 
 	const regionTimeData = {
 		labels: [
