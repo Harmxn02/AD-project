@@ -12,15 +12,12 @@ const SubscriptionOverviewCardSkeleton = () => {
 
 	return (
 		<div className="bg-white w-full rounded-lg p-6 border border-gray-300">
-			<h3 className="text-[1.5rem] text-brandDarkGreen font-semibold">
-				Plan Name
-			</h3>
 
 			{/* plan name */}
-			<div></div>
+			<div className="w-[15ch] h-6 bg-gray-200 animate-pulse mb-4"></div>
 
+			{/* descriptionm 2 lines */}
 			<div className="flex flex-col gap-2">
-				{/* descriptionm 2 lines */}
 				<div className="w-[35ch] h-4 bg-gray-200 animate-pulse"></div>
 				<div className="w-[10ch] h-4 bg-gray-200 animate-pulse"></div>
 			</div>
