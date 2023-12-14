@@ -1,36 +1,11 @@
-"use client";
+import React from "react";
+import SubscriptionsOverview from "../../subscriptions-overview/SubscriptionsOverview";
+import SubscriptionsOverviewCard from "../../subscriptions-overview/SubscriptionsOverviewCard";
 
 import Link from "next/link";
-import SubscriptionsOverviewCard from "@/components/subscriptions-overview/SubscriptionsOverviewCard";
-import { GetAPI } from "@/assets/js/api";
 
-import ExplorePlansSkeleton from "@/components/utility/skeletons/ExplorePlansSkeleton";
 
-const SubscriptionsOverview = () => {
-	const descriptions = {
-		1: "Soar into adventure with 10 flight hours, expert training, and support.",
-		2: "Elevate your journey with 24 hours of flight, plus priority access.",
-		3: "Unleash boundless exploration with 48 hours, 24/7 support, and unlimited rentals.",
-		4: "Dive into discovery at just $3.29 per hour. Start exploring now!",
-	};
-
-	const periods = {
-		1: "month",
-		2: "month",
-		3: "month",
-		4: "hour",
-	};
-
-	const explorePlans = GetAPI("/plans");
-
-	if (explorePlans == null) {
-		return (
-			<div className="bg-brandDarkGreen">
-				<ExplorePlansSkeleton />
-			</div>
-		);
-	}
-
+const ExplorePlansSkeleton = () => {
 	return (
 		<div className="selection:bg-[#62a0aa71] min-h-screen px-8 bg-brandDarkGreen">
 			<header className="flex items-center gap-2 mb-3">
@@ -76,20 +51,11 @@ const SubscriptionsOverview = () => {
 					</p>
 				</div>
 				<section className="flex w-full gap-12 mt-12 pb-8 justify-between">
-					{explorePlans.map((plan) => (
-						<SubscriptionsOverviewCard
-							key={plan.id}
-							name={plan.name}
-							description={descriptions[plan.id]}
-							price={plan.price}
-							period={periods[plan.id]}
-							features={plan.perks}
-						/>
-					))}
+					
 				</section>
 			</main>
 		</div>
 	);
 };
 
-export default SubscriptionsOverview;
+export default ExplorePlansSkeleton;
