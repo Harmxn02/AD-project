@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Title from "@/components/utility/Title";
 import LineBarChart from "@/components/dashboard/charts/LineBarChart";
-import StatisticsSkeleton from "@/components/utility/skeletons/StatisticsSkeleton";
+import PeriodicRevenueSkeleton from "@/components/utility/skeletons/PeriodicRevenueSkeleton";
 
 import { GetAPI } from "../../assets/js/api";
 
@@ -18,7 +18,7 @@ const Revenue = ({ activeButton }) => {
 	let prefixTitle;
 
 	if (!revenueDataAPI) {
-		return <StatisticsSkeleton />;
+		return <PeriodicRevenueSkeleton />;
 	}
 
 	const revenueData = {
