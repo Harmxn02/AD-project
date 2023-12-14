@@ -33,7 +33,7 @@ const StartButton = () => {
 		<div className="py-6">
 			<a
 				href="#todo"
-				className="bg-brandTeal rounded-md px-4 py-3 text-white"
+				className="bg-brandTeal hover:bg-teal-800 transition-colors duration-500 rounded-md px-4 py-3 text-white"
 			>
 				Explore now
 			</a>
