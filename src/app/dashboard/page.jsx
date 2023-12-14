@@ -29,7 +29,7 @@ export default function Home() {
 				<MemoizedStatistics activeButton={activeButton} />
 				<MemoizedRecentFinds />
 				<MemoizedRecentXplorations />
-				<MemoizedRevenue />
+				<MemoizedRevenue activeButton={activeButton}/>
 			</section>
 		</Layout>
 	);
