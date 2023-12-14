@@ -2,6 +2,7 @@ import React from "react";
 import SubscriptionsOverview from "../../subscriptions-overview/SubscriptionsOverview";
 import SubscriptionsOverviewCard from "../../subscriptions-overview/SubscriptionsOverviewCard";
 
+import SubscriptionOverviewCardSkeleton from "./SubscriptionOverviewCardSkeleton";
 import Link from "next/link";
 
 
@@ -51,7 +52,10 @@ const ExplorePlansSkeleton = () => {
 					</p>
 				</div>
 				<section className="flex w-full gap-12 mt-12 pb-8 justify-between">
-					
+					<SubscriptionOverviewCardSkeleton/>
+					<SubscriptionOverviewCardSkeleton/>
+					<SubscriptionOverviewCardSkeleton/>
+					<SubscriptionOverviewCardSkeleton/>
 				</section>
 			</main>
 		</div>
