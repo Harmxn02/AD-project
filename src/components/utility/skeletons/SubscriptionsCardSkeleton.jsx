@@ -6,14 +6,7 @@ const SubscriptionsCardSkeleton = ({ isLast }) => {
 		isLast: PropTypes.bool.isRequired,
 	};
 
-    const numberOfFeatures = [
-		{ id: 1 },
-		{ id: 2 },
-		{ id: 3 },
-		{ id: 4 },
-	];
-
-	const sharedButtonStyles = "px-5 py-3 text-center bg-planButtons ";
+	const numberOfFeatures = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
 
 	return (
 		<div className="grid-cols-1">
@@ -22,30 +15,15 @@ const SubscriptionsCardSkeleton = ({ isLast }) => {
 					className={`flex flex-col mx-auto w-[29rem] text-center text-gray-900 border border-gray-300 shadow-md p-8
 						${isLast ? "bg-lastPlan text-white" : "bg-white text-black"}`}
 				>
-					<h3
-						className={`mb-4 text-2xl text-left font-medium
-						${isLast ? "bg-lastPlan text-white" : "bg-white text-black"}
+					{/* plan name */}
+					<div className="w-[15ch] h-6 bg-gray-200 animate-pulse mb-4"></div>
 
-						`}
-					>
-						name
-					</h3>
-					<div
-						className={`flex items-end mt-4 ${
-							isLast ? "text-white" : " text-black"
-						} `}
-					>
-						<span
-							className={`mr-2 text-5xl font-extrabold flex gap-2
-						`}
-						>
-							<span className="text-lg">Ⓐ</span>
-							<span>price</span>
-						</span>
-						<span className="text-gray-400">/month</span>
+					<div className="flex gap-2 mt-4 mb-2 items-baseline">
+						<div className="w-[20ch] h-12 bg-gray-200 animate-pulse"></div>
+						<div className="w-[5ch] h-4 bg-gray-200 animate-pulse"></div>
 					</div>
 					<div
-						className={`h-px my-8 ${
+						className={`h-px my-8 animate-pulse ${
 							isLast ? "bg-white" : " bg-black"
 						}`}
 					></div>
@@ -57,7 +35,7 @@ const SubscriptionsCardSkeleton = ({ isLast }) => {
 						Every month you have access to:
 					</p>
 					<ul
-						className={`mb-8 space-y-4 text-left h-60 ${
+						className={`mb-8 space-y-6 text-left h-60 ${
 							isLast ? "text-white" : " text-black"
 						}`}
 					>
@@ -67,7 +45,7 @@ const SubscriptionsCardSkeleton = ({ isLast }) => {
 								className="flex items-center space-x-3"
 							>
 								<svg
-									className="flex-shrink-0 w-5 h-5 text-brandGreen animate-pulse mr-3"
+									className="flex-shrink-0 w-5 h-5 text-brandGreen "
 									fill="currentColor"
 									viewBox="0 0 20 20"
 									xmlns="http://www.w3.org/2000/svg"
@@ -78,18 +56,13 @@ const SubscriptionsCardSkeleton = ({ isLast }) => {
 										clipRule="evenodd"
 									></path>
 								</svg>
-								<div className="w-[25ch] h-4 bg-gray-200 rounded-full animate-pulse"></div>
+								<div className="w-[25ch] h-3 bg-gray-200 rounded-full animate-pulse"></div>
 							</li>
 						))}
 					</ul>
-					{isLast ? (
-						<p className={`${sharedButtonStyles}`}>Current plan</p>
-					) : (
-						<a
-							href="#"
-							className={`text-white font-medium px-5 py-3 text-center ${sharedButtonStyles}`}
-						>{`Switch to {name}`}</a>
-					)}
+
+					{/* switch button */}
+					<div className="px-5 py-3 h-12 text-center bg-planButtons animate-pulse"></div>
 				</div>
 			</div>
 		</div>
