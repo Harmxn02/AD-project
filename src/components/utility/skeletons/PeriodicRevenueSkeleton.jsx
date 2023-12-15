@@ -12,8 +12,8 @@ const PeriodicRevenueSkeleton = () => {
 				quick analysis.
 			</p>
 			<div className="w-full mt-4 h-[25rem] animate-pulse rounded-xl bg-gray-200 flex justify-center items-center">
-                <Image src={Logo} alt="logo" width={450} />
-            </div>
+				<Image src={Logo} alt="logo" width={450} />
+			</div>
 		</section>
 	);
 };

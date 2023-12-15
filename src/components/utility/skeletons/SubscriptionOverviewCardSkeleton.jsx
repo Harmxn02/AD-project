@@ -1,16 +1,10 @@
 import React from "react";
 
 const SubscriptionOverviewCardSkeleton = () => {
-	const numberOfFeatures = [
-		{ id: 1 },
-		{ id: 2 },
-		{ id: 3 },
-		{ id: 4 },
-	];
+	const numberOfFeatures = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
 
 	return (
 		<div className="bg-white min-h-[547px] w-full rounded-lg p-6 border border-gray-300">
-
 			{/* plan name */}
 			<div className="w-[15ch] h-6 bg-gray-200 animate-pulse mb-4"></div>
 
@@ -20,13 +14,11 @@ const SubscriptionOverviewCardSkeleton = () => {
 				<div className="w-[10ch] h-4 bg-gray-200 animate-pulse"></div>
 			</div>
 
-
-            {/* price */}
-            <div className="flex gap-2 my-4 items-baseline">
+			{/* price */}
+			<div className="flex gap-2 my-4 items-baseline">
 				<div className="w-[20ch] h-8 bg-gray-200 animate-pulse"></div>
 				<div className="w-[5ch] h-4 bg-gray-200 animate-pulse"></div>
 			</div>
-
 
 			<div className="rounded-lg bg-brandDarkGreen animate-pulse px-4 py-[0.375rem] h-9 max-w-[190px]"></div>
 

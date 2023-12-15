@@ -2,7 +2,6 @@ import React from "react";
 import SubscriptionOverviewCardSkeleton from "./SubscriptionOverviewCardSkeleton";
 import Link from "next/link";
 
-
 const ExplorePlansSkeleton = () => {
 	return (
 		<div className="selection:bg-[#62a0aa71] min-h-screen px-8 bg-brandDarkGreen">
@@ -49,10 +48,10 @@ const ExplorePlansSkeleton = () => {
 					</p>
 				</div>
 				<section className="flex w-full gap-12 mt-12 pb-8 justify-between">
-					<SubscriptionOverviewCardSkeleton/>
-					<SubscriptionOverviewCardSkeleton/>
-					<SubscriptionOverviewCardSkeleton/>
-					<SubscriptionOverviewCardSkeleton/>
+					<SubscriptionOverviewCardSkeleton />
+					<SubscriptionOverviewCardSkeleton />
+					<SubscriptionOverviewCardSkeleton />
+					<SubscriptionOverviewCardSkeleton />
 				</section>
 			</main>
 		</div>
