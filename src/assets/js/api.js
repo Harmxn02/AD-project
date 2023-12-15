@@ -2,19 +2,17 @@
 
 import { useEffect, useState } from "react";
 
-export const GetAPI = (path) => {
+export const GetAPI = (path, cache = false) => {
 	const [apiData, setApiData] = useState(null);
 	const URL = `https://project-2.ti.howest.be/2023-2024/group-17/api`;
-
-	// voor caching
-	//  { cache: 'force-cache' }
 
 	useEffect(() => {
 		let isMounted = true;
 
 		const fetchData = async () => {
 			try {
-				const response = await fetch(URL + path);
+				let cacheOption = cache ? { cache: 'force-cache' } : {};
+				const response = await fetch(URL + path, cacheOption);
 				await response.json().then((data) => {
 					if (isMounted) {
 						const firstKey = Object.keys(data)[0];
@@ -25,11 +23,13 @@ export const GetAPI = (path) => {
 				console.error("Error", error);
 			}
 		};
+
 		fetchData();
 
 		return () => {
 			isMounted = false;
 		};
-	}, [URL, path]);
+	}, [URL, path, cache]);
+
 	return apiData;
 };
