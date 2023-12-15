@@ -21,8 +21,8 @@ const StatisticsSkeleton = () => {
 					</p>
 					<div className="w-full mt-4 h-[27rem]">
 						<div className="h-[24rem] animate-pulse rounded-xl bg-gray-200 flex justify-center items-center">
-                            <Image src={Logo} alt="logo" width={200} />
-                        </div>
+							<Image src={Logo} alt="logo" width={200} />
+						</div>
 					</div>
 				</div>
 				<div className="max-w-[600px] h-full">
@@ -33,8 +33,8 @@ const StatisticsSkeleton = () => {
 					</p>
 					<div className="w-full mt-4 h-[27rem]">
 						<div className="h-[24rem] animate-pulse rounded-xl bg-gray-200 flex justify-center items-center">
-                            <Image src={Logo} alt="logo" width={200} />
-                        </div>
+							<Image src={Logo} alt="logo" width={200} />
+						</div>
 					</div>
 				</div>
 			</div>
