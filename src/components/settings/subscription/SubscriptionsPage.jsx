@@ -6,7 +6,8 @@ import SubscriptionCard from "./SubscriptionCard";
 import ListItem from "./ListItem";
 import VerticalSubscriptionCard from "./VerticalSubscriptionCard";
 
-import Loading from "@/components/utility/Loading";
+import SubscriptionsPageSkeleton from "@/components/utility/skeletons/SubscriptionsPageSkeleton";
+
 
 import { GetAPI } from "../../../assets/js/api";
 
@@ -14,33 +15,33 @@ const SubscriptionsPage = () => {
 	// normally `const endpoint`, but I need to splice the first 3 elements
 	let plans = GetAPI("/plans");
 
-	if (plans === null) {
+	if (plans) {
 		// this prevents map from not working if the data is empty
-		return <Loading />;
+		return <SubscriptionsPageSkeleton />;
 	}
 
-	plans = plans.slice(0, 3);
+	// plans = plans.slice(0, 3);
 
-	return (
-		<section className="mb-12">
-			<Title content="Subscription Plans" />
-			<div className="flex justify-between">
-				{plans.map((subscription) => (
-					<SubscriptionCard
-						isLast={subscription.id === plans.length}
-						key={subscription.id}
-						price={subscription.price}
-						name={subscription.name}
-					>
-						{subscription.perks.map((perk) => (
-							<ListItem key={perk} content={perk} />
-						))}
-					</SubscriptionCard>
-				))}
-			</div>
-			<VerticalSubscriptionCard />
-		</section>
-	);
+	// return (
+	// 	<section className="mb-12 ">
+	// 		<Title content="Subscription Plans" />
+	// 		<div className="flex justify-between">
+	// 			{/* {plans.map((subscription) => (
+	// 				<SubscriptionCard
+	// 					isLast={subscription.id === plans.length}
+	// 					key={subscription.id}
+	// 					price={subscription.price}
+	// 					name={subscription.name}
+	// 				>
+	// 					{subscription.perks.map((perk) => (
+	// 						<ListItem key={perk} content={perk} />
+	// 					))}
+	// 				</SubscriptionCard>
+	// 			))} */}
+	// 		</div>
+	// 		<VerticalSubscriptionCard />
+	// 	</section>
+	// );
 };
 
 export default SubscriptionsPage;
