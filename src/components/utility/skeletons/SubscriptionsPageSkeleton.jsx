@@ -10,10 +10,10 @@ const SubscriptionsPageSkeleton = () => {
 		<section className="mb-12">
 			<Title content="Subscription Plans" />
 			<div className="flex justify-between">
-				{numberOfNormalCards.map((cards) => (
+				{numberOfNormalCards.map((card) => (
 					<SubscriptionsCardSkeleton
-						isLast={cards.id === numberOfNormalCards.length}
-						key={numberOfNormalCards.id}
+						key={card.id}
+						isLast={card.id === numberOfNormalCards.length}
 					></SubscriptionsCardSkeleton>
 				))}
 			</div>
