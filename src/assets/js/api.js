@@ -11,7 +11,7 @@ export const GetAPI = (path, cache = false) => {
 
 		const fetchData = async () => {
 			try {
-				let cacheOption = cache ? { cache: 'force-cache' } : {};
+				const cacheOption = cache ? { cache: 'force-cache' } : {};
 				const response = await fetch(URL + path, cacheOption);
 				await response.json().then((data) => {
 					if (isMounted) {
