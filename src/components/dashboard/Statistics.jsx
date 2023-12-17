@@ -157,7 +157,6 @@ const Statistics = ({ activeButton }) => {
 					</p>
 					<div className="w-full mt-4 h-[25rem]">
 						<BarChart
-							labels={flownTime.labels}
 							dataObject={flownTime.dataToRender}
 						/>
 					</div>
