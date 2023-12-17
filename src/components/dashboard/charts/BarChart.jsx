@@ -10,7 +10,6 @@ const BarChart = (props) => {
         const myChart = new Chart(ctx, {
             type: "bar",
             data: {
-                labels: props.labels,
                 datasets: props.dataObject,
             },
             options: {
@@ -32,7 +31,7 @@ const BarChart = (props) => {
         return () => {
             myChart.destroy();
         };
-    }, [props.dataObject, props.labels]);
+    }, [props.dataObject]);
 
     return <canvas ref={chartRef}></canvas>;
 };
