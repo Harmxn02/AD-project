@@ -17,12 +17,11 @@ const Statistics = ({ activeButton }) => {
 	const flownTimeDataAPI = GetAPI(`/flytime/${adriaId}`);
 
 	const flownTime = {
-		dataToRender: [],
-		labels: [],
+		dataToRender: []
 	};
 
 	const regionTime = {
-		dataToRender: [],
+		dataToRender: []
 	};
 
 	let prefixTitle;
@@ -127,25 +126,21 @@ const Statistics = ({ activeButton }) => {
 	switch (activeButton) {
 		case "DAY":
 			flownTime.dataToRender = flownTimeData.dailyData;
-			flownTime.labels = flownTimeData.dailyData[0].labels;
 			regionTime.dataToRender = regionTimeData.dailyData;
 			prefixTitle = "Daily";
 			break;
 		case "WEEK":
 			flownTime.dataToRender = flownTimeData.weeklyData;
-			flownTime.labels = flownTimeData.weeklyData[0].labels;
 			regionTime.dataToRender = regionTimeData.weeklyData;
 			prefixTitle = "Weekly";
 			break;
 		case "MONTH":
 			flownTime.dataToRender = flownTimeData.monthlyData;
-			flownTime.labels = flownTimeData.monthlyData[0].labels;
 			regionTime.dataToRender = regionTimeData.monthlyData;
 			prefixTitle = "Monthly";
 			break;
 		default:
 			flownTime.dataToRender = flownTimeData.dailyData;
-			flownTime.labels = flownTimeData.dailyData[0].labels;
 			regionTime.dataToRender = regionTimeData.dailyData[0].data;
 			prefixTitle = "Daily";
 	}
@@ -162,7 +157,6 @@ const Statistics = ({ activeButton }) => {
 					</p>
 					<div className="w-full mt-4 h-[25rem]">
 						<BarChart
-							labels={flownTime.labels}
 							dataObject={flownTime.dataToRender}
 						/>
 					</div>

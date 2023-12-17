@@ -11,8 +11,7 @@ const Revenue = ({ activeButton }) => {
 	const revenueDataAPI = GetAPI(`/revenue/${adriaId}`);
 
 	const revenue = {
-		dataToRender: [],
-		labels: [],
+		dataToRender: []
 	};
 
 	let prefixTitle;
@@ -81,22 +80,18 @@ const Revenue = ({ activeButton }) => {
 	switch (activeButton) {
 		case "DAY":
 			revenue.dataToRender = revenueData.dailyData;
-			revenue.labels = revenueData.dailyData[0].labels;
 			prefixTitle = "Daily";
 			break;
 		case "WEEK":
 			revenue.dataToRender = revenueData.weeklyData;
-			revenue.labels = revenueData.weeklyData[0].labels;
 			prefixTitle = "Weekly";
 			break;
 		case "MONTH":
 			revenue.dataToRender = revenueData.monthlyData;
-			revenue.labels = revenueData.monthlyData[0].labels;
 			prefixTitle = "Monthly";
 			break;
 		default:
 			revenue.dataToRender = revenueData.dailyData;
-			revenue.labels = revenueData.dailyData[0].labels;
 			prefixTitle = "Daily";
 	}
 
