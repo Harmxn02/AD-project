@@ -12,9 +12,9 @@ import { GetAPI } from "../../assets/js/api";
 import StatisticsSkeleton from "@/components/utility/skeletons/StatisticsSkeleton";
 
 const Statistics = ({ activeButton }) => {
-	const AdriaID = JSON.parse(localStorage.getItem("AdriaUser")).id;
-	const regionTimeDataAPI = GetAPI(`/flytimepercoordinate/${AdriaID}`);
-	const flownTimeDataAPI = GetAPI(`/flytime/${AdriaID}`);
+	const adriaId = JSON.parse(localStorage.getItem("AdriaUser")).id;
+	const regionTimeDataAPI = GetAPI(`/flytimepercoordinate/${adriaId}`);
+	const flownTimeDataAPI = GetAPI(`/flytime/${adriaId}`);
 
 	const flownTime = {
 		dataToRender: [],

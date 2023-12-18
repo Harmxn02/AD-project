@@ -25,8 +25,8 @@ const getColourAndImage = (item) => {
 };
 
 const RecentFinds = () => {
-	const AdriaID = JSON.parse(localStorage.getItem("AdriaUser")).id;
-	const finds = GetAPI(`/items/${AdriaID}`);
+	const adriaId = JSON.parse(localStorage.getItem("AdriaUser")).id;
+	const finds = GetAPI(`/items/${adriaId}`);
 	const title = "Recent finds";
 	const description =
 		"An overview of your recent finds during past X-plorations, including the coordinates where you found them and their status on the auction.";

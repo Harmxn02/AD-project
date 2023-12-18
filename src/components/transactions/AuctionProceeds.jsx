@@ -10,8 +10,8 @@ import Skeleton from "@/components/utility/skeletons/TransactionsSkeleton";
 import { GetAPI } from "../../assets/js/api";
 
 const AuctionProceeds = () => {
-	const AdriaID = JSON.parse(localStorage.getItem("AdriaUser")).id;
-	const auction_proceeds = GetAPI(`/auctions/${AdriaID}`);
+	const adriaId = JSON.parse(localStorage.getItem("AdriaUser")).id;
+	const auction_proceeds = GetAPI(`/auctions/${adriaId}`);
 
 	if (auction_proceeds === null) {
 		return (

@@ -9,7 +9,6 @@ import { usePathname } from "next/navigation";
 import Button from "@/components/utility/Button";
 import Image from "next/image";
 import Link from "next/link";
-import ProfilePicture from "../../../public/profile-pictures/male_2.jpg";
 import ExitIcon from "../../../public/icons/exit.svg";
 
 import ChestIcon from "../../../public/icons/sidebar_statistics/chest.svg";
@@ -55,8 +54,8 @@ const SidebarLink = ({ href, icon, text, currentPath }) => {
 };
 
 const QuickStats = () => {
-	const AdriaID = JSON.parse(localStorage.getItem("AdriaUser")).id;
-	const statistics = GetAPI(`/members/${AdriaID}/statistics`, true);
+	const adriaId = JSON.parse(localStorage.getItem("AdriaUser")).id;
+	const statistics = GetAPI(`/members/${adriaId}/statistics`, true);
 
 	if (!statistics) {
 		return <SidebarSkeleton />;
