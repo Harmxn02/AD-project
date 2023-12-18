@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 import { GetAPI } from "../../assets/js/api";
@@ -108,6 +108,48 @@ const QuickStats = () => {
 	);
 };
 
+const UserInformation = () => {
+	const selectedUserID = GetUser();
+	const users = GetAPI("/members", true);
+
+	let currentUser;
+
+	if (users) {
+		currentUser = users[selectedUserID - 1];
+		console.log("current user: ", currentUser);
+	}
+
+	return (
+		<div className="p-8 text-center">
+			<Image
+				src={ProfilePicture}
+				alt="Profile Picture"
+				width={80}
+				height={80}
+				className="w-[80px] h-[80px] rounded-full m-auto mb-4"
+				priority
+			/>
+
+			{/* inline skeleton, I know, crazy shit hehe */}
+			{currentUser ? 
+				<div>
+					<h3 className="text-brandTeal font-bold">{currentUser.name}</h3>
+					<h3 className="text-[0.875rem] text-brandBlack">
+						{currentUser.email}
+					</h3>
+
+				</div> : 
+				<div className="flex flex-col gap-2 items-center">
+					<div className="mt-2 h-4 w-[13ch] mx-auto bg-brandTeal animate-pulse"></div>
+					<div className="h-3 w-[15ch] mx-auto bg-gray-200 animate-pulse"></div>
+				</div>
+			}
+
+
+		</div>
+	);
+};
+
 const Sidebar = () => {
 	const selectedUserID = GetUser();
 	const users = GetAPI("/members");
@@ -115,7 +157,7 @@ const Sidebar = () => {
 	let currentUser;
 
 	if (users) {
-		currentUser = users[selectedUserID];
+		currentUser = users[selectedUserID - 1];
 		console.log("current user: ", currentUser);
 	}
 
@@ -191,7 +233,7 @@ const Sidebar = () => {
 
 	return (
 		<header className="bg-white w-[250px] h-screen relative">
-			<div className="p-8 text-center">
+			{/* <div className="p-8 text-center">
 				<Image
 					src={ProfilePicture}
 					alt="Profile Picture"
@@ -204,8 +246,9 @@ const Sidebar = () => {
 				<h3 className="text-[0.875rem] text-brandBlack">
 					A.Karpenko@adriamail.com
 				</h3>
-			</div>
+			</div> */}
 
+			<UserInformation />
 			<QuickStats />
 
 			<nav className="pr-7 py-7 ">
