@@ -13,6 +13,8 @@ const SubscriptionCard = ({
 		price: PropTypes.number.isRequired,
 		name: PropTypes.string.isRequired,
 		isLast: PropTypes.bool.isRequired,
+		isActive: PropTypes.bool.isRequired,
+		onActivate: PropTypes.bool.isRequired,
 		children: PropTypes.node,
 	};
 
@@ -67,7 +69,7 @@ const SubscriptionCard = ({
 						{children}
 					</ul>
 					{isActive ? (
-						<p className={`${sharedButtonStyles}`}>Current plan</p>
+						<button className={`${sharedButtonStyles}`} onClick={onActivate}>Current plan</button>
 					) : (
 						<button
 							onClick={onActivate}
