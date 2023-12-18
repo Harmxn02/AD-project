@@ -54,7 +54,13 @@ const SidebarLink = ({ href, icon, text, currentPath }) => {
 };
 
 const QuickStats = () => {
-	const adriaId = JSON.parse(localStorage.getItem("AdriaUser")).id;
+	let adriaId;
+
+	if (typeof window !== "undefined") {
+		if (localStorage.getItem("AdriaUser")) {
+			adriaId = JSON.parse(localStorage.getItem("AdriaUser")).id;
+		}
+	}
 	const statistics = GetAPI(`/members/${adriaId}/statistics`, true);
 
 	if (!statistics) {

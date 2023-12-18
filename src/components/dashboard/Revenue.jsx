@@ -7,7 +7,13 @@ import PeriodicRevenueSkeleton from "@/components/utility/skeletons/PeriodicReve
 import { GetAPI } from "../../assets/js/api";
 
 const Revenue = ({ activeButton }) => {
-	const adriaId = JSON.parse(localStorage.getItem("AdriaUser")).id;
+	let adriaId;
+
+	if (typeof window !== "undefined") {
+		if (localStorage.getItem("AdriaUser")) {
+			adriaId = JSON.parse(localStorage.getItem("AdriaUser")).id;
+		}
+	}
 	const revenueDataAPI = GetAPI(`/revenue/${adriaId}`);
 
 	const revenue = {
