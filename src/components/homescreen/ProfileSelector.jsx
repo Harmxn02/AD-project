@@ -12,7 +12,15 @@ const users = [
 ];
 
 const ProfileSelector = () => {
-	const [selectedElement, setSelectedElement] = useState(2);
+	const [selectedElement, setSelectedElement] = useState(null);
+
+	useEffect(() => {
+		// Set DEFAULT value to 2 if AdriaID is initially null
+		if (selectedElement === null) {
+			setSelectedElement(2);
+			localStorage.setItem("AdriaID", 2);
+		}
+	}, [selectedElement]);
 
 	const commonStyles = "rounded-full border-2";
 	const selectedStyles =
