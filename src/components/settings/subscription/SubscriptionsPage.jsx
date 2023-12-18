@@ -15,7 +15,6 @@ const SubscriptionsPage = () => {
 	const adriaId = 1;
 
 	const handleSwitchPlan = async (subscriptionId) => {
-		// Trigger your PUT request using fetch or any other method
 		try {
 			const response = await fetch(
 				`https://project-2.ti.howest.be/2023-2024/group-17/api/members/${adriaId}`,
