@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 
 import MaleOne from "../../../public/profile-pictures/male_1.png";
 import MaleTwo from "../../../public/profile-pictures/male_2.jpg";
@@ -26,6 +28,34 @@ const people = [
 ];
 
 const ProfileSelector = () => {
+	const [selectedProfile, setSelectedProfile] = useState(null);
+
+	// Load selected profile from localStorage on mount
+	useEffect(() => {
+		const storedProfile = localStorage.getItem("selectedProfile");
+		if (storedProfile) {
+			setSelectedProfile(JSON.parse(storedProfile));
+		}
+	}, []);
+
+	// Save selected profile to localStorage whenever it changes
+	useEffect(() => {
+		if (selectedProfile) {
+			localStorage.setItem(
+				"selectedProfile",
+				JSON.stringify(selectedProfile),
+			);
+		}
+	}, [selectedProfile]);
+
+	const handleSelectChange = (event) => {
+		const selectedId = parseInt(event.target.value, 10);
+		const selectedPerson = people.find(
+			(person) => person.id === selectedId,
+		);
+		setSelectedProfile(selectedPerson);
+	};
+
 	return (
 		<div className="absolute bottom-40">
 			<p className="text-sm font-medium text-gray-900 my-2 text-center">
@@ -33,7 +63,12 @@ const ProfileSelector = () => {
 			</p>
 			<select
 				className="px-4 py-2 border rounded-md"
+				value={selectedProfile ? selectedProfile.id : ""}
+				onChange={handleSelectChange}
 			>
+				<option value="" disabled>
+					Select a profile
+				</option>
 				{people.map((person) => (
 					<option key={person.id} value={person.id}>
 						{person.name}

@@ -1,9 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import { GetAPI } from "../../assets/js/api";
+import { GetUser } from "../../assets/js/user";
 
 import ProfilePicture from "../../../public/profile-pictures/male_1.png";
 
@@ -108,6 +109,16 @@ const QuickStats = () => {
 };
 
 const Sidebar = () => {
+	const selectedUserID = GetUser();
+	const users = GetAPI("/members");
+
+	let currentUser;
+
+	if (users) {
+		currentUser = users[selectedUserID];
+		console.log("current user: ", currentUser);
+	}
+
 	const pathname = usePathname() || "";
 	const settingsPathname = "/settings";
 	const transactionsPathname = "/transactions";
