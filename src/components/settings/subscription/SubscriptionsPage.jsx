@@ -11,8 +11,13 @@ import SubscriptionsPageSkeleton from "@/components/utility/skeletons/Subscripti
 import { GetAPI } from "../../../assets/js/api";
 
 const SubscriptionsPage = () => {
-	const [activePlan, setActivePlan] = useState(null);
 	const adriaId = 1;
+	const memberData = GetAPI(`/members/${adriaId}`);
+	const subscriptionIdOfMember = memberData
+		? memberData.subscriptionId
+		: null;
+	const plan = GetAPI(`/subscribe/${subscriptionIdOfMember}`);
+	const planId = plan ? plan.id : null;
 
 	const handleSwitchPlan = async (subscriptionId) => {
 		try {
@@ -50,12 +55,11 @@ const SubscriptionsPage = () => {
 		<section className="mb-12 ">
 			<Title content="Subscription Plans" />
 			<div className="flex justify-between">
-				{plans.map((subscription, index) => (
+				{plans.map((subscription) => (
 					<SubscriptionCard
 						isLast={subscription.id === plans.length}
-						isActive={index === activePlan}
+						isActive={subscription.id === planId} // Compare subscription.id with planId
 						onActivate={() => {
-							setActivePlan(index);
 							handleSwitchPlan(subscription.id);
 						}}
 						key={subscription.id}
