@@ -30,8 +30,8 @@ const formatTimeDifference = (startTime, endTime) => {
 };
 
 const RecentXplorations = () => {
-	const adriaId = 1;
-	const recent_xplorations = GetAPI(`/sessions/${adriaId}`);
+	const AdriaID = JSON.parse(localStorage.getItem("AdriaUser")).id;
+	const recent_xplorations = GetAPI(`/sessions/${AdriaID}`);
 	const title = "Recent X-Plorations";
 	const description =
 		"An overview of your recently visited locations, including travel time.";
@@ -80,9 +80,6 @@ const RecentXplorations = () => {
 								{exploration.countriesVisited.join(" - ")}
 							</p>
 
-
-
-
 							{/*
 
 							THIS PART SHOWS WHICH COUNTRY'S SVG FILE IS BEING FETCHED
@@ -106,7 +103,6 @@ const RecentXplorations = () => {
 							</div>
 
 							{/* <---------------- end of temporary feature ----------------> */}
-
 						</div>
 						<div className="w-3/6 flex flex-row justify-between items-center px-8">
 							<p className="text-brandBlack font-semibold">

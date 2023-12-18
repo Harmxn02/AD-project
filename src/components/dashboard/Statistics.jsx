@@ -12,16 +12,16 @@ import { GetAPI } from "../../assets/js/api";
 import StatisticsSkeleton from "@/components/utility/skeletons/StatisticsSkeleton";
 
 const Statistics = ({ activeButton }) => {
-	const adriaId = 1;
-	const regionTimeDataAPI = GetAPI(`/flytimepercoordinate/${adriaId}`);
-	const flownTimeDataAPI = GetAPI(`/flytime/${adriaId}`);
+	const AdriaID = JSON.parse(localStorage.getItem("AdriaUser")).id;
+	const regionTimeDataAPI = GetAPI(`/flytimepercoordinate/${AdriaID}`);
+	const flownTimeDataAPI = GetAPI(`/flytime/${AdriaID}`);
 
 	const flownTime = {
-		dataToRender: []
+		dataToRender: [],
 	};
 
 	const regionTime = {
-		dataToRender: []
+		dataToRender: [],
 	};
 
 	let prefixTitle;
@@ -61,7 +61,7 @@ const Statistics = ({ activeButton }) => {
 				label: "Minutes Flown",
 				backgroundColor: "#62A0AA73",
 				borderColor: "rgba(75, 192, 192, 1)",
-				borderWidth: 1
+				borderWidth: 1,
 			},
 		],
 		weeklyData: [
@@ -70,7 +70,7 @@ const Statistics = ({ activeButton }) => {
 				label: "Minutes Flown",
 				backgroundColor: "#62A0AA73",
 				borderColor: "rgba(75, 192, 192, 1)",
-				borderWidth: 1
+				borderWidth: 1,
 			},
 		],
 		monthlyData: [
@@ -79,7 +79,7 @@ const Statistics = ({ activeButton }) => {
 				label: "Minutes Flown",
 				backgroundColor: "#62A0AA73",
 				borderColor: "rgba(75, 192, 192, 1)",
-				borderWidth: 1
+				borderWidth: 1,
 			},
 		],
 	};
@@ -156,9 +156,7 @@ const Statistics = ({ activeButton }) => {
 						offering a clear overview for analysis.
 					</p>
 					<div className="w-full mt-4 h-[25rem]">
-						<BarChart
-							dataObject={flownTime.dataToRender}
-						/>
+						<BarChart dataObject={flownTime.dataToRender} />
 					</div>
 				</div>
 				<div className="max-w-[600px] h-full">

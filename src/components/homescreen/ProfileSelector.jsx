@@ -31,7 +31,7 @@ const ProfileSelector = () => {
     useEffect(() => {
         // Set DEFAULT value to the second user if selectedUser is initially null
         if (selectedUser === null) {
-          const defaultUser = people.find(person => person.id === 2);
+          const defaultUser = people.find(person => person.id === 2 );
           setSelectedUser(defaultUser);
           localStorage.setItem("AdriaUser", JSON.stringify(defaultUser));
         }

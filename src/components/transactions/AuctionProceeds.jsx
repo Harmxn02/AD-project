@@ -10,8 +10,8 @@ import Skeleton from "@/components/utility/skeletons/TransactionsSkeleton";
 import { GetAPI } from "../../assets/js/api";
 
 const AuctionProceeds = () => {
-	const adriaId = 1;
-	const auction_proceeds = GetAPI(`/auctions/${adriaId}`);
+	const AdriaID = JSON.parse(localStorage.getItem("AdriaUser")).id;
+	const auction_proceeds = GetAPI(`/auctions/${AdriaID}`);
 
 	if (auction_proceeds === null) {
 		return (
@@ -43,7 +43,7 @@ const AuctionProceeds = () => {
 								</TableDataCell>
 								<TableDataCell>
 									{new Intl.DateTimeFormat("en-GB").format(
-										new Date(auction_proceed.date)
+										new Date(auction_proceed.date),
 									)}
 								</TableDataCell>
 								<TableDataCell>
