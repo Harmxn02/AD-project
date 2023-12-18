@@ -67,12 +67,11 @@ const SubscriptionCard = ({
             {children}
           </ul>
           {isActive ? (
-            <button
+            <p
               className={`${sharedButtonStyles} text-gray-400`}
-              onClick={() => onActivate(null)} // Pass null to onActivate
             >
-              Cancel plan
-            </button>
+              Active plan
+            </p>
           ) : (
             <button
               onClick={() => onActivate(name)} // Pass the plan name to onActivate
