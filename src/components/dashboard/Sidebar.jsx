@@ -18,6 +18,8 @@ import ChestIcon from "../../../public/icons/sidebar_statistics/chest.svg";
 import RulerIcon from "../../../public/icons/sidebar_statistics/ruler.svg";
 import ClockIcon from "../../../public/icons/sidebar_statistics/clock.svg";
 import SidebarSkeleton from "@/components/utility/skeletons/SidebarSkeleton";
+import UserInformationSkeleton from "@/components/utility/skeletons/UserInformationSkeleton";
+
 
 const SidebarLink = ({ href, icon, text, currentPath }) => {
 	SidebarLink.propTypes = {
@@ -116,36 +118,33 @@ const UserInformation = () => {
 
 	if (users) {
 		currentUser = users[selectedUserID - 1];
+
+		// the console.log should stay until we are done with this section 
 		console.log("current user: ", currentUser);
 	}
 
 	return (
 		<div className="p-8 text-center">
-			<Image
-				src={ProfilePicture}
-				alt="Profile Picture"
-				width={80}
-				height={80}
-				className="w-[80px] h-[80px] rounded-full m-auto mb-4"
-				priority
-			/>
-
-			{/* inline skeleton, I know, crazy shit hehe */}
-			{currentUser ? 
+			{currentUser ? (
 				<div>
-					<h3 className="text-brandTeal font-bold">{currentUser.name}</h3>
+					<Image
+						src={ProfilePicture}
+						alt="Profile Picture"
+						width={80}
+						height={80}
+						className="w-[80px] h-[80px] rounded-full m-auto mb-4"
+						priority
+					/>
+					<h3 className="text-brandTeal font-bold">
+						{currentUser.name}
+					</h3>
 					<h3 className="text-[0.875rem] text-brandBlack">
 						{currentUser.email}
 					</h3>
-
-				</div> : 
-				<div className="flex flex-col gap-2 items-center">
-					<div className="mt-2 h-4 w-[13ch] mx-auto bg-brandTeal animate-pulse"></div>
-					<div className="h-3 w-[15ch] mx-auto bg-gray-200 animate-pulse"></div>
 				</div>
-			}
-
-
+			) : (
+				<UserInformationSkeleton />
+			)}
 		</div>
 	);
 };
