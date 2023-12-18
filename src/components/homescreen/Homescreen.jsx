@@ -101,7 +101,7 @@ const Homescreen = () => {
                 <div className="w-2/5 bg-white flex flex-col justify-center items-center">
                     {/* RIGHT */}
 
-                    <ProfileSelector />
+
 
                     <div className="flex flex-col gap-8 items-center">
                         <p className="text-3xl font-bold text-brandBlack">
@@ -125,6 +125,8 @@ const Homescreen = () => {
                         </div>
 
                     </div>
+
+                    <ProfileSelector />
 
                     <div className="absolute flex flex-col justify-center gap-6 bottom-10">
                         <div className="flex gap-2 justify-center">
