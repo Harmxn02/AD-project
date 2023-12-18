@@ -14,9 +14,9 @@ const users = [
 const ProfileSelector = () => {
 	const [selectedElement, setSelectedElement] = useState(2);
 
-	const commonStyles = "bg-brandTeal aspect-square rounded-full";
+	const commonStyles = "rounded-full border-2";
 	const selectedStyles =
-		"bg-brandTeal h-24 w-24 aspect-square rounded-full border-4";
+		"h-24 w-24  border-4 border-blue-500";
 
 	const handleClick = (adriaID) => {
 		// Toggle selection
@@ -29,28 +29,22 @@ const ProfileSelector = () => {
 
 	return (
 		<div className="absolute top-40">
-			<p className="text-xl font-semibold text-brandBlack my-4 text-center">
+			<p className="text-xl font-semibold text-brandBlack my-2 text-center">
 				Select user:
 			</p>
 			<div className="flex gap-4 items-center">
 				{users.map((user) => (
-					<div key={user.id}>
-						<Image
-							src={user.src}
-							alt={user.alt}
-							className={`${commonStyles} ${
-								selectedElement === user.id
-									? selectedStyles
-									: "h-16 w-16"
-							}`}
-							onClick={() => handleClick(user.id)}
-						/>
-						{selectedElement === user.id ? (
-							<p className="text-center text-sm">{user.name}</p>
-						) : (
-							<p></p>
-						)}
-					</div>
+					<Image
+						key={user.id}
+						src={user.src}
+						alt={user.alt}
+						className={`${commonStyles} ${
+							selectedElement === user.id
+								? selectedStyles
+								: "h-16 w-16"
+						}`}
+						onClick={() => handleClick(user.id)}
+					/>
 				))}
 			</div>
 		</div>
