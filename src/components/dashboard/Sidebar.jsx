@@ -176,8 +176,6 @@ const Sidebar = () => {
 		</svg>
 	);
 
-	const localData = JSON.parse(localStorage.getItem("AdriaUser"));
-
 	return (
 		<header className="bg-white w-[250px] h-screen relative">
 			<div className="p-8 text-center">
