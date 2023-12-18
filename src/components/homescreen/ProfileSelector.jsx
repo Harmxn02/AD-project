@@ -33,11 +33,7 @@ const ProfileSelector = () => {
 		if (selectedUser === null) {
 			const defaultUser = people.find((person) => person.id === 2);
 			setSelectedUser(defaultUser);
-
-			// Check if running on the client side before using localStorage
-			if (typeof window !== "undefined") {
-				localStorage.setItem("AdriaUser", JSON.stringify(defaultUser));
-			}
+			localStorage.setItem("AdriaUser", JSON.stringify(defaultUser));
 		}
 	}, [selectedUser]);
 
@@ -46,10 +42,8 @@ const ProfileSelector = () => {
 		const newUser = people.find((person) => person.id === newSelectedId);
 		setSelectedUser(newUser);
 
-		// Check if running on the client side before using localStorage
-		if (typeof window !== "undefined") {
-			localStorage.setItem("AdriaUser", JSON.stringify(newUser));
-		}
+		// Update local storage
+		localStorage.setItem("AdriaUser", JSON.stringify(newUser));
 	};
 
 	return (
