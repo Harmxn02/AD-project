@@ -7,19 +7,19 @@ import FemaleOne from "../../../public/profile-pictures/female_1.png";
 const people = [
 	{
 		id: 1,
-        src: MaleOne,
+		src: MaleOne,
 		alt: "Mark Singers",
 		name: "Mark Singers",
 	},
 	{
 		id: 2,
-        src: MaleTwo,
+		src: MaleTwo,
 		alt: "Felix Gonet",
 		name: "Felix Gonet",
 	},
 	{
 		id: 3,
-        src: FemaleOne,
+		src: FemaleOne,
 		alt: "Sabine Balmadier",
 		name: "Sabine Balmadier",
 	},
@@ -28,24 +28,28 @@ const people = [
 const ProfileSelector = () => {
 	const [selectedUser, setSelectedUser] = useState(null);
 
-    useEffect(() => {
-        // Set DEFAULT value to the second user if selectedUser is initially null
-        if (selectedUser === null) {
-          const defaultUser = people.find(person => person.id === 2 );
-          setSelectedUser(defaultUser);
-          localStorage.setItem("AdriaUser", JSON.stringify(defaultUser));
-        }
-      }, [selectedUser]);
-    
+	useEffect(() => {
+		// Set DEFAULT value to the second user if selectedUser is initially null
+		if (selectedUser === null) {
+			const defaultUser = people.find((person) => person.id === 2);
+			setSelectedUser(defaultUser);
 
+			// Check if running on the client side before using localStorage
+			if (typeof window !== "undefined") {
+				localStorage.setItem("AdriaUser", JSON.stringify(defaultUser));
+			}
+		}
+	}, [selectedUser]);
 
 	const handleChange = (event) => {
 		const newSelectedId = parseInt(event.target.value, 10);
 		const newUser = people.find((person) => person.id === newSelectedId);
 		setSelectedUser(newUser);
 
-		// Update local storage
-		localStorage.setItem("AdriaUser", JSON.stringify(newUser));
+		// Check if running on the client side before using localStorage
+		if (typeof window !== "undefined") {
+			localStorage.setItem("AdriaUser", JSON.stringify(newUser));
+		}
 	};
 
 	return (
