@@ -5,6 +5,8 @@ import React, { useEffect, useState } from "react";
 import LOGO from "../../app/icon_green.svg";
 import Link from "next/link";
 
+import ProfileSelector from "./ProfileSelector";
+
 import { Typewriter } from "react-simple-typewriter";
 
 const Homescreen = () => {
@@ -96,26 +98,32 @@ const Homescreen = () => {
                     </div>
                 </div>
 
-                <div className="w-2/5 bg-white flex flex-col gap-8 justify-center items-center">
+                <div className="w-2/5 bg-white flex flex-col justify-center items-center">
                     {/* RIGHT */}
-                    <p className="text-3xl font-bold text-brandBlack">
-                        Get started
-                    </p>
 
-                    <div className="flex flex-col justify-center items-center xl:flex-row gap-3">
-                        <Link
-                            href="/dashboard"
-                            className="text-white rounded-md max-w-fit font-semibold bg-brandTeal hover:bg-teal-800 transition-colors duration-500 px-12 py-3"
-                        >
-                            Enter dashboard
-                        </Link>
+                    <ProfileSelector />
 
-                        <Link
-                            href="/explore-plans"
-                            className="text-white rounded-md max-w-fit font-semibold bg-brandTeal hover:bg-teal-800 transition-colors duration-500 px-12 py-3"
-                        >
-                            Explore plans
-                        </Link>
+                    <div className="flex flex-col gap-8 items-center">
+                        <p className="text-3xl font-bold text-brandBlack">
+                            Get started
+                        </p>
+
+                        <div className="flex flex-col justify-center items-center xl:flex-row gap-3">
+                            <Link
+                                href="/dashboard"
+                                className="text-white rounded-md max-w-fit font-semibold bg-brandTeal hover:bg-teal-800 transition-colors duration-500 px-12 py-3"
+                            >
+                                Enter dashboard
+                            </Link>
+
+                            <Link
+                                href="/explore-plans"
+                                className="text-white rounded-md max-w-fit font-semibold bg-brandTeal hover:bg-teal-800 transition-colors duration-500 px-12 py-3"
+                            >
+                                Explore plans
+                            </Link>
+                        </div>
+
                     </div>
 
                     <div className="absolute flex flex-col justify-center gap-6 bottom-10">
