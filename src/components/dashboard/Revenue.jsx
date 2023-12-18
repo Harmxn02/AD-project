@@ -7,11 +7,11 @@ import PeriodicRevenueSkeleton from "@/components/utility/skeletons/PeriodicReve
 import { GetAPI } from "../../assets/js/api";
 
 const Revenue = ({ activeButton }) => {
-	const adriaId = 1;
+	const adriaId = JSON.parse(localStorage.getItem("AdriaUser")).id;
 	const revenueDataAPI = GetAPI(`/revenue/${adriaId}`);
 
 	const revenue = {
-		dataToRender: []
+		dataToRender: [],
 	};
 
 	let prefixTitle;
@@ -37,7 +37,7 @@ const Revenue = ({ activeButton }) => {
 				backgroundColor: "rgba(98, 160, 170, 0.45)",
 				borderColor: "rgba(75, 192, 192, 1)",
 				borderWidth: 1,
-			}
+			},
 		],
 		weeklyData: [
 			{
@@ -55,7 +55,7 @@ const Revenue = ({ activeButton }) => {
 				backgroundColor: "rgba(98, 160, 170, 0.45)",
 				borderColor: "rgba(75, 192, 192, 1)",
 				borderWidth: 1,
-			}
+			},
 		],
 		monthlyData: [
 			{
@@ -73,7 +73,7 @@ const Revenue = ({ activeButton }) => {
 				backgroundColor: "rgba(98, 160, 170, 0.45)",
 				borderColor: "rgba(75, 192, 192, 1)",
 				borderWidth: 1,
-			}
+			},
 		],
 	};
 
@@ -103,7 +103,10 @@ const Revenue = ({ activeButton }) => {
 				quick analysis.
 			</p>
 			<div className="w-full mt-4 h-[25rem]">
-				<LineBarChart labels={revenue.labels} dataObject={revenue.dataToRender} />
+				<LineBarChart
+					labels={revenue.labels}
+					dataObject={revenue.dataToRender}
+				/>
 			</div>
 		</section>
 	);

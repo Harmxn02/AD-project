@@ -9,7 +9,6 @@ import { usePathname } from "next/navigation";
 import Button from "@/components/utility/Button";
 import Image from "next/image";
 import Link from "next/link";
-import ProfilePicture from "../../../public/avatar-profile.jpg";
 import ExitIcon from "../../../public/icons/exit.svg";
 
 import ChestIcon from "../../../public/icons/sidebar_statistics/chest.svg";
@@ -55,7 +54,7 @@ const SidebarLink = ({ href, icon, text, currentPath }) => {
 };
 
 const QuickStats = () => {
-	const adriaId = 1;
+	const adriaId = JSON.parse(localStorage.getItem("AdriaUser")).id;
 	const statistics = GetAPI(`/members/${adriaId}/statistics`, true);
 
 	if (!statistics) {
@@ -177,20 +176,24 @@ const Sidebar = () => {
 		</svg>
 	);
 
+	const localData = JSON.parse(localStorage.getItem("AdriaUser"));
+
 	return (
 		<header className="bg-white w-[250px] h-screen relative">
 			<div className="p-8 text-center">
 				<Image
-					src={ProfilePicture}
+					src={localData.src}
 					alt="Profile Picture"
 					width={80}
 					height={80}
 					className="w-[80px] h-[80px] rounded-full m-auto mb-4"
 					priority
 				/>
-				<h3 className="text-brandTeal font-bold">Alexander Karpenko</h3>
+				<h3 className="text-brandTeal font-bold">{localData.name}</h3>
 				<h3 className="text-[0.875rem] text-brandBlack">
-					A.Karpenko@adriamail.com
+					{`${localData.name.charAt(0)}.${
+						localData.name.split(" ")[1]
+					}@adriamail.com`}
 				</h3>
 			</div>
 

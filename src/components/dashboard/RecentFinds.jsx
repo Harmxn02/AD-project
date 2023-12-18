@@ -25,7 +25,7 @@ const getColourAndImage = (item) => {
 };
 
 const RecentFinds = () => {
-	const adriaId = 1;
+	const adriaId = JSON.parse(localStorage.getItem("AdriaUser")).id;
 	const finds = GetAPI(`/items/${adriaId}`);
 	const title = "Recent finds";
 	const description =
