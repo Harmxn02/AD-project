@@ -1,7 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const SubscriptionCard = ({ price, name, isLast, children }) => {
+const SubscriptionCard = ({
+	price,
+	name,
+	isLast,
+	isActive,
+	onActivate,
+	children,
+}) => {
 	SubscriptionCard.propTypes = {
 		price: PropTypes.number.isRequired,
 		name: PropTypes.string.isRequired,
@@ -59,13 +66,13 @@ const SubscriptionCard = ({ price, name, isLast, children }) => {
 					>
 						{children}
 					</ul>
-					{isLast ? (
+					{isActive ? (
 						<p className={`${sharedButtonStyles}`}>Current plan</p>
 					) : (
-						<a
-							href="#"
+						<button
+							onClick={onActivate}
 							className={`text-white font-medium px-5 py-3 text-center ${sharedButtonStyles}`}
-						>{`Switch to ${name}`}</a>
+						>{`Switch to ${name}`}</button>
 					)}
 				</div>
 			</div>
