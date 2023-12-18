@@ -5,6 +5,8 @@ import PropTypes from "prop-types";
 
 import { GetAPI } from "../../assets/js/api";
 
+import ProfilePicture from "../../../public/profile-pictures/male_1.png";
+
 import { usePathname } from "next/navigation";
 import Button from "@/components/utility/Button";
 import Image from "next/image";
@@ -176,24 +178,20 @@ const Sidebar = () => {
 		</svg>
 	);
 
-	const localData = JSON.parse(localStorage.getItem("AdriaUser"));
-
 	return (
 		<header className="bg-white w-[250px] h-screen relative">
 			<div className="p-8 text-center">
 				<Image
-					src={localData.src}
+					src={ProfilePicture}
 					alt="Profile Picture"
 					width={80}
 					height={80}
 					className="w-[80px] h-[80px] rounded-full m-auto mb-4"
 					priority
 				/>
-				<h3 className="text-brandTeal font-bold">{localData.name}</h3>
+				<h3 className="text-brandTeal font-bold">Alexander Karpenko</h3>
 				<h3 className="text-[0.875rem] text-brandBlack">
-					{`${localData.name.charAt(0)}.${
-						localData.name.split(" ")[1]
-					}@adriamail.com`}
+					A.Karpenko@adriamail.com
 				</h3>
 			</div>
 
