@@ -1,3 +1,5 @@
+"use client";
+
 import Layout from "@/components/utility/Layout";
 import Transactions from "@/components/transactions/Transactions";
 import AuctionProceeds from "@/components/transactions/AuctionProceeds";

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Layout from "@/components/utility/Layout";
 import Title from "@/components/utility/Title";

@@ -1,3 +1,5 @@
+"use client";
+
 import AccountDeleted from "@/components/settings/AccountDeleted";
 
 export default function Home() {

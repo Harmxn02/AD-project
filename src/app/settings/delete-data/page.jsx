@@ -1,3 +1,5 @@
+"use client";
+
 import DeleteAccountPrompt from "@/components/settings/DeleteAccountPrompt";
 import Layout from "@/components/utility/Layout";
 

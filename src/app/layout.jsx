@@ -1,3 +1,5 @@
+"use client";
+
 import { Inter } from "next/font/google";
 import PropTypes from "prop-types";
 import "./globals.css";
