@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import MaleOne from "../../../public/profile-pictures/male_1.png";
 import MaleTwo from "../../../public/profile-pictures/male_2.jpg";
@@ -26,7 +26,18 @@ const people = [
 ];
 
 const ProfileSelector = () => {
-	const [selectedUser, setSelectedUser] = useState(1);
+	const [selectedUser, setSelectedUser] = useState(null);
+
+    useEffect(() => {
+        // Set DEFAULT value to the second user if selectedUser is initially null
+        if (selectedUser === null) {
+          const defaultUser = people.find(person => person.id === 2);
+          setSelectedUser(defaultUser);
+          localStorage.setItem("AdriaUser", JSON.stringify(defaultUser));
+        }
+      }, [selectedUser]);
+    
+
 
 	const handleChange = (event) => {
 		const newSelectedId = parseInt(event.target.value, 10);
