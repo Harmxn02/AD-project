@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 import Button from "@/components/utility/Button";
 import Image from "next/image";
 import Link from "next/link";
-import ProfilePicture from "../../../public/avatar-profile.jpg";
+import ProfilePicture from "../../../public/profile-pictures/male_2.jpg";
 import ExitIcon from "../../../public/icons/exit.svg";
 
 import ChestIcon from "../../../public/icons/sidebar_statistics/chest.svg";
