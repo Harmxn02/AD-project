@@ -29,12 +29,18 @@ const ProfileSelector = () => {
 	const [selectedUser, setSelectedUser] = useState(null);
 
 	useEffect(() => {
-		// Set DEFAULT value to the second user if selectedUser is initially null
-		if (selectedUser === null) {
-			const defaultUser = people.find((person) => person.id === 2);
-			setSelectedUser(defaultUser);
-			localStorage.setItem("AdriaUser", JSON.stringify(defaultUser));
-		}
+		// Run client-side code after the component has mounted
+		const handleMount = () => {
+			// Set DEFAULT value to the second user if selectedUser is initially null
+			if (selectedUser === null) {
+				const defaultUser = people.find((person) => person.id === 2);
+				setSelectedUser(defaultUser);
+				localStorage.setItem("AdriaUser", JSON.stringify(defaultUser));
+			}
+		};
+
+		// Execute the function after mounting
+		handleMount();
 	}, [selectedUser]);
 
 	const handleChange = (event) => {
