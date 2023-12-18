@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import MaleOne from "../../../public/profile-pictures/male_1.png";
 import MaleTwo from "../../../public/profile-pictures/male_2.jpg";

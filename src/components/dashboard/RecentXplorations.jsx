@@ -30,14 +30,8 @@ const formatTimeDifference = (startTime, endTime) => {
 };
 
 const RecentXplorations = () => {
-	let adriaId;
+	const adriaId = 1;
 
-	if (typeof window !== "undefined") {
-		if (localStorage.getItem("AdriaUser")) {
-			adriaId = JSON.parse(localStorage.getItem("AdriaUser")).id;
-		}
-	}
-	
 	const recent_xplorations = GetAPI(`/sessions/${adriaId}`);
 	const title = "Recent X-Plorations";
 	const description =

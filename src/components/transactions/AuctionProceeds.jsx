@@ -10,13 +10,7 @@ import Skeleton from "@/components/utility/skeletons/TransactionsSkeleton";
 import { GetAPI } from "../../assets/js/api";
 
 const AuctionProceeds = () => {
-	let adriaId;
-
-	if (typeof window !== "undefined") {
-		if (localStorage.getItem("AdriaUser")) {
-			adriaId = JSON.parse(localStorage.getItem("AdriaUser")).id;
-		}
-	}
+	const adriaId = 1;
 	const auction_proceeds = GetAPI(`/auctions/${adriaId}`);
 
 	if (auction_proceeds === null) {

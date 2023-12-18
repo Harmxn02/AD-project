@@ -25,13 +25,7 @@ const getColourAndImage = (item) => {
 };
 
 const RecentFinds = () => {
-	let adriaId;
-
-	if (typeof window !== "undefined") {
-		if (localStorage.getItem("AdriaUser")) {
-			adriaId = JSON.parse(localStorage.getItem("AdriaUser")).id;
-		}
-	}
+	const adriaId = 1;
 
 	const finds = GetAPI(`/items/${adriaId}`);
 	const title = "Recent finds";
