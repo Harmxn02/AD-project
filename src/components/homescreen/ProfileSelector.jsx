@@ -29,9 +29,6 @@ const people = [
 ];
 
 const ProfileSelector = () => {
-	
-	// TODO maybe: fetch /members for the select dropdown
-	
 	const [selectedProfile, setSelectedProfile] = useState(people[0]);
 
 	// Load selected profile from localStorage on mount
