@@ -4,6 +4,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { GetAPI } from "../../assets/js/api";
+import { GetUser } from "../../assets/js/user";
 
 import ProfilePicture from "../../../public/profile-pictures/male_1.png";
 
@@ -17,6 +18,8 @@ import ChestIcon from "../../../public/icons/sidebar_statistics/chest.svg";
 import RulerIcon from "../../../public/icons/sidebar_statistics/ruler.svg";
 import ClockIcon from "../../../public/icons/sidebar_statistics/clock.svg";
 import SidebarSkeleton from "@/components/utility/skeletons/SidebarSkeleton";
+import UserInformationSkeleton from "@/components/utility/skeletons/UserInformationSkeleton";
+
 
 const SidebarLink = ({ href, icon, text, currentPath }) => {
 	SidebarLink.propTypes = {
@@ -56,7 +59,18 @@ const SidebarLink = ({ href, icon, text, currentPath }) => {
 };
 
 const QuickStats = () => {
-	const adriaId = 1;
+
+	const selectedUserID = GetUser();
+	// const users = GetAPI("/members");
+
+	// let currentUser;
+
+	// if (users) {
+	// 	currentUser = users[selectedUserID];
+	// 	console.log("current user: ", currentUser);
+	// }
+
+	const adriaId = selectedUserID;
 	const statistics = GetAPI(`/members/${adriaId}/statistics`, true);
 
 	if (!statistics) {
@@ -103,6 +117,45 @@ const QuickStats = () => {
 					</div>
 				</div>
 			))}
+		</div>
+	);
+};
+
+const UserInformation = () => {
+	const selectedUserID = GetUser();
+	const users = GetAPI("/members", true);
+
+	let currentUser;
+
+	if (users) {
+		currentUser = users[selectedUserID];
+
+		// the console.log should stay until we are done with this section 
+		console.log("current user: ", currentUser);
+	}
+
+	return (
+		<div className="p-8 text-center">
+			{currentUser ? (
+				<div>
+					<Image
+						src={ProfilePicture}
+						alt="Profile Picture"
+						width={80}
+						height={80}
+						className="w-[80px] h-[80px] rounded-full m-auto mb-4"
+						priority
+					/>
+					<h3 className="text-brandTeal font-bold">
+						{currentUser.name}
+					</h3>
+					<h3 className="text-[0.875rem] text-brandBlack">
+						{currentUser.email}
+					</h3>
+				</div>
+			) : (
+				<UserInformationSkeleton />
+			)}
 		</div>
 	);
 };
@@ -179,8 +232,8 @@ const Sidebar = () => {
 	);
 
 	return (
-		<header className="bg-white w-[250px] h-screen relative">
-			<div className="p-8 text-center">
+		<header className="bg-white min-w-[250px] h-screen relative">
+			{/* <div className="p-8 text-center">
 				<Image
 					src={ProfilePicture}
 					alt="Profile Picture"
@@ -193,8 +246,9 @@ const Sidebar = () => {
 				<h3 className="text-[0.875rem] text-brandBlack">
 					A.Karpenko@adriamail.com
 				</h3>
-			</div>
+			</div> */}
 
+			<UserInformation />
 			<QuickStats />
 
 			<nav className="pr-7 py-7 ">
