@@ -59,7 +59,18 @@ const SidebarLink = ({ href, icon, text, currentPath }) => {
 };
 
 const QuickStats = () => {
-	const adriaId = 1;
+
+	const selectedUserID = GetUser();
+	// const users = GetAPI("/members");
+
+	// let currentUser;
+
+	// if (users) {
+	// 	currentUser = users[selectedUserID];
+	// 	console.log("current user: ", currentUser);
+	// }
+
+	const adriaId = selectedUserID;
 	const statistics = GetAPI(`/members/${adriaId}/statistics`, true);
 
 	if (!statistics) {
@@ -150,16 +161,6 @@ const UserInformation = () => {
 };
 
 const Sidebar = () => {
-	const selectedUserID = GetUser();
-	const users = GetAPI("/members");
-
-	let currentUser;
-
-	if (users) {
-		currentUser = users[selectedUserID - 1];
-		console.log("current user: ", currentUser);
-	}
-
 	const pathname = usePathname() || "";
 	const settingsPathname = "/settings";
 	const transactionsPathname = "/transactions";
