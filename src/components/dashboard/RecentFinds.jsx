@@ -1,12 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import Title from "@/components/utility/Title";
-
 import Image from "next/image";
-import { GetAPI } from "../../assets/js/api";
-import RecentXSkeleton from "@/components/utility/skeletons/RecentXSkeleton";
 
+import { GetAPI } from "../../assets/js/api";
+
+import Title from "@/components/utility/Title";
+import RecentXSkeleton from "@/components/utility/skeletons/RecentXSkeleton";
 import RecentsContainer from "@/components/utility/Recents/RecentsContainer";
+import RecentFindsModal from "@/components/modals/RecentFindsModal";
 
 import Red from "../../../public/icons/finds_toAuction.svg";
 import Green from "../../../public/icons/finds_sold.svg";
@@ -104,12 +105,12 @@ const RecentFinds = () => {
 										>
 											<g
 												id="SVGRepo_bgCarrier"
-												stroke-width="0"
+												strokeWidth="0"
 											></g>
 											<g
 												id="SVGRepo_tracerCarrier"
-												stroke-linecap="round"
-												stroke-linejoin="round"
+												strokeLinecap="round"
+												strokeLinejoin="round"
 											></g>
 											<g id="SVGRepo_iconCarrier">
 												{" "}
@@ -118,13 +119,13 @@ const RecentFinds = () => {
 													cy="12"
 													r="10"
 													stroke="#FFFFFF"
-													stroke-width="1.5"
+													strokeWidth="1.5"
 												></circle>{" "}
 												<path
 													d="M12 17V11"
 													stroke="#FFFFFF"
-													stroke-width="1.5"
-													stroke-linecap="round"
+													strokeWidth="1.5"
+													strokeLinecap="round"
 												></path>{" "}
 												<circle
 													cx="1"
@@ -153,6 +154,10 @@ const RecentFinds = () => {
 					);
 				})}
 			</div>
+
+			{isModalVisible && (
+				<RecentFindsModal sessionId={SelectedSessionId} />
+			)}
 		</>
 	);
 };
