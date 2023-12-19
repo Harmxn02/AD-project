@@ -57,8 +57,6 @@ const RecentXplorations = () => {
 			.replace(/'/g, "");
 	};
 
-	console.log("RX: ", recent_xplorations);
-
 	return (
 		<section className="mt-12">
 			<Title content={title} />
