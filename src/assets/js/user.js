@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 export const GetUser = () => {
-	const [selectedProfileId, setSelectedProfileId] = useState(null);
+	const [selectedProfileId, setSelectedProfileId] = useState(1);
 
 	useEffect(() => {
 		const storedProfile = localStorage.getItem("selectedProfile");
