@@ -232,7 +232,7 @@ const Sidebar = () => {
 	);
 
 	return (
-		<header className="bg-white w-[250px] h-screen relative">
+		<header className="bg-white min-w-[250px] h-screen relative">
 			{/* <div className="p-8 text-center">
 				<Image
 					src={ProfilePicture}
