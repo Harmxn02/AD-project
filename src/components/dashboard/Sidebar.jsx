@@ -20,7 +20,6 @@ import ClockIcon from "../../../public/icons/sidebar_statistics/clock.svg";
 import SidebarSkeleton from "@/components/utility/skeletons/SidebarSkeleton";
 import UserInformationSkeleton from "@/components/utility/skeletons/UserInformationSkeleton";
 
-
 const SidebarLink = ({ href, icon, text, currentPath }) => {
 	SidebarLink.propTypes = {
 		href: PropTypes.string.isRequired,
@@ -59,7 +58,6 @@ const SidebarLink = ({ href, icon, text, currentPath }) => {
 };
 
 const QuickStats = () => {
-
 	const selectedUserID = GetUser();
 	// const users = GetAPI("/members");
 
@@ -130,7 +128,7 @@ const UserInformation = () => {
 	if (users) {
 		currentUser = users[selectedUserID];
 
-		// the console.log should stay until we are done with this section 
+		// the console.log should stay until we are done with this section
 		console.log("current user: ", currentUser);
 	}
 
@@ -138,14 +136,16 @@ const UserInformation = () => {
 		<div className="p-8 text-center">
 			{currentUser ? (
 				<div>
-					<Image
-						src={ProfilePicture}
-						alt="Profile Picture"
-						width={80}
-						height={80}
-						className="w-[80px] h-[80px] rounded-full m-auto mb-4"
-						priority
-					/>
+					<Link href="/settings">
+						<Image
+							src={ProfilePicture}
+							alt="Profile Picture"
+							width={80}
+							height={80}
+							className="w-[80px] h-[80px] rounded-full m-auto mb-4"
+							priority
+						/>
+					</Link>
 					<h3 className="text-brandTeal font-bold">
 						{currentUser.name}
 					</h3>
@@ -234,7 +234,7 @@ const Sidebar = () => {
 	return (
 		<header className="bg-white min-w-[250px] h-screen relative">
 			{/* <div className="p-8 text-center">
-				<Image
+				<Image<
 					src={ProfilePicture}
 					alt="Profile Picture"
 					width={80}
