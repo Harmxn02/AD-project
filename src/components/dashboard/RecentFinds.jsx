@@ -40,9 +40,17 @@ const RecentFinds = () => {
 		return <RecentXSkeleton title={title} description={description} />;
 	}
 
-	const toggleModal = (sessionId) => {
+	const openModal = (sessionId) => {
 		setSelectedSessionId(sessionId);
-		setIsModalVisible(!isModalVisible);
+		setIsModalVisible(true);
+	};
+
+	//I, Layton, am aware of a toggle function but i just wanted to prevent to toggle the modal since it doesn't not make
+	//sense if they click on the eye it says toggle but it just has to open, it is not responsible for closing.
+	//That is why I made a open and close modal for readability and just better usecase-abiliy here.
+	const closeModal = () => {
+		setSelectedSessionId(null);
+		setIsModalVisible(false);
 	};
 
 	return (
@@ -70,7 +78,7 @@ const RecentFinds = () => {
 								</p>
 								<button
 									className="relative group flex"
-									onClick={() => toggleModal(null)}
+									onClick={() => openModal(null)}
 								>
 									<svg
 										width="25px"
@@ -156,7 +164,7 @@ const RecentFinds = () => {
 			</div>
 
 			{isModalVisible && (
-				<RecentFindsModal sessionId={SelectedSessionId} />
+				<RecentFindsModal sessionId={SelectedSessionId} onClose={closeModal}/>
 			)}
 		</>
 	);
