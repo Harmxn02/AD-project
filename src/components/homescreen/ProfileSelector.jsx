@@ -29,7 +29,10 @@ const people = [
 ];
 
 const ProfileSelector = () => {
-	const [selectedProfile, setSelectedProfile] = useState(null);
+	
+	// TODO maybe: fetch /members for the select dropdown
+	
+	const [selectedProfile, setSelectedProfile] = useState(people[0]);
 
 	// Load selected profile from localStorage on mount
 	useEffect(() => {
