@@ -9,7 +9,7 @@ export const GetUser = () => {
 		const storedProfile = localStorage.getItem("selectedProfile");
 		if (storedProfile) {
 			const selectedProfile = JSON.parse(storedProfile);
-			setSelectedProfileId(selectedProfile.id);
+			setSelectedProfileId(selectedProfile.id - 1);
 		}
 	}, []);
 
