@@ -83,7 +83,47 @@ const RecentFinds = () => {
 											strokeLinejoin="round"
 										/>
 									</svg>
-									<span className="group-hover:opacity-100 transition-opacity bg-brandBlack px-3 py-2 text-sm text-gray-100 rounded-md w-max absolute left-1/4 -translate-x-1/2 translate-y-2/3 opacity-0 mx-auto">
+									<span className="group-hover:opacity-100 transition-opacity bg-brandBlack px-3 py-2 text-sm text-gray-100 rounded-md w-max absolute left-1/4 -translate-x-1/2 translate-y-2/3 opacity-0 mx-auto flex items-center gap-x-2">
+										<svg
+											width="24px"
+											height="24px"
+											viewBox="0 0 24 24"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<g
+												id="SVGRepo_bgCarrier"
+												stroke-width="0"
+											></g>
+											<g
+												id="SVGRepo_tracerCarrier"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+											></g>
+											<g id="SVGRepo_iconCarrier">
+												{" "}
+												<circle
+													cx="12"
+													cy="12"
+													r="10"
+													stroke="#FFFFFF"
+													stroke-width="1.5"
+												></circle>{" "}
+												<path
+													d="M12 17V11"
+													stroke="#FFFFFF"
+													stroke-width="1.5"
+													stroke-linecap="round"
+												></path>{" "}
+												<circle
+													cx="1"
+													cy="1"
+													r="1"
+													transform="matrix(1 0 0 -1 11 9)"
+													fill="#FFFFFF"
+												></circle>{" "}
+											</g>
+										</svg>
 										View details
 									</span>
 								</button>
