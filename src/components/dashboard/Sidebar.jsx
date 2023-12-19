@@ -59,6 +59,17 @@ const SidebarLink = ({ href, icon, text, currentPath }) => {
 
 const QuickStats = () => {
 	const selectedUserID = GetUser();
+	const users = GetAPI("/members", true);
+
+	let currentUser;
+
+	if (users) {
+		currentUser = users[selectedUserID];
+
+		// the console.log should stay until we are done with this section
+		console.log("current user QS: ", currentUser);
+	}
+
 	const adriaId = selectedUserID;
 	const statistics = GetAPI(`/members/${adriaId}/statistics`, true);
 
@@ -138,7 +149,7 @@ const UserInformation = () => {
 						/>
 					</Link>
 					<h3 className="text-brandTeal font-bold">
-						{currentUser.name}
+						{currentUser.name} ID:{currentUser.adriaId}
 					</h3>
 					<h3 className="text-[0.875rem] text-brandBlack">
 						{currentUser.email}
