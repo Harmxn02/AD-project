@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Title from "@/components/utility/Title";
 
 import Image from "next/image";
@@ -32,9 +32,17 @@ const RecentFinds = () => {
 	const description =
 		"An overview of your recent finds during past X-plorations, including the coordinates where you found them and their status on the auction.";
 
+	const [SelectedSessionId, setSelectedSessionId] = useState(null);
+	const [isModalVisible, setIsModalVisible] = useState(false);
+
 	if (finds === null) {
 		return <RecentXSkeleton title={title} description={description} />;
 	}
+
+	const toggleModal = (sessionId) => {
+		setSelectedSessionId(sessionId);
+		setIsModalVisible(!isModalVisible);
+	};
 
 	return (
 		<>
@@ -59,7 +67,10 @@ const RecentFinds = () => {
 								<p className="font-medium text-lg">
 									{find.name}
 								</p>
-								<button className="relative group flex">
+								<button
+									className="relative group flex"
+									onClick={() => toggleModal(null)}
+								>
 									<svg
 										width="25px"
 										height="25px"
