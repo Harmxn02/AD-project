@@ -59,19 +59,9 @@ const SidebarLink = ({ href, icon, text, currentPath }) => {
 
 const QuickStats = () => {
 	const selectedUserID = GetUser();
-	const users = GetAPI("/members", true);
-
-	let currentUser;
-
-	if (users) {
-		currentUser = users[selectedUserID];
-
-		// the console.log should stay until we are done with this section
-		console.log("current user QS: ", currentUser);
-	}
 
 	const adriaId = selectedUserID;
-	const statistics = GetAPI(`/members/${adriaId}/statistics`, true);
+	const statistics = GetAPI(`/members/${adriaId}/statistics`);
 
 	if (!statistics) {
 		return <SidebarSkeleton />;
@@ -123,16 +113,12 @@ const QuickStats = () => {
 
 const UserInformation = () => {
 	const selectedUserID = GetUser();
-	const users = GetAPI("/members", true);
+	const currentUser = GetAPI(`/members/${selectedUserID}`);
 
-	let currentUser;
-
-	if (users) {
-		currentUser = users[selectedUserID];
-
-		// the console.log should stay until we are done with this section
-		console.log("current user: ", currentUser);
+	if (currentUser) {
+		console.log(`user ${selectedUserID} fetched`)
 	}
+	
 
 	return (
 		<div className="p-8 text-center">
