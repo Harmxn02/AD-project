@@ -59,14 +59,14 @@ const SidebarLink = ({ href, icon, text, currentPath }) => {
 
 const QuickStats = () => {
 	const selectedUserID = GetUser();
-	// const users = GetAPI("/members");
+	const users = GetAPI("/members");
 
-	// let currentUser;
+	let currentUser;
 
-	// if (users) {
-	// 	currentUser = users[selectedUserID];
-	// 	console.log("current user: ", currentUser);
-	// }
+	if (users) {
+	 	currentUser = users[selectedUserID];
+	 	console.log("current user: ", currentUser);
+	}
 
 	const adriaId = selectedUserID;
 	const statistics = GetAPI(`/members/${adriaId}/statistics`, true);
