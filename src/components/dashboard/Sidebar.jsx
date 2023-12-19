@@ -117,7 +117,7 @@ const UserInformation = () => {
 	let currentUser;
 
 	if (users) {
-		currentUser = users[selectedUserID - 1];
+		currentUser = users[selectedUserID];
 
 		// the console.log should stay until we are done with this section 
 		console.log("current user: ", currentUser);
