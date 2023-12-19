@@ -114,10 +114,6 @@ const QuickStats = () => {
 const UserInformation = () => {
 	const selectedUserID = GetUser();
 	const currentUser = GetAPI(`/members/${selectedUserID}`);
-
-	if (currentUser) {
-		console.log(`user ${selectedUserID} fetched`)
-	}
 	
 
 	return (
