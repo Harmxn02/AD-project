@@ -3,6 +3,8 @@ import RouteMap from "@/components/dashboard/map/RouteMap";
 import Image from "next/image";
 import Close from "../../../public/icons/close.svg";
 
+import PropTypes from "prop-types";
+
 const RecentFindsModal = ({ onClose }) => {
 	return (
 		<div className="fixed top-0 left-0 flex flex-col w-full h-full justify-center items-center bg-black bg-opacity-50">
@@ -154,6 +156,10 @@ const RecentFindsModal = ({ onClose }) => {
 			</div>
 		</div>
 	);
+};
+
+RecentFindsModal.propTypes = {
+	onClose: PropTypes.func.isRequired,
 };
 
 export default RecentFindsModal;
