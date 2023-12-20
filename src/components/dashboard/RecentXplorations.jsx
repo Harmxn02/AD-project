@@ -96,7 +96,6 @@ const RecentXplorations = () => {
 							<p className="font-medium text-lg">
 								{exploration.countriesVisited.join(" - ")}
 							</p>
-
 							{/*<div className="pl-4 text-[.5rem] min-w-fit">
 								{`${formatCountryString(
 									exploration.countriesVisited[0],
