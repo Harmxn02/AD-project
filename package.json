@@ -21,6 +21,7 @@
   "dependencies": {
     "@vercel/analytics": "^1.1.1",
     "chart.js": "^4.4.0",
+    "maplibre-gl": "^3.6.2",
     "react": "^18",
     "react-dom": "^18",
     "react-simple-typewriter": "^5.0.1",
