@@ -9,8 +9,8 @@ const RecentFindsModal = ({ onClose }) => {
 				<div className="bg-[#85cbfa] w-full min-w-[80%]">
 					<RouteMap />
 				</div>
-				<div className="bg-white w-full">
-					<Image src={Close} width={25} height={25} alt="close icon" />
+				<div className="bg-white w-full flex flex-col p-4">
+					<Image src={Close} width={25} height={25} onClick={onClose} alt="close icon" className="self-end cursor-pointer"/>
 				</div>
 			</div>
 		</div>
