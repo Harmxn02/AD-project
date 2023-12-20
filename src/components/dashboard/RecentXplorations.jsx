@@ -59,6 +59,7 @@ const RecentXplorations = () => {
 	//That is why I made a open and close modal for readability and just better usecase-abiliy here.
 	const closeModal = () => {
 		//setSelectedSessionId(null);
+		console.log("dfsfdsfd")
 		setIsModalVisible(false);
 	};
 

@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 
@@ -62,7 +63,7 @@ export default function RouteMap() {
 		document.querySelector("#temperature").textContent = Math.round(temperature);
 		document.querySelector("#humidity").textContent = humidity;
 		document.querySelector("#pressure").textContent = pressure.toFixed(3);
-		document.querySelector("#light").textContent = light .toFixed(3);
+		document.querySelector("#light").textContent = light.toFixed(3);
 		document.querySelector("#windspeed").textContent = windSpeed.toFixed(0);
 		document.querySelector("#windDirection").textContent = windDirection;
 		document.querySelector("#radiation").textContent = radiation.toFixed(3);
@@ -83,7 +84,7 @@ export default function RouteMap() {
 	}
 
 	return (
-		<div className="map-wrap relative w-full h-full">
+		<div className="relative w-full h-full">
 			<div ref={mapContainer} className="map absolute w-full h-full" />
 		</div>
 	);
