@@ -12,8 +12,6 @@ export default function RouteMap() {
     const API_KEY = "OZkqnFxcrUbHDpJQ5a3K";
 
     useEffect(() => {
-        if (map.current) return; // stops map from intializing more than once
-
         map.current = new maplibregl.Map({
             container: mapContainer.current,
             style: `https://api.maptiler.com/maps/streets-v2/style.json?key=${API_KEY}`,
@@ -34,13 +32,19 @@ export default function RouteMap() {
             el.textContent = index;
 
             el.addEventListener('click', () => {
-                updateRouteMapSidebar(geologicalInfo.latitude, geologicalInfo.longitude);
+                updateRouteMapSidebar(geologicalInfo);
             });
 
             new maplibregl.Marker({element: el})
                 .setLngLat([geologicalInfo.longitude,geologicalInfo.latitude])
                 .addTo(map.current);
         })
+    }
+
+    function updateRouteMapSidebar(geologicalInfo) {
+        const {timestamp, latitude, longitude, altitude, temperature, humidity, pressure, light, windSpeed, windDirection, radiation} = geologicalInfo;
+
+        console.log("TO BE IMPLEMENTED IN COUPLE HOURS :D")
     }
 
     async function getMarkerData() {
