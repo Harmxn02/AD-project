@@ -32,8 +32,8 @@ export default function RouteMap() {
 			el.addEventListener("mouseover", () => (el.textContent = index + 1));
 			el.addEventListener("mouseleave", () => (el.textContent = ""));
 
-			el.addEventListener("click", () => {
-				updateRouteMapSidebar(geologicalInfo);
+			el.addEventListener("click", (event) => {
+				updateRouteMapSidebar(geologicalInfo, event);
 			});
 
 			new maplibregl.Marker({ element: el })
@@ -44,7 +44,7 @@ export default function RouteMap() {
 		updateRouteMapSidebar(geologicalInfoData[0]);
 	}
 
-	function updateRouteMapSidebar(geologicalInfo) {
+	function updateRouteMapSidebar(geologicalInfo, event) {
 		const {
 			timestamp,
 			latitude,
@@ -69,6 +69,19 @@ export default function RouteMap() {
 		document.querySelector("#windspeed").textContent = windSpeed.toFixed(0);
 		document.querySelector("#windDirection").textContent = windDirection;
 		document.querySelector("#radiation").textContent = radiation.toFixed(3);
+
+		resetAllClickedElements();
+		const clickedElement = event || undefined;
+		if (clickedElement !== undefined) {
+			clickedElement.target.style.backgroundColor = "#E74C3C";
+			clickedElement.target.classList.remove("bg-brandTeal");
+		}
+	}
+
+	function resetAllClickedElements() {
+		document.querySelectorAll(".marker").forEach((marker) => {
+			marker.style.backgroundColor = "#54696c";
+		});
 	}
 
 	async function getMarkerData() {
