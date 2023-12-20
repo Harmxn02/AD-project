@@ -6,8 +6,6 @@ import PropTypes from "prop-types";
 import { GetAPI } from "../../assets/js/api";
 import { GetUser } from "../../assets/js/user";
 
-import ProfilePicture from "../../../public/profile-pictures/male_1.png";
-
 import { usePathname } from "next/navigation";
 import Button from "@/components/utility/Button";
 import Image from "next/image";
@@ -61,7 +59,7 @@ const QuickStats = () => {
 	const selectedUserID = GetUser();
 
 	const adriaId = selectedUserID;
-	const statistics = GetAPI(`/members/${adriaId}/statistics`);
+	const statistics = GetAPI(`/members/${adriaId}/statistics`, true);
 
 	if (!statistics) {
 		return <SidebarSkeleton />;
@@ -114,7 +112,6 @@ const QuickStats = () => {
 const UserInformation = () => {
 	const selectedUserID = GetUser();
 	const currentUser = GetAPI(`/members/${selectedUserID}`);
-	
 
 	return (
 		<div className="p-8 text-center">
@@ -122,7 +119,7 @@ const UserInformation = () => {
 				<div>
 					<Link href="/settings">
 						<Image
-							src={ProfilePicture}
+							src={currentUser.profilepicture}
 							alt="Profile Picture"
 							width={80}
 							height={80}

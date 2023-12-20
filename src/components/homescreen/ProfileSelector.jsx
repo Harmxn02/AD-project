@@ -3,27 +3,17 @@
 import React, { useState, useEffect } from "react";
 import toast, { Toaster } from 'react-hot-toast';
 
-import MaleOne from "../../../public/profile-pictures/male_1.png";
-import MaleTwo from "../../../public/profile-pictures/male_2.jpg";
-import FemaleOne from "../../../public/profile-pictures/female_1.png";
-
 const people = [
 	{
 		id: 1,
-		src: MaleOne,
-		alt: "Mark Singers",
 		name: "Mark Singers",
 	},
 	{
 		id: 2,
-		src: MaleTwo,
-		alt: "Felix Gonet",
 		name: "Felix Gonet",
 	},
 	{
 		id: 3,
-		src: FemaleOne,
-		alt: "Sabine Balmadier",
 		name: "Sabine Balmadier",
 	},
 ];
