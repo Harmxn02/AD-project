@@ -56,6 +56,16 @@ export default function RouteMap() {
 			radiation,
 		} = geologicalInfo;
 		document.querySelector("#timestamp").textContent = new Date(timestamp).toLocaleTimeString("en-GB");
+		document.querySelector("#latitude").textContent = latitude;
+		document.querySelector("#longitude").textContent = longitude.toFixed(3);
+		document.querySelector("#altitude").textContent = altitude.toFixed(3);
+		document.querySelector("#temperature").textContent = Math.round(temperature);
+		document.querySelector("#humidity").textContent = humidity;
+		document.querySelector("#pressure").textContent = pressure.toFixed(3);
+		document.querySelector("#light").textContent = light .toFixed(3);
+		document.querySelector("#windspeed").textContent = windSpeed.toFixed(0);
+		document.querySelector("#windDirection").textContent = windDirection;
+		document.querySelector("#radiation").textContent = radiation.toFixed(3);
 	}
 
 	async function getMarkerData() {
