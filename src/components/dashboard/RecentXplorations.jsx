@@ -49,9 +49,8 @@ const RecentXplorations = () => {
 		);
 	}
 
-
 	// if countriesVisited == null, then is shows Roman Empire instead
-	recent_xplorations.forEach(exploration => {
+	recent_xplorations.forEach((exploration) => {
 		if (exploration.countriesVisited[0] == null) {
 			exploration.countriesVisited = ["Roman Empire"];
 		}
@@ -105,11 +104,11 @@ const RecentXplorations = () => {
 
 							{/* <---------------- start of temporary feature ----------------> */}
 
-							<div className="pl-4 text-[.5rem] min-w-fit">
+							{/* <div className="pl-4 text-[.5rem] min-w-fit">
 								{`${formatCountryString(
 									exploration.countriesVisited[0],
 								)}.svg`}
-							</div>
+							</div> */}
 
 							{/* <---------------- end of temporary feature ----------------> */}
 						</div>

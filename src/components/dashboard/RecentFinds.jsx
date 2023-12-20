@@ -59,10 +59,11 @@ const RecentFinds = () => {
 							<div className="w-3/6 flex items-center h-full border-r-4">
 								<p className="font-medium text-lg">
 									{find.name}
-									<span className="font-light text-xs">
-										{/* temporary */}
+									{/* temporary */}
+									{/* <span className="font-light text-xs">
 										session: {find.sessionId}
 									</span>
+									*/}
 								</p>
 							</div>
 							<div className="w-3/6 flex flex-row justify-between items-center px-8">
