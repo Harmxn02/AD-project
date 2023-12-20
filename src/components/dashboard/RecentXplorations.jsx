@@ -15,18 +15,12 @@ const formatTimeDifference = (startTime, endTime) => {
 	const timeDifference = endDateTime - startDateTime;
 
 	const hours = Math.floor(timeDifference / (1000 * 60 * 60));
-	const minutes = Math.floor(
-		(timeDifference % (1000 * 60 * 60)) / (1000 * 60),
-	);
+	const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
 
-	const formatUnit = (value, unit) =>
-		`${value} ${unit}${value !== 1 ? "s" : ""}`;
+	const formatUnit = (value, unit) => `${value} ${unit}${value !== 1 ? "s" : ""}`;
 
 	if (hours > 0) {
-		return (
-			formatUnit(hours, "hour") +
-			(minutes > 0 ? ` ${formatUnit(minutes, "minute")}` : "")
-		);
+		return formatUnit(hours, "hour") + (minutes > 0 ? ` ${formatUnit(minutes, "minute")}` : "");
 	} else {
 		return formatUnit(minutes, "minute");
 	}
@@ -39,17 +33,10 @@ const RecentXplorations = () => {
 
 	const recent_xplorations = GetAPI(`/sessions/${adriaId}`);
 	const title = "Recent X-Plorations";
-	const description =
-		"An overview of your recently visited locations, including travel time.";
+	const description = "An overview of your recently visited locations, including travel time.";
 
 	if (recent_xplorations === null) {
-		return (
-			<RecentXSkeleton
-				title={title}
-				description={description}
-				className="mt-12"
-			/>
-		);
+		return <RecentXSkeleton title={title} description={description} className="mt-12" />;
 	}
 
 	const formatCountryString = (country) => {
@@ -71,7 +58,7 @@ const RecentXplorations = () => {
 	//sense if they click on the eye it says toggle but it just has to open, it is not responsible for closing.
 	//That is why I made a open and close modal for readability and just better usecase-abiliy here.
 	const closeModal = () => {
-		setSelectedSessionId(null);
+		//setSelectedSessionId(null);
 		setIsModalVisible(false);
 	};
 
@@ -83,9 +70,7 @@ const RecentXplorations = () => {
 				{recent_xplorations.map((exploration) => (
 					<RecentsContainer key={exploration.id}>
 						<Image
-							src={`/icons/country-flags/${formatCountryString(
-								exploration.countriesVisited[0],
-							)}.svg`}
+							src={`/icons/country-flags/${formatCountryString(exploration.countriesVisited[0])}.svg`}
 							width={256}
 							height={256}
 							className="w-16 h-16 rounded-xl rounded-tr-none rounded-br-none"
@@ -93,18 +78,13 @@ const RecentXplorations = () => {
 						></Image>
 
 						<div className="w-3/6 flex items-center justify-between h-full border-r-4">
-							<p className="font-medium text-lg">
-								{exploration.countriesVisited.join(" - ")}
-							</p>
+							<p className="font-medium text-lg">{exploration.countriesVisited.join(" - ")}</p>
 							{/*<div className="pl-4 text-[.5rem] min-w-fit">
 								{`${formatCountryString(
 									exploration.countriesVisited[0],
 								)}.svg`}
 								</div>*/}
-							<button
-								className="relative group flex mr-8"
-								onClick={() => openModal(null)}
-							>
+							<button className="relative group flex mr-8" onClick={() => openModal(null)}>
 								<svg
 									width="25px"
 									height="25px"
@@ -136,15 +116,8 @@ const RecentXplorations = () => {
 										fill="none"
 										xmlns="http://www.w3.org/2000/svg"
 									>
-										<g
-											id="SVGRepo_bgCarrier"
-											strokeWidth="0"
-										></g>
-										<g
-											id="SVGRepo_tracerCarrier"
-											strokeLinecap="round"
-											strokeLinejoin="round"
-										></g>
+										<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+										<g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
 										<g id="SVGRepo_iconCarrier">
 											{" "}
 											<circle
@@ -175,26 +148,16 @@ const RecentXplorations = () => {
 						</div>
 						<div className="w-3/6 flex flex-row justify-between items-center px-8">
 							<p className="text-brandBlack font-semibold">
-								{formatTimeDifference(
-									exploration.startTime,
-									exploration.endTime,
-								)}
+								{formatTimeDifference(exploration.startTime, exploration.endTime)}
 							</p>
 							<p className="font-medium text-sm">
-								{new Intl.DateTimeFormat("en-GB").format(
-									new Date(exploration.startTime),
-								)}
+								{new Intl.DateTimeFormat("en-GB").format(new Date(exploration.startTime))}
 							</p>
 						</div>
 					</RecentsContainer>
 				))}
 			</div>
-			{isModalVisible && (
-				<RecentFindsModal
-					sessionId={SelectedSessionId}
-					onClose={closeModal}
-				/>
-			)}
+			{isModalVisible && <RecentFindsModal sessionId={SelectedSessionId} onClose={closeModal} />}
 		</section>
 	);
 };
