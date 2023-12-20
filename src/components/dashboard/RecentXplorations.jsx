@@ -49,6 +49,14 @@ const RecentXplorations = () => {
 		);
 	}
 
+
+	// if countriesVisited == null, then is shows Roman Empire instead
+	recent_xplorations.forEach(exploration => {
+		if (exploration.countriesVisited[0] == null) {
+			exploration.countriesVisited = ["Roman Empire"];
+		}
+	});
+
 	const formatCountryString = (country) => {
 		// Convert to string, replace spaces with underscores, remove accents, and remove single quotes
 		return String(country)
