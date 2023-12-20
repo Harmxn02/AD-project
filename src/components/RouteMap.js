@@ -9,8 +9,6 @@ export default function RouteMap() {
     let geologicalInfoData;
     const mapContainer = useRef(null);
     const map = useRef(null);
-    const lng = 139.753;
-    const lat = 35.6844;
     const API_KEY = "OZkqnFxcrUbHDpJQ5a3K";
 
     useEffect(() => {
@@ -19,15 +17,15 @@ export default function RouteMap() {
         map.current = new maplibregl.Map({
             container: mapContainer.current,
             style: `https://api.maptiler.com/maps/streets-v2/style.json?key=${API_KEY}`,
-            center: [lng, lat],
-            zoom: 7,
+            center: [30, 31],
+            zoom: 10,
             minZoom: 1,
             maxZoom: 16,
         });
 
         getMarkerData();
 
-    }, [API_KEY, lng, lat, zoom, geologicalInfoData]);
+    }, [API_KEY, geologicalInfoData]);
 
     function renderMarkers() {
         geologicalInfoData.forEach(geologicalinfo => {
@@ -40,6 +38,12 @@ export default function RouteMap() {
     async function getMarkerData() {
         const { flyData } = await fetch("https://project-2.ti.howest.be/2023-2024/group-17/api/geologicalinfo/1").then(data => data.json());
         geologicalInfoData = flyData;
+
+        if (geologicalInfoData.length > 0) {
+            const firstItem = geologicalInfoData[0];
+            map.current.setCenter([firstItem.longitude, firstItem.latitude]);
+        }
+
         renderMarkers();
     }
 
