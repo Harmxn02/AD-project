@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Title(props) {
+function Title({content}) {
 	return (
-		<h2 className="text-black font-bold text-3xl my-4">{props.content}</h2>
+		<h2 className="text-black font-bold text-3xl my-4">{content}</h2>
 	);
 }
 
