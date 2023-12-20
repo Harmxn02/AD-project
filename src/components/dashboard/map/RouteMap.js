@@ -40,6 +40,8 @@ export default function RouteMap() {
 				.setLngLat([geologicalInfo.longitude, geologicalInfo.latitude])
 				.addTo(map.current);
 		});
+
+		updateRouteMapSidebar(geologicalInfoData[0]);
 	}
 
 	function updateRouteMapSidebar(geologicalInfo) {
