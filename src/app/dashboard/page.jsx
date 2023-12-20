@@ -1,4 +1,5 @@
 "use client";
+
 import Header from "@/components/dashboard/Header";
 import Statistics from "@/components/dashboard/Statistics";
 import RecentXplorations from "@/components/dashboard/RecentXplorations";
@@ -29,7 +30,7 @@ export default function Home() {
 				<MemoizedStatistics activeButton={activeButton} />
 				<MemoizedRecentFinds />
 				<MemoizedRecentXplorations />
-				<MemoizedRevenue activeButton={activeButton}/>
+				<MemoizedRevenue activeButton={activeButton} />
 			</section>
 		</Layout>
 	);
