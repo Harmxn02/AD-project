@@ -9,7 +9,7 @@ export default function RouteMap() {
 	const API_KEY = "OZkqnFxcrUbHDpJQ5a3K";
 
 	useEffect(() => {
-		if (map.current) return null;
+		if (map.current) return undefined;
 
 		map.current = new maplibregl.Map({
 			container: mapContainer.current,
