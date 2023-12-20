@@ -30,8 +30,12 @@ export default function Map() {
     }, [API_KEY, lng, lat, zoom]);
 
     async function renderMarkers() {
-        const { sessions } = await fetch("https://project-2.ti.howest.be/2023-2024/group-17/api/sessions/1").then(data => data.json());
-        console.log(sessions)
+        const { flyData } = await fetch("https://project-2.ti.howest.be/2023-2024/group-17/api/geologicalinfo/1").then(data => data.json());
+        flyData.forEach(geologicalinfo => {
+            new maplibregl.Marker({color: "#FF0000"})
+                .setLngLat([geologicalinfo.longitude,geologicalinfo.latitude])
+                .addTo(map.current);
+        })
     }
 
     return (
