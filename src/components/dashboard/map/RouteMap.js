@@ -25,19 +25,15 @@ export default function RouteMap() {
 
 	function renderMarkers() {
 		geologicalInfoData.forEach((geologicalInfo, index) => {
-			const el = document.createElement("div");
-			el.className =
-				"marker bg-brandBlack w-3 h-3 rounded-full hover:marker-maproute-onhover";
-
-			el.addEventListener(
-				"mouseover",
-				() => (el.textContent = index + 1),
-			);
+			el.addEventListener("mouseover", () => (el.textContent = index + 1));
 			el.addEventListener("mouseleave", () => (el.textContent = ""));
 
 			el.addEventListener("click", () => {
 				updateRouteMapSidebar(geologicalInfo);
 			});
+
+			const el = document.createElement("div");
+			el.className = "marker bg-brandBlack w-3 h-3 rounded-full hover:marker-maproute-onhover";
 
 			new maplibregl.Marker({ element: el })
 				.setLngLat([geologicalInfo.longitude, geologicalInfo.latitude])
@@ -64,9 +60,9 @@ export default function RouteMap() {
 	}
 
 	async function getMarkerData() {
-		const { flyData } = await fetch(
-			"https://project-2.ti.howest.be/2023-2024/group-17/api/geologicalinfo/1",
-		).then((data) => data.json());
+		const { flyData } = await fetch("https://project-2.ti.howest.be/2023-2024/group-17/api/geologicalinfo/1").then(
+			(data) => data.json(),
+		);
 		geologicalInfoData = flyData;
 
 		if (geologicalInfoData.length > 0) {
