@@ -1,13 +1,12 @@
 "use client";
 import React from "react";
-import Title from "@/components/utility/Title";
-
 import Image from "next/image";
+
 import { GetAPI } from "../../assets/js/api";
 import { GetUser } from "@/assets/js/user";
 
+import Title from "@/components/utility/Title";
 import RecentXSkeleton from "@/components/utility/skeletons/RecentXSkeleton";
-
 import RecentsContainer from "@/components/utility/Recents/RecentsContainer";
 
 import Red from "../../../public/icons/finds_toAuction.svg";
@@ -59,11 +58,6 @@ const RecentFinds = () => {
 							<div className="w-3/6 flex items-center h-full border-r-4">
 								<p className="font-medium text-lg">
 									{find.name}
-									{/* temporary */}
-									{/* <span className="font-light text-xs">
-										session: {find.sessionId}
-									</span>
-									*/}
 								</p>
 							</div>
 							<div className="w-3/6 flex flex-row justify-between items-center px-8">

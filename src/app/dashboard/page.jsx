@@ -1,4 +1,5 @@
 "use client";
+
 import Header from "@/components/dashboard/Header";
 import Statistics from "@/components/dashboard/Statistics";
 import RecentXplorations from "@/components/dashboard/RecentXplorations";
@@ -22,14 +23,14 @@ export default function Home() {
 	return (
 		<Layout>
 			<section className="pt-16 pb-8 px-24 w-full max-h-screen overflow-y-auto scrollbar scrollbar-thumb-brandTeal scrollbar-track-transparent">
-				<Header
+				{/* <Header
 					activeButton={activeButton}
 					onButtonClick={handleButtonClick}
 				/>
 				<MemoizedStatistics activeButton={activeButton} />
-				<MemoizedRecentFinds />
+				<MemoizedRecentFinds /> */}
 				<MemoizedRecentXplorations />
-				<MemoizedRevenue activeButton={activeButton}/>
+				{/* <MemoizedRevenue activeButton={activeButton} /> */}
 			</section>
 		</Layout>
 	);
