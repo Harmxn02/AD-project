@@ -58,8 +58,7 @@ const RecentXplorations = () => {
 	//sense if they click on the eye it says toggle but it just has to open, it is not responsible for closing.
 	//That is why I made a open and close modal for readability and just better usecase-abiliy here.
 	const closeModal = () => {
-		//setSelectedSessionId(null);
-		console.log("dfsfdsfd")
+		setSelectedSessionId(null);
 		setIsModalVisible(false);
 	};
 
