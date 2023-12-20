@@ -28,7 +28,7 @@ const formatTimeDifference = (startTime, endTime) => {
 };
 
 const RecentXplorations = () => {
-	const [SelectedSessionId, setSelectedSessionId] = useState(null);
+	const [selectedSessionId, setSelectedSessionId] = useState(null);
 	const [isModalVisible, setIsModalVisible] = useState(false);
 
 	const adriaId = GetUser();
@@ -69,7 +69,7 @@ const RecentXplorations = () => {
 		setSelectedSessionId(null);
 		setIsModalVisible(false);
 	};
-	
+
 	return (
 		<section className="mt-12">
 			<Title content={title} />
@@ -88,9 +88,7 @@ const RecentXplorations = () => {
 						<div className="w-3/6 flex items-center justify-between h-full border-r-4">
 							<p className="font-medium text-lg">{exploration.countriesVisited.join(" - ")}</p>
 							<div className="pl-4 text-[.5rem] min-w-fit">
-								{`${formatCountryString(
-									exploration.countriesVisited[0],
-								)}.svg`}
+								{`${formatCountryString(exploration.countriesVisited[0])}.svg`}
 							</div>
 							<button className="relative group flex mr-8" onClick={() => openModal(null)}>
 								<svg
@@ -155,9 +153,7 @@ const RecentXplorations = () => {
 							</button>
 						</div>
 						<div className="w-3/6 flex items-center h-full border-r-4">
-							<p className="font-medium text-lg">
-								{exploration.countriesVisited.join(" - ")}
-							</p>
+							<p className="font-medium text-lg">{exploration.countriesVisited.join(" - ")}</p>
 						</div>
 						<div className="w-3/6 flex flex-row justify-between items-center px-8">
 							<p className="text-brandBlack font-semibold">
@@ -170,7 +166,7 @@ const RecentXplorations = () => {
 					</RecentsContainer>
 				))}
 			</div>
-			{isModalVisible && <RecentFindsModal sessionId={SelectedSessionId} onClose={closeModal} />}
+			{isModalVisible && <RecentFindsModal sessionId={selectedSessionId} onClose={closeModal} />}
 		</section>
 	);
 };
