@@ -55,6 +55,7 @@ export default function RouteMap() {
 			windDirection,
 			radiation,
 		} = geologicalInfo;
+		document.querySelector("#timestamp").textContent = new Date(timestamp).toLocaleTimeString("en-GB");
 	}
 
 	async function getMarkerData() {
