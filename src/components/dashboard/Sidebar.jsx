@@ -6,8 +6,6 @@ import PropTypes from "prop-types";
 import { GetAPI } from "../../assets/js/api";
 import { GetUser } from "../../assets/js/user";
 
-import ProfilePicture from "../../../public/profile-pictures/male_1.png";
-
 import { usePathname } from "next/navigation";
 import Button from "@/components/utility/Button";
 import Image from "next/image";
@@ -19,7 +17,6 @@ import RulerIcon from "../../../public/icons/sidebar_statistics/ruler.svg";
 import ClockIcon from "../../../public/icons/sidebar_statistics/clock.svg";
 import SidebarSkeleton from "@/components/utility/skeletons/SidebarSkeleton";
 import UserInformationSkeleton from "@/components/utility/skeletons/UserInformationSkeleton";
-
 
 const SidebarLink = ({ href, icon, text, currentPath }) => {
 	SidebarLink.propTypes = {
@@ -59,16 +56,7 @@ const SidebarLink = ({ href, icon, text, currentPath }) => {
 };
 
 const QuickStats = () => {
-
 	const selectedUserID = GetUser();
-	// const users = GetAPI("/members");
-
-	// let currentUser;
-
-	// if (users) {
-	// 	currentUser = users[selectedUserID];
-	// 	console.log("current user: ", currentUser);
-	// }
 
 	const adriaId = selectedUserID;
 	const statistics = GetAPI(`/members/${adriaId}/statistics`, true);
@@ -123,29 +111,22 @@ const QuickStats = () => {
 
 const UserInformation = () => {
 	const selectedUserID = GetUser();
-	const users = GetAPI("/members", true);
-
-	let currentUser;
-
-	if (users) {
-		currentUser = users[selectedUserID];
-
-		// the console.log should stay until we are done with this section 
-		console.log("current user: ", currentUser);
-	}
+	const currentUser = GetAPI(`/members/${selectedUserID}`, true);
 
 	return (
 		<div className="p-8 text-center">
 			{currentUser ? (
 				<div>
-					<Image
-						src={ProfilePicture}
-						alt="Profile Picture"
-						width={80}
-						height={80}
-						className="w-[80px] h-[80px] rounded-full m-auto mb-4"
-						priority
-					/>
+					<Link href="/settings">
+						<Image
+							src={currentUser.profilePicture}
+							alt="Profile Picture"
+							width={80}
+							height={80}
+							className="w-[80px] h-[80px] rounded-full m-auto mb-4"
+							priority
+						/>
+					</Link>
 					<h3 className="text-brandTeal font-bold">
 						{currentUser.name}
 					</h3>
@@ -234,7 +215,7 @@ const Sidebar = () => {
 	return (
 		<header className="bg-white min-w-[250px] h-screen relative">
 			{/* <div className="p-8 text-center">
-				<Image
+				<Image<
 					src={ProfilePicture}
 					alt="Profile Picture"
 					width={80}

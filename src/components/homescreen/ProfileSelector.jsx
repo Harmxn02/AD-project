@@ -1,34 +1,25 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-
-import MaleOne from "../../../public/profile-pictures/male_1.png";
-import MaleTwo from "../../../public/profile-pictures/male_2.jpg";
-import FemaleOne from "../../../public/profile-pictures/female_1.png";
+import toast, { Toaster } from "react-hot-toast";
 
 const people = [
 	{
 		id: 1,
-		src: MaleOne,
-		alt: "Mark Singers",
 		name: "Mark Singers",
 	},
 	{
 		id: 2,
-		src: MaleTwo,
-		alt: "Felix Gonet",
 		name: "Felix Gonet",
 	},
 	{
 		id: 3,
-		src: FemaleOne,
-		alt: "Sabine Balmadier",
 		name: "Sabine Balmadier",
 	},
 ];
 
 const ProfileSelector = () => {
-	const [selectedProfile, setSelectedProfile] = useState(null);
+	const [selectedProfile, setSelectedProfile] = useState(people[0]);
 
 	// Load selected profile from localStorage on mount
 	useEffect(() => {
@@ -53,6 +44,9 @@ const ProfileSelector = () => {
 		const selectedPerson = people.find(
 			(person) => person.id === selectedId,
 		);
+
+		// Show toast when the profile is changed
+		toast.success(`Profile changed to: ${selectedPerson.name}`);
 		setSelectedProfile(selectedPerson);
 	};
 
@@ -75,6 +69,7 @@ const ProfileSelector = () => {
 					</option>
 				))}
 			</select>
+			<Toaster />
 		</div>
 	);
 };

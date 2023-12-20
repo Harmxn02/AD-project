@@ -8,9 +8,10 @@ import TableDataCell from "@/components/utility/Table/TableDataCell";
 import Skeleton from "@/components/utility/skeletons/TransactionsSkeleton";
 
 import { GetAPI } from "../../assets/js/api";
+import { GetUser } from "../../assets/js/user";
 
 const AuctionProceeds = () => {
-	const adriaId = 1;
+	const adriaId = GetUser();
 	const auction_proceeds = GetAPI(`/auctions/${adriaId}`);
 
 	if (auction_proceeds === null) {

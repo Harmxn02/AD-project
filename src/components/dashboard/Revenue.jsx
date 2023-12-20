@@ -7,9 +7,10 @@ import LineBarChart from "@/components/dashboard/charts/LineBarChart";
 import PeriodicRevenueSkeleton from "@/components/utility/skeletons/PeriodicRevenueSkeleton";
 
 import { GetAPI } from "../../assets/js/api";
+import { GetUser } from "../../assets/js/user";
 
 const Revenue = ({ activeButton }) => {
-	const adriaId = 1;
+	const adriaId = GetUser();
 	const revenueDataAPI = GetAPI(`/revenue/${adriaId}`);
 
 	const revenue = {
@@ -22,59 +23,71 @@ const Revenue = ({ activeButton }) => {
 		return <PeriodicRevenueSkeleton />;
 	}
 
+	const dataContext = {
+		lineBackgroundColor: "rgba(49, 94, 101, 1)",
+		lineBorderColor: "rgba(49, 94, 101, 1)",
+		lineBorderWidth: 1,
+
+		barBackgroundColor: "rgba(98, 160, 170, 0.45)",
+		barBorderColor: "rgba(75, 192, 192, 1)",
+		barBorderWidth: 1,
+
+		defaultLabel: "ADCO earned",
+	};
+
 	const revenueData = {
 		dailyData: [
 			{
 				type: "line",
-				label: "ADCO earned",
+				label: dataContext.defaultLabel,
 				data: revenueDataAPI.daily,
-				backgroundColor: "rgba(49, 94, 101, 1)",
-				borderColor: "rgba(49, 94, 101, 1)",
-				borderWidth: 1,
+				backgroundColor: dataContext.lineBackgroundColor,
+				borderColor: dataContext.lineBorderColor,
+				borderWidth: dataContext.lineBorderWidth,
 			},
 			{
 				type: "bar",
-				label: "ADCO earned",
+				label: dataContext.defaultLabel,
 				data: revenueDataAPI.daily,
-				backgroundColor: "rgba(98, 160, 170, 0.45)",
-				borderColor: "rgba(75, 192, 192, 1)",
-				borderWidth: 1,
+				backgroundColor: dataContext.barBackgroundColor,
+				borderColor: dataContext.barBorderColor,
+				borderWidth: dataContext.barBorderWidth,
 			},
 		],
 		weeklyData: [
 			{
 				type: "line",
-				label: "ADCO earned",
+				label: dataContext.defaultLabel,
 				data: revenueDataAPI.weekly,
-				backgroundColor: "rgba(49, 94, 101, 1)",
-				borderColor: "rgba(49, 94, 101, 1)",
-				borderWidth: 1,
+				backgroundColor: dataContext.lineBackgroundColor,
+				borderColor: dataContext.lineBorderColor,
+				borderWidth: dataContext.lineBorderWidth,
 			},
 			{
 				type: "bar",
-				label: "ADCO earned",
+				label: dataContext.defaultLabel,
 				data: revenueDataAPI.weekly,
-				backgroundColor: "rgba(98, 160, 170, 0.45)",
-				borderColor: "rgba(75, 192, 192, 1)",
-				borderWidth: 1,
+				backgroundColor: dataContext.barBackgroundColor,
+				borderColor: dataContext.barBorderColor,
+				borderWidth: dataContext.barBorderWidth,
 			},
 		],
 		monthlyData: [
 			{
 				type: "line",
-				label: "ADCO earned",
+				label: dataContext.defaultLabel,
 				data: revenueDataAPI.monthly,
-				backgroundColor: "rgba(49, 94, 101, 1)",
-				borderColor: "rgba(49, 94, 101, 1)",
-				borderWidth: 1,
+				backgroundColor: dataContext.lineBackgroundColor,
+				borderColor: dataContext.lineBorderColor,
+				borderWidth: dataContext.lineBorderWidth,
 			},
 			{
 				type: "bar",
-				label: "ADCO earned",
+				label: dataContext.defaultLabel,
 				data: revenueDataAPI.monthly,
-				backgroundColor: "rgba(98, 160, 170, 0.45)",
-				borderColor: "rgba(75, 192, 192, 1)",
-				borderWidth: 1,
+				backgroundColor: dataContext.barBackgroundColor,
+				borderColor: dataContext.barBorderColor,
+				borderWidth: dataContext.barBorderWidth,
 			},
 		],
 	};
@@ -93,8 +106,7 @@ const Revenue = ({ activeButton }) => {
 			prefixTitle = "Monthly";
 			break;
 		default:
-			revenue.dataToRender = revenueData.dailyData;
-			prefixTitle = "Daily";
+			break;
 	}
 
 	return (

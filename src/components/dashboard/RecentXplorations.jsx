@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 import { GetAPI } from "../../assets/js/api";
+import { GetUser } from "../../assets/js/user";
 
 import Title from "@/components/utility/Title";
 import RecentsContainer from "@/components/utility/Recents/RecentsContainer";
@@ -29,8 +30,8 @@ const formatTimeDifference = (startTime, endTime) => {
 const RecentXplorations = () => {
 	const [SelectedSessionId, setSelectedSessionId] = useState(null);
 	const [isModalVisible, setIsModalVisible] = useState(false);
-	const adriaId = 1;
 
+	const adriaId = GetUser();
 	const recent_xplorations = GetAPI(`/sessions/${adriaId}`);
 	const title = "Recent X-Plorations";
 	const description = "An overview of your recently visited locations, including travel time.";
@@ -38,6 +39,13 @@ const RecentXplorations = () => {
 	if (recent_xplorations === null) {
 		return <RecentXSkeleton title={title} description={description} className="mt-12" />;
 	}
+
+	// if countriesVisited == null, then is shows Roman Empire instead
+	recent_xplorations.forEach((exploration) => {
+		if (exploration.countriesVisited[0] == null) {
+			exploration.countriesVisited = ["Roman Empire"];
+		}
+	});
 
 	const formatCountryString = (country) => {
 		// Convert to string, replace spaces with underscores, remove accents, and remove single quotes
@@ -61,7 +69,7 @@ const RecentXplorations = () => {
 		setSelectedSessionId(null);
 		setIsModalVisible(false);
 	};
-
+	
 	return (
 		<section className="mt-12">
 			<Title content={title} />
@@ -79,11 +87,11 @@ const RecentXplorations = () => {
 
 						<div className="w-3/6 flex items-center justify-between h-full border-r-4">
 							<p className="font-medium text-lg">{exploration.countriesVisited.join(" - ")}</p>
-							{/*<div className="pl-4 text-[.5rem] min-w-fit">
+							<div className="pl-4 text-[.5rem] min-w-fit">
 								{`${formatCountryString(
 									exploration.countriesVisited[0],
 								)}.svg`}
-								</div>*/}
+							</div>
 							<button className="relative group flex mr-8" onClick={() => openModal(null)}>
 								<svg
 									width="25px"
@@ -145,6 +153,11 @@ const RecentXplorations = () => {
 									View details
 								</span>
 							</button>
+						</div>
+						<div className="w-3/6 flex items-center h-full border-r-4">
+							<p className="font-medium text-lg">
+								{exploration.countriesVisited.join(" - ")}
+							</p>
 						</div>
 						<div className="w-3/6 flex flex-row justify-between items-center px-8">
 							<p className="text-brandBlack font-semibold">
