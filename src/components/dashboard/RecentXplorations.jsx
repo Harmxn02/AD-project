@@ -102,7 +102,7 @@ const RecentXplorations = () => {
 								)}.svg`}
 								</div>*/}
 							<button
-								className="relative group flex"
+								className="relative group flex mr-8"
 								onClick={() => openModal(null)}
 							>
 								<svg
@@ -111,7 +111,7 @@ const RecentXplorations = () => {
 									viewBox="0 0 24 24"
 									fill="none"
 									xmlns="http://www.w3.org/2000/svg"
-									className="mr-8 hover:opacity-30"
+									className="hover:opacity-30"
 								>
 									<path
 										d="M15.0007 12C15.0007 13.6569 13.6576 15 12.0007 15C10.3439 15 9.00073 13.6569 9.00073 12C9.00073 10.3431 10.3439 9 12.0007 9C13.6576 9 15.0007 10.3431 15.0007 12Z"
