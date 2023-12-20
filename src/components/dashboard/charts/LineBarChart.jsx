@@ -43,20 +43,20 @@ const LineBarChart = (props) => {
 	return <canvas ref={chartRef}></canvas>;
 };
 
-// LineBarChart.propTypes = {
-// 	labels: PropTypes.arrayOf(PropTypes.string),
-// 	dataObject: PropTypes.arrayOf(
-// 		PropTypes.shape({
-// 			label: PropTypes.string.isRequired,
-// 			data: PropTypes.oneOfType([
-//                 PropTypes.arrayOf(PropTypes.number).isRequired,
-//                 PropTypes.object.isRequired,
-//             ]).isRequired,
-// 			backgroundColor: PropTypes.string.isRequired,
-// 			borderColor: PropTypes.string.isRequired,
-// 			borderWidth: PropTypes.number.isRequired,
-// 		})
-// 	).isRequired,
-// };
+LineBarChart.propTypes = {
+	labels: PropTypes.arrayOf(PropTypes.string),
+	dataObject: PropTypes.arrayOf(
+		PropTypes.shape({
+			label: PropTypes.string.isRequired,
+			data: PropTypes.oneOfType([
+				PropTypes.arrayOf(PropTypes.number).isRequired,
+				PropTypes.object.isRequired,
+			]).isRequired,
+			backgroundColor: PropTypes.string.isRequired,
+			borderColor: PropTypes.string.isRequired,
+			borderWidth: PropTypes.number.isRequired,
+		}),
+	).isRequired,
+};
 
 export default LineBarChart;
