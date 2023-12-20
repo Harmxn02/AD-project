@@ -4,6 +4,8 @@ import Title from "@/components/utility/Title";
 
 import Image from "next/image";
 import { GetAPI } from "../../assets/js/api";
+import { GetUser } from "@/assets/js/user";
+
 import RecentXSkeleton from "@/components/utility/skeletons/RecentXSkeleton";
 
 import RecentsContainer from "@/components/utility/Recents/RecentsContainer";
@@ -25,8 +27,7 @@ const getColourAndImage = (item) => {
 };
 
 const RecentFinds = () => {
-	const adriaId = 1;
-
+	const adriaId = GetUser();
 	const finds = GetAPI(`/items/${adriaId}`);
 	const title = "Recent finds";
 	const description =
