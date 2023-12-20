@@ -111,7 +111,7 @@ const QuickStats = () => {
 
 const UserInformation = () => {
 	const selectedUserID = GetUser();
-	const currentUser = GetAPI(`/members/${selectedUserID}`);
+	const currentUser = GetAPI(`/members/${selectedUserID}`, true);
 
 	return (
 		<div className="p-8 text-center">
@@ -119,8 +119,7 @@ const UserInformation = () => {
 				<div>
 					<Link href="/settings">
 						<Image
-							// src={currentUser.profilepicture}
-							src={ClockIcon}
+							src={currentUser.profilePicture}
 							alt="Profile Picture"
 							width={80}
 							height={80}
