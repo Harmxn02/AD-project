@@ -1,6 +1,9 @@
 import React from "react";
 import Title from "@/components/utility/Title";
+
 import { GetAPI } from "../../assets/js/api";
+import { GetUser } from "../../assets/js/user";
+
 import RecentXSkeleton from "@/components/utility/skeletons/RecentXSkeleton";
 import Image from "next/image";
 import RecentsContainer from "@/components/utility/Recents/RecentsContainer";
@@ -30,8 +33,7 @@ const formatTimeDifference = (startTime, endTime) => {
 };
 
 const RecentXplorations = () => {
-	const adriaId = 1;
-
+	const adriaId = GetUser();
 	const recent_xplorations = GetAPI(`/sessions/${adriaId}`);
 	const title = "Recent X-Plorations";
 	const description =

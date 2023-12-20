@@ -7,9 +7,10 @@ import LineBarChart from "@/components/dashboard/charts/LineBarChart";
 import PeriodicRevenueSkeleton from "@/components/utility/skeletons/PeriodicRevenueSkeleton";
 
 import { GetAPI } from "../../assets/js/api";
+import { GetUser } from "../../assets/js/user";
 
 const Revenue = ({ activeButton }) => {
-	const adriaId = 1;
+	const adriaId = GetUser();
 	const revenueDataAPI = GetAPI(`/revenue/${adriaId}`);
 
 	const revenue = {
