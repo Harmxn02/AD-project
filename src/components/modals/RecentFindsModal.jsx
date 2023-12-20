@@ -24,7 +24,7 @@ const RecentFindsModal = ({ onClose }) => {
 								<th scope="col" className="px-6 py-3 bg-gray-800">
 									Metric Type
 								</th>
-								<th scope="col" className="px-6 py-3 bg-gray-600">
+								<th scope="col" className="px-6 py-3 w-[40%] bg-gray-600">
 									Value
 								</th>
 							</tr>
