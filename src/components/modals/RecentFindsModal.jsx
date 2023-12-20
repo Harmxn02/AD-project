@@ -1,4 +1,4 @@
-import RouteMap from '@/components/RouteMap';
+import RouteMap from '@/components/dashboard/map/RouteMap';
 
 const RecentFindsModal = ({ onClose }) => {
 	return (
