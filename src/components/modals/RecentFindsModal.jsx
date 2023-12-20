@@ -1,4 +1,6 @@
-import RouteMap from '@/components/dashboard/map/RouteMap';
+import RouteMap from "@/components/dashboard/map/RouteMap";
+import Image from "next/image";
+import Close from "../../../public/icons/close.svg";
 
 const RecentFindsModal = ({ onClose }) => {
 	return (
@@ -7,7 +9,8 @@ const RecentFindsModal = ({ onClose }) => {
 				<div className="bg-[#85cbfa] w-full min-w-[80%]">
 					<RouteMap />
 				</div>
-				<div className="bg-gray-500 w-full">
+				<div className="bg-white w-full">
+					<Image src={Close} width={25} height={25} alt="close icon" />
 				</div>
 			</div>
 		</div>
