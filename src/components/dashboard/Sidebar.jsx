@@ -119,7 +119,8 @@ const UserInformation = () => {
 				<div>
 					<Link href="/settings">
 						<Image
-							src={currentUser.profilepicture}
+							// src={currentUser.profilepicture}
+							src={ClockIcon}
 							alt="Profile Picture"
 							width={80}
 							height={80}
