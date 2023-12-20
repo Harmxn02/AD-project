@@ -106,8 +106,7 @@ const Revenue = ({ activeButton }) => {
 			prefixTitle = "Monthly";
 			break;
 		default:
-			revenue.dataToRender = revenueData.dailyData;
-			prefixTitle = "Daily";
+			break;
 	}
 
 	return (
