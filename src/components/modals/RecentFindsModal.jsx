@@ -37,7 +37,9 @@ const RecentFindsModal = ({ onClose }) => {
 								>
 									Timestamp
 								</th>
-								<td className="px-6 py-4 bg-gray-600" id="timestamp">Silver</td>
+								<td className="px-6 py-4 bg-gray-600" id="timestamp">
+									Timestamp
+								</td>
 							</tr>
 							<tr className="border-b border-gray-700">
 								<th
@@ -46,7 +48,9 @@ const RecentFindsModal = ({ onClose }) => {
 								>
 									Latitude
 								</th>
-								<td className="px-6 py-4 bg-gray-600">Silver</td>
+								<td className="px-6 py-4 bg-gray-600" id="latitude">
+									Latitude
+								</td>
 							</tr>
 							<tr className="border-b border-gray-700">
 								<th
@@ -55,7 +59,9 @@ const RecentFindsModal = ({ onClose }) => {
 								>
 									Longitude
 								</th>
-								<td className="px-6 py-4 bg-gray-600">Silver</td>
+								<td className="px-6 py-4 bg-gray-600" id="longitude">
+									Longitude
+								</td>
 							</tr>
 							<tr className="border-b border-gray-700">
 								<th
@@ -64,7 +70,9 @@ const RecentFindsModal = ({ onClose }) => {
 								>
 									Altitude
 								</th>
-								<td className="px-6 py-4 bg-gray-600">Silver</td>
+								<td className="px-6 py-4 bg-gray-600" id="altitude">
+									Altitude
+								</td>
 							</tr>
 							<tr className="border-b border-gray-700">
 								<th
@@ -73,7 +81,9 @@ const RecentFindsModal = ({ onClose }) => {
 								>
 									Temperature
 								</th>
-								<td className="px-6 py-4 bg-gray-600">Silver</td>
+								<td className="px-6 py-4 bg-gray-600" id="temperature">
+									Temperature
+								</td>
 							</tr>
 							<tr className="border-b border-gray-700">
 								<th
@@ -82,7 +92,9 @@ const RecentFindsModal = ({ onClose }) => {
 								>
 									Humidity
 								</th>
-								<td className="px-6 py-4 bg-gray-600">Silver</td>
+								<td className="px-6 py-4 bg-gray-600" id="humidity">
+									Humidity
+								</td>
 							</tr>
 							<tr className="border-b border-gray-700">
 								<th
@@ -91,7 +103,9 @@ const RecentFindsModal = ({ onClose }) => {
 								>
 									Pressure
 								</th>
-								<td className="px-6 py-4 bg-gray-600">Silver</td>
+								<td className="px-6 py-4 bg-gray-600" id="pressure">
+									Pressure
+								</td>
 							</tr>
 							<tr className="border-b border-gray-700">
 								<th
@@ -100,7 +114,9 @@ const RecentFindsModal = ({ onClose }) => {
 								>
 									Light
 								</th>
-								<td className="px-6 py-4 bg-gray-600">Silver</td>
+								<td className="px-6 py-4 bg-gray-600" id="light">
+									Light
+								</td>
 							</tr>
 							<tr className="border-b border-gray-700">
 								<th
@@ -109,7 +125,9 @@ const RecentFindsModal = ({ onClose }) => {
 								>
 									Windspeed
 								</th>
-								<td className="px-6 py-4 bg-gray-600">Silver</td>
+								<td className="px-6 py-4 bg-gray-600" id="windspeed">
+									Windspeed
+								</td>
 							</tr>
 							<tr className="border-b border-gray-700">
 								<th
@@ -118,7 +136,9 @@ const RecentFindsModal = ({ onClose }) => {
 								>
 									Wind Direction
 								</th>
-								<td className="px-6 py-4 bg-gray-600">Silver</td>
+								<td className="px-6 py-4 bg-gray-600" id="windDirection">
+									Wind Direction
+								</td>
 							</tr>
 							<tr className="border-b border-gray-700">
 								<th
@@ -127,7 +147,9 @@ const RecentFindsModal = ({ onClose }) => {
 								>
 									Radiation
 								</th>
-								<td className="px-6 py-4 bg-gray-600">Silver</td>
+								<td className="px-6 py-4 bg-gray-600" id="radiation">
+									Radiation
+								</td>
 							</tr>
 						</tbody>
 					</table>
