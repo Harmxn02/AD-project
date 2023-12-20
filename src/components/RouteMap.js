@@ -28,9 +28,17 @@ export default function RouteMap() {
     }, [API_KEY, geologicalInfoData]);
 
     function renderMarkers() {
-        geologicalInfoData.forEach(geologicalinfo => {
-            new maplibregl.Marker({color: "#FF0000"})
-                .setLngLat([geologicalinfo.longitude,geologicalinfo.latitude])
+        geologicalInfoData.forEach((geologicalInfo, index) => {
+            const el = document.createElement('div');
+            el.className = 'marker bg-brandCyan border-2 border-white text-white w-8 h-8 rounded-full flex justify-center items-center hover:cursor-pointer hover:bg-brandTeal hover:z-50';
+            el.textContent = index;
+
+            el.addEventListener('click', () => {
+                updateRouteMapSidebar(geologicalInfo.latitude, geologicalInfo.longitude);
+            });
+
+            new maplibregl.Marker({element: el})
+                .setLngLat([geologicalInfo.longitude,geologicalInfo.latitude])
                 .addTo(map.current);
         })
     }
