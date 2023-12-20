@@ -1,69 +1,85 @@
-import React, {
-    useRef,
-    useEffect
-} from 'react';
-import maplibregl from 'maplibre-gl';
-import 'maplibre-gl/dist/maplibre-gl.css';
+import React, { useRef, useEffect } from "react";
+import maplibregl from "maplibre-gl";
+import "maplibre-gl/dist/maplibre-gl.css";
 
 export default function RouteMap() {
-    let geologicalInfoData;
-    const mapContainer = useRef(null);
-    const map = useRef(null);
-    const API_KEY = "OZkqnFxcrUbHDpJQ5a3K";
+	let geologicalInfoData;
+	const mapContainer = useRef(null);
+	const map = useRef(null);
+	const API_KEY = "OZkqnFxcrUbHDpJQ5a3K";
 
-    useEffect(() => {
-        if(map.current) return null;
-        
-        map.current = new maplibregl.Map({
-            container: mapContainer.current,
-            style: `https://api.maptiler.com/maps/streets-v2/style.json?key=${API_KEY}`,
-            center: [30, 31],
-            zoom: 10,
-            minZoom: 1,
-            maxZoom: 16,
-        });
+	useEffect(() => {
+		if (map.current) return null;
 
-        getMarkerData();
+		map.current = new maplibregl.Map({
+			container: mapContainer.current,
+			style: `https://api.maptiler.com/maps/streets-v2/style.json?key=${API_KEY}`,
+			center: [30, 31],
+			zoom: 10,
+			minZoom: 1,
+			maxZoom: 16,
+		});
 
-    }, [API_KEY, geologicalInfoData]);
+		getMarkerData();
+	}, [API_KEY, geologicalInfoData]);
 
-    function renderMarkers() {
-        geologicalInfoData.forEach((geologicalInfo, index) => {
-            const el = document.createElement('div');
-            el.className = 'marker bg-brandCyan border-2 border-white text-white w-8 h-8 rounded-full flex justify-center items-center hover:cursor-pointer hover:bg-brandTeal hover:z-50';
-            el.textContent = index;
+	function renderMarkers() {
+		geologicalInfoData.forEach((geologicalInfo, index) => {
+			const el = document.createElement("div");
+			el.className =
+				"marker bg-brandBlack w-3 h-3 rounded-full hover:marker-maproute-onhover";
 
-            el.addEventListener('click', () => {
-                updateRouteMapSidebar(geologicalInfo);
-            });
+			el.addEventListener(
+				"mouseover",
+				() => (el.textContent = index + 1),
+			);
+			el.addEventListener("mouseleave", () => (el.textContent = ""));
 
-            new maplibregl.Marker({element: el})
-                .setLngLat([geologicalInfo.longitude,geologicalInfo.latitude])
-                .addTo(map.current);
-        })
-    }
+			el.addEventListener("click", () => {
+				updateRouteMapSidebar(geologicalInfo);
+			});
 
-    function updateRouteMapSidebar(geologicalInfo) {
-        const {timestamp, latitude, longitude, altitude, temperature, humidity, pressure, light, windSpeed, windDirection, radiation} = geologicalInfo;
+			new maplibregl.Marker({ element: el })
+				.setLngLat([geologicalInfo.longitude, geologicalInfo.latitude])
+				.addTo(map.current);
+		});
+	}
 
-        console.log("TO BE IMPLEMENTED IN COUPLE HOURS :D")
-    }
+	function updateRouteMapSidebar(geologicalInfo) {
+		const {
+			timestamp,
+			latitude,
+			longitude,
+			altitude,
+			temperature,
+			humidity,
+			pressure,
+			light,
+			windSpeed,
+			windDirection,
+			radiation,
+		} = geologicalInfo;
 
-    async function getMarkerData() {
-        const { flyData } = await fetch("https://project-2.ti.howest.be/2023-2024/group-17/api/geologicalinfo/1").then(data => data.json());
-        geologicalInfoData = flyData;
+		console.log("TO BE IMPLEMENTED IN COUPLE HOURS :D");
+	}
 
-        if (geologicalInfoData.length > 0) {
-            const firstItem = geologicalInfoData[0];
-            map.current.setCenter([firstItem.longitude, firstItem.latitude]);
-        }
+	async function getMarkerData() {
+		const { flyData } = await fetch(
+			"https://project-2.ti.howest.be/2023-2024/group-17/api/geologicalinfo/1",
+		).then((data) => data.json());
+		geologicalInfoData = flyData;
 
-        renderMarkers();
-    }
+		if (geologicalInfoData.length > 0) {
+			const firstItem = geologicalInfoData[0];
+			map.current.setCenter([firstItem.longitude, firstItem.latitude]);
+		}
 
-    return (
-        <div className="map-wrap relative w-full h-full">
-            <div ref={mapContainer} className="map absolute w-full h-full" />
-        </div>
-    );
+		renderMarkers();
+	}
+
+	return (
+		<div className="map-wrap relative w-full h-full">
+			<div ref={mapContainer} className="map absolute w-full h-full" />
+		</div>
+	);
 }
