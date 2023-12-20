@@ -128,7 +128,7 @@ const UserInformation = () => {
 						/>
 					</Link>
 					<h3 className="text-brandTeal font-bold">
-						{currentUser.name} ID:{currentUser.adriaId}
+						{currentUser.name}
 					</h3>
 					<h3 className="text-[0.875rem] text-brandBlack">
 						{currentUser.email}
