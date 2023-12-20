@@ -44,7 +44,7 @@ const RecentFindsModal = ({ onClose }) => {
 							<tr className="border-b border-gray-700">
 								<th
 									scope="row"
-									className="px-6 py-4 font-medium text-white whitespace-nowraptext-white bg-gray-800"
+									className="px-6 py-2 font-medium text-white whitespace-nowraptext-white bg-gray-800"
 								>
 									Latitude
 								</th>
@@ -55,7 +55,7 @@ const RecentFindsModal = ({ onClose }) => {
 							<tr className="border-b border-gray-700">
 								<th
 									scope="row"
-									className="px-6 py-4 font-medium whitespace-nowrap text-white bg-gray-800"
+									className="px-6 py-2 font-medium whitespace-nowrap text-white bg-gray-800"
 								>
 									Longitude
 								</th>
@@ -137,7 +137,7 @@ const RecentFindsModal = ({ onClose }) => {
 									Wind Direction
 								</th>
 								<td className="px-6 py-4 bg-gray-600" id="windDirection">
-									Wind Direction
+									248
 								</td>
 							</tr>
 							<tr className="border-b border-gray-700">

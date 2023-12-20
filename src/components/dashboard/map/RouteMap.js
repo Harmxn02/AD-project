@@ -56,9 +56,9 @@ export default function RouteMap() {
 			radiation,
 		} = geologicalInfo;
 		document.querySelector("#timestamp").textContent = new Date(timestamp).toLocaleTimeString("en-GB");
-		document.querySelector("#latitude").textContent = latitude;
+		document.querySelector("#latitude").textContent = latitude.toFixed(3);
 		document.querySelector("#longitude").textContent = longitude.toFixed(3);
-		document.querySelector("#altitude").textContent = altitude.toFixed(3);
+		document.querySelector("#altitude").textContent = altitude;
 		document.querySelector("#temperature").textContent = Math.round(temperature);
 		document.querySelector("#humidity").textContent = humidity;
 		document.querySelector("#pressure").textContent = pressure.toFixed(3);
