@@ -7,12 +7,14 @@ import Subtitle from "@/components/utility/Subtitle";
 
 import BarChart from "@/components/dashboard/charts/BarChart";
 import RadarChartStacked from "@/components/dashboard/charts/RadarChartStacked";
+
 import { GetAPI } from "../../assets/js/api";
+import { GetUser } from "../../assets/js/user";
 
 import StatisticsSkeleton from "@/components/utility/skeletons/StatisticsSkeleton";
 
 const Statistics = ({ activeButton }) => {
-	const adriaId = 1;
+	const adriaId = GetUser();
 	const regionTimeDataAPI = GetAPI(`/flytimepercoordinate/${adriaId}`);
 	const flownTimeDataAPI = GetAPI(`/flytime/${adriaId}`);
 
