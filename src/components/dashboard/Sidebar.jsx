@@ -119,7 +119,8 @@ const UserInformation = () => {
 				<div>
 					<Link href="/settings">
 						<Image
-							src={currentUser.profilepicture}
+							// src={currentUser.profilepicture}
+							src={ClockIcon}
 							alt="Profile Picture"
 							width={80}
 							height={80}
@@ -128,7 +129,7 @@ const UserInformation = () => {
 						/>
 					</Link>
 					<h3 className="text-brandTeal font-bold">
-						{currentUser.name} ID:{currentUser.adriaId}
+						{currentUser.name}
 					</h3>
 					<h3 className="text-[0.875rem] text-brandBlack">
 						{currentUser.email}
