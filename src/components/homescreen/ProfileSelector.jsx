@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 
 const people = [
 	{
@@ -44,7 +44,7 @@ const ProfileSelector = () => {
 		const selectedPerson = people.find(
 			(person) => person.id === selectedId,
 		);
-		
+
 		// Show toast when the profile is changed
 		toast.success(`Profile changed to: ${selectedPerson.name}`);
 		setSelectedProfile(selectedPerson);
