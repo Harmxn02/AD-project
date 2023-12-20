@@ -12,6 +12,8 @@ export default function RouteMap() {
     const API_KEY = "OZkqnFxcrUbHDpJQ5a3K";
 
     useEffect(() => {
+        if(map.current) return null;
+        
         map.current = new maplibregl.Map({
             container: mapContainer.current,
             style: `https://api.maptiler.com/maps/streets-v2/style.json?key=${API_KEY}`,
