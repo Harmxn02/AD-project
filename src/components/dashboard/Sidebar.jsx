@@ -61,7 +61,7 @@ const QuickStats = () => {
 	const selectedUserID = GetUser();
 
 	const adriaId = selectedUserID;
-	const statistics = GetAPI(`/members/${adriaId}/statistics`);
+	const statistics = GetAPI(`/members/${adriaId}/statistics`, true);
 
 	if (!statistics) {
 		return <SidebarSkeleton />;
