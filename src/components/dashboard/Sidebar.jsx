@@ -214,21 +214,6 @@ const Sidebar = () => {
 
 	return (
 		<header className="bg-white min-w-[250px] h-screen relative">
-			{/* <div className="p-8 text-center">
-				<Image<
-					src={ProfilePicture}
-					alt="Profile Picture"
-					width={80}
-					height={80}
-					className="w-[80px] h-[80px] rounded-full m-auto mb-4"
-					priority
-				/>
-				<h3 className="text-brandTeal font-bold">Alexander Karpenko</h3>
-				<h3 className="text-[0.875rem] text-brandBlack">
-					A.Karpenko@adriamail.com
-				</h3>
-			</div> */}
-
 			<UserInformation />
 			<QuickStats />
 
