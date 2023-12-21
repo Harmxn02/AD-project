@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 const SubscriptionCard = ({
 	price,
 	name,
 	isLast,
-	isActive,
+	initialIsActive,
 	onActivate,
 	children,
 }) => {
@@ -13,12 +13,18 @@ const SubscriptionCard = ({
 		price: PropTypes.number.isRequired,
 		name: PropTypes.string.isRequired,
 		isLast: PropTypes.bool.isRequired,
-		isActive: PropTypes.bool.isRequired,
+		initialIsActive: PropTypes.bool.isRequired,
 		onActivate: PropTypes.func.isRequired,
 		children: PropTypes.node,
 	};
 
+	const [isActive, setIsActive] = useState(initialIsActive);
+
 	const sharedButtonStyles = "px-5 py-3 text-center bg-planButtons";
+
+	useEffect(() => {
+		setIsActive(initialIsActive);
+	}, [initialIsActive]);
 
 	return (
 		<div className="grid-cols-1">
@@ -72,7 +78,10 @@ const SubscriptionCard = ({
 						</p>
 					) : (
 						<button
-							onClick={() => onActivate(name)} // Pass the plan name to onActivate
+							onClick={() => {
+								setIsActive(true);
+								onActivate(name);
+							}}
 							className={`text-white font-medium px-5 py-3 text-center ${sharedButtonStyles}`}
 						>
 							{`Switch to ${name}`}
