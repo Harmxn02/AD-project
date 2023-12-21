@@ -29,26 +29,23 @@ export default function RouteMap({ sessionId }) {
 		};
 	}, [API_KEY, geologicalInfoData]);
 
-	function renderMarkers() {
-		const coordinateLines = [];
-		geologicalInfoData.forEach((geologicalInfo, index) => {
-			const el = document.createElement("div");
-			el.className = "marker bg-brandBlack w-3 h-3 rounded-full hover:marker-maproute-onhover";
+	function createMarkerElement(index) {
+		const el = document.createElement("div");
+		el.className = "marker bg-brandBlack w-3 h-3 rounded-full hover:marker-maproute-onhover";
 
-			el.addEventListener("mouseover", () => (el.textContent = index + 1));
-			el.addEventListener("mouseleave", () => (el.textContent = ""));
+		el.addEventListener("mouseover", () => (el.textContent = index + 1));
+		el.addEventListener("mouseleave", () => (el.textContent = ""));
 
-			el.addEventListener("click", (event) => {
-				updateRouteMapSidebar(geologicalInfo, event);
-			});
+		return el;
+	}
 
-			new maplibregl.Marker({ element: el })
-				.setLngLat([geologicalInfo.longitude, geologicalInfo.latitude])
-				.addTo(map.current);
+	function addMarkerToMap(geologicalInfo, el) {
+		new maplibregl.Marker({ element: el })
+			.setLngLat([geologicalInfo.longitude, geologicalInfo.latitude])
+			.addTo(map.current);
+	}
 
-			coordinateLines.push([geologicalInfo.longitude, geologicalInfo.latitude]);
-		});
-
+	function addRouteToMap(coordinateLines) {
 		map.current.on("load", () => {
 			map.current.addSource("route", {
 				type: "geojson",
@@ -70,6 +67,23 @@ export default function RouteMap({ sessionId }) {
 				},
 			});
 		});
+	}
+
+	function renderMarkers() {
+		const coordinateLines = [];
+		geologicalInfoData.forEach((geologicalInfo, index) => {
+			const el = createMarkerElement(index);
+
+			el.addEventListener("click", (event) => {
+				updateRouteMapSidebar(geologicalInfo, event);
+			});
+
+			addMarkerToMap(geologicalInfo, el);
+
+			coordinateLines.push([geologicalInfo.longitude, geologicalInfo.latitude]);
+		});
+
+		addRouteToMap(coordinateLines);
 
 		updateRouteMapSidebar(geologicalInfoData[0]);
 	}
