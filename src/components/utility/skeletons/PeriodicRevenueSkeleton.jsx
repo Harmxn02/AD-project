@@ -5,10 +5,7 @@ const PeriodicRevenueSkeleton = () => {
 	return (
 		<section className="mt-12">
 			<Title content="Daily Revenue" />
-			<p className="font-light">
-				An overview of revenue changes within a specific timeframe for
-				quick analysis.
-			</p>
+			<p className="font-light">An overview of revenue changes within a specific timeframe for quick analysis.</p>
 			<div className="w-full mt-4 h-[25rem] animate-pulse rounded-xl bg-gray-200 flex justify-center items-center">
 				<svg
 					className="w-10 h-10 text-gray-200 dark:text-gray-600"

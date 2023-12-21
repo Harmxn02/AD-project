@@ -26,7 +26,7 @@ const LineBarChart = (props) => {
 						beginAtZero: true,
 						ticks: {
 							stepSize: 5,
-							display: false
+							display: false,
 						},
 					},
 				},
@@ -49,10 +49,8 @@ LineBarChart.propTypes = {
 	dataObject: PropTypes.arrayOf(
 		PropTypes.shape({
 			label: PropTypes.string.isRequired,
-			data: PropTypes.oneOfType([
-				PropTypes.arrayOf(PropTypes.number).isRequired,
-				PropTypes.object.isRequired,
-			]).isRequired,
+			data: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.number).isRequired, PropTypes.object.isRequired])
+				.isRequired,
 			backgroundColor: PropTypes.string.isRequired,
 			borderColor: PropTypes.string.isRequired,
 			borderWidth: PropTypes.number.isRequired,

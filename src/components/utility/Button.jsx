@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import Link from "next/link";
 
 const Button = (props) => {
-
 	return (
 		<Link
 			href={props.href}

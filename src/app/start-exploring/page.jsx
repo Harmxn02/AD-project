@@ -53,31 +53,21 @@ const page = () => {
 					<Container>
 						<Subtitle>Area 1</Subtitle>
 						<Paragraph>
-							Lorem ipsum dolor sit amet consectetur, adipisicing
-							elit. Recusandae eligendi tempora accusantium eos
-							laudantium maiores ipsam eveniet sint, aut labore.
+							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae eligendi tempora
+							accusantium eos laudantium maiores ipsam eveniet sint, aut labore.
 						</Paragraph>
 						<StartButton />
 					</Container>
 
-					<Image
-						className="h-96 object-cover"
-						src={Landscape}
-						alt="banner image for start exploring"
-					/>
+					<Image className="h-96 object-cover" src={Landscape} alt="banner image for start exploring" />
 
-					<Image
-						className="h-96 object-cover"
-						src={Landscape}
-						alt="banner image for start exploring"
-					/>
+					<Image className="h-96 object-cover" src={Landscape} alt="banner image for start exploring" />
 
 					<Container>
 						<Subtitle>Area 2</Subtitle>
 						<Paragraph>
-							Lorem ipsum dolor sit amet consectetur, adipisicing
-							elit. Recusandae eligendi tempora accusantium eos
-							laudantium maiores ipsam eveniet sint, aut labore.
+							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae eligendi tempora
+							accusantium eos laudantium maiores ipsam eveniet sint, aut labore.
 						</Paragraph>
 						<StartButton />
 					</Container>

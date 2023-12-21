@@ -13,10 +13,7 @@ const Header = ({ activeButton, onButtonClick }) => {
 		document.addEventListener("fullscreenchange", handleFullscreenChange);
 
 		return () => {
-			document.removeEventListener(
-				"fullscreenchange",
-				handleFullscreenChange
-			);
+			document.removeEventListener("fullscreenchange", handleFullscreenChange);
 		};
 	}, []);
 
@@ -30,20 +27,20 @@ const Header = ({ activeButton, onButtonClick }) => {
 
 	const buttons = [
 		{
-            id: 1,
+			id: 1,
 			title: "DAY",
 			action: "#",
 		},
 		{
-            id: 2,
+			id: 2,
 			title: "WEEK",
 			action: "#",
 		},
 		{
-            id: 3,
+			id: 3,
 			title: "MONTH",
 			action: "#",
-		}
+		},
 	];
 
 	return (
@@ -54,29 +51,18 @@ const Header = ({ activeButton, onButtonClick }) => {
 						key={button.id}
 						onClick={() => onButtonClick(button.title)}
 						className={`font-medium py-2 px-4 ${
-							activeButton === button.title
-								? "bg-brandTeal text-white"
-								: ""
+							activeButton === button.title ? "bg-brandTeal text-white" : ""
 						}`}
 					>
 						{button.title}
 					</button>
 				))}
 			</div>
-			<button
-				className="bg-brandTeal text-white px-4 py-2 flex gap-4"
-				onClick={handleFullscreenToggle}
-			>
+			<button className="bg-brandTeal text-white px-4 py-2 flex gap-4" onClick={handleFullscreenToggle}>
 				{isFullscreen ? " EXIT FULLSCREEN" : " ENTER FULLSCREEN"}
 				<Image
-					src={`/icons/${
-						isFullscreen ? "exit-fullscreen" : "fullscreen"
-					}.svg`}
-					alt={
-						isFullscreen
-							? "exit fullscreen icon"
-							: "fullscreen icon"
-					}
+					src={`/icons/${isFullscreen ? "exit-fullscreen" : "fullscreen"}.svg`}
+					alt={isFullscreen ? "exit fullscreen icon" : "fullscreen icon"}
 					width={20}
 					height={20}
 				/>

@@ -14,9 +14,7 @@ import toast, { Toaster } from "react-hot-toast";
 
 const fetchPlanId = async (adriaId) => {
 	try {
-		const response = await fetch(
-			`https://project-2.ti.howest.be/2023-2024/group-17/api/members/${adriaId}`,
-		);
+		const response = await fetch(`https://project-2.ti.howest.be/2023-2024/group-17/api/members/${adriaId}`);
 
 		if (response.ok) {
 			const { member } = await response.json();
@@ -33,16 +31,13 @@ const fetchPlanId = async (adriaId) => {
 
 const switchPlan = async (adriaId, subscriptionId) => {
 	try {
-		const response = await fetch(
-			`https://project-2.ti.howest.be/2023-2024/group-17/api/members/${adriaId}`,
-			{
-				method: "PUT",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({ subscriptionId }),
+		const response = await fetch(`https://project-2.ti.howest.be/2023-2024/group-17/api/members/${adriaId}`, {
+			method: "PUT",
+			headers: {
+				"Content-Type": "application/json",
 			},
-		);
+			body: JSON.stringify({ subscriptionId }),
+		});
 
 		if (!response.ok) {
 			console.error("Failed to switch plan");

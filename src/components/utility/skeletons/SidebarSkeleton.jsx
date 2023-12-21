@@ -30,15 +30,10 @@ const SidebarSkeleton = () => {
 	return (
 		<div className="h-[159px] mb-4 px-3">
 			{skeletonData.map((data) => (
-				<div
-					key={data.id}
-					className={`flex items-center gap-3 border-b py-2`}
-				>
+				<div key={data.id} className={`flex items-center gap-3 border-b py-2`}>
 					<Image src={data.icon} alt={data.icon_alt} />
 					<div>
-						<h4 className="font-semibold text-sm text-brandTeal">
-							{data.title}
-						</h4>
+						<h4 className="font-semibold text-sm text-brandTeal">{data.title}</h4>
 						<div className="h-4 flex items-center">
 							<div className="w-12 h-2 bg-gray-200 rounded-full animate-pulse"></div>
 						</div>

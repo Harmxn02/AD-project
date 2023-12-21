@@ -8,14 +8,7 @@ const Skeleton = (props) => {
 		firstCol: PropTypes.string.isRequired,
 	};
 
-	const numberOfRows = [
-		{ id: 1 },
-		{ id: 2 },
-		{ id: 3 },
-		{ id: 4 },
-		{ id: 5 },
-		{ id: 6 },
-	];
+	const numberOfRows = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }, { id: 6 }];
 
 	return (
 		<div className="bg-white px-8 pb-6 max-h-[335px] rounded-xl shadow-md">
