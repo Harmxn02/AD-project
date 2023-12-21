@@ -1,3 +1,5 @@
+"use client";
+
 import SubscriptionsPage from "@/components/settings/subscription/SubscriptionsPage";
 import Layout from "@/components/utility/Layout";
 

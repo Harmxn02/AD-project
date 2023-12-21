@@ -27,11 +27,15 @@ const SubscriptionCard = ({
 	}, [initialIsActive]);
 
 	return (
-		<div className="grid-cols-1">
-			<div className="mx-auto py-10">
-				<div
-					className={`flex flex-col mx-auto w-[29rem] text-center text-gray-900 border border-gray-300 shadow-md p-8
+		<div className="pt-4 pb-10 w-full">
+			<div
+				className={`flex flex-col mx-auto w-full text-center text-gray-900 border border-gray-300 shadow-md p-8
 						${isLast ? "bg-lastPlan text-white" : "bg-white text-black"}`}
+			>
+				<h3
+					className={`mb-4 text-2xl text-left font-medium ${
+						isLast ? "bg-lastPlan text-white" : "bg-white text-black"
+					}`}
 				>
 					<h3
 						className={`mb-4 text-2xl text-left font-medium
@@ -88,6 +92,19 @@ const SubscriptionCard = ({
 						</button>
 					)}
 				</div>
+				<div className={`h-px my-8 ${isLast ? "bg-white" : " bg-black"}`}></div>
+				<p className={`text-left  font-medium mb-4 ${isLast ? "text-white" : "text-[#6D6D6D]"} `}>
+					Every month you have access to:
+				</p>
+				<ul className={`mb-8 space-y-4 text-left h-60 ${isLast ? "text-white" : " text-black"}`}>{children}</ul>
+				{isLast ? (
+					<p className={`${sharedButtonStyles}`}>Current plan</p>
+				) : (
+					<a
+						href="#"
+						className={`text-white font-medium px-5 py-3 text-center ${sharedButtonStyles}`}
+					>{`Switch to ${name}`}</a>
+				)}
 			</div>
 		</div>
 	);

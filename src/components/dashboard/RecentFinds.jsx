@@ -1,11 +1,12 @@
 "use client";
 import React from "react";
-import Title from "@/components/utility/Title";
-
 import Image from "next/image";
-import { GetAPI } from "../../assets/js/api";
-import RecentXSkeleton from "@/components/utility/skeletons/RecentXSkeleton";
 
+import { GetAPI } from "../../assets/js/api";
+import { GetUser } from "@/assets/js/user";
+
+import Title from "@/components/utility/Title";
+import RecentXSkeleton from "@/components/utility/skeletons/RecentXSkeleton";
 import RecentsContainer from "@/components/utility/Recents/RecentsContainer";
 
 import Red from "../../../public/icons/finds_toAuction.svg";
@@ -25,7 +26,7 @@ const getColourAndImage = (item) => {
 };
 
 const RecentFinds = () => {
-	const adriaId = 1;
+	const adriaId = GetUser();
 	const finds = GetAPI(`/items/${adriaId}`);
 	const title = "Recent finds";
 	const description =
@@ -55,23 +56,13 @@ const RecentFinds = () => {
 							</div>
 
 							<div className="w-3/6 flex items-center h-full border-r-4">
-								<p className="font-medium text-lg">
-									{find.name}
-									<span className="font-light text-xs">
-										{/* temporary */}
-										session: {find.sessionId}
-									</span>
-								</p>
+								<p className="font-medium text-lg">{find.name}</p>
 							</div>
 							<div className="w-3/6 flex flex-row justify-between items-center px-8">
 								<p className="text-brandBlack font-semibold">
 									{`${find.latitude}° N, ${find.longitude}° E`}
 								</p>
-								<p className="font-medium text-sm">
-									{new Date(find.date).toLocaleDateString(
-										"en-GB",
-									)}
-								</p>
+								<p className="font-medium text-sm">{new Date(find.date).toLocaleDateString("en-GB")}</p>
 							</div>
 						</RecentsContainer>
 					);

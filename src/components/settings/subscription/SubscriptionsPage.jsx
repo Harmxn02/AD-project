@@ -83,7 +83,7 @@ const SubscriptionsPage = () => {
 		<section className="mb-12 ">
 			<Toaster />
 			<Title content="Subscription Plans" />
-			<div className="flex justify-between">
+			<div className="flex justify-between gap-x-8">
 				{plans.map((subscription) => (
 					<SubscriptionCard
 						key={subscription.id}

@@ -5,5 +5,5 @@
 	"singleQuote": false,
 	"jsxSingleQuote": false,
 	"trailingComma": "all",
-	"printWidth": 80
+	"printWidth": 120
 }

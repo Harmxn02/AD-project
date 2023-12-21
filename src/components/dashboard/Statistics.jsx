@@ -7,21 +7,23 @@ import Subtitle from "@/components/utility/Subtitle";
 
 import BarChart from "@/components/dashboard/charts/BarChart";
 import RadarChartStacked from "@/components/dashboard/charts/RadarChartStacked";
+
 import { GetAPI } from "../../assets/js/api";
+import { GetUser } from "../../assets/js/user";
 
 import StatisticsSkeleton from "@/components/utility/skeletons/StatisticsSkeleton";
 
 const Statistics = ({ activeButton }) => {
-	const adriaId = 1;
+	const adriaId = GetUser();
 	const regionTimeDataAPI = GetAPI(`/flytimepercoordinate/${adriaId}`);
 	const flownTimeDataAPI = GetAPI(`/flytime/${adriaId}`);
 
 	const flownTime = {
-		dataToRender: []
+		dataToRender: [],
 	};
 
 	const regionTime = {
-		dataToRender: []
+		dataToRender: [],
 	};
 
 	let prefixTitle;
@@ -61,7 +63,7 @@ const Statistics = ({ activeButton }) => {
 				label: "Minutes Flown",
 				backgroundColor: "#62A0AA73",
 				borderColor: "rgba(75, 192, 192, 1)",
-				borderWidth: 1
+				borderWidth: 1,
 			},
 		],
 		weeklyData: [
@@ -70,7 +72,7 @@ const Statistics = ({ activeButton }) => {
 				label: "Minutes Flown",
 				backgroundColor: "#62A0AA73",
 				borderColor: "rgba(75, 192, 192, 1)",
-				borderWidth: 1
+				borderWidth: 1,
 			},
 		],
 		monthlyData: [
@@ -79,7 +81,7 @@ const Statistics = ({ activeButton }) => {
 				label: "Minutes Flown",
 				backgroundColor: "#62A0AA73",
 				borderColor: "rgba(75, 192, 192, 1)",
-				borderWidth: 1
+				borderWidth: 1,
 			},
 		],
 	};
@@ -156,9 +158,7 @@ const Statistics = ({ activeButton }) => {
 						offering a clear overview for analysis.
 					</p>
 					<div className="w-full mt-4 h-[25rem]">
-						<BarChart
-							dataObject={flownTime.dataToRender}
-						/>
+						<BarChart dataObject={flownTime.dataToRender} />
 					</div>
 				</div>
 				<div className="max-w-[600px] h-full">
