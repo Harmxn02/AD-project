@@ -56,6 +56,8 @@ export default function RouteMap({ sessionId }) {
 		});
 		map.current.addLayer({
 			id: "route",
+			type: "line",
+			source: "route",
 			paint: {
 				"line-color": "#888",
 				"line-width": 1,
