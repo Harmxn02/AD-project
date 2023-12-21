@@ -18,6 +18,7 @@ import ClockIcon from "../../../public/icons/sidebar_statistics/clock.svg";
 import SidebarSkeleton from "@/components/utility/skeletons/SidebarSkeleton";
 import UserInformationSkeleton from "@/components/utility/skeletons/UserInformationSkeleton";
 import Button from "@/components/utility/Button";
+
 const SidebarLink = ({ href, icon, text, currentPath }) => {
 	SidebarLink.propTypes = {
 		href: PropTypes.string.isRequired,
