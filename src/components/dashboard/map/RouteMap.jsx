@@ -24,6 +24,7 @@ export default function RouteMap({ sessionId }) {
 	}, [API_KEY, geologicalInfoData]);
 
 	function renderMarkers() {
+		const coordinateLines = [];
 		geologicalInfoData.forEach((geologicalInfo, index) => {
 			const el = document.createElement("div");
 			el.className = "marker bg-brandBlack w-3 h-3 rounded-full hover:marker-maproute-onhover";
@@ -38,6 +39,28 @@ export default function RouteMap({ sessionId }) {
 			new maplibregl.Marker({ element: el })
 				.setLngLat([geologicalInfo.longitude, geologicalInfo.latitude])
 				.addTo(map.current);
+
+			coordinateLines.push([geologicalInfo.longitude, geologicalInfo.latitude]);
+		});
+
+		map.current.addSource("route", {
+			type: "geojson",
+			data: {
+				type: "Feature",
+				geometry: {
+					type: "LineString",
+					coordinates: coordinateLines,
+				},
+			},
+		});
+		map.current.addLayer({
+			id: "route",
+			type: "line",
+			source: "route",
+			paint: {
+				"line-color": "#888",
+				"line-width": 1,
+			},
 		});
 
 		updateRouteMapSidebar(geologicalInfoData[0]);
