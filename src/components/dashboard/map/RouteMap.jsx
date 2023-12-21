@@ -15,7 +15,6 @@ export default function RouteMap({ sessionId }) {
 		map.current = new maplibregl.Map({
 			container: mapContainer.current,
 			style: `https://api.maptiler.com/maps/streets-v2/style.json?key=${API_KEY}`,
-			center: [30, 31],
 			zoom: 10,
 			minZoom: 1,
 			maxZoom: 16,

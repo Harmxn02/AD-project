@@ -12,7 +12,7 @@ const RecentExplorationsModal = ({ onClose, sessionId }) => {
 				<div className="bg-[#85cbfa] w-full min-w-[80%]">
 					<RouteMap sessionId={sessionId} />
 				</div>
-				<div className="relative overflow-x-auto shadow-md min-w-[20%]">
+				<div className="relative overflow-x-hidden shadow-md min-w-[20%]">
 					<table className="w-full h-full text-sm text-left text-gray-400">
 						<thead className="text-xs uppercase text-gray-400">
 							<tr>
