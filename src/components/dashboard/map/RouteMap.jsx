@@ -74,7 +74,7 @@ export default function RouteMap({ sessionId }) {
 		updateRouteMapSidebar(geologicalInfoData[0]);
 	}
 
-	function updateRouteMapSidebar(geologicalInfo) {
+	function updateRouteMapSidebar(geologicalInfo, event) {
 		updateTimestamp(geologicalInfo.timestamp);
 		updateLatitude(geologicalInfo.latitude);
 		updateLongitude(geologicalInfo.longitude);
@@ -86,6 +86,14 @@ export default function RouteMap({ sessionId }) {
 		updateWindSpeed(geologicalInfo.windSpeed);
 		updateWindDirection(geologicalInfo.windDirection);
 		updateRadiation(geologicalInfo.radiation);
+
+		resetAllClickedElements();
+
+		const clickedElement = event || undefined;
+		if (clickedElement !== undefined) {
+			clickedElement.target.style.backgroundColor = "#E74C3C";
+			clickedElement.target.classList.remove("bg-brandTeal");
+		}
 	}
 
 	function updateTimestamp(timestamp) {
