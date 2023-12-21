@@ -26,6 +26,7 @@ const LineBarChart = (props) => {
 						beginAtZero: true,
 						ticks: {
 							stepSize: 5,
+							display: false
 						},
 					},
 				},

@@ -12,7 +12,7 @@ import { GetAPI } from "../../../assets/js/api";
 
 const SubscriptionsPage = () => {
 	// normally `const endpoint`, but I need to splice the first 3 elements
-	let plans = GetAPI("/plans", true);
+	let plans = GetAPI("/plans");
 
 	if (!plans) {
 		return <SubscriptionsPageSkeleton />;
@@ -23,7 +23,7 @@ const SubscriptionsPage = () => {
 	return (
 		<section className="mb-12 ">
 			<Title content="Subscription Plans" />
-			<div className="flex justify-between">
+			<div className="flex justify-between gap-x-8">
 				{plans.map((subscription) => (
 					<SubscriptionCard
 						isLast={subscription.id === plans.length}
