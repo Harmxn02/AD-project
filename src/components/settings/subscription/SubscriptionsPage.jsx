@@ -23,7 +23,7 @@ const SubscriptionsPage = () => {
 	return (
 		<section className="mb-12 ">
 			<Title content="Subscription Plans" />
-			<div className="flex justify-between">
+			<div className="flex justify-between gap-x-8">
 				{plans.map((subscription) => (
 					<SubscriptionCard
 						isLast={subscription.id === plans.length}
