@@ -51,19 +51,6 @@ const SubscriptionCard = ({ price, name, isLast, initialIsActive, onActivate, ch
 					</button>
 				)}
 			</div>
-			<div className={`h-px my-8 ${isLast ? "bg-white" : " bg-black"}`}></div>
-			<p className={`text-left  font-medium mb-4 ${isLast ? "text-white" : "text-[#6D6D6D]"} `}>
-				Every month you have access to:
-			</p>
-			<ul className={`mb-8 space-y-4 text-left h-60 ${isLast ? "text-white" : " text-black"}`}>{children}</ul>
-			{isLast ? (
-				<p className={`${sharedButtonStyles}`}>Current plan</p>
-			) : (
-				<a
-					href="#"
-					className={`text-white font-medium px-5 py-3 text-center ${sharedButtonStyles}`}
-				>{`Switch to ${name}`}</a>
-			)}
 		</div>
 	);
 };
