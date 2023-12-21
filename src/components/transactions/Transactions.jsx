@@ -16,6 +16,7 @@ const Transactions = () => {
 		return (
 			<div>
 				<Title content="Transactions" />
+				<p className="font-light pb-4">An overview of your purchases.</p>
 				<Skeleton firstCol="Transaction ID" />
 			</div>
 		);
@@ -24,6 +25,7 @@ const Transactions = () => {
 	return (
 		<section>
 			<Title content="Transactions" />
+			<p className="font-light pb-4">An overview of your purchases.</p>
 			<div className="bg-white px-8 pb-6 mb-12 max-h-[335px] rounded-xl overflow-y-auto scrollbar scrollbar-thumb-brandTeal scrollbar-track-transparent shadow-md">
 				<table className="w-full">
 					<thead className="sticky top-0 bg-white w-full">
@@ -37,21 +39,12 @@ const Transactions = () => {
 					<tbody className="[&>*:nth-child(odd)]:bg-white [&>*:nth-child(even)]:bg-alternatingTransaction">
 						{transactions.map((transaction) => (
 							<tr key={transaction.id}>
-								<TableDataCell extra_styling="font-bold pl-10">
-									{transaction.id}
-								</TableDataCell>
+								<TableDataCell extra_styling="font-bold pl-10">{transaction.id}</TableDataCell>
 								<TableDataCell>
-									{new Intl.DateTimeFormat("en-GB").format(
-										new Date(transaction.date)
-									)}
+									{new Intl.DateTimeFormat("en-GB").format(new Date(transaction.date))}
 								</TableDataCell>
-								<TableDataCell>
-									{transaction.subscription.plan.name}
-								</TableDataCell>
-								<TableDataCell>
-									{parseFloat(transaction.amount).toFixed(2)}{" "}
-									ADCO
-								</TableDataCell>
+								<TableDataCell>{transaction.subscription.plan.name}</TableDataCell>
+								<TableDataCell>{parseFloat(transaction.amount).toFixed(2)} ADCO</TableDataCell>
 							</tr>
 						))}
 					</tbody>
