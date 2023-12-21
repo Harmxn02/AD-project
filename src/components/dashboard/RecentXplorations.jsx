@@ -32,7 +32,7 @@ const RecentXplorations = () => {
 	const [isModalVisible, setIsModalVisible] = useState(false);
 
 	const adriaId = GetUser();
-	const recent_xplorations = GetAPI(`/sessions/${adriaId}`, true);
+	const recent_xplorations = GetAPI(`/sessions/${adriaId}`);
 	const title = "Recent X-Plorations";
 	const description = "An overview of your recently visited locations, including travel time.";
 

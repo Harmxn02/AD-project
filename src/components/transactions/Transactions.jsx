@@ -10,7 +10,7 @@ import Skeleton from "@/components/utility/skeletons/TransactionsSkeleton";
 import { GetAPI } from "../../assets/js/api";
 
 const Transactions = () => {
-	const transactions = GetAPI("/transactions", true);
+	const transactions = GetAPI("/transactions");
 
 	if (transactions === null) {
 		return (
