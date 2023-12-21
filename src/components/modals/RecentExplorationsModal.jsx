@@ -150,9 +150,9 @@ const RecentExplorationsModal = ({ onClose }) => {
 					</table>
 				</div>
 			</div>
-			<div className="flex mt-4 text-white items-center cursor-pointer hover:opacity-70" onClick={onClose}>
+			<div className="flex mt-4 text-white bg-brandTeal px-4 py-2 items-center rounded-md cursor-pointer hover:opacity-70" onClick={onClose}>
 				<Image src={Close} width={30} height={30} alt="close icon" className="mr-2" />
-				<span>Close modal</span>
+				<span className="text-lg font-bold">Close modal</span>
 			</div>
 		</div>
 	);
