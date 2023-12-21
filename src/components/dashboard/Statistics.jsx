@@ -15,8 +15,8 @@ import StatisticsSkeleton from "@/components/utility/skeletons/StatisticsSkeleto
 
 const Statistics = ({ activeButton }) => {
 	const adriaId = GetUser();
-	const regionTimeDataAPI = GetAPI(`/flytimepercoordinate/${adriaId}`);
-	const flownTimeDataAPI = GetAPI(`/flytime/${adriaId}`);
+	const regionTimeDataAPI = GetAPI(`/flytimepercoordinate/${adriaId}`, true);
+	const flownTimeDataAPI = GetAPI(`/flytime/${adriaId}`, true);
 
 	const flownTime = {
 		dataToRender: [],

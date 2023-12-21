@@ -34,7 +34,7 @@ const formatTimeDifference = (startTime, endTime) => {
 
 const RecentXplorations = () => {
 	const adriaId = GetUser();
-	const recent_xplorations = GetAPI(`/sessions/${adriaId}`);
+	const recent_xplorations = GetAPI(`/sessions/${adriaId}`, true);
 	const title = "Recent X-Plorations";
 	const description =
 		"An overview of your recently visited locations, including travel time.";

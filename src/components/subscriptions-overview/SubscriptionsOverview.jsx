@@ -21,7 +21,7 @@ const SubscriptionsOverview = () => {
 		4: "hour",
 	};
 
-	const explorePlans = GetAPI("/plans");
+	const explorePlans = GetAPI("/plans", true);
 
 	if (explorePlans == null) {
 		return (

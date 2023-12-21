@@ -11,7 +11,7 @@ import { GetUser } from "../../assets/js/user";
 
 const Revenue = ({ activeButton }) => {
 	const adriaId = GetUser();
-	const revenueDataAPI = GetAPI(`/revenue/${adriaId}`);
+	const revenueDataAPI = GetAPI(`/revenue/${adriaId}`, true);
 
 	const revenue = {
 		dataToRender: [],

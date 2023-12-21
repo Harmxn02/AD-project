@@ -12,7 +12,7 @@ import { GetUser } from "../../assets/js/user";
 
 const AuctionProceeds = () => {
 	const adriaId = GetUser();
-	const auction_proceeds = GetAPI(`/auctions/${adriaId}`);
+	const auction_proceeds = GetAPI(`/auctions/${adriaId}`, true);
 
 	if (auction_proceeds === null) {
 		return (

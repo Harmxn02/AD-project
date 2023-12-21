@@ -12,7 +12,7 @@ import { GetAPI } from "../../../assets/js/api";
 
 const SubscriptionsPage = () => {
 	// normally `const endpoint`, but I need to splice the first 3 elements
-	let plans = GetAPI("/plans");
+	let plans = GetAPI("/plans", true);
 
 	if (!plans) {
 		return <SubscriptionsPageSkeleton />;
