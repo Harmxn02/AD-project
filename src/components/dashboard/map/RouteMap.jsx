@@ -3,7 +3,7 @@ import React, { useRef, useEffect } from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 
-export default function RouteMap() {
+export default function RouteMap({ sessionId }) {
 	let geologicalInfoData;
 	const mapContainer = useRef(null);
 	const map = useRef(null);
@@ -21,7 +21,7 @@ export default function RouteMap() {
 			maxZoom: 16,
 		});
 
-		getMarkerData();
+		getMarkerData(sessionId);
 	}, [API_KEY, geologicalInfoData]);
 
 	function renderMarkers() {
@@ -85,10 +85,10 @@ export default function RouteMap() {
 		});
 	}
 
-	async function getMarkerData() {
-		const { flyData } = await fetch("https://project-2.ti.howest.be/2023-2024/group-17/api/geologicalinfo/1").then(
-			(data) => data.json(),
-		);
+	async function getMarkerData(sessionId) {
+		const { flyData } = await fetch(
+			`https://project-2.ti.howest.be/2023-2024/group-17/api/geologicalinfo/${sessionId}`,
+		).then((data) => data.json());
 		geologicalInfoData = flyData;
 
 		if (geologicalInfoData.length > 0) {
