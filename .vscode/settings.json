@@ -1,6 +1,6 @@
 {
-	"sonarlint.connectedMode.project": {
-		"connectionId": "https://sonarqube.ti.howest.be",
-		"projectKey": "2023.project-2:adria-client-17"
-	}
+    "sonarlint.connectedMode.project": {
+        "connectionId": "https://sonarqube.ti.howest.be",
+        "projectKey": "2023.project-2:adria-client-17"
+    }
 }
