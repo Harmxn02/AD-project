@@ -63,7 +63,7 @@ const RecentExplorationsModal = ({ onClose }) => {
 									scope="row"
 									className="px-6 py-4 font-medium whitespace-nowrap text-white bg-gray-800"
 								>
-									Altitude
+									Altitude <sup> (ft)</sup>
 								</th>
 								<td className="px-6 py-4 bg-gray-600" id="altitude">
 									5
@@ -74,7 +74,7 @@ const RecentExplorationsModal = ({ onClose }) => {
 									scope="row"
 									className="px-6 py-4 font-medium whitespace-nowrap text-white bg-gray-800"
 								>
-									Temperature
+									Temperature <sup>(°C)</sup>
 								</th>
 								<td className="px-6 py-4 bg-gray-600" id="temperature">
 									37
@@ -85,7 +85,7 @@ const RecentExplorationsModal = ({ onClose }) => {
 									scope="row"
 									className="px-6 py-4 font-medium whitespace-nowrap text-white bg-gray-800"
 								>
-									Humidity
+									Humidity<sup> (g/m<sup>3</sup>)</sup>
 								</th>
 								<td className="px-6 py-4 bg-gray-600" id="humidity">
 									0
@@ -96,7 +96,7 @@ const RecentExplorationsModal = ({ onClose }) => {
 									scope="row"
 									className="px-6 py-4 font-medium whitespace-nowrap text-white bg-gray-800"
 								>
-									Pressure
+									Pressure<sup> (hPa)</sup>
 								</th>
 								<td className="px-6 py-4 bg-gray-600" id="pressure">
 									1147
@@ -107,7 +107,7 @@ const RecentExplorationsModal = ({ onClose }) => {
 									scope="row"
 									className="px-6 py-4 font-medium whitespace-nowrap text-white bg-gray-800"
 								>
-									Light
+									Light <sup> (lm)</sup>
 								</th>
 								<td className="px-6 py-4 bg-gray-600" id="light">
 									1478.2554
@@ -118,7 +118,7 @@ const RecentExplorationsModal = ({ onClose }) => {
 									scope="row"
 									className="px-6 py-4 font-medium whitespace-nowrap text-white bg-gray-800"
 								>
-									Windspeed
+									Windspeed <sup> (km/h)</sup>
 								</th>
 								<td className="px-6 py-4 bg-gray-600" id="windspeed">
 									34
@@ -129,7 +129,7 @@ const RecentExplorationsModal = ({ onClose }) => {
 									scope="row"
 									className="px-6 py-4 font-medium whitespace-nowrap text-white bg-gray-800"
 								>
-									Wind Direction
+									Wind Direction <sup> (heading)</sup>
 								</th>
 								<td className="px-6 py-4 bg-gray-600" id="windDirection">
 									249
@@ -140,7 +140,7 @@ const RecentExplorationsModal = ({ onClose }) => {
 									scope="row"
 									className="px-6 py-4 font-medium whitespace-nowrap text-white bg-gray-800"
 								>
-									Radiation
+									Radiation <sup> (rad)</sup>
 								</th>
 								<td className="px-6 py-4 bg-gray-600" id="radiation">
 									34.782
@@ -150,9 +150,9 @@ const RecentExplorationsModal = ({ onClose }) => {
 					</table>
 				</div>
 			</div>
-			<div className="flex mt-4 text-white items-center cursor-pointer hover:opacity-70" onClick={onClose}>
+			<div className="flex mt-4 text-white bg-brandTeal px-4 py-2 items-center rounded-md cursor-pointer hover:opacity-70" onClick={onClose}>
 				<Image src={Close} width={30} height={30} alt="close icon" className="mr-2" />
-				<span>Close modal</span>
+				<span className="text-lg font-bold">Close modal</span>
 			</div>
 		</div>
 	);

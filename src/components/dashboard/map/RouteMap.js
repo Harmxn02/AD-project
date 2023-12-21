@@ -71,6 +71,7 @@ export default function RouteMap() {
 		document.querySelector("#radiation").textContent = radiation.toFixed(3);
 
 		resetAllClickedElements();
+
 		const clickedElement = event || undefined;
 		if (clickedElement !== undefined) {
 			clickedElement.target.style.backgroundColor = "#E74C3C";
