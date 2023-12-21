@@ -7,7 +7,7 @@ import { GetUser } from "../../assets/js/user";
 import Title from "@/components/utility/Title";
 import RecentsContainer from "@/components/utility/Recents/RecentsContainer";
 import RecentXSkeleton from "@/components/utility/skeletons/RecentXSkeleton";
-import RecentFindsModal from "@/components/modals/RecentFindsModal";
+import RecentExplorationsModal from "@/components/modals/RecentExplorationsModal";
 
 const formatTimeDifference = (startTime, endTime) => {
 	const startDateTime = new Date(startTime);
@@ -160,7 +160,7 @@ const RecentXplorations = () => {
 					</RecentsContainer>
 				))}
 			</div>
-			{isModalVisible && <RecentFindsModal sessionId={selectedSessionId} onClose={closeModal} />}
+			{isModalVisible && <RecentExplorationsModal sessionId={selectedSessionId} onClose={closeModal} />}
 		</section>
 	);
 };

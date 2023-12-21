@@ -5,7 +5,7 @@ import Close from "../../../public/icons/close.svg";
 
 import PropTypes from "prop-types";
 
-const RecentFindsModal = ({ onClose }) => {
+const RecentExplorationsModal = ({ onClose }) => {
 	return (
 		<div className="fixed top-0 left-0 flex flex-col w-full h-full justify-center items-center bg-black bg-opacity-50">
 			<div className="bg-white w-[90%] h-[85%] flex">
@@ -120,7 +120,9 @@ const RecentFindsModal = ({ onClose }) => {
 								>
 									Windspeed
 								</th>
-								<td className="px-6 py-4 bg-gray-600" id="windspeed">34</td>
+								<td className="px-6 py-4 bg-gray-600" id="windspeed">
+									34
+								</td>
 							</tr>
 							<tr className="border-b border-gray-700">
 								<th
@@ -129,7 +131,9 @@ const RecentFindsModal = ({ onClose }) => {
 								>
 									Wind Direction
 								</th>
-								<td className="px-6 py-4 bg-gray-600" id="windDirection">249</td>
+								<td className="px-6 py-4 bg-gray-600" id="windDirection">
+									249
+								</td>
 							</tr>
 							<tr className="border-b border-gray-700">
 								<th
@@ -154,8 +158,8 @@ const RecentFindsModal = ({ onClose }) => {
 	);
 };
 
-RecentFindsModal.propTypes = {
+RecentExplorationsModal.propTypes = {
 	onClose: PropTypes.func.isRequired,
 };
 
-export default RecentFindsModal;
+export default RecentExplorationsModal;
