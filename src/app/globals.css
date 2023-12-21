@@ -18,3 +18,9 @@ html {
 		@apply shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px];
 	}
 }
+
+@layer components {
+	.marker-maproute-onhover {
+		@apply bg-brandCyan border-2 border-white text-white w-8 h-8 flex justify-center items-center hover:cursor-pointer hover:bg-brandTeal hover:z-50;
+	}
+}
