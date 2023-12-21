@@ -5,14 +5,14 @@ import Close from "../../../public/icons/close.svg";
 
 import PropTypes from "prop-types";
 
-const RecentExplorationsModal = ({ onClose }) => {
+const RecentExplorationsModal = ({ onClose, sessionId }) => {
 	return (
 		<div className="fixed top-0 left-0 flex flex-col w-full h-full justify-center items-center bg-black bg-opacity-50">
 			<div className="bg-white w-[90%] h-[85%] flex">
 				<div className="bg-[#85cbfa] w-full min-w-[80%]">
-					<RouteMap />
+					<RouteMap sessionId={sessionId} />
 				</div>
-				<div className="relative overflow-x-auto shadow-md min-w-[20%]">
+				<div className="relative overflow-x-hidden shadow-md min-w-[20%]">
 					<table className="w-full h-full text-sm text-left text-gray-400">
 						<thead className="text-xs uppercase text-gray-400">
 							<tr>
@@ -85,7 +85,11 @@ const RecentExplorationsModal = ({ onClose }) => {
 									scope="row"
 									className="px-6 py-4 font-medium whitespace-nowrap text-white bg-gray-800"
 								>
-									Humidity<sup> (g/m<sup>3</sup>)</sup>
+									Humidity
+									<sup>
+										{" "}
+										(g/m<sup>3</sup>)
+									</sup>
 								</th>
 								<td className="px-6 py-4 bg-gray-600" id="humidity">
 									0
@@ -150,7 +154,10 @@ const RecentExplorationsModal = ({ onClose }) => {
 					</table>
 				</div>
 			</div>
-			<div className="flex mt-4 text-white bg-brandTeal px-4 py-2 items-center rounded-md cursor-pointer hover:opacity-70" onClick={onClose}>
+			<div
+				className="flex mt-4 text-white bg-brandTeal px-4 py-2 items-center rounded-md cursor-pointer hover:opacity-70"
+				onClick={onClose}
+			>
 				<Image src={Close} width={30} height={30} alt="close icon" className="mr-2" />
 				<span className="text-lg font-bold">Close modal</span>
 			</div>

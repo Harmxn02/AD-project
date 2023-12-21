@@ -87,7 +87,7 @@ const RecentXplorations = () => {
 
 						<div className="w-3/6 flex items-center justify-between h-full border-r-4">
 							<p className="font-medium text-lg">{exploration.countriesVisited.join(" - ")}</p>
-							<button className="relative group flex mr-8" onClick={() => openModal(null)}>
+							<button className="relative group flex mr-8" onClick={() => openModal(exploration.id)}>
 								<svg
 									width="25px"
 									height="25px"
