@@ -10,7 +10,9 @@ export default function RouteMap({ sessionId }) {
 	const API_KEY = "OZkqnFxcrUbHDpJQ5a3K";
 
 	useEffect(() => {
-		if (map.current) return undefined;
+		if (map.current) {
+			return () => {}; //Causes the map not too render multiple times :)
+		}
 
 		map.current = new maplibregl.Map({
 			container: mapContainer.current,
@@ -21,6 +23,10 @@ export default function RouteMap({ sessionId }) {
 		});
 
 		getMarkerData(sessionId);
+
+		return () => {
+			// Cleanup logic here
+		};
 	}, [API_KEY, geologicalInfoData]);
 
 	function renderMarkers() {
@@ -43,30 +49,88 @@ export default function RouteMap({ sessionId }) {
 			coordinateLines.push([geologicalInfo.longitude, geologicalInfo.latitude]);
 		});
 
-		map.current.addSource("route", {
-			type: "geojson",
-			data: {
-				type: "Feature",
-				geometry: {
-					type: "LineString",
-					coordinates: coordinateLines,
+		map.current.on("load", () => {
+			map.current.addSource("route", {
+				type: "geojson",
+				data: {
+					type: "Feature",
+					geometry: {
+						type: "LineString",
+						coordinates: coordinateLines,
+					},
 				},
-			},
-		});
-		map.current.addLayer({
-			id: "route",
-			type: "line",
-			source: "route",
-			paint: {
-				"line-color": "#888",
-				"line-width": 1,
-			},
+			});
+			map.current.addLayer({
+				id: "route",
+				type: "line",
+				source: "route",
+				paint: {
+					"line-color": "#888",
+					"line-width": 1,
+				},
+			});
 		});
 
 		updateRouteMapSidebar(geologicalInfoData[0]);
 	}
 
 	function updateRouteMapSidebar(geologicalInfo, event) {
+		updateTimestamp(geologicalInfo.timestamp);
+		updateLatitude(geologicalInfo.latitude);
+		updateLongitude(geologicalInfo.longitude);
+		updateAltitude(geologicalInfo.altitude);
+		updateTemperature(geologicalInfo.temperature);
+		updateHumidity(geologicalInfo.humidity);
+		updatePressure(geologicalInfo.pressure);
+		updateLight(geologicalInfo.light);
+		updateWindSpeed(geologicalInfo.windSpeed);
+		updateWindDirection(geologicalInfo.windDirection);
+		updateRadiation(geologicalInfo.radiation);
+	}
+
+	function updateTimestamp(timestamp) {
+		document.querySelector("#timestamp").textContent = new Date(timestamp).toLocaleTimeString("en-GB");
+	}
+
+	function updateLatitude(latitude) {
+		document.querySelector("#latitude").textContent = latitude.toFixed(3);
+	}
+
+	function updateLongitude(longitude) {
+		document.querySelector("#longitude").textContent = longitude.toFixed(3);
+	}
+
+	function updateAltitude(altitude) {
+		document.querySelector("#altitude").textContent = altitude;
+	}
+
+	function updateTemperature(temperature) {
+		document.querySelector("#temperature").textContent = Math.round(temperature);
+	}
+
+	function updateHumidity(humidity) {
+		document.querySelector("#humidity").textContent = humidity;
+	}
+
+	function updatePressure(pressure) {
+		document.querySelector("#pressure").textContent = pressure.toFixed(3);
+	}
+
+	function updateLight(light) {
+		document.querySelector("#light").textContent = light.toFixed(3);
+	}
+
+	function updateWindSpeed(windSpeed) {
+		document.querySelector("#windspeed").textContent = windSpeed.toFixed(0);
+	}
+
+	function updateWindDirection(windDirection) {
+		document.querySelector("#windDirection").textContent = windDirection;
+	}
+
+	function updateRadiation(radiation) {
+		document.querySelector("#radiation").textContent = radiation.toFixed(3);
+	}
 		const {
 			timestamp,
 			latitude,
