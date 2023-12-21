@@ -13,7 +13,6 @@ import SettingsTitle from "@/components/utility/Settings/SettingsTitle";
 import SettingsContainer from "@/components/utility/Settings/SettingsContainer";
 
 const Button = (props) => {
-
 	Button.propTypes = {
 		href: PropTypes.string.isRequired,
 		children: PropTypes.node.isRequired,
@@ -36,24 +35,16 @@ const Account = () => {
 			<section className="flex flex-col gap-5">
 				<SettingsContainer>
 					<div>
-						<Image
-							alt="User icon"
-							className="w-8 h-8"
-							src={User}
-						></Image>
+						<Image alt="User icon" className="w-8 h-8" src={User}></Image>
 					</div>
 					<div className="flex flex-col gap-4">
 						<div>
 							<SettingsTitle>Active Subscription</SettingsTitle>
-							<SettingsSubtitle>
-								Change or cancel your active subscription.
-							</SettingsSubtitle>
+							<SettingsSubtitle>Change or cancel your active subscription.</SettingsSubtitle>
 						</div>
 
 						<div className="flex gap-5">
-							<Button href="settings/subscriptions">
-								Change subscription
-							</Button>
+							<Button href="settings/subscriptions">Change subscription</Button>
 							<Button href="#todo">Cancel subscription</Button>
 						</div>
 					</div>
@@ -61,17 +52,14 @@ const Account = () => {
 
 				<SettingsContainer>
 					<div>
-						<Image
-							alt="User icon"
-							className="w-8 h-8"
-							src={Danger}
-						></Image>
+						<Image alt="User icon" className="w-8 h-8" src={Danger}></Image>
 					</div>
 					<div className="flex flex-col gap-4">
 						<div>
 							<SettingsTitle>DANGER ZONE</SettingsTitle>
 							<SettingsSubtitle>
-								Delete your data. This is a<strong className="font-semibold"> permanent </strong>and<strong className="font-semibold"> irreversible </strong>change.
+								Delete your data. This is a<strong className="font-semibold"> permanent </strong>and
+								<strong className="font-semibold"> irreversible </strong>change.
 							</SettingsSubtitle>
 						</div>
 

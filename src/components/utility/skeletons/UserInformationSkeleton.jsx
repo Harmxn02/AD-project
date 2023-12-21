@@ -1,7 +1,7 @@
 import React from "react";
 
 const UserInformationSkeleton = () => {
-    // als er iets verschuift, dan ligt het wellicht aan de "mt-2" in de Teal skeleton <div>
+	// als er iets verschuift, dan ligt het wellicht aan de "mt-2" in de Teal skeleton <div>
 	return (
 		<div className="flex flex-col gap-2 items-center">
 			<div className="w-[80px] h-[80px] rounded-full flex items-center justify-center bg-gray-200 animate-pulse">

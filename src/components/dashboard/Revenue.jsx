@@ -112,15 +112,9 @@ const Revenue = ({ activeButton }) => {
 	return (
 		<section className="mt-12">
 			<Title content={`${prefixTitle} Revenue`} />
-			<p className="font-light">
-				An overview of revenue changes within a specific timeframe for
-				quick analysis.
-			</p>
+			<p className="font-light">An overview of revenue changes within a specific timeframe for quick analysis.</p>
 			<div className="w-full mt-4 h-[25rem]">
-				<LineBarChart
-					labels={revenue.labels}
-					dataObject={revenue.dataToRender}
-				/>
+				<LineBarChart labels={revenue.labels} dataObject={revenue.dataToRender} />
 			</div>
 		</section>
 	);

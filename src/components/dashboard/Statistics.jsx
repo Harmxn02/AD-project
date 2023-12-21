@@ -35,15 +35,7 @@ const Statistics = ({ activeButton }) => {
 	function getContinentValuesPerPeriod(data, period) {
 		const resultArray = [];
 
-		const continentOrder = [
-			"europe",
-			"asia",
-			"africa",
-			"southAmerica",
-			"northAmerica",
-			"antarctica",
-			"australia",
-		];
+		const continentOrder = ["europe", "asia", "africa", "southAmerica", "northAmerica", "antarctica", "australia"];
 
 		for (const continent of continentOrder) {
 			if (data.hasOwnProperty(continent)) {
@@ -87,15 +79,7 @@ const Statistics = ({ activeButton }) => {
 	};
 
 	const regionTimeData = {
-		labels: [
-			"Europe",
-			"Asia",
-			"Africa",
-			"S-America",
-			"N-America",
-			"Antarctica",
-			"Australia",
-		],
+		labels: ["Europe", "Asia", "Africa", "S-America", "N-America", "Antarctica", "Australia"],
 		dailyData: [
 			{
 				data: getContinentValuesPerPeriod(regionTimeDataAPI, "day"),
@@ -154,8 +138,7 @@ const Statistics = ({ activeButton }) => {
 				<div className="max-w-[600px] h-full">
 					<Subtitle content="Minutes flown" />
 					<p className="font-light">
-						Charting flight durations within a specific time frame,
-						offering a clear overview for analysis.
+						Charting flight durations within a specific time frame, offering a clear overview for analysis.
 					</p>
 					<div className="w-full mt-4 h-[25rem]">
 						<BarChart dataObject={flownTime.dataToRender} />
@@ -164,14 +147,11 @@ const Statistics = ({ activeButton }) => {
 				<div className="max-w-[600px] h-full">
 					<Subtitle content="Regions" />
 					<p className="font-light">
-						A visual summary of flight time across regions,
-						highlighting minutes flown in a specified period.
+						A visual summary of flight time across regions, highlighting minutes flown in a specified
+						period.
 					</p>
 					<div className="w-full h-[28rem] flex justify-center items-center">
-						<RadarChartStacked
-							labels={regionTimeData.labels}
-							dataObject={regionTime.dataToRender}
-						/>
+						<RadarChartStacked labels={regionTimeData.labels} dataObject={regionTime.dataToRender} />
 					</div>
 				</div>
 			</div>

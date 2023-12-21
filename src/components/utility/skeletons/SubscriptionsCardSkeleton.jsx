@@ -22,28 +22,13 @@ const SubscriptionsCardSkeleton = ({ isLast }) => {
 						<div className="w-[20ch] h-12 bg-gray-200 animate-pulse"></div>
 						<div className="w-[5ch] h-4 bg-gray-200 animate-pulse"></div>
 					</div>
-					<div
-						className={`h-px my-8 animate-pulse ${
-							isLast ? "bg-white" : " bg-black"
-						}`}
-					></div>
-					<p
-						className={`text-left  font-medium mb-4 ${
-							isLast ? "text-white" : "text-[#6D6D6D]"
-						} `}
-					>
+					<div className={`h-px my-8 animate-pulse ${isLast ? "bg-white" : " bg-black"}`}></div>
+					<p className={`text-left  font-medium mb-4 ${isLast ? "text-white" : "text-[#6D6D6D]"} `}>
 						Every month you have access to:
 					</p>
-					<ul
-						className={`mb-8 space-y-6 text-left h-60 ${
-							isLast ? "text-white" : " text-black"
-						}`}
-					>
+					<ul className={`mb-8 space-y-6 text-left h-60 ${isLast ? "text-white" : " text-black"}`}>
 						{numberOfFeatures.map((row) => (
-							<li
-								key={row.id}
-								className="flex items-center space-x-3"
-							>
+							<li key={row.id} className="flex items-center space-x-3">
 								<svg
 									className="flex-shrink-0 w-5 h-5 text-brandGreen "
 									fill="currentColor"
