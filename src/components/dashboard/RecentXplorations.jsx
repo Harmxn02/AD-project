@@ -111,7 +111,13 @@ const RecentXplorations = () => {
 										strokeLinejoin="round"
 									/>
 								</svg>
-								<span className="group-hover:opacity-100 transition-opacity bg-brandBlack px-3 py-2 text-sm text-gray-100 rounded-md w-max absolute left-1/4 -translate-x-1/2 translate-y-2/3 opacity-0 mx-auto flex items-center gap-x-2">
+								<span
+									className="
+										group-hover:opacity-100 transition-opacity bg-brandBlack px-3
+										py-2 text-sm text-gray-100 rounded-md w-max absolute
+										left-1/4 -translate-x-1/2 translate-y-2/3 opacity-0 mx-auto
+										flex items-center gap-x-2"
+								>
 									<svg
 										width="24px"
 										height="24px"
