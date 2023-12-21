@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import PHOTO from "../../../../public/landscape.jpg";
+import Link from "next/link";
 
 const VerticalSubscriptionCard = () => {
 	return (
@@ -15,9 +16,9 @@ const VerticalSubscriptionCard = () => {
 					<span className="text-gray-400">/hour</span>
 				</div>
 
-				<a href="#" className="text-white bg-planButtons font-medium px-5 py-3 text-center ">
+				<Link href="/start-exploring" className="text-white bg-planButtons font-medium px-5 py-3 text-center ">
 					Start exploring now!
-				</a>
+				</Link>
 			</div>
 			<div className="w-2/3">
 				<Image className="w-full h-64 object-cover" alt="banner image for quick explore" src={PHOTO} />
