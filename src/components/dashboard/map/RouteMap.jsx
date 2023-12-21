@@ -74,7 +74,7 @@ export default function RouteMap({ sessionId }) {
 		updateRouteMapSidebar(geologicalInfoData[0]);
 	}
 
-	function updateRouteMapSidebar(geologicalInfo, event) {
+	function updateRouteMapSidebar(geologicalInfo) {
 		updateTimestamp(geologicalInfo.timestamp);
 		updateLatitude(geologicalInfo.latitude);
 		updateLongitude(geologicalInfo.longitude);
@@ -130,39 +130,6 @@ export default function RouteMap({ sessionId }) {
 
 	function updateRadiation(radiation) {
 		document.querySelector("#radiation").textContent = radiation.toFixed(3);
-	}
-		const {
-			timestamp,
-			latitude,
-			longitude,
-			altitude,
-			temperature,
-			humidity,
-			pressure,
-			light,
-			windSpeed,
-			windDirection,
-			radiation,
-		} = geologicalInfo;
-		document.querySelector("#timestamp").textContent = new Date(timestamp).toLocaleTimeString("en-GB");
-		document.querySelector("#latitude").textContent = latitude.toFixed(3);
-		document.querySelector("#longitude").textContent = longitude.toFixed(3);
-		document.querySelector("#altitude").textContent = altitude;
-		document.querySelector("#temperature").textContent = Math.round(temperature);
-		document.querySelector("#humidity").textContent = humidity;
-		document.querySelector("#pressure").textContent = pressure.toFixed(3);
-		document.querySelector("#light").textContent = light.toFixed(3);
-		document.querySelector("#windspeed").textContent = windSpeed.toFixed(0);
-		document.querySelector("#windDirection").textContent = windDirection;
-		document.querySelector("#radiation").textContent = radiation.toFixed(3);
-
-		resetAllClickedElements();
-
-		const clickedElement = event || undefined;
-		if (clickedElement !== undefined) {
-			clickedElement.target.style.backgroundColor = "#E74C3C";
-			clickedElement.target.classList.remove("bg-brandTeal");
-		}
 	}
 
 	function resetAllClickedElements() {
