@@ -47,7 +47,6 @@ export default function RouteMap({ sessionId }) {
 			type: "geojson",
 			data: {
 				type: "Feature",
-				properties: {},
 				geometry: {
 					type: "LineString",
 					coordinates: coordinateLines,
