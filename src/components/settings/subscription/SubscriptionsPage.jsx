@@ -10,6 +10,8 @@ import SubscriptionsPageSkeleton from "@/components/utility/skeletons/Subscripti
 
 import { GetAPI } from "../../../assets/js/api";
 
+import toast, { Toaster } from "react-hot-toast";
+
 const fetchPlanId = async (adriaId) => {
 	try {
 		const response = await fetch(
@@ -66,6 +68,7 @@ const SubscriptionsPage = () => {
 	const handleSwitchPlan = async (subscriptionId) => {
 		switchPlan(adriaId, subscriptionId);
 		setActivePlanId(subscriptionId); // Update the active plan ID
+		toast.success(`Subscription succesfully changed.`);
 	};
 
 	let plans = GetAPI("/plans");
@@ -78,6 +81,7 @@ const SubscriptionsPage = () => {
 
 	return (
 		<section className="mb-12 ">
+			<Toaster />
 			<Title content="Subscription Plans" />
 			<div className="flex justify-between">
 				{plans.map((subscription) => (
