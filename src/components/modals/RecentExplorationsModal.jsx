@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 
 const RecentExplorationsModal = ({ onClose, sessionId }) => {
 	return (
-		<div className="fixed top-0 left-0 flex flex-col w-full h-full justify-center items-center bg-black bg-opacity-50">
+		<div className="fixed top-0 left-0 flex flex-col w-full h-full justify-center items-center bg-black bg-opacity-50 z-50">
 			<div className="bg-white w-[90%] h-[85%] flex">
 				<div className="bg-[#85cbfa] w-full min-w-[80%]">
 					<RouteMap sessionId={sessionId} />
