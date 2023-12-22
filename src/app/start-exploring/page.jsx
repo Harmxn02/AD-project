@@ -7,7 +7,8 @@ import Title from "@/components/utility/Title";
 import PropTypes from "prop-types";
 
 import Image from "next/image";
-import Landscape from "../../../public/landscape.jpg";
+import Paris from "../../../public/Paris.png";
+import Santorini from "../../../public/Santorini.png";
 
 const Subtitle = (props) => {
 	Subtitle.propTypes = {
@@ -48,26 +49,22 @@ const page = () => {
 		<Layout>
 			<section className="pb-8 pt-16 px-24 w-full max-h-screen overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent">
 				<Title content="Start Exploring (part of flow2 so not finished)" />
-
 				<div className="grid grid-cols-2 rounded-md shadow-md bg-white ">
 					<Container>
-						<Subtitle>Area 1</Subtitle>
+						<Subtitle>Paris, France</Subtitle>
 						<Paragraph>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae eligendi tempora
-							accusantium eos laudantium maiores ipsam eveniet sint, aut labore.
+							Explore Paris, the City of Light, with iconic landmarks like the Eiffel Tower and Notre-Dame. Immerse in history, art, and romance amid charming streets, exquisite cuisine,
+							and enchanting culture.
 						</Paragraph>
 						<StartButton />
 					</Container>
-
-					<Image className="h-96 object-cover" src={Landscape} alt="banner image for start exploring" />
-
-					<Image className="h-96 object-cover" src={Landscape} alt="banner image for start exploring" />
-
+					<Image className="h-96 object-cover" src={Paris} alt="banner image for start exploring" />
+					<Image className="h-96 object-cover" src={Santorini} alt="banner image for start exploring" />
 					<Container>
-						<Subtitle>Area 2</Subtitle>
+						<Subtitle>Santorini, Greece</Subtitle>
 						<Paragraph>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae eligendi tempora
-							accusantium eos laudantium maiores ipsam eveniet sint, aut labore.
+							Experience Santorini, a captivating Greek island with white-washed buildings, stunning sunsets, and crystal-clear waters. Explore charming villages, immerse in the
+							beauty of the Aegean Sea, discover historic sites, and savor delicious Mediterranean cuisine.
 						</Paragraph>
 						<StartButton />
 					</Container>
