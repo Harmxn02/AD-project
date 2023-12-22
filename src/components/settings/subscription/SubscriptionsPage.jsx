@@ -68,8 +68,6 @@ const SubscriptionsPage = () => {
 
 	let plans = GetAPI("/plans");
 
-	plans = false;
-
 	if (!plans) {
 		return <SubscriptionsPageSkeleton />;
 	}
