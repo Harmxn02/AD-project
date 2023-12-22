@@ -47,9 +47,9 @@ const page = () => {
 	return (
 		<Layout>
 			<section className="pb-8 pt-16 px-24 w-full max-h-screen overflow-y-auto scrollbar scrollbar-thumb-brandCyan scrollbar-track-transparent">
-				<Title content="Start Exploring" />
+				<Title content="Start Exploring (part of flow2 so not finished)" />
 
-				<div className="grid grid-cols-2 gap-4 rounded-md shadow-md bg-white ">
+				<div className="grid grid-cols-2 rounded-md shadow-md bg-white ">
 					<Container>
 						<Subtitle>Area 1</Subtitle>
 						<Paragraph>
