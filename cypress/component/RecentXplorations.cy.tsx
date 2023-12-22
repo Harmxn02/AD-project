@@ -1,6 +1,6 @@
 import RecentXplorations from "@/components/dashboard/RecentXplorations";
 
-describe("RecentFinds component", () => {
+describe("RecentXplorations component", () => {
 	beforeEach(() => {
 		cy.mount(<RecentXplorations />);
 	});
