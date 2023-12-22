@@ -23,7 +23,7 @@ const SubscriptionsOverview = () => {
 
 	const explorePlans = GetAPI("/plans", true);
 
-	if (!explorePlans) {
+	if (explorePlans == null) {
 		return (
 			<div className="bg-brandDarkGreen">
 				<ExplorePlansSkeleton />
