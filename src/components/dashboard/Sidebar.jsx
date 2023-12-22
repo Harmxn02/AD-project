@@ -27,7 +27,7 @@ const SidebarLink = ({ href, icon, text, currentPath }) => {
 		currentPath: PropTypes.string.isRequired,
 	};
 
-	const isActive = currentPath.includes(href) || currentPath === href;;
+	const isActive = currentPath === href;;
 
 	return (
 		<li className="flex items-center">
