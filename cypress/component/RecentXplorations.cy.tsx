@@ -1,15 +1,15 @@
-import RecentFinds from "@/components/dashboard/RecentFinds";
+import RecentXplorations from "@/components/dashboard/RecentXplorations";
 
-describe("RecentFinds component", () => {
+describe("RecentXplorations component", () => {
 	beforeEach(() => {
-		cy.mount(<RecentFinds />);
+		cy.mount(<RecentXplorations />);
 	});
 
 	it("renders correctly", () => {
-		cy.contains('Recent finds').should('exist');
+		cy.contains('Recent X-Plorations').should('exist');
 
 		// Check if the description paragraph is rendered
-		cy.contains('An overview of your recent finds').should('exist');
+		cy.contains('An overview of your recently visited locations, including travel time.').should('exist');
 
 		// Check if at least one find is rendered (assuming there should be some finds)
 		cy.get('div.w-full.flex.flex-col').should('exist');
