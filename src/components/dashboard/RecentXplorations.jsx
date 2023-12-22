@@ -85,9 +85,9 @@ const RecentXplorations = () => {
 							alt="country flag"
 						></Image>
 
-						<div className="w-3/6 flex items-center justify-between h-full border-r-4">
-							<p className="font-medium text-lg">{exploration.countriesVisited.join(" - ")}</p>
-							<button className="relative group flex mr-8" onClick={() => openModal(exploration.id)}>
+						<div className="w-3/6 flex items-center justify-between h-full border-r-4 pr-5">
+							<p className="font-medium text-lg max-w-[85%] truncate ...">{exploration.countriesVisited.join(" - ")}</p>
+							<button className="relative group flex" onClick={() => openModal(exploration.id)}>
 								<svg
 									width="25px"
 									height="25px"
