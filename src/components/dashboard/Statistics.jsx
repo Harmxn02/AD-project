@@ -48,32 +48,38 @@ const Statistics = ({ activeButton }) => {
 		return resultArray;
 	}
 
+	const dataContext = {
+		barBackgroundColor: "rgba(98, 160, 170, 0.45)",
+		barBorderColor: "rgba(75, 192, 192, 1)",
+		barBorderWidth: 1,
+	};
+
 	const flownTimeData = {
 		dailyData: [
 			{
 				data: flownTimeDataAPI.daily,
 				label: "Minutes Flown",
-				backgroundColor: "#62A0AA73",
-				borderColor: "rgba(75, 192, 192, 1)",
-				borderWidth: 1,
+				backgroundColor: dataContext.barBackgroundColor,
+				borderColor: dataContext.barBorderColor,
+				borderWidth: dataContext.barBorderWidth,
 			},
 		],
 		weeklyData: [
 			{
 				data: flownTimeDataAPI.weekly,
 				label: "Minutes Flown",
-				backgroundColor: "#62A0AA73",
-				borderColor: "rgba(75, 192, 192, 1)",
-				borderWidth: 1,
+				backgroundColor: dataContext.barBackgroundColor,
+				borderColor: dataContext.barBorderColor,
+				borderWidth: dataContext.barBorderWidth,
 			},
 		],
 		monthlyData: [
 			{
 				data: flownTimeDataAPI.monthly,
 				label: "Minutes Flown",
-				backgroundColor: "#62A0AA73",
-				borderColor: "rgba(75, 192, 192, 1)",
-				borderWidth: 1,
+				backgroundColor: dataContext.barBackgroundColor,
+				borderColor: dataContext.barBorderColor,
+				borderWidth: dataContext.barBorderWidth,
 			},
 		],
 	};
@@ -84,27 +90,27 @@ const Statistics = ({ activeButton }) => {
 			{
 				data: getContinentValuesPerPeriod(regionTimeDataAPI, "day"),
 				label: "Minutes Flown",
-				backgroundColor: "#62A0AA73",
-				borderColor: "rgba(75, 192, 192, 1)",
-				borderWidth: 1,
+				backgroundColor: dataContext.barBackgroundColor,
+				borderColor: dataContext.barBorderColor,
+				borderWidth: dataContext.barBorderWidth,
 			},
 		],
 		weeklyData: [
 			{
 				data: getContinentValuesPerPeriod(regionTimeDataAPI, "week"),
 				label: "Minutes Flown",
-				backgroundColor: "#62A0AA73",
-				borderColor: "rgba(75, 192, 192, 1)",
-				borderWidth: 1,
+				backgroundColor: dataContext.barBackgroundColor,
+				borderColor: dataContext.barBorderColor,
+				borderWidth: dataContext.barBorderWidth,
 			},
 		],
 		monthlyData: [
 			{
 				data: getContinentValuesPerPeriod(regionTimeDataAPI, "month"),
 				label: "Minutes Flown",
-				backgroundColor: "#62A0AA73",
-				borderColor: "rgba(75, 192, 192, 1)",
-				borderWidth: 1,
+				backgroundColor: dataContext.barBackgroundColor,
+				borderColor: dataContext.barBorderColor,
+				borderWidth: dataContext.barBorderWidth,
 			},
 		],
 	};
