@@ -43,7 +43,7 @@ const RecentXplorations = () => {
 	// if countriesVisited == null (when there is no country found = in the middle of the ocean), then it shows Atlantis instead
 	recent_xplorations.forEach((exploration) => {
 		if (exploration.countriesVisited[0] == null) {
-			exploration.countriesVisited = ["Atlantis"];
+			exploration.countriesVisited = ["Atlantic Waters"];
 		}
 	});
 
