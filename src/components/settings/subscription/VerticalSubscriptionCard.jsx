@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import PHOTO from "../../../../public/landscape.jpg";
+import PHOTO from "../../../../public/Paris.png";
 import Link from "next/link";
 
 const VerticalSubscriptionCard = () => {
